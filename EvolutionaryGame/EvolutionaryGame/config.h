@@ -8,7 +8,8 @@
 
 /*
  Defines the constants needed to make the program run 
- smoothly and effectively. 
+ effectively. Add constants that would otherwise be "magic
+ numbers" to this file.
  */
 
 #ifndef CONFIG_H
