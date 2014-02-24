@@ -7,6 +7,9 @@
 //
 
 #import "LSVMyScene.h"
+#import "LSVCharacter.h"
+
+#import "config.h"
 
 @implementation LSVMyScene
 
@@ -24,6 +27,15 @@
                                        CGRectGetMidY(self.frame));
         
         [self addChild:myLabel];
+        
+        // Create the main character and place it in the center of the screen
+        // Also, set it's current velocity to half of maximum
+        self.mainCharacter = [LSVCharacter spriteNodeWithImageNamed:@"Spaceship"];
+        self.mainCharacter.position = CGPointMake(CGRectGetMidX(self.frame),
+                                         CGRectGetMidY(self.frame));
+        self.mainCharacter.xVelocity = 0.5;
+        
+        [self addChild:self.mainCharacter];
     }
     return self;
 }
@@ -31,23 +43,24 @@
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     /* Called when a touch begins */
     
+    // Whenever a touch begins, reverse the direction of the moving
+    // sprite across the screens
     for (UITouch *touch in touches) {
-        CGPoint location = [touch locationInNode:self];
-        
-        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
-        
-        sprite.position = location;
-        
-        SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
-        
-        [sprite runAction:[SKAction repeatActionForever:action]];
-        
-        [self addChild:sprite];
+    
+        self.mainCharacter.xVelocity = - self.mainCharacter.xVelocity;
+        self.mainCharacter.yVelocity = 0.0;
+    
     }
 }
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
+    
+    SKAction *action = [SKAction moveByX:self.mainCharacter.xVelocity*MAX_VELOCITY
+                                       y:self.mainCharacter.yVelocity*MAX_VELOCITY
+                                       duration:1];
+    
+    [self.mainCharacter runAction:action];
 }
 
 @end
