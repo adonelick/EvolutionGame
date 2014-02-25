@@ -12,10 +12,15 @@
  numbers" to this file.
  */
 
+#import "LSVCharacter.h"
+
 #ifndef CONFIG_H
 #define CONFIG_H 1
 
 #define MAX_VELOCITY 10.0
 #define MIN_VELOCITY 0.0
+
+LSVCharacter* mainCharacter;
+
 
 #endif

@@ -30,12 +30,12 @@
         
         // Create the main character and place it in the center of the screen
         // Also, set it's current velocity to half of maximum
-        self.mainCharacter = [LSVCharacter spriteNodeWithImageNamed:@"Spaceship"];
-        self.mainCharacter.position = CGPointMake(CGRectGetMidX(self.frame),
+        mainCharacter = [LSVCharacter spriteNodeWithImageNamed:@"Spaceship"];
+        mainCharacter.position = CGPointMake(CGRectGetMidX(self.frame),
                                          CGRectGetMidY(self.frame));
-        self.mainCharacter.xVelocity = 0.5;
+        mainCharacter.xVelocity = 0.5;
         
-        [self addChild:self.mainCharacter];
+        [self addChild:mainCharacter];
     }
     return self;
 }
@@ -47,8 +47,7 @@
     // sprite across the screens
     for (UITouch *touch in touches) {
     
-        self.mainCharacter.xVelocity = - self.mainCharacter.xVelocity;
-        self.mainCharacter.yVelocity = 0.0;
+        // Do stuff here with touches...
     
     }
 }
@@ -56,11 +55,14 @@
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
     
-    SKAction *action = [SKAction moveByX:self.mainCharacter.xVelocity*MAX_VELOCITY
-                                       y:self.mainCharacter.yVelocity*MAX_VELOCITY
-                                       duration:1];
     
-    [self.mainCharacter runAction:action];
+    
+    SKAction *action = [SKAction moveByX:mainCharacter.xVelocity*MAX_VELOCITY
+                                       y:mainCharacter.yVelocity*MAX_VELOCITY
+                                       duration:0.5];
+    
+    [mainCharacter runAction:action];
+    mainCharacter.xVelocity = 0.0;
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import "LSVViewController.h"
 #import "LSVMyScene.h"
+#import "config.h"
 
 @implementation LSVViewController
 
@@ -47,5 +48,18 @@
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
 }
+
+- (IBAction)goRight:(id)sender
+{
+    mainCharacter.xVelocity = 1.0;
+}
+
+- (IBAction)goLeft:(id)sender
+{
+    mainCharacter.xVelocity = -1.0;
+}
+
+
+
 
 @end

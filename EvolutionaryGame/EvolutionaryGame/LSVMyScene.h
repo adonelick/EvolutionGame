@@ -11,7 +11,7 @@
 
 @interface LSVMyScene : SKScene
 
-@property LSVCharacter* mainCharacter;
+//@property LSVCharacter* mainCharacter;
 
 
 @end

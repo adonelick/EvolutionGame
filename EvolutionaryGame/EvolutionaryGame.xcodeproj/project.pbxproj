@@ -24,6 +24,8 @@
 		9333FD5E18B3E521006B11F5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9333FD3918B3E521006B11F5 /* UIKit.framework */; };
 		9333FD6618B3E521006B11F5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9333FD6418B3E521006B11F5 /* InfoPlist.strings */; };
 		9333FD6818B3E521006B11F5 /* EvolutionaryGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9333FD6718B3E521006B11F5 /* EvolutionaryGameTests.m */; };
+		9333FD7318B5A187006B11F5 /* LSVCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9333FD7218B5A187006B11F5 /* LSVCharacter.m */; };
+		9333FD7B18B9313C006B11F5 /* Platform.m in Sources */ = {isa = PBXBuildFile; fileRef = 9333FD7A18B9313C006B11F5 /* Platform.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,11 @@
 		9333FD6318B3E521006B11F5 /* EvolutionaryGameTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EvolutionaryGameTests-Info.plist"; sourceTree = "<group>"; };
 		9333FD6518B3E521006B11F5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9333FD6718B3E521006B11F5 /* EvolutionaryGameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EvolutionaryGameTests.m; sourceTree = "<group>"; };
+		9333FD7118B5A187006B11F5 /* LSVCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSVCharacter.h; path = Creatures/LSVCharacter.h; sourceTree = "<group>"; };
+		9333FD7218B5A187006B11F5 /* LSVCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSVCharacter.m; path = Creatures/LSVCharacter.m; sourceTree = "<group>"; };
+		9333FD7918B9313C006B11F5 /* Platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Platform.h; path = Objects/Platform.h; sourceTree = "<group>"; };
+		9333FD7A18B9313C006B11F5 /* Platform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Platform.m; path = Objects/Platform.m; sourceTree = "<group>"; };
+		9333FD7D18B9342B006B11F5 /* config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +128,7 @@
 		9333FD3D18B3E521006B11F5 /* EvolutionaryGame */ = {
 			isa = PBXGroup;
 			children = (
+				9333FD7D18B9342B006B11F5 /* config.h */,
 				9333FD4618B3E521006B11F5 /* LSVAppDelegate.h */,
 				9333FD4718B3E521006B11F5 /* LSVAppDelegate.m */,
 				9333FD4918B3E521006B11F5 /* Main.storyboard */,
@@ -130,6 +138,8 @@
 				9333FD5018B3E521006B11F5 /* LSVMyScene.m */,
 				9333FD5218B3E521006B11F5 /* Spaceship.png */,
 				9333FD5418B3E521006B11F5 /* Images.xcassets */,
+				9333FD7518B92FA1006B11F5 /* Objects */,
+				9333FD7418B5A1B1006B11F5 /* Creatures */,
 				9333FD3E18B3E521006B11F5 /* Supporting Files */,
 			);
 			path = EvolutionaryGame;
@@ -162,6 +172,24 @@
 				9333FD6418B3E521006B11F5 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9333FD7418B5A1B1006B11F5 /* Creatures */ = {
+			isa = PBXGroup;
+			children = (
+				9333FD7118B5A187006B11F5 /* LSVCharacter.h */,
+				9333FD7218B5A187006B11F5 /* LSVCharacter.m */,
+			);
+			name = Creatures;
+			sourceTree = "<group>";
+		};
+		9333FD7518B92FA1006B11F5 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				9333FD7918B9313C006B11F5 /* Platform.h */,
+				9333FD7A18B9313C006B11F5 /* Platform.m */,
+			);
+			name = Objects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +292,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9333FD5118B3E521006B11F5 /* LSVMyScene.m in Sources */,
+				9333FD7318B5A187006B11F5 /* LSVCharacter.m in Sources */,
+				9333FD7B18B9313C006B11F5 /* Platform.m in Sources */,
 				9333FD4818B3E521006B11F5 /* LSVAppDelegate.m in Sources */,
 				9333FD4418B3E521006B11F5 /* main.m in Sources */,
 				9333FD4E18B3E521006B11F5 /* LSVViewController.m in Sources */,
@@ -395,6 +425,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EvolutionaryGame/EvolutionaryGame-Prefix.pch";
 				INFOPLIST_FILE = "EvolutionaryGame/EvolutionaryGame-Info.plist";
@@ -409,6 +440,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EvolutionaryGame/EvolutionaryGame-Prefix.pch";
 				INFOPLIST_FILE = "EvolutionaryGame/EvolutionaryGame-Info.plist";
