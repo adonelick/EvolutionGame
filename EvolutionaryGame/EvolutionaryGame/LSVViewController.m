@@ -77,4 +77,27 @@
 
 
 
+- (IBAction)rightButtonDown:(id)sender
+{
+    // Create the timer that will tell the character to move
+    self.rightTimer = [NSTimer scheduledTimerWithTimeInterval:UPDATE_TIME
+                                                      target:self
+                                                    selector:@selector(moveCharacterRight)
+                                                    userInfo:nil
+                                                     repeats:YES];
+}
+
+- (void) moveCharacterRight
+{
+    mainCharacter.xVelocity = 1.0;
+}
+
+- (IBAction)rightButtonUp:(id)sender
+{
+    // Invalidate the timer to stop its operation
+    [self.rightTimer invalidate];
+}
+
+
+
 @end

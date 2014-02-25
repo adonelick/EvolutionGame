@@ -11,6 +11,9 @@
 
 @interface LSVViewController : UIViewController
 
+// Create timers to control the characters movements
+//   We create three different timers so that the character can
+//   do all three types of movements at once
 @property NSTimer* leftTimer;
 @property NSTimer* rightTimer;
 @property NSTimer* jumpTimer;

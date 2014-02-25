@@ -22,7 +22,8 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Right"/>
                                 <connections>
-                                    <action selector="goRight:" destination="BV1-FR-VrT" eventType="touchUpInside" id="cca-gG-KTu"/>
+                                    <action selector="rightButtonDown:" destination="BV1-FR-VrT" eventType="touchDown" id="LJU-em-2k3"/>
+                                    <action selector="rightButtonUp:" destination="BV1-FR-VrT" eventType="touchUpInside" id="bML-ZW-0B1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbj-6Z-zAw">

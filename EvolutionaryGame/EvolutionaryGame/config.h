@@ -22,6 +22,7 @@
 
 #define UPDATE_TIME 0.05
 
+
 // Global variable that contains the main character that
 // the user controls in the game.
 LSVCharacter* mainCharacter;
