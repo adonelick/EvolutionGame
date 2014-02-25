@@ -20,6 +20,8 @@
 #define MAX_VELOCITY 10.0
 #define MIN_VELOCITY 0.0
 
+// Global variable that contains the main character that
+// the user controls in the game.
 LSVCharacter* mainCharacter;
 
 
