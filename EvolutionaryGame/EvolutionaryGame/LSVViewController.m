@@ -54,11 +54,26 @@
     mainCharacter.xVelocity = 1.0;
 }
 
-- (IBAction)goLeft:(id)sender
+- (IBAction)leftButtonDown:(id)sender
+{
+    // Create the timer that will tell the character to move
+    self.leftTimer = [NSTimer scheduledTimerWithTimeInterval:UPDATE_TIME
+                                                      target:self
+                                                      selector:@selector(moveCharacterLeft)
+                                                      userInfo:nil
+                                                      repeats:YES];
+}
+
+- (void) moveCharacterLeft
 {
     mainCharacter.xVelocity = -1.0;
 }
 
+- (IBAction)leftButtonUp:(id)sender
+{
+    // Invalidate the timer to stop its operation
+    [self.leftTimer invalidate];
+}
 
 
 

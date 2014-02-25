@@ -11,5 +11,9 @@
 
 @interface LSVViewController : UIViewController
 
+@property NSTimer* leftTimer;
+@property NSTimer* rightTimer;
+@property NSTimer* jumpTimer;
+
 
 @end
