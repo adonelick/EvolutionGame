@@ -16,10 +16,15 @@
     
     if (self) {
         // Create the textures from the image files
-        _textureWalkLeft1 = [SKTexture textureWithImageNamed:@"PlayerCharL1.gif"];
-        _textureWalkLeft2 = [SKTexture textureWithImageNamed:@"PlayerCharL2.gif"];
-        _textureWalkRight1 = [SKTexture textureWithImageNamed:@"PlayerCharR1.gif"];
-        _textureWalkRight2 = [SKTexture textureWithImageNamed:@"PlayerCharR2.gif"];
+        _walkLeft1 = [SKTexture textureWithImageNamed:@"PlayerCharL1.gif"];
+        _walkLeft2 = [SKTexture textureWithImageNamed:@"PlayerCharL2.gif"];
+        _walkRight1 = [SKTexture textureWithImageNamed:@"PlayerCharR1.gif"];
+        _walkRight2 = [SKTexture textureWithImageNamed:@"PlayerCharR2.gif"];
+        
+        _walkLeftWeapon1 = [SKTexture textureWithImageNamed:@"PlayerCharWeaponL1.gif"];
+        _walkLeftWeapon2 = [SKTexture textureWithImageNamed:@"PlayerCharWeaponL2.gif"];
+        _walkRightWeapon1 = [SKTexture textureWithImageNamed:@"PlayerCharWeaponR1.gif"];
+        _walkRightWeapon2 = [SKTexture textureWithImageNamed:@"PlayerCharWeaponR2.gif"];
     }
     
     return self;
@@ -27,24 +32,32 @@
 
 - (void) changeTexture
 {
+    // Make changes to the Character's appearance here
     
     if (self.xVelocity > 0) {
-        
-        if (self.texture == _textureWalkRight1) {
-            self.texture = _textureWalkRight2;
+        // If the velocity is positive, then we are moving to the right
+        if (self.texture == _walkRight1) {
+            self.texture = _walkRight2;
         } else {
-            self.texture = _textureWalkRight1;
+            self.texture = _walkRight1;
         }
         
     } else if (self.xVelocity < 0) {
-        
-        if (self.texture == _textureWalkLeft1) {
-            self.texture = _textureWalkLeft2;
+        // If the velocity is negative, then we are moving to the left
+        if (self.texture == _walkLeft1) {
+            self.texture = _walkLeft2;
         } else {
-            self.texture = _textureWalkLeft1;
+            self.texture = _walkLeft1;
         }
     }
+    
+    // TODO: Add functionality to handle whethr the Character is firing projectiles
 
+}
+
+- (void) fireProjectile
+{
+    // Deal with the weapon stuff here...
 }
 
 

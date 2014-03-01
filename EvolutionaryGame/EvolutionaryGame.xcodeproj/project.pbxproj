@@ -27,7 +27,6 @@
 		9333FD7B18B9313C006B11F5 /* Platform.m in Sources */ = {isa = PBXBuildFile; fileRef = 9333FD7A18B9313C006B11F5 /* Platform.m */; };
 		9342719D18C1B9D6006E9365 /* Weapon.m in Sources */ = {isa = PBXBuildFile; fileRef = 9342719C18C1B9D6006E9365 /* Weapon.m */; };
 		934271A018C1BA01006E9365 /* Projectile.m in Sources */ = {isa = PBXBuildFile; fileRef = 9342719F18C1BA01006E9365 /* Projectile.m */; };
-		934271A418C1BE64006E9365 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 934271A318C1BE64006E9365 /* Spaceship.png */; };
 		934271B518C1C274006E9365 /* Arrow_Left.png in Resources */ = {isa = PBXBuildFile; fileRef = 934271B318C1C274006E9365 /* Arrow_Left.png */; };
 		934271B618C1C274006E9365 /* Arrow_Right.png in Resources */ = {isa = PBXBuildFile; fileRef = 934271B418C1C274006E9365 /* Arrow_Right.png */; };
 		934271C118C1C4DD006E9365 /* FullFirePlayerChar1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 934271B718C1C4DD006E9365 /* FullFirePlayerChar1.gif */; };
@@ -84,7 +83,6 @@
 		9342719C18C1B9D6006E9365 /* Weapon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Weapon.m; path = Objects/Weapon.m; sourceTree = "<group>"; };
 		9342719E18C1BA01006E9365 /* Projectile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Projectile.h; path = Objects/Projectile.h; sourceTree = "<group>"; };
 		9342719F18C1BA01006E9365 /* Projectile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Projectile.m; path = Objects/Projectile.m; sourceTree = "<group>"; };
-		934271A318C1BE64006E9365 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Spaceship.png; path = Images/Spaceship.png; sourceTree = "<group>"; };
 		934271B318C1C274006E9365 /* Arrow_Left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Arrow_Left.png; path = Images/Arrow_Left.png; sourceTree = "<group>"; };
 		934271B418C1C274006E9365 /* Arrow_Right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Arrow_Right.png; path = Images/Arrow_Right.png; sourceTree = "<group>"; };
 		934271B718C1C4DD006E9365 /* FullFirePlayerChar1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FullFirePlayerChar1.gif; path = Images/FullFirePlayerChar1.gif; sourceTree = "<group>"; };
@@ -231,7 +229,6 @@
 			children = (
 				934271CC18C1C503006E9365 /* Characters */,
 				934271CB18C1C4EF006E9365 /* Controls */,
-				934271A318C1BE64006E9365 /* Spaceship.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -341,7 +338,6 @@
 			files = (
 				934271C418C1C4DD006E9365 /* PlayerCharR1.gif in Resources */,
 				934271C518C1C4DD006E9365 /* PlayerCharR2.gif in Resources */,
-				934271A418C1BE64006E9365 /* Spaceship.png in Resources */,
 				934271C718C1C4DD006E9365 /* PlayerCharWeaponL2.gif in Resources */,
 				934271C818C1C4DD006E9365 /* PlayerCharWeaponR1.gif in Resources */,
 				9333FD4218B3E521006B11F5 /* InfoPlist.strings in Resources */,

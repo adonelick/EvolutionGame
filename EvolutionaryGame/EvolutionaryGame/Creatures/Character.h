@@ -14,14 +14,25 @@
 @property double xVelocity;
 @property double yVelocity;
 
+// Determines whether or not the character is armed
+@property Boolean isArmed;
+
 // Textures for the character's walking
-@property SKTexture* textureWalkLeft1;
-@property SKTexture* textureWalkLeft2;
-@property SKTexture* textureWalkRight1;
-@property SKTexture* textureWalkRight2;
+@property SKTexture* walkLeft1;
+@property SKTexture* walkLeft2;
+@property SKTexture* walkRight1;
+@property SKTexture* walkRight2;
+
+// Textures for the character walking with a weapon
+@property SKTexture* walkLeftWeapon1;
+@property SKTexture* walkLeftWeapon2;
+@property SKTexture* walkRightWeapon1;
+@property SKTexture* walkRightWeapon2;
 
 // Switches the texture of the character to display
 // walking, arming with a weapon, etc
 - (void) changeTexture;
+
+- (void) fireProjectile;
 
 @end
