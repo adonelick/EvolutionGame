@@ -7,9 +7,12 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "Projectile.h"
 
 @interface LSVMyScene : SKScene
 
+@property NSMutableArray* projectiles;
 
+- (void) addProjectile:(Projectile*) projectile;
 
 @end

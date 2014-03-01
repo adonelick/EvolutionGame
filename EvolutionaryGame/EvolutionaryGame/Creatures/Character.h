@@ -1,5 +1,5 @@
 //
-//  LSVCharacter.h
+//  Character.h
 //  EvolutionaryGame
 //
 //  Created by CS121 on 2/19/14.
@@ -7,6 +7,7 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "Weapon.h"
 
 @interface Character : SKSpriteNode
 
@@ -14,8 +15,14 @@
 @property double xVelocity;
 @property double yVelocity;
 
+// Stores which direction the character is currently pointed
+@property Boolean facingRight;
+
 // Determines whether or not the character is armed
 @property Boolean isArmed;
+
+// The weapon for the character
+@property Weapon* weapon;
 
 // Textures for the character's walking
 @property SKTexture* walkLeft1;
@@ -31,8 +38,10 @@
 
 // Switches the texture of the character to display
 // walking, arming with a weapon, etc
-- (void) changeTexture;
+- (void) updateTexture;
 
-- (void) fireProjectile;
+// Makes the weapon fire a projectile.
+// Returns the projectile fired.
+- (id) fireProjectile;
 
 @end

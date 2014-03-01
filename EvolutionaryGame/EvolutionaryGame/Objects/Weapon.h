@@ -7,9 +7,10 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "Projectile.h"
 
 @interface Weapon : SKSpriteNode
 
-- (void) fireProjectile;
+- (id) fireProjectile:(Boolean) fireRight;
 
 @end

@@ -10,12 +10,15 @@
 
 @implementation Weapon
 
-- (void) fireProjectile
+- (id) fireProjectile:(Boolean) fireRight
 {
     // Create the projectile objects here
+    Projectile* p = [[Projectile alloc] initWithDirection:fireRight];
     
     // Start the projectile moving at the specified
     // height above the main platform
+    
+    return p;
 }
 
 @end

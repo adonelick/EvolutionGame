@@ -17,10 +17,12 @@
 #ifndef CONFIG_H
 #define CONFIG_H 1
 
+#define ACTION_DURATION 0.2
+
 #define MAX_VELOCITY 10.0
 #define MIN_VELOCITY 0.0
 
-#define UPDATE_TIME 0.1
+#define UPDATE_TIME 0.08
 
 
 // Global variable that contains the main character that

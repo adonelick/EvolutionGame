@@ -12,9 +12,6 @@
 
 
 // At the moment, a platform is just rectangle with a color
-@property int xSize;
-@property int ySize;
-@property SKColor* backgroundColor;
 
 
 @end

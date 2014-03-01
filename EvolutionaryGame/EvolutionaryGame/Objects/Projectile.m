@@ -10,4 +10,19 @@
 
 @implementation Projectile
 
+- (id) initWithDirection:(Boolean) isTravelingRight
+{
+    if (isTravelingRight) {
+        self = [super initWithImageNamed:@"PlayerProjectileRight.gif"];
+    } else {
+        self = [super initWithImageNamed:@"PlayerProjectileLeft.gif"];
+    }
+    
+    if (self) {
+        _isTravelingRight = isTravelingRight;
+    }
+    
+    return self;
+}
+
 @end

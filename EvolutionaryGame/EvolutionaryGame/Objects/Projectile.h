@@ -12,5 +12,8 @@
 
 @property double maxSpeed;
 @property double range;
+@property Boolean isTravelingRight;
+
+- (id) initWithDirection:(Boolean) isTravelingRight;
 
 @end

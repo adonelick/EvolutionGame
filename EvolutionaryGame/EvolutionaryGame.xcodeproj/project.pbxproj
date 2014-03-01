@@ -38,7 +38,12 @@
 		934271C718C1C4DD006E9365 /* PlayerCharWeaponL2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 934271BD18C1C4DD006E9365 /* PlayerCharWeaponL2.gif */; };
 		934271C818C1C4DD006E9365 /* PlayerCharWeaponR1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 934271BE18C1C4DD006E9365 /* PlayerCharWeaponR1.gif */; };
 		934271C918C1C4DD006E9365 /* PlayerCharWeaponR2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 934271BF18C1C4DD006E9365 /* PlayerCharWeaponR2.gif */; };
-		934271CA18C1C4DD006E9365 /* PlayerProjectile.gif in Resources */ = {isa = PBXBuildFile; fileRef = 934271C018C1C4DD006E9365 /* PlayerProjectile.gif */; };
+		934271D118C27E94006E9365 /* FireEnemySmallL1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 934271CD18C27E94006E9365 /* FireEnemySmallL1.gif */; };
+		934271D218C27E94006E9365 /* FireEnemySmallL2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 934271CE18C27E94006E9365 /* FireEnemySmallL2.gif */; };
+		934271D318C27E94006E9365 /* FireEnemySmallR1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 934271CF18C27E94006E9365 /* FireEnemySmallR1.gif */; };
+		934271D418C27E94006E9365 /* FireEnemySmallR2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 934271D018C27E94006E9365 /* FireEnemySmallR2.gif */; };
+		934271D718C27EA1006E9365 /* PlayerProjectileLeft.gif in Resources */ = {isa = PBXBuildFile; fileRef = 934271D518C27EA1006E9365 /* PlayerProjectileLeft.gif */; };
+		934271D818C27EA1006E9365 /* PlayerProjectileRight.gif in Resources */ = {isa = PBXBuildFile; fileRef = 934271D618C27EA1006E9365 /* PlayerProjectileRight.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,7 +99,12 @@
 		934271BD18C1C4DD006E9365 /* PlayerCharWeaponL2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = PlayerCharWeaponL2.gif; path = Images/PlayerCharWeaponL2.gif; sourceTree = "<group>"; };
 		934271BE18C1C4DD006E9365 /* PlayerCharWeaponR1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = PlayerCharWeaponR1.gif; path = Images/PlayerCharWeaponR1.gif; sourceTree = "<group>"; };
 		934271BF18C1C4DD006E9365 /* PlayerCharWeaponR2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = PlayerCharWeaponR2.gif; path = Images/PlayerCharWeaponR2.gif; sourceTree = "<group>"; };
-		934271C018C1C4DD006E9365 /* PlayerProjectile.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = PlayerProjectile.gif; path = Images/PlayerProjectile.gif; sourceTree = "<group>"; };
+		934271CD18C27E94006E9365 /* FireEnemySmallL1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FireEnemySmallL1.gif; path = Images/FireEnemySmallL1.gif; sourceTree = "<group>"; };
+		934271CE18C27E94006E9365 /* FireEnemySmallL2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FireEnemySmallL2.gif; path = Images/FireEnemySmallL2.gif; sourceTree = "<group>"; };
+		934271CF18C27E94006E9365 /* FireEnemySmallR1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FireEnemySmallR1.gif; path = Images/FireEnemySmallR1.gif; sourceTree = "<group>"; };
+		934271D018C27E94006E9365 /* FireEnemySmallR2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FireEnemySmallR2.gif; path = Images/FireEnemySmallR2.gif; sourceTree = "<group>"; };
+		934271D518C27EA1006E9365 /* PlayerProjectileLeft.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = PlayerProjectileLeft.gif; path = Images/PlayerProjectileLeft.gif; sourceTree = "<group>"; };
+		934271D618C27EA1006E9365 /* PlayerProjectileRight.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = PlayerProjectileRight.gif; path = Images/PlayerProjectileRight.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +237,7 @@
 		9342719A18C1B3CF006E9365 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				934271D918C2827A006E9365 /* Objects */,
 				934271CC18C1C503006E9365 /* Characters */,
 				934271CB18C1C4EF006E9365 /* Controls */,
 			);
@@ -245,6 +256,10 @@
 		934271CC18C1C503006E9365 /* Characters */ = {
 			isa = PBXGroup;
 			children = (
+				934271CD18C27E94006E9365 /* FireEnemySmallL1.gif */,
+				934271CE18C27E94006E9365 /* FireEnemySmallL2.gif */,
+				934271CF18C27E94006E9365 /* FireEnemySmallR1.gif */,
+				934271D018C27E94006E9365 /* FireEnemySmallR2.gif */,
 				934271B818C1C4DD006E9365 /* PlayerCharL1.gif */,
 				934271B918C1C4DD006E9365 /* PlayerCharL2.gif */,
 				934271BA18C1C4DD006E9365 /* PlayerCharR1.gif */,
@@ -253,10 +268,18 @@
 				934271BD18C1C4DD006E9365 /* PlayerCharWeaponL2.gif */,
 				934271BE18C1C4DD006E9365 /* PlayerCharWeaponR1.gif */,
 				934271BF18C1C4DD006E9365 /* PlayerCharWeaponR2.gif */,
-				934271C018C1C4DD006E9365 /* PlayerProjectile.gif */,
 				934271B718C1C4DD006E9365 /* FullFirePlayerChar1.gif */,
 			);
 			name = Characters;
+			sourceTree = "<group>";
+		};
+		934271D918C2827A006E9365 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				934271D518C27EA1006E9365 /* PlayerProjectileLeft.gif */,
+				934271D618C27EA1006E9365 /* PlayerProjectileRight.gif */,
+			);
+			name = Objects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,18 +362,23 @@
 				934271C418C1C4DD006E9365 /* PlayerCharR1.gif in Resources */,
 				934271C518C1C4DD006E9365 /* PlayerCharR2.gif in Resources */,
 				934271C718C1C4DD006E9365 /* PlayerCharWeaponL2.gif in Resources */,
+				934271D218C27E94006E9365 /* FireEnemySmallL2.gif in Resources */,
 				934271C818C1C4DD006E9365 /* PlayerCharWeaponR1.gif in Resources */,
 				9333FD4218B3E521006B11F5 /* InfoPlist.strings in Resources */,
-				934271CA18C1C4DD006E9365 /* PlayerProjectile.gif in Resources */,
 				934271B518C1C274006E9365 /* Arrow_Left.png in Resources */,
 				934271C118C1C4DD006E9365 /* FullFirePlayerChar1.gif in Resources */,
+				934271D318C27E94006E9365 /* FireEnemySmallR1.gif in Resources */,
 				934271C218C1C4DD006E9365 /* PlayerCharL1.gif in Resources */,
+				934271D718C27EA1006E9365 /* PlayerProjectileLeft.gif in Resources */,
+				934271D118C27E94006E9365 /* FireEnemySmallL1.gif in Resources */,
 				934271C318C1C4DD006E9365 /* PlayerCharL2.gif in Resources */,
 				934271C618C1C4DD006E9365 /* PlayerCharWeaponL1.gif in Resources */,
 				934271C918C1C4DD006E9365 /* PlayerCharWeaponR2.gif in Resources */,
 				9333FD5518B3E521006B11F5 /* Images.xcassets in Resources */,
 				934271B618C1C274006E9365 /* Arrow_Right.png in Resources */,
+				934271D818C27EA1006E9365 /* PlayerProjectileRight.gif in Resources */,
 				9333FD4B18B3E521006B11F5 /* Main.storyboard in Resources */,
+				934271D418C27E94006E9365 /* FireEnemySmallR2.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

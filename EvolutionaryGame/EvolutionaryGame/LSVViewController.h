@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
+#import "LSVMyScene.h"
 
 @interface LSVViewController : UIViewController
+
+@property LSVMyScene* scene;
 
 // Create timers to control the characters movements
 //   We create three different timers so that the character can

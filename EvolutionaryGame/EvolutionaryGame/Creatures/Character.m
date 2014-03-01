@@ -1,5 +1,5 @@
 //
-//  LSVCharacter.m
+//  Character.m
 //  EvolutionaryGame
 //
 //  Created by CS121 on 2/19/14.
@@ -25,39 +25,90 @@
         _walkLeftWeapon2 = [SKTexture textureWithImageNamed:@"PlayerCharWeaponL2.gif"];
         _walkRightWeapon1 = [SKTexture textureWithImageNamed:@"PlayerCharWeaponR1.gif"];
         _walkRightWeapon2 = [SKTexture textureWithImageNamed:@"PlayerCharWeaponR2.gif"];
+        
+        // Originally, the character is not moving
+        _xVelocity = 0.0;
+        _yVelocity = 0.0;
+        
+        _facingRight = YES;
+        
+        _weapon = [[Weapon alloc] init];
     }
     
     return self;
 }
 
-- (void) changeTexture
+- (void) updateTexture
 {
     // Make changes to the Character's appearance here
     
-    if (self.xVelocity > 0) {
-        // If the velocity is positive, then we are moving to the right
-        if (self.texture == _walkRight1) {
-            self.texture = _walkRight2;
+    if (_isArmed) {
+        // Show the character with a weapon
+        if (self.xVelocity > 0) {
+            // If the velocity is positive, then we are moving to the right
+            _facingRight = YES;
+            
+            if (self.texture == _walkRightWeapon1) {
+                self.texture = _walkRightWeapon2;
+            } else {
+                self.texture = _walkRightWeapon1;
+            }
+            
+        } else if (self.xVelocity < 0) {
+            // If the velocity is negative, then we are moving to the left
+            _facingRight = NO;
+            
+            if (self.texture == _walkLeftWeapon1) {
+                self.texture = _walkLeftWeapon2;
+            } else {
+                self.texture = _walkLeftWeapon1;
+            }
         } else {
-            self.texture = _walkRight1;
+            // Reset the textures to default if not moving
+            if (_facingRight) {
+                self.texture = _walkRightWeapon1;
+            } else
+                self.texture = _walkLeftWeapon1;
         }
-        
-    } else if (self.xVelocity < 0) {
-        // If the velocity is negative, then we are moving to the left
-        if (self.texture == _walkLeft1) {
-            self.texture = _walkLeft2;
+
+    } else {
+        if (self.xVelocity > 0) {
+            // If the velocity is positive, then we are moving to the right
+            _facingRight = YES;
+            
+            if (self.texture == _walkRight1) {
+                self.texture = _walkRight2;
+            } else {
+                self.texture = _walkRight1;
+            }
+            
+        } else if (self.xVelocity < 0) {
+            // If the velocity is negative, then we are moving to the left
+            _facingRight = NO;
+            
+            if (self.texture == _walkLeft1) {
+                self.texture = _walkLeft2;
+            } else {
+                self.texture = _walkLeft1;
+            }
         } else {
-            self.texture = _walkLeft1;
+            // Reset the textures to default if not moving
+            if (_facingRight) {
+                self.texture = _walkRight1;
+            } else
+                self.texture = _walkLeft1;
         }
     }
-    
-    // TODO: Add functionality to handle whethr the Character is firing projectiles
-
 }
 
-- (void) fireProjectile
+- (id) fireProjectile
 {
-    // Deal with the weapon stuff here...
+    // Fire a projectile, but only if the character is armed
+    if (_isArmed) {
+        return [_weapon fireProjectile:_facingRight];
+    } else {
+        return nil;
+    }
 }
 
 
