@@ -12,7 +12,7 @@
 
 @implementation LSVViewController
 
-- (void)viewDidLoad
+- (void) viewDidLoad
 {
     [super viewDidLoad];
 
@@ -49,15 +49,11 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-- (IBAction)goRight:(id)sender
-{
-    mainCharacter.xVelocity = 1.0;
-}
 
 - (IBAction)leftButtonDown:(id)sender
 {
     // Create the timer that will tell the character to move
-    self.leftTimer = [NSTimer scheduledTimerWithTimeInterval:UPDATE_TIME
+    _leftTimer = [NSTimer scheduledTimerWithTimeInterval:UPDATE_TIME
                                                       target:self
                                                       selector:@selector(moveCharacterLeft)
                                                       userInfo:nil
@@ -72,15 +68,14 @@
 - (IBAction)leftButtonUp:(id)sender
 {
     // Invalidate the timer to stop its operation
-    [self.leftTimer invalidate];
+    [_leftTimer invalidate];
 }
-
 
 
 - (IBAction)rightButtonDown:(id)sender
 {
     // Create the timer that will tell the character to move
-    self.rightTimer = [NSTimer scheduledTimerWithTimeInterval:UPDATE_TIME
+    _rightTimer = [NSTimer scheduledTimerWithTimeInterval:UPDATE_TIME
                                                       target:self
                                                     selector:@selector(moveCharacterRight)
                                                     userInfo:nil
@@ -95,7 +90,7 @@
 - (IBAction)rightButtonUp:(id)sender
 {
     // Invalidate the timer to stop its operation
-    [self.rightTimer invalidate];
+    [_rightTimer invalidate];
 }
 
 

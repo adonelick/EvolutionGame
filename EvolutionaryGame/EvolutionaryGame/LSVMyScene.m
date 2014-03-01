@@ -7,7 +7,7 @@
 //
 
 #import "LSVMyScene.h"
-#import "LSVCharacter.h"
+#import "Character.h"
 
 #import "config.h"
 
@@ -19,22 +19,13 @@
         
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
-        SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-        
-        myLabel.text = @"Hello, World!";
-        myLabel.fontSize = 30;
-        myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-                                       CGRectGetMidY(self.frame));
-        
-        [self addChild:myLabel];
-        
         // Create the main character and place it in the center of the screen
         // Also, set it's current velocity to half of maximum
-        mainCharacter = [LSVCharacter spriteNodeWithImageNamed:@"Spaceship"];
+        mainCharacter = [[Character alloc] init];
+        
         mainCharacter.position = CGPointMake(CGRectGetMidX(self.frame),
                                          CGRectGetMidY(self.frame));
         mainCharacter.xVelocity = 0.5;
-        
         [self addChild:mainCharacter];
     }
     return self;
@@ -56,7 +47,7 @@
     /* Called before each frame is rendered */
     
     
-    
+    [mainCharacter changeTexture];
     SKAction *action = [SKAction moveByX:mainCharacter.xVelocity*MAX_VELOCITY
                                        y:mainCharacter.yVelocity*MAX_VELOCITY
                                        duration:0.5];

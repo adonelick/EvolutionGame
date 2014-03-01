@@ -10,4 +10,7 @@
 
 @interface Projectile : SKSpriteNode
 
+@property double maxSpeed;
+@property double range;
+
 @end

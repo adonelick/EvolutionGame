@@ -16,7 +16,5 @@
 @property int ySize;
 @property SKColor* backgroundColor;
 
-- (void) translate;
-
 
 @end

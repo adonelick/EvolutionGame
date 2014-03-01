@@ -18,5 +18,4 @@
 @property NSTimer* rightTimer;
 @property NSTimer* jumpTimer;
 
-
 @end

@@ -10,4 +10,6 @@
 
 @interface Weapon : SKSpriteNode
 
+- (void) fireProjectile;
+
 @end

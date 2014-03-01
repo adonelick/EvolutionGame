@@ -10,4 +10,12 @@
 
 @implementation Weapon
 
+- (void) fireProjectile
+{
+    // Create the projectile objects here
+    
+    // Start the projectile moving at the specified
+    // height above the main platform
+}
+
 @end

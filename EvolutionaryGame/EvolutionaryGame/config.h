@@ -12,7 +12,7 @@
  numbers" to this file.
  */
 
-#import "LSVCharacter.h"
+#import "Character.h"
 
 #ifndef CONFIG_H
 #define CONFIG_H 1
@@ -20,12 +20,12 @@
 #define MAX_VELOCITY 10.0
 #define MIN_VELOCITY 0.0
 
-#define UPDATE_TIME 0.05
+#define UPDATE_TIME 0.1
 
 
 // Global variable that contains the main character that
 // the user controls in the game.
-LSVCharacter* mainCharacter;
+Character* mainCharacter;
 
 
 #endif

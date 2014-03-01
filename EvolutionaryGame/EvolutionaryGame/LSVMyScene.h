@@ -7,11 +7,9 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
-#import "LSVCharacter.h"
 
 @interface LSVMyScene : SKScene
 
-//@property LSVCharacter* mainCharacter;
 
 
 @end
