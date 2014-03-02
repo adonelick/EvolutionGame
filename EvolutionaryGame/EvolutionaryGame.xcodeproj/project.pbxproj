@@ -44,6 +44,8 @@
 		934271D418C27E94006E9365 /* FireEnemySmallR2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 934271D018C27E94006E9365 /* FireEnemySmallR2.gif */; };
 		934271D718C27EA1006E9365 /* PlayerProjectileLeft.gif in Resources */ = {isa = PBXBuildFile; fileRef = 934271D518C27EA1006E9365 /* PlayerProjectileLeft.gif */; };
 		934271D818C27EA1006E9365 /* PlayerProjectileRight.gif in Resources */ = {isa = PBXBuildFile; fileRef = 934271D618C27EA1006E9365 /* PlayerProjectileRight.gif */; };
+		934271DF18C2EBA1006E9365 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 934271DE18C2EBA1006E9365 /* Enemy.m */; };
+		934271E218C2EE0F006E9365 /* Creature.m in Sources */ = {isa = PBXBuildFile; fileRef = 934271E118C2EE0F006E9365 /* Creature.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +107,10 @@
 		934271D018C27E94006E9365 /* FireEnemySmallR2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FireEnemySmallR2.gif; path = Images/FireEnemySmallR2.gif; sourceTree = "<group>"; };
 		934271D518C27EA1006E9365 /* PlayerProjectileLeft.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = PlayerProjectileLeft.gif; path = Images/PlayerProjectileLeft.gif; sourceTree = "<group>"; };
 		934271D618C27EA1006E9365 /* PlayerProjectileRight.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = PlayerProjectileRight.gif; path = Images/PlayerProjectileRight.gif; sourceTree = "<group>"; };
+		934271DD18C2EBA1006E9365 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Enemy.h; path = Creatures/Enemy.h; sourceTree = "<group>"; };
+		934271DE18C2EBA1006E9365 /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Enemy.m; path = Creatures/Enemy.m; sourceTree = "<group>"; };
+		934271E018C2EE0F006E9365 /* Creature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Creature.h; path = Creatures/Creature.h; sourceTree = "<group>"; };
+		934271E118C2EE0F006E9365 /* Creature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Creature.m; path = Creatures/Creature.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,8 +221,12 @@
 		9333FD7418B5A1B1006B11F5 /* Creatures */ = {
 			isa = PBXGroup;
 			children = (
+				934271E018C2EE0F006E9365 /* Creature.h */,
+				934271E118C2EE0F006E9365 /* Creature.m */,
 				9333FD7118B5A187006B11F5 /* Character.h */,
 				9333FD7218B5A187006B11F5 /* Character.m */,
+				934271DD18C2EBA1006E9365 /* Enemy.h */,
+				934271DE18C2EBA1006E9365 /* Enemy.m */,
 			);
 			name = Creatures;
 			sourceTree = "<group>";
@@ -397,9 +407,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				934271DF18C2EBA1006E9365 /* Enemy.m in Sources */,
 				934271A018C1BA01006E9365 /* Projectile.m in Sources */,
 				9342719D18C1B9D6006E9365 /* Weapon.m in Sources */,
 				9333FD5118B3E521006B11F5 /* LSVMyScene.m in Sources */,
+				934271E218C2EE0F006E9365 /* Creature.m in Sources */,
 				9333FD7318B5A187006B11F5 /* Character.m in Sources */,
 				9333FD7B18B9313C006B11F5 /* Platform.m in Sources */,
 				9333FD4818B3E521006B11F5 /* LSVAppDelegate.m in Sources */,

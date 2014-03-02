@@ -22,6 +22,9 @@
 #define MAX_VELOCITY 10.0
 #define MIN_VELOCITY 0.0
 
+#define PROJECTILE_DX 10
+#define PROJECTILE_DY 7
+
 #define UPDATE_TIME 0.08
 
 
