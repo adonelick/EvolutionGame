@@ -21,6 +21,7 @@
 - (void) updateMainCharacter;
 - (void) updateProjectiles;
 - (void) updateEnemies;
+- (void) mainCharacterGravity;
 
 // Allows for the addition of projectiles
 - (void) addProjectile:(Projectile*) projectile;

@@ -108,6 +108,10 @@
     mainCharacter.xVelocity = 0.0;
 }
 
+- (IBAction)jump:(id)sender {
+    mainCharacter.yVelocity = 1;
+}
+
 
 
 @end
