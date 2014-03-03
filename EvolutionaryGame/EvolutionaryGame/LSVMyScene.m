@@ -194,21 +194,5 @@
     }
 }
 
-<<<<<<< HEAD
-
-=======
-- (void) mainCharacterGravity
-{
-    if (mainCharacter.position.y > CGRectGetMidY(self.frame)) {
-        mainCharacter.yVelocity -= .05;
-    }
-    else if (mainCharacter.position.y < CGRectGetMidY(self.frame)) {
-        mainCharacter.yVelocity = 0;
-        mainCharacter.position = CGPointMake(mainCharacter.position.x,
-                                             CGRectGetMidY((self.frame)));
-        
-    }
-}
->>>>>>> 93216d6f6e3f09b8ada0b2224aef1d475caf0ca9
 
 @end
