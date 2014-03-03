@@ -9,6 +9,7 @@
 #import "LSVMyScene.h"
 #import "Character.h"
 #import "Enemy.h"
+#import "ExtraMath.h"
 
 #import "config.h"
 
@@ -16,20 +17,25 @@
 
 - (id) initWithSize:(CGSize)size
 {
-    if (self = [super initWithSize:size]) {
-        /* Setup your scene here */
+    self = [super initWithSize:size];
+    if (self) {
         
         _projectiles = [NSMutableArray new];
         _enemies = [NSMutableArray new];
         
+        Enemy* newEnemy = [[Enemy alloc] init];
+        newEnemy.position = CGPointMake(CGRectGetMidX(self.frame),
+                                        CGRectGetMidY(self.frame));
+        [_enemies addObject:newEnemy];
+        [self addChild:newEnemy];
+        
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
         // Create the main character and place it in the center of the screen
-        // Also, set it's current velocity to half of maximum
         mainCharacter = [[Character alloc] init];
         
         mainCharacter.position = CGPointMake(CGRectGetMidX(self.frame),
-                                         CGRectGetMidY(self.frame));
+                                             CGRectGetMidY(self.frame));
         
         [self addChild:mainCharacter];
     }
@@ -40,8 +46,6 @@
 {
     /* Called when a touch begins */
     
-    // Whenever a touch begins, reverse the direction of the moving
-    // sprite across the screens
     for (UITouch *touch in touches) {
         // Do stuff here with touches...
     }
@@ -61,12 +65,32 @@
 {
     // Checks whether a collision has occured between any
     // of the creatures or objects currently in the scene.
+    
+    // Calculates the relative position between all projectiles
+    // and enemies
+    
+    for (Projectile* p in _projectiles) {
+        for (Enemy* e in _enemies) {
+            CGPoint projectPos = p.position;
+            CGPoint enemyPos = e.position;
+            double distance = [ExtraMath distanceBetween:projectPos and: enemyPos];
+            
+            if (distance <= KILL_DISTANCE) {
+                // Delete the enemy and projectile from the scene
+                [_projectiles removeObject:p];
+                [_enemies removeObject:e];
+                
+                [e removeFromParent];
+                [p removeFromParent];
+            }
+        }
+    }
 }
 
 
 - (void) updateMainCharacter
 {
-    SKAction *walkAction = [SKAction moveByX:mainCharacter.xVelocity*MAX_VELOCITY
+    SKAction* walkAction = [SKAction moveByX:mainCharacter.xVelocity*MAX_VELOCITY
                                            y:mainCharacter.yVelocity*MAX_VELOCITY
                                     duration:ACTION_DURATION];
     
@@ -108,7 +132,9 @@
 
 - (void) updateEnemies
 {
-    // Update enemies here...
+    for (Enemy* e in _enemies) {
+        [e updateTexture];
+    }
 }
 
 
@@ -122,9 +148,13 @@
         
         // Adjust the projectile's start position to make it come out
         // of the weapon on the image
-        projectile.position = CGPointMake(x + PROJECTILE_DX, y + PROJECTILE_DY);
         
-        projectile.position = CGPointMake(x + PROJECTILE_DX, y + PROJECTILE_DY);
+        if (mainCharacter.facingRight) {
+            projectile.position = CGPointMake(x + PROJECTILE_DX, y + PROJECTILE_DY);
+        } else {
+            projectile.position = CGPointMake(x - PROJECTILE_DX, y + PROJECTILE_DY);
+        }
+        
         [_projectiles addObject:projectile];
         [self addChild:projectile];
     }

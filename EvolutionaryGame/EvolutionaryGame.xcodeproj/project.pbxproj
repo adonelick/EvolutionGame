@@ -46,6 +46,7 @@
 		934271D818C27EA1006E9365 /* PlayerProjectileRight.gif in Resources */ = {isa = PBXBuildFile; fileRef = 934271D618C27EA1006E9365 /* PlayerProjectileRight.gif */; };
 		934271DF18C2EBA1006E9365 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 934271DE18C2EBA1006E9365 /* Enemy.m */; };
 		934271E218C2EE0F006E9365 /* Creature.m in Sources */ = {isa = PBXBuildFile; fileRef = 934271E118C2EE0F006E9365 /* Creature.m */; };
+		934271E518C432FD006E9365 /* ExtraMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 934271E418C432FD006E9365 /* ExtraMath.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,8 @@
 		934271DE18C2EBA1006E9365 /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Enemy.m; path = Creatures/Enemy.m; sourceTree = "<group>"; };
 		934271E018C2EE0F006E9365 /* Creature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Creature.h; path = Creatures/Creature.h; sourceTree = "<group>"; };
 		934271E118C2EE0F006E9365 /* Creature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Creature.m; path = Creatures/Creature.m; sourceTree = "<group>"; };
+		934271E318C432FD006E9365 /* ExtraMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtraMath.h; sourceTree = "<group>"; };
+		934271E418C432FD006E9365 /* ExtraMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtraMath.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +195,8 @@
 		9333FD3E18B3E521006B11F5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				934271E318C432FD006E9365 /* ExtraMath.h */,
+				934271E418C432FD006E9365 /* ExtraMath.m */,
 				9333FD3F18B3E521006B11F5 /* EvolutionaryGame-Info.plist */,
 				9333FD4018B3E521006B11F5 /* InfoPlist.strings */,
 				9333FD4318B3E521006B11F5 /* main.m */,
@@ -415,6 +420,7 @@
 				9333FD7318B5A187006B11F5 /* Character.m in Sources */,
 				9333FD7B18B9313C006B11F5 /* Platform.m in Sources */,
 				9333FD4818B3E521006B11F5 /* LSVAppDelegate.m in Sources */,
+				934271E518C432FD006E9365 /* ExtraMath.m in Sources */,
 				9333FD4418B3E521006B11F5 /* main.m in Sources */,
 				9333FD4E18B3E521006B11F5 /* LSVViewController.m in Sources */,
 			);
