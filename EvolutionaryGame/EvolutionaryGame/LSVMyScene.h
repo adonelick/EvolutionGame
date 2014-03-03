@@ -26,9 +26,12 @@
 - (void) updateProjectiles;
 - (void) updateEnemies;
 - (void) mainCharacterGravity;
+<<<<<<< HEAD
 
 
 - (void) cleanUp:(NSMutableArray*) objects byDeleting:(NSMutableArray*) delObjects;
+=======
+>>>>>>> 93216d6f6e3f09b8ada0b2224aef1d475caf0ca9
 
 // Allows for the addition of projectiles
 - (void) addProjectile:(Projectile*) projectile;
