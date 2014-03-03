@@ -60,6 +60,7 @@
     [self updateMainCharacter];
     [self updateProjectiles];
     [self updateEnemies];
+    [self mainCharacterGravity];
 }
 
 
@@ -155,6 +156,20 @@
     
     delObjects = [NSMutableArray new];
 }
+
+- (void) mainCharacterGravity
+{
+    if (mainCharacter.position.y > CGRectGetMidY(self.frame)) {
+        mainCharacter.yVelocity -= .05;
+    }
+    else if (mainCharacter.position.y < CGRectGetMidY(self.frame)) {
+        mainCharacter.yVelocity = 0;
+        mainCharacter.position = CGPointMake(mainCharacter.position.x,
+                                             CGRectGetMidY((self.frame)));
+        
+    }
+}
+
 
 
 - (void) addProjectile:(Projectile*) projectile
