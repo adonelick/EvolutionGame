@@ -22,6 +22,8 @@
         
         _projectiles = [NSMutableArray new];
         _enemies = [NSMutableArray new];
+        _killedEnemies = [NSMutableArray new];
+        _usedProjectiles = [NSMutableArray new];
         
         Enemy* newEnemy = [[Enemy alloc] init];
         newEnemy.position = CGPointMake(CGRectGetMidX(self.frame),
@@ -76,15 +78,21 @@
             double distance = [ExtraMath distanceBetween:projectPos and: enemyPos];
             
             if (distance <= KILL_DISTANCE) {
-                // Delete the enemy and projectile from the scene
-                [_projectiles removeObject:p];
-                [_enemies removeObject:e];
                 
-                [e removeFromParent];
-                [p removeFromParent];
+                [e damageBy:1];
+                [_usedProjectiles  addObject:p];
+                
+                if (e.health <= 0) {
+                    // Delete the enemy and projectile from the scene
+                    [_killedEnemies addObject:e];
+                }
             }
         }
     }
+    
+    [self cleanUp:_enemies byDeleting:_killedEnemies];
+    [self cleanUp:_projectiles byDeleting:_usedProjectiles];
+    
 }
 
 
@@ -137,6 +145,17 @@
     }
 }
 
+- (void) cleanUp:(NSMutableArray *)objects byDeleting:(NSMutableArray *)delObjects
+{
+    // Deletes a set of objects from another set of objects
+    for (id itemToDelete in delObjects) {
+        [itemToDelete removeFromParent];
+        [objects removeObject:itemToDelete];
+    }
+    
+    delObjects = [NSMutableArray new];
+}
+
 
 - (void) addProjectile:(Projectile*) projectile
 {
@@ -159,5 +178,7 @@
         [self addChild:projectile];
     }
 }
+
+
 
 @end

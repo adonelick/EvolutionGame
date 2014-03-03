@@ -47,4 +47,9 @@
     }
 }
 
+- (void) damageBy:(int)damage
+{
+    self.health -= damage;
+}
+
 @end

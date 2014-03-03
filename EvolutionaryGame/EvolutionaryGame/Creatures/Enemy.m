@@ -19,6 +19,11 @@
         self.walkLeft2 = [SKTexture textureWithImageNamed:@"FireEnemySmallL2.gif"];
         self.walkRight1 = [SKTexture textureWithImageNamed:@"FireEnemySmallR1.gif"];
         self.walkRight2 = [SKTexture textureWithImageNamed:@"FireEnemySmallR2.gif"];
+        
+        self.xVelocity = 0.0;
+        self.yVelocity = 0.0;
+        
+        self.health = 5;
     }
     
     return self;

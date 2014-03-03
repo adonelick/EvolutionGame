@@ -17,10 +17,17 @@
 // Keeps track of all the enemies currently on the screen
 @property NSMutableArray* enemies;
 
+@property NSMutableArray* killedEnemies;
+
+@property NSMutableArray* usedProjectiles;
+
 - (void) checkForCollisions;
 - (void) updateMainCharacter;
 - (void) updateProjectiles;
 - (void) updateEnemies;
+
+
+- (void) cleanUp:(NSMutableArray*) objects byDeleting:(NSMutableArray*) delObjects;
 
 // Allows for the addition of projectiles
 - (void) addProjectile:(Projectile*) projectile;

@@ -14,6 +14,9 @@
 @property double xVelocity;
 @property double yVelocity;
 
+// Number of hits it takes to kill the creature
+@property int health;
+
 // Stores which direction the creature is currently pointed
 @property Boolean facingRight;
 
@@ -26,6 +29,8 @@
 // Switches the texture of the character to display
 // walking, arming with a weapon, etc
 - (void) updateTexture;
+
+- (void) damageBy:(int) damage;
 
 
 @end

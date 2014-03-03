@@ -30,6 +30,8 @@
         self.xVelocity = 0.0;
         self.yVelocity = 0.0;
         
+        self.health = 100;
+        
         self.facingRight = YES;
         
         _weapon = [[Weapon alloc] init];
