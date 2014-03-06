@@ -34,7 +34,8 @@
         
         self.facingRight = YES;
         
-        _weapon = [[Weapon alloc] init];
+        self.weapon = [[Weapon alloc] init];
+        
     }
     
     return self;
@@ -109,7 +110,13 @@
 {
     // Fire a projectile, but only if the character is armed
     if (_isArmed) {
-        return [_weapon fireProjectile:self.facingRight];
+        double heading;
+        if (self.facingRight) {
+            heading = 0.0;
+        } else {
+            heading = M_PI;
+        }
+        return [self.weapon fireProjectile:heading];
     } else {
         return nil;
     }

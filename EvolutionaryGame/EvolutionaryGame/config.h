@@ -25,6 +25,8 @@
 #define PROJECTILE_DX 10
 #define PROJECTILE_DY 7
 
+// How close (in pixels) much a projectile come to a creature
+// to cause damage?
 #define KILL_DISTANCE 30
 
 #define UPDATE_TIME 0.08

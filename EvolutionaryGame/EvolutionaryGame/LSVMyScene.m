@@ -21,9 +21,8 @@
     if (self) {
         
         _projectiles = [NSMutableArray new];
+        _enemyProjectiles = [NSMutableArray new];
         _enemies = [NSMutableArray new];
-        _killedEnemies = [NSMutableArray new];
-        _usedProjectiles = [NSMutableArray new];
         
         Enemy* newEnemy = [[Enemy alloc] init];
         newEnemy.position = CGPointMake(CGRectGetMidX(self.frame),
@@ -35,10 +34,8 @@
         
         // Create the main character and place it in the center of the screen
         mainCharacter = [[Character alloc] init];
-        
         mainCharacter.position = CGPointMake(CGRectGetMidX(self.frame),
                                              CGRectGetMidY(self.frame));
-        
         [self addChild:mainCharacter];
     }
     return self;
@@ -69,9 +66,11 @@
     // Checks whether a collision has occured between any
     // of the creatures or objects currently in the scene.
     
-    // Calculates the relative position between all projectiles
-    // and enemies
+    NSMutableArray* killedEnemies = [NSMutableArray new];
+    NSMutableArray* usedProjectiles = [NSMutableArray new];
     
+    // Calculates the relative position between all projectiles
+    // fired by the character and the enemies
     for (Projectile* p in _projectiles) {
         for (Enemy* e in _enemies) {
             CGPoint projectPos = p.position;
@@ -81,49 +80,35 @@
             if (distance <= KILL_DISTANCE) {
                 
                 [e damageBy:1];
-                [_usedProjectiles  addObject:p];
+                [usedProjectiles  addObject:p];
                 
+                // Delete the enemy and projectile from the scene
+                // if enough damage has occured to kill the enemy
                 if (e.health <= 0) {
-                    // Delete the enemy and projectile from the scene
-                    [_killedEnemies addObject:e];
+                    [killedEnemies addObject:e];
                 }
             }
         }
     }
     
-    [self cleanUp:_enemies byDeleting:_killedEnemies];
-    [self cleanUp:_projectiles byDeleting:_usedProjectiles];
+    [self cleanUp:_enemies byDeleting: killedEnemies];
+    [self cleanUp:_projectiles byDeleting: usedProjectiles];
     
 }
 
 
 - (void) updateMainCharacter
 {
-    SKAction* walkAction = [SKAction moveByX:mainCharacter.xVelocity*MAX_VELOCITY
-                                           y:mainCharacter.yVelocity*MAX_VELOCITY
-                                    duration:ACTION_DURATION];
-    
-    [mainCharacter runAction:walkAction];
+    [mainCharacter move];
 }
 
 - (void) updateProjectiles
 {
-    SKAction* shootAction;
     NSMutableArray* vanishedProjectiles = [NSMutableArray new];
     
     // Update the position of all the remaining projectiles
     for (Projectile* p in _projectiles) {
-        
-        if (p.isTravelingRight) {
-            shootAction = [SKAction moveByX:0.2*MAX_VELOCITY
-                                          y:0.0*MAX_VELOCITY
-                                   duration:ACTION_DURATION];
-        } else {
-            shootAction = [SKAction moveByX:-0.2*MAX_VELOCITY
-                                          y:0.0*MAX_VELOCITY
-                                   duration:ACTION_DURATION];
-        }
-        [p runAction:shootAction];
+        [p move];
         
         // Check if the projectile has gone out of bounds. If so,
         // slate it for deletion.
@@ -133,15 +118,27 @@
     }
     
     // Delete the projectiles that have gone out of bounds
-    for (Projectile* p in vanishedProjectiles) {
-        [_projectiles removeObject:p];
+    [self cleanUp:_projectiles byDeleting:vanishedProjectiles];
+    [vanishedProjectiles removeAllObjects];
+    
+    for (Projectile* p in _enemyProjectiles) {
+        [p move];
+        
+        // Check if the projectile has gone out of bounds. If so,
+        // slate it for deletion.
+        if (p.position.x > self.frame.size.width || p.position.x < 0) {
+            [vanishedProjectiles addObject:p];
+        }
     }
+    
+    [self cleanUp:_enemyProjectiles byDeleting:vanishedProjectiles];
 
 }
 
 - (void) updateEnemies
 {
     for (Enemy* e in _enemies) {
+        [e move];
         [e updateTexture];
     }
 }
@@ -153,8 +150,6 @@
         [itemToDelete removeFromParent];
         [objects removeObject:itemToDelete];
     }
-    
-    delObjects = [NSMutableArray new];
 }
 
 - (void) mainCharacterGravity
@@ -165,7 +160,7 @@
     else if (mainCharacter.position.y < CGRectGetMidY(self.frame)) {
         mainCharacter.yVelocity = 0;
         mainCharacter.position = CGPointMake(mainCharacter.position.x,
-                                             CGRectGetMidY((self.frame)));
+                                 CGRectGetMidY((self.frame)));
         
     }
 }
@@ -191,6 +186,7 @@
         
         [_projectiles addObject:projectile];
         [self addChild:projectile];
+        
     }
 }
 

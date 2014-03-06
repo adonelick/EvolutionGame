@@ -10,10 +10,17 @@
 
 @interface Projectile : SKSpriteNode
 
-@property double maxSpeed;
-@property double range;
-@property Boolean isTravelingRight;
+// In range [0, 1]
+@property double velocity;
 
-- (id) initWithDirection:(Boolean) isTravelingRight;
+// Range of the projectile (in pixels)
+@property double range;
+
+// Current heading of the projectile (in radians)
+@property double heading;
+
+- (id) initWithDirection:(double) heading;
+
+- (void) move;
 
 @end

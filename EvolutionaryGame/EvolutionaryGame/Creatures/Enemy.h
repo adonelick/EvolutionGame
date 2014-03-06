@@ -10,4 +10,13 @@
 
 @interface Enemy : Creature
 
+@property int circlingRadius;
+
+- (id) fireProjectileAt: (CGPoint) point;
+
+// Makes the enemy move in a circle around a specified point
+- (void) circleAround:(CGPoint) point;
+
+- (void) moveToward:(CGPoint) point;
+
 @end

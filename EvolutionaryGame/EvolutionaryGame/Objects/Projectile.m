@@ -7,22 +7,36 @@
 //
 
 #import "Projectile.h"
+#import "config.h"
 
 @implementation Projectile
 
-- (id) initWithDirection:(Boolean) isTravelingRight
+- (id) initWithDirection:(double) heading
 {
-    if (isTravelingRight) {
-        self = [super initWithImageNamed:@"PlayerProjectileRight.gif"];
-    } else {
-        self = [super initWithImageNamed:@"PlayerProjectileLeft.gif"];
-    }
+    self = [super initWithImageNamed:@"PlayerProjectileRight.gif"];
     
     if (self) {
-        _isTravelingRight = isTravelingRight;
+        SKAction* rotate = [SKAction rotateByAngle:heading duration:0.0];
+        [self runAction:rotate];
+        _heading = heading;
+        
+        // The weapon sets the projectile's velocity
+        _velocity = 0.0;
+        
     }
     
     return self;
+}
+
+- (void) move
+{
+    double deltaX = MAX_VELOCITY * _velocity * cos(_heading);
+    double deltaY = MAX_VELOCITY * _velocity * sin(_heading);
+    
+    SKAction* moveAction = [SKAction moveByX:deltaX
+                                           y:deltaY
+                                    duration:ACTION_DURATION];
+    [self runAction:moveAction];
 }
 
 @end

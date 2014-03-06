@@ -23,10 +23,37 @@
         self.xVelocity = 0.0;
         self.yVelocity = 0.0;
         
+        self.weapon = [[Weapon alloc] init];
+        
         self.health = 5;
     }
     
     return self;
+}
+
+- (id) fireProjectileAt: (CGPoint) point
+{
+    
+    // Calculate the amount of rotation necessary to aim at the point
+    double x1 = point.x;
+    double y1 = point.y;
+    
+    double x2 = self.position.x;
+    double y2 = self.position.y;
+    
+    double theta = atan2(y1 - y2, x1 - x2);
+    
+    return [self.weapon fireProjectile:theta];
+}
+
+- (void) circleAround:(CGPoint)point
+{
+    // Circling code here...
+}
+
+- (void) moveToward:(CGPoint)point
+{
+    // Moving code here...
 }
 
 @end

@@ -11,6 +11,6 @@
 
 @interface Weapon : SKSpriteNode
 
-- (id) fireProjectile:(Boolean) fireRight;
+- (id) fireProjectile:(double) heading;
 
 @end

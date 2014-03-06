@@ -10,13 +10,14 @@
 
 @implementation Weapon
 
-- (id) fireProjectile:(Boolean) fireRight
+- (id) fireProjectile:(double) heading
 {
     // Create the projectile objects here
-    Projectile* p = [[Projectile alloc] initWithDirection:fireRight];
+    Projectile* p = [[Projectile alloc] initWithDirection:heading];
+    p.velocity = 0.3;
     
-    // Start the projectile moving at the specified
-    // height above the main platform
+    // Set properties of the projectile here, based on
+    // the current evolution of the weapon
     
     return p;
 }

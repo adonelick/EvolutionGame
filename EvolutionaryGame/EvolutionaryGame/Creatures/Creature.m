@@ -7,6 +7,7 @@
 //
 
 #import "Creature.h"
+#import "config.h"
 
 @implementation Creature
 
@@ -15,6 +16,14 @@
 // specific walking textures.
 
 
+- (void) move
+{
+    SKAction* moveAction = [SKAction moveByX:_xVelocity*MAX_VELOCITY
+                                           y:_yVelocity*MAX_VELOCITY
+                                    duration:ACTION_DURATION];
+    
+    [self runAction:moveAction];
+}
 
 - (void) updateTexture
 {
@@ -45,6 +54,13 @@
             self.texture = _walkLeft1;
         }
     }
+}
+
+- (id) fireProjectile
+{
+    // Make sure to override this method in a subclass to actually
+    // fire some kind of projectile
+    return nil;
 }
 
 - (void) damageBy:(int)damage
