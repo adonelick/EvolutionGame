@@ -15,7 +15,7 @@
 - (id) fireProjectileAt: (CGPoint) point;
 
 // Makes the enemy move in a circle around a specified point
-- (void) circleAround:(CGPoint) point;
+- (void) circleAround:(CGPoint) point withDistance:(int) distance;
 
 - (void) moveToward:(CGPoint) point;
 

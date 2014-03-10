@@ -52,7 +52,6 @@
 - (IBAction)armCharacter:(id)sender
 {
     mainCharacter.isArmed = !(mainCharacter.isArmed);
-    [mainCharacter updateTexture];
 }
 
 - (IBAction)shootWeapon:(id)sender
@@ -63,52 +62,30 @@
 
 - (IBAction)leftButtonDown:(id)sender
 {
-    // Create the timer that will tell the character to move
-    _leftTimer = [NSTimer scheduledTimerWithTimeInterval:UPDATE_TIME
-                                                  target:self
-                                                selector:@selector(moveCharacterLeft)
-                                                userInfo:nil
-                                                 repeats:YES];
+    mainCharacter.xVelocity = -0.5;
 }
 
-- (void) moveCharacterLeft
-{
-    mainCharacter.xVelocity = -0.5;
-    [mainCharacter updateTexture];
-}
 
 - (IBAction)leftButtonUp:(id)sender
 {
-    // Invalidate the timer to stop its operation
-    [_leftTimer invalidate];
     mainCharacter.xVelocity = 0.0;
 }
 
 
 - (IBAction)rightButtonDown:(id)sender
 {
-    // Create the timer that will tell the character to move
-    _rightTimer = [NSTimer scheduledTimerWithTimeInterval:UPDATE_TIME
-                                                   target:self
-                                                 selector:@selector(moveCharacterRight)
-                                                 userInfo:nil
-                                                  repeats:YES];
+    mainCharacter.xVelocity = 0.5;
 }
 
-- (void) moveCharacterRight
-{
-    mainCharacter.xVelocity = 0.5;
-    [mainCharacter updateTexture];
-}
 
 - (IBAction)rightButtonUp:(id)sender
 {
-    // Invalidate the timer to stop its operation
-    [_rightTimer invalidate];
+
     mainCharacter.xVelocity = 0.0;
 }
 
-- (IBAction)jump:(id)sender {
+- (IBAction)jump:(id)sender
+{
     mainCharacter.yVelocity = 1;
 }
 

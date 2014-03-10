@@ -20,6 +20,11 @@
     self = [super initWithSize:size];
     if (self) {
         
+        _textureTimer = [NSTimer scheduledTimerWithTimeInterval:UPDATE_TIME
+                                                         target:self
+                                                       selector:@selector(updateTextures)
+                                                       userInfo:nil
+                                                        repeats:YES];
         _projectiles = [NSMutableArray new];
         _enemyProjectiles = [NSMutableArray new];
         _enemies = [NSMutableArray new];
@@ -40,6 +45,17 @@
     }
     return self;
 }
+
+
+- (void) updateTextures
+{
+    [mainCharacter updateTexture];
+    
+    for (Enemy* e in _enemies) {
+        [e updateTexture];
+    }
+}
+                         
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -93,7 +109,6 @@
     
     [self cleanUp:_enemies byDeleting: killedEnemies];
     [self cleanUp:_projectiles byDeleting: usedProjectiles];
-    
 }
 
 
@@ -139,7 +154,7 @@
 {
     for (Enemy* e in _enemies) {
         [e move];
-        [e updateTexture];
+        [e circleAround:mainCharacter.position withDistance:100];
     }
 }
 

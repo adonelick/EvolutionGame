@@ -31,6 +31,12 @@
 
 #define UPDATE_TIME 0.08
 
+// How many enemies can be on the scene at one time
+#define MAX_ENEMIES 5
+
+// Amount of rotation (in radians) for the enemy's hover
+#define DELTA_THETA 0.1
+
 
 // Global variable that contains the main character that
 // the user controls in the game.

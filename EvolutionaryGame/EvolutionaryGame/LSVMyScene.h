@@ -20,6 +20,11 @@
 // Keeps track of all the enemies currently on the screen
 @property NSMutableArray* enemies;
 
+// Updates the appearance of the main character, enemies
+@property NSTimer* textureTimer;
+
+// Each of the following methods are called before
+// each of the frames are rendered
 - (void) checkForCollisions;
 - (void) updateMainCharacter;
 - (void) updateProjectiles;
