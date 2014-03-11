@@ -56,7 +56,7 @@
 
 - (IBAction)shootWeapon:(id)sender
 {
-    [_scene addProjectile:[mainCharacter fireProjectile]];
+    [_scene addProjectile:[mainCharacter fireProjectile] toArray:_scene.projectiles];
 }
 
 

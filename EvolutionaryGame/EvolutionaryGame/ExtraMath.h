@@ -11,8 +11,6 @@
 
 @interface ExtraMath : NSObject
 
-#define PI 3.14159265358979
-
 // Calculate the Euclidian distance between two CGPoints
 + (double) distanceBetween:(CGPoint) p1 and:(CGPoint) p2;
 

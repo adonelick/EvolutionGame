@@ -11,7 +11,4 @@
 @interface Platform : SKSpriteNode
 
 
-// At the moment, a platform is just rectangle with a color
-
-
 @end

@@ -155,15 +155,7 @@
     for (Enemy* e in _enemies) {
         [e move];
         [e circleAround:mainCharacter.position withDistance:100];
-    }
-}
-
-- (void) cleanUp:(NSMutableArray *)objects byDeleting:(NSMutableArray *)delObjects
-{
-    // Deletes a set of objects from another set of objects
-    for (id itemToDelete in delObjects) {
-        [itemToDelete removeFromParent];
-        [objects removeObject:itemToDelete];
+        [self addProjectile: [e fireProjectileAt:mainCharacter.position] toArray:_enemyProjectiles];
     }
 }
 
@@ -175,31 +167,30 @@
     else if (mainCharacter.position.y < CGRectGetMidY(self.frame)) {
         mainCharacter.yVelocity = 0;
         mainCharacter.position = CGPointMake(mainCharacter.position.x,
-                                 CGRectGetMidY((self.frame)));
+                                             CGRectGetMidY((self.frame)));
         
     }
 }
 
 
 
-- (void) addProjectile:(Projectile*) projectile
+- (void) cleanUp:(NSMutableArray *)objects byDeleting:(NSMutableArray *)delObjects
+{
+    // Deletes a set of objects from another set of objects
+    for (id itemToDelete in delObjects) {
+        [itemToDelete removeFromParent];
+        [objects removeObject:itemToDelete];
+    }
+}
+
+
+- (void) addProjectile:(Projectile*) projectile toArray: (NSMutableArray*) array
 {
     // A projectile can only be added if it is not nil.
     // If it is, do nothing.
     if (projectile) {
-        CGFloat x = mainCharacter.position.x;
-        CGFloat y = mainCharacter.position.y;
         
-        // Adjust the projectile's start position to make it come out
-        // of the weapon on the image
-        
-        if (mainCharacter.facingRight) {
-            projectile.position = CGPointMake(x + PROJECTILE_DX, y + PROJECTILE_DY);
-        } else {
-            projectile.position = CGPointMake(x - PROJECTILE_DX, y + PROJECTILE_DY);
-        }
-        
-        [_projectiles addObject:projectile];
+        [array addObject:projectile];
         [self addChild:projectile];
         
     }

@@ -7,6 +7,7 @@
 //
 
 #import "Character.h"
+#import "config.h"
 
 @implementation Character
 
@@ -108,6 +109,7 @@
 
 - (id) fireProjectile
 {
+    Projectile* projectile = nil;
     // Fire a projectile, but only if the character is armed
     if (_isArmed) {
         double heading;
@@ -116,10 +118,22 @@
         } else {
             heading = M_PI;
         }
-        return [self.weapon fireProjectile:heading];
-    } else {
-        return nil;
+        projectile = [self.weapon fireProjectile:heading];
+        
+        CGFloat x = self.position.x;
+        CGFloat y = self.position.y;
+        
+        // Adjust the projectile's start position to make it come out
+        // of the weapon on the image
+        
+        if (self.facingRight) {
+            projectile.position = CGPointMake(x + PROJECTILE_DX, y + PROJECTILE_DY);
+        } else {
+            projectile.position = CGPointMake(x - PROJECTILE_DX, y + PROJECTILE_DY);
+        }
     }
+    
+    return projectile;
 }
 
 

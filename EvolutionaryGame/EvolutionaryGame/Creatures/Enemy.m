@@ -35,7 +35,6 @@
 
 - (id) fireProjectileAt: (CGPoint) point
 {
-    
     // Calculate the amount of rotation necessary to aim at the point
     double x1 = point.x;
     double y1 = point.y;
@@ -45,7 +44,9 @@
     
     double theta = atan2(y1 - y2, x1 - x2);
     
-    return [self.weapon fireProjectile:theta];
+    Projectile* p = [self.weapon fireProjectile:theta];
+    p.position = self.position;
+    return p;
 }
 
 - (void) circleAround:(CGPoint)point withDistance:(int)distance
@@ -86,7 +87,13 @@
 
 - (void) moveToward:(CGPoint)point
 {
-    // Moving code here...
+    // Move's toward the given point, but does not actually
+    // reach it.
+    int dx = point.x - self.position.x;
+    int dy = point.y - self.position.y;
+    
+    SKAction* moveAction = [SKAction moveByX:0.1*dx y:0.1*dy duration:0.1];
+    [self runAction:moveAction];
 }
 
 @end

@@ -18,9 +18,14 @@
 @property NSMutableArray* enemyProjectiles;
 
 // Keeps track of all the enemies currently on the screen
+// TODO: make a new array for each type of enemies, as
+//       some of the enemies function differently than others.
 @property NSMutableArray* enemies;
 
 // Updates the appearance of the main character, enemies
+// This timer calls another function every so often, but not
+// as fast as the frames are rendered. This makes the animations
+// go slow enough to be noticable.
 @property NSTimer* textureTimer;
 
 // Each of the following methods are called before
@@ -35,6 +40,6 @@
 - (void) cleanUp:(NSMutableArray*) objects byDeleting:(NSMutableArray*) delObjects;
 
 // Allows for the addition of projectiles
-- (void) addProjectile:(Projectile*) projectile;
+- (void) addProjectile:(Projectile*) projectile toArray: (NSMutableArray*) array;
 
 @end
