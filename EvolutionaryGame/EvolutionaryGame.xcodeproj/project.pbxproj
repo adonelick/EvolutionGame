@@ -147,6 +147,7 @@
 				9333FD3D18B3E521006B11F5 /* EvolutionaryGame */,
 				9333FD6118B3E521006B11F5 /* EvolutionaryGameTests */,
 				9333FD3418B3E521006B11F5 /* Frameworks */,
+				9333FD4018B3E521006B11F5 /* InfoPlist.strings */,
 				9333FD3318B3E521006B11F5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -198,7 +199,6 @@
 				934271E318C432FD006E9365 /* ExtraMath.h */,
 				934271E418C432FD006E9365 /* ExtraMath.m */,
 				9333FD3F18B3E521006B11F5 /* EvolutionaryGame-Info.plist */,
-				9333FD4018B3E521006B11F5 /* InfoPlist.strings */,
 				9333FD4318B3E521006B11F5 /* main.m */,
 				9333FD4518B3E521006B11F5 /* EvolutionaryGame-Prefix.pch */,
 			);
@@ -451,6 +451,7 @@
 				9333FD4118B3E521006B11F5 /* en */,
 			);
 			name = InfoPlist.strings;
+			path = EvolutionaryGame;
 			sourceTree = "<group>";
 		};
 		9333FD4918B3E521006B11F5 /* Main.storyboard */ = {

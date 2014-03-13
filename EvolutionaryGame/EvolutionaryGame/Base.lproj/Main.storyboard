@@ -23,8 +23,9 @@
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="Arrow_Right.png"/>
                                 <connections>
-                                    <action selector="rightButtonDown:" destination="BV1-FR-VrT" eventType="touchDown" id="LJU-em-2k3"/>
-                                    <action selector="rightButtonUp:" destination="BV1-FR-VrT" eventType="touchUpInside" id="bML-ZW-0B1"/>
+                                    <action selector="rightButtonDown:" destination="BV1-FR-VrT" eventType="touchDown" id="AeI-z7-aDq"/>
+                                    <action selector="rightButtonUp:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Wfk-4f-wBl"/>
+                                    <action selector="rightButtonUp:" destination="BV1-FR-VrT" eventType="touchUpOutside" id="oFN-td-v70"/>
                                 </connections>
                             </button>
                             <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbj-6Z-zAw">
@@ -36,6 +37,7 @@
                                 <connections>
                                     <action selector="leftButtonDown:" destination="BV1-FR-VrT" eventType="touchDown" id="Rb7-Ja-tTb"/>
                                     <action selector="leftButtonUp:" destination="BV1-FR-VrT" eventType="touchUpInside" id="XAl-mg-vQS"/>
+                                    <action selector="leftButtonUp:" destination="BV1-FR-VrT" eventType="touchUpOutside" id="kxD-se-y8M"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nla-SD-II3">
