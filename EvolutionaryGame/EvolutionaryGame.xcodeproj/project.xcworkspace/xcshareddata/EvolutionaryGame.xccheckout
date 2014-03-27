@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>89E2DD45-5942-4958-8CAC-7B89F8378BFC</string>
+	<key>IDESourceControlProjectName</key>
+	<string>EvolutionaryGame</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C52F7833-C98F-4BE6-B6E7-35E68DBEDD9E</key>
+		<string>https://github.com/adonelick/EvolutionGame.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>EvolutionaryGame/EvolutionaryGame.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C52F7833-C98F-4BE6-B6E7-35E68DBEDD9E</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/adonelick/EvolutionGame.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C52F7833-C98F-4BE6-B6E7-35E68DBEDD9E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C52F7833-C98F-4BE6-B6E7-35E68DBEDD9E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>EvolutionGame</string>
+		</dict>
+	</array>
+</dict>
+</plist>
