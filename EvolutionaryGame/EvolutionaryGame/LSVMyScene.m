@@ -168,6 +168,7 @@
         mainCharacter.yVelocity = 0;
         mainCharacter.position = CGPointMake(mainCharacter.position.x,
                                              CGRectGetMidY((self.frame)));
+        mainCharacter.airborne = NO;
         
     }
 }

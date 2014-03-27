@@ -34,6 +34,7 @@
         self.health = 100;
         
         self.facingRight = YES;
+        self.airborne = NO;
         
         self.weapon = [[Weapon alloc] init];
         

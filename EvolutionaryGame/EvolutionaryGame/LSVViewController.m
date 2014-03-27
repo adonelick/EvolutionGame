@@ -86,7 +86,10 @@
 
 - (IBAction)jump:(id)sender
 {
+    if (mainCharacter.airborne == NO) {
     mainCharacter.yVelocity = 1;
+    mainCharacter.airborne = YES;
+    }
 }
 
 
