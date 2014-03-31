@@ -24,7 +24,7 @@
 
 // Keeps track of all the environmental hazards on the screen
 // that may pose a risk to the main player.
-@property NSMutableArray* hazards;
+@property NSMutableArray* smokeHazards;
 
 // Updates the appearance of the main character, enemies
 // This timer calls another function every so often, but not

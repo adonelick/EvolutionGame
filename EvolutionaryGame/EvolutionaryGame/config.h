@@ -25,9 +25,13 @@
 #define PROJECTILE_DX 10
 #define PROJECTILE_DY 7
 
-// How close (in pixels) much a projectile come to a creature
+// How close (in pixels) must a projectile come to a creature
 // to cause damage?
 #define KILL_DISTANCE 30
+
+// How close (in pixels) must the main character come to
+// the smoke hazard to be injured?
+#define SMOKE_INJURE_DISTANCE 5
 
 #define UPDATE_TIME 0.08
 

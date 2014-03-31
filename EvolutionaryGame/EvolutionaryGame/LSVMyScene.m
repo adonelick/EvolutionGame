@@ -9,6 +9,7 @@
 #import "LSVMyScene.h"
 #import "Character.h"
 #import "Enemy.h"
+#import "SmokeHazard.h"
 #import "ExtraMath.h"
 
 #import "config.h"
@@ -28,6 +29,7 @@
         _projectiles = [NSMutableArray new];
         _enemyProjectiles = [NSMutableArray new];
         _enemies = [NSMutableArray new];
+        _smokeHazards = [NSMutableArray new];
         
         Enemy* newEnemy = [[Enemy alloc] init];
         newEnemy.position = CGPointMake(CGRectGetMidX(self.frame),
@@ -36,6 +38,16 @@
         [self addChild:newEnemy];
         
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
+        
+        
+        // FOR TESTING PURPOSES:
+        SmokeHazard* newHazard = [[SmokeHazard alloc] init];
+        newHazard.position = CGPointMake(CGRectGetMidX(self.frame),
+                                         CGRectGetMidY(self.frame));
+        [_smokeHazards addObject:newHazard];
+        [self addChild:newHazard];
+        
+        
         
         // Create the main character and place it in the center of the screen
         mainCharacter = [[Character alloc] init];
@@ -122,18 +134,32 @@
             
             [mainCharacter damageBy:1];
             [usedProjectiles addObject:p];
-            
-            // If enough damage has occured to kill the player,
-            // end the game.
-            if (mainCharacter.health <= 0) {
-                // Show what stats screen here...
-                NSLog(@"You are now dead.");
-            }
         }
         
     }
     
     [self cleanUp:_enemyProjectiles byDeleting:usedProjectiles];
+    
+    // Check whether the main character has come into contact with
+    // any of the smoke hazards on the screen.
+    for (SmokeHazard* h in _smokeHazards) {
+        CGPoint projectPos = h.position;
+        CGPoint characterPos = mainCharacter.position;
+        double distance = [ExtraMath distanceBetween:projectPos and:characterPos];
+        
+        if (distance <= SMOKE_INJURE_DISTANCE && arc4random() < 150000000) {
+            [mainCharacter damageBy:h.damagePotential];
+        }
+    }
+    
+    // If enough damage has occured to kill the player,
+    // end the game.
+    NSLog(@"%d", mainCharacter.health);
+    if (mainCharacter.health <= 0) {
+        // Show what stats screen here...
+        NSLog(@"You are now dead.");
+    }
+    
 }
 
 
