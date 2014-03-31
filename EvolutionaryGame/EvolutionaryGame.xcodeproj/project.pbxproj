@@ -47,6 +47,8 @@
 		934271DF18C2EBA1006E9365 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 934271DE18C2EBA1006E9365 /* Enemy.m */; };
 		934271E218C2EE0F006E9365 /* Creature.m in Sources */ = {isa = PBXBuildFile; fileRef = 934271E118C2EE0F006E9365 /* Creature.m */; };
 		934271E518C432FD006E9365 /* ExtraMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 934271E418C432FD006E9365 /* ExtraMath.m */; };
+		93C4329A18E9199F002D27FF /* FireEnemySmallProjectileL.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93C4329918E9199F002D27FF /* FireEnemySmallProjectileL.gif */; };
+		93C4329C18E919BA002D27FF /* FireEnemySmallProjectileR.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93C4329B18E919BA002D27FF /* FireEnemySmallProjectileR.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +116,8 @@
 		934271E118C2EE0F006E9365 /* Creature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Creature.m; path = Creatures/Creature.m; sourceTree = "<group>"; };
 		934271E318C432FD006E9365 /* ExtraMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtraMath.h; sourceTree = "<group>"; };
 		934271E418C432FD006E9365 /* ExtraMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtraMath.m; sourceTree = "<group>"; };
+		93C4329918E9199F002D27FF /* FireEnemySmallProjectileL.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FireEnemySmallProjectileL.gif; path = ../../../Downloads/FireEnemySmallProjectileL.gif; sourceTree = "<group>"; };
+		93C4329B18E919BA002D27FF /* FireEnemySmallProjectileR.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FireEnemySmallProjectileR.gif; path = ../../../Downloads/FireEnemySmallProjectileR.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,6 +297,8 @@
 			children = (
 				934271D518C27EA1006E9365 /* PlayerProjectileLeft.gif */,
 				934271D618C27EA1006E9365 /* PlayerProjectileRight.gif */,
+				93C4329918E9199F002D27FF /* FireEnemySmallProjectileL.gif */,
+				93C4329B18E919BA002D27FF /* FireEnemySmallProjectileR.gif */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -375,11 +381,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				934271C418C1C4DD006E9365 /* PlayerCharR1.gif in Resources */,
+				93C4329A18E9199F002D27FF /* FireEnemySmallProjectileL.gif in Resources */,
 				934271C518C1C4DD006E9365 /* PlayerCharR2.gif in Resources */,
 				934271C718C1C4DD006E9365 /* PlayerCharWeaponL2.gif in Resources */,
 				934271D218C27E94006E9365 /* FireEnemySmallL2.gif in Resources */,
 				934271C818C1C4DD006E9365 /* PlayerCharWeaponR1.gif in Resources */,
 				9333FD4218B3E521006B11F5 /* InfoPlist.strings in Resources */,
+				93C4329C18E919BA002D27FF /* FireEnemySmallProjectileR.gif in Resources */,
 				934271B518C1C274006E9365 /* Arrow_Left.png in Resources */,
 				934271C118C1C4DD006E9365 /* FullFirePlayerChar1.gif in Resources */,
 				934271D318C27E94006E9365 /* FireEnemySmallR1.gif in Resources */,
