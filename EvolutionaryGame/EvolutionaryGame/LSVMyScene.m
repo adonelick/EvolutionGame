@@ -109,6 +109,31 @@
     
     [self cleanUp:_enemies byDeleting: killedEnemies];
     [self cleanUp:_projectiles byDeleting: usedProjectiles];
+    
+    // Calculates the relative position between all projectiles
+    // fired by the enemies and the character.
+    
+    for (Projectile* p in _enemyProjectiles) {
+        CGPoint projectPos = p.position;
+        CGPoint characterPos = mainCharacter.position;
+        double distance = [ExtraMath distanceBetween:projectPos and:characterPos];
+        
+        if (distance <= KILL_DISTANCE) {
+            
+            [mainCharacter damageBy:1];
+            [usedProjectiles addObject:p];
+            
+            // If enough damage has occured to kill the player,
+            // end the game.
+            if (mainCharacter.health <= 0) {
+                // Show what stats screen here...
+                NSLog(@"You are now dead.");
+            }
+        }
+        
+    }
+    
+    [self cleanUp:_enemyProjectiles byDeleting:usedProjectiles];
 }
 
 
@@ -155,7 +180,12 @@
     for (Enemy* e in _enemies) {
         [e move];
         [e circleAround:mainCharacter.position withDistance:100];
-        [self addProjectile: [e fireProjectileAt:mainCharacter.position] toArray:_enemyProjectiles];
+        
+        // Fire a projectile at random time intervals to try
+        // to kill the main player.
+        if (arc4random() < 50000000) {
+           [self addProjectile: [e fireProjectileAt:mainCharacter.position] toArray:_enemyProjectiles];
+        }
     }
 }
 
