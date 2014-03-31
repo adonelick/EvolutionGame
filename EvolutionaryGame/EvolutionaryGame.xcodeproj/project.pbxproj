@@ -47,6 +47,7 @@
 		934271DF18C2EBA1006E9365 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 934271DE18C2EBA1006E9365 /* Enemy.m */; };
 		934271E218C2EE0F006E9365 /* Creature.m in Sources */ = {isa = PBXBuildFile; fileRef = 934271E118C2EE0F006E9365 /* Creature.m */; };
 		934271E518C432FD006E9365 /* ExtraMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 934271E418C432FD006E9365 /* ExtraMath.m */; };
+		93FB25E818E910B0008193F3 /* SmokeHazard.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FB25E718E910B0008193F3 /* SmokeHazard.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,8 @@
 		934271E118C2EE0F006E9365 /* Creature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Creature.m; path = Creatures/Creature.m; sourceTree = "<group>"; };
 		934271E318C432FD006E9365 /* ExtraMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtraMath.h; sourceTree = "<group>"; };
 		934271E418C432FD006E9365 /* ExtraMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtraMath.m; sourceTree = "<group>"; };
+		93FB25E618E910B0008193F3 /* SmokeHazard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SmokeHazard.h; path = Objects/SmokeHazard.h; sourceTree = "<group>"; };
+		93FB25E718E910B0008193F3 /* SmokeHazard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SmokeHazard.m; path = Objects/SmokeHazard.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +248,8 @@
 				9342719C18C1B9D6006E9365 /* Weapon.m */,
 				9333FD7918B9313C006B11F5 /* Platform.h */,
 				9333FD7A18B9313C006B11F5 /* Platform.m */,
+				93FB25E618E910B0008193F3 /* SmokeHazard.h */,
+				93FB25E718E910B0008193F3 /* SmokeHazard.m */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -417,6 +422,7 @@
 				9342719D18C1B9D6006E9365 /* Weapon.m in Sources */,
 				9333FD5118B3E521006B11F5 /* LSVMyScene.m in Sources */,
 				934271E218C2EE0F006E9365 /* Creature.m in Sources */,
+				93FB25E818E910B0008193F3 /* SmokeHazard.m in Sources */,
 				9333FD7318B5A187006B11F5 /* Character.m in Sources */,
 				9333FD7B18B9313C006B11F5 /* Platform.m in Sources */,
 				9333FD4818B3E521006B11F5 /* LSVAppDelegate.m in Sources */,
