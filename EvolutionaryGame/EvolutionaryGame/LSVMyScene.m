@@ -8,9 +8,9 @@
 
 #import "LSVMyScene.h"
 #import "Character.h"
-#import "Enemy.h"
 #import "SmokeHazard.h"
 #import "ExtraMath.h"
+#import "SmallEnemy.h"
 
 #import "config.h"
 
@@ -31,7 +31,7 @@
         _enemies = [NSMutableArray new];
         _smokeHazards = [NSMutableArray new];
         
-        Enemy* newEnemy = [[Enemy alloc] init];
+        SmallEnemy* newEnemy = [[SmallEnemy alloc] init];
         newEnemy.position = CGPointMake(CGRectGetMidX(self.frame),
                                         CGRectGetMidY(self.frame));
         [_enemies addObject:newEnemy];
@@ -204,13 +204,13 @@
 - (void) updateEnemies
 {
     for (Enemy* e in _enemies) {
-        [e move];
-        [e circleAround:mainCharacter.position withDistance:100];
+            [e move];
+            [e circleAround:mainCharacter.position withDistance:100];
         
-        // Fire a projectile at random time intervals to try
-        // to kill the main player.
-        if (arc4random() < 50000000) {
-           [self addProjectile: [e fireProjectileAt:mainCharacter.position] toArray:_enemyProjectiles];
+            // Fire a projectile at random time intervals to try
+            // to kill the main player.
+            if (arc4random() < 50000000) {
+                [self addProjectile: [e fireProjectileAt:mainCharacter.position] toArray:_enemyProjectiles];
         }
     }
 }

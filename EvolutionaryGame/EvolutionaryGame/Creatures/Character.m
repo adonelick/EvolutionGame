@@ -31,7 +31,7 @@
         self.xVelocity = 0.0;
         self.yVelocity = 0.0;
         
-        self.health = 100;
+        self.health = 1000;
         
         self.facingRight = YES;
         self.airborne = NO;

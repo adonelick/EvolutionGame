@@ -16,6 +16,9 @@
 // Determines whether the character is in the air
 @property Boolean airborne;
 
+// The weapon for the character
+@property Weapon* weapon;
+
 // Textures for the character walking with a weapon
 @property SKTexture* walkLeftWeapon1;
 @property SKTexture* walkLeftWeapon2;

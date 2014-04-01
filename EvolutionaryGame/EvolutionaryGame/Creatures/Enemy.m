@@ -7,31 +7,10 @@
 //
 
 #import "Enemy.h"
-#import "config.h"
-#import "ExtraMath.h"
+
+
 
 @implementation Enemy
-
-- (id) init
-{
-    self = [super initWithImageNamed:@"FireEnemySmallL1.gif"];
-    
-    if (self) {
-        self.walkLeft1 = [SKTexture textureWithImageNamed:@"FireEnemySmallL1.gif"];
-        self.walkLeft2 = [SKTexture textureWithImageNamed:@"FireEnemySmallL2.gif"];
-        self.walkRight1 = [SKTexture textureWithImageNamed:@"FireEnemySmallR1.gif"];
-        self.walkRight2 = [SKTexture textureWithImageNamed:@"FireEnemySmallR2.gif"];
-        
-        self.xVelocity = 0.0;
-        self.yVelocity = 0.0;
-        
-        self.weapon = [[Weapon alloc] init];
-        
-        self.health = 5;
-    }
-    
-    return self;
-}
 
 - (id) fireProjectileAt: (CGPoint) point
 {
@@ -47,6 +26,18 @@
     Projectile* p = [self.weapon fireProjectile:theta];
     p.position = self.position;
     return p;
+}
+
+
+- (void) moveToward:(CGPoint)point
+{
+    // Move's toward the given point, but does not actually
+    // reach it.
+    int dx = point.x - self.position.x;
+    int dy = point.y - self.position.y;
+    
+    SKAction* moveAction = [SKAction moveByX:0.1*dx y:0.1*dy duration:0.1];
+    [self runAction:moveAction];
 }
 
 - (void) circleAround:(CGPoint)point withDistance:(int)distance
@@ -82,17 +73,6 @@
     }
     
     
-    [self runAction:moveAction];
-}
-
-- (void) moveToward:(CGPoint)point
-{
-    // Move's toward the given point, but does not actually
-    // reach it.
-    int dx = point.x - self.position.x;
-    int dy = point.y - self.position.y;
-    
-    SKAction* moveAction = [SKAction moveByX:0.1*dx y:0.1*dy duration:0.1];
     [self runAction:moveAction];
 }
 

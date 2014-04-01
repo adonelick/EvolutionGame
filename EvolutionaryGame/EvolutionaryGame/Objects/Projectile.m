@@ -23,6 +23,8 @@
         // The weapon sets the projectile's velocity
         _velocity = 0.0;
         
+        self.damage = 0;
+        
     }
     
     return self;

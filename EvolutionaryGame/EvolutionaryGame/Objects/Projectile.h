@@ -8,6 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 
+
 @interface Projectile : SKSpriteNode
 
 // In range [0, 1]
@@ -18,6 +19,9 @@
 
 // Current heading of the projectile (in radians)
 @property double heading;
+
+// Damage done by the projectile
+@property int damage;
 
 - (id) initWithDirection:(double) heading;
 

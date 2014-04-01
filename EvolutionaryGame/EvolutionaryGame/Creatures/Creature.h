@@ -15,8 +15,6 @@
 @property double xVelocity;
 @property double yVelocity;
 
-// The weapon for the creature
-@property Weapon* weapon;
 
 // Number of hits it takes to kill the creature
 @property int health;
