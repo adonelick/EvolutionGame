@@ -107,7 +107,7 @@
             
             if (distance <= KILL_DISTANCE) {
                 
-                [e damageBy:1];
+                [e damageBy:p.damage];
                 [usedProjectiles  addObject:p];
                 
                 // Delete the enemy and projectile from the scene
