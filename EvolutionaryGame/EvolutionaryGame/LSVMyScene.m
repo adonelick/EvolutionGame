@@ -132,7 +132,7 @@
         
         if (distance <= KILL_DISTANCE) {
             
-            [mainCharacter damageBy:1];
+            [mainCharacter damageBy:p.damage];
             [usedProjectiles addObject:p];
         }
         
