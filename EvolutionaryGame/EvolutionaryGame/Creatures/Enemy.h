@@ -14,7 +14,11 @@
 
 @interface Enemy : Creature
 
+// Type of enemy
 @property int type;
+
+// Weapon property (type is different for each enemy)
+@property Weapon* weapon;
 
 - (id) fireProjectileAt: (CGPoint) point;
 
@@ -22,8 +26,5 @@
 
 // Makes the enemy circle around a certain point (only used for small enemies)
 - (void) circleAround:(CGPoint)point withDistance:(int)distance;
-
-// Weapon property (type is different for each enemy)
-@property Weapon* weapon;
 
 @end
