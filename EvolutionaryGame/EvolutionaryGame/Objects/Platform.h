@@ -10,5 +10,10 @@
 
 @interface Platform : SKSpriteNode
 
+// x position of the platform
+@property int xPos;
+
+// y position of the platform
+@property int yPos;
 
 @end

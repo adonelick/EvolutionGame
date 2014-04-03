@@ -47,6 +47,7 @@
 		934271DF18C2EBA1006E9365 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 934271DE18C2EBA1006E9365 /* Enemy.m */; };
 		934271E218C2EE0F006E9365 /* Creature.m in Sources */ = {isa = PBXBuildFile; fileRef = 934271E118C2EE0F006E9365 /* Creature.m */; };
 		934271E518C432FD006E9365 /* ExtraMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 934271E418C432FD006E9365 /* ExtraMath.m */; };
+		9358E71A18EE2323009BB406 /* TPlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = 9358E71918EE2323009BB406 /* TPlatform.m */; };
 		935C9AEE18E91B53007B57F9 /* FireEnemySmallProjectileL.gif in Resources */ = {isa = PBXBuildFile; fileRef = 935C9AED18E91B53007B57F9 /* FireEnemySmallProjectileL.gif */; };
 		935C9AF018E91B58007B57F9 /* FireEnemySmallProjectileR.gif in Resources */ = {isa = PBXBuildFile; fileRef = 935C9AEF18E91B58007B57F9 /* FireEnemySmallProjectileR.gif */; };
 		93E0473F18E91C97004D5433 /* SmallEnemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E0473E18E91C97004D5433 /* SmallEnemy.m */; };
@@ -120,6 +121,8 @@
 		934271E118C2EE0F006E9365 /* Creature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Creature.m; path = Creatures/Creature.m; sourceTree = "<group>"; };
 		934271E318C432FD006E9365 /* ExtraMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtraMath.h; sourceTree = "<group>"; };
 		934271E418C432FD006E9365 /* ExtraMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtraMath.m; sourceTree = "<group>"; };
+		9358E71818EE2323009BB406 /* TPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPlatform.h; sourceTree = "<group>"; };
+		9358E71918EE2323009BB406 /* TPlatform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPlatform.m; sourceTree = "<group>"; };
 		935C9AED18E91B53007B57F9 /* FireEnemySmallProjectileL.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FireEnemySmallProjectileL.gif; path = Images/FireEnemySmallProjectileL.gif; sourceTree = "<group>"; };
 		935C9AEF18E91B58007B57F9 /* FireEnemySmallProjectileR.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FireEnemySmallProjectileR.gif; path = Images/FireEnemySmallProjectileR.gif; sourceTree = "<group>"; };
 		93E0473D18E91C97004D5433 /* SmallEnemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmallEnemy.h; sourceTree = "<group>"; };
@@ -266,6 +269,8 @@
 				93E0474718EA6925004D5433 /* SmallEnemyWeapon.m */,
 				9333FD7918B9313C006B11F5 /* Platform.h */,
 				9333FD7A18B9313C006B11F5 /* Platform.m */,
+				9358E71818EE2323009BB406 /* TPlatform.h */,
+				9358E71918EE2323009BB406 /* TPlatform.m */,
 				93FB25E618E910B0008193F3 /* SmokeHazard.h */,
 				93FB25E718E910B0008193F3 /* SmokeHazard.m */,
 			);
@@ -455,6 +460,7 @@
 				93E0474518EA66EB004D5433 /* SmallEnemyProjectile.m in Sources */,
 				9333FD4418B3E521006B11F5 /* main.m in Sources */,
 				9333FD4E18B3E521006B11F5 /* LSVViewController.m in Sources */,
+				9358E71A18EE2323009BB406 /* TPlatform.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
