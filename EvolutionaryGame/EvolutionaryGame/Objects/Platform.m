@@ -14,11 +14,6 @@
 {
     self = [super initWithImageNamed:imageName];
     
-    if (self) {
-        self.xPos = self.position.x;
-        self.yPos = self.position.y;
-    }
-    
     return self;
 }
 

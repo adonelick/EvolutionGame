@@ -44,37 +44,34 @@
                                              CGRectGetMidY(self.frame));
         [self addChild:mainCharacter];
         
-        SmallEnemy* newEnemy = [[SmallEnemy alloc] init];
-        newEnemy.position = CGPointMake(CGRectGetMidX(self.frame),
-                                        CGRectGetMidY(self.frame));
-        [_enemies addObject:newEnemy];
-        [self addChild:newEnemy];
-        
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
-        
         // FOR TESTING PURPOSES:
+        
+        _ground = mainCharacter.position.y - 37;
+        
         SmokeHazard* newHazard = [[SmokeHazard alloc] init];
         newHazard.position = CGPointMake(CGRectGetMidX(self.frame)+100,
-                                         CGRectGetMidY(self.frame));
+                                         _ground + 25);
         [_smokeHazards addObject:newHazard];
         [self addChild:newHazard];
         
         SmokeHazard* newHazard2 = [[SmokeHazard alloc] init];
         newHazard2.position = CGPointMake(CGRectGetMidX(self.frame)+150,
-                                         CGRectGetMidY(self.frame));
+                                         _ground + 25);
         [_smokeHazards addObject:newHazard2];
         [self addChild:newHazard2];
         
         SmokeHazard* newHazard3 = [[SmokeHazard alloc] init];
         newHazard3.position = CGPointMake(CGRectGetMidX(self.frame)+100,
-                                         CGRectGetMidY(self.frame)+50);
+                                         _ground + 75);
         [_smokeHazards addObject:newHazard3];
         [self addChild:newHazard3];
         
         SmokeHazard* newHazard4 = [[SmokeHazard alloc] init];
         newHazard4.position = CGPointMake(CGRectGetMidX(self.frame)+150,
-                                         CGRectGetMidY(self.frame)+50);
+                                         _ground + 75);
+        
         [_smokeHazards addObject:newHazard4];
         [self addChild:newHazard4];
         
@@ -84,7 +81,115 @@
         [_platforms addObject:testPlatform];
         [self addChild:testPlatform];
         
+        Platform* testPlatform2 = [[Platform alloc] init: @"FirePlatformTopBottom.gif"];
+        testPlatform2.position = CGPointMake(CGRectGetMidX(self.frame) + (50*-2),
+                                            CGRectGetMidY(self.frame) - 62);
+        [_platforms addObject:testPlatform2];
+        [self addChild:testPlatform2];
         
+        Platform* testPlatform3 = [[Platform alloc] init: @"FirePlatformTopBottom.gif"];
+        testPlatform3.position = CGPointMake(CGRectGetMidX(self.frame) + (50*-1),
+                                            CGRectGetMidY(self.frame) - 62);
+        [_platforms addObject:testPlatform3];
+        [self addChild:testPlatform3];
+        
+        Platform* testPlatform4 = [[Platform alloc] init: @"FirePlatformTopBottom.gif"];
+        testPlatform4.position = CGPointMake(CGRectGetMidX(self.frame) + (50*+2),
+                                            CGRectGetMidY(self.frame) - 62);
+        [_platforms addObject:testPlatform4];
+        [self addChild:testPlatform4];
+        
+        Platform* testPlatform5 = [[Platform alloc] init: @"FirePlatformTopBottom.gif"];
+        testPlatform5.position = CGPointMake(CGRectGetMidX(self.frame) + (50*+1),
+                                            CGRectGetMidY(self.frame) - 62);
+        [_platforms addObject:testPlatform5];
+        [self addChild:testPlatform5];
+        
+        Platform* testPlatform6 = [[Platform alloc] init: @"FirePlatformTopBottom.gif"];
+        testPlatform6.position = CGPointMake(CGRectGetMidX(self.frame),
+                                             CGRectGetMidY(self.frame) - 62);
+        [_platforms addObject:testPlatform6];
+        [self addChild:testPlatform6];
+        
+        Platform* testPlatform7 = [[Platform alloc] init: @"FirePlatformTopBottom.gif"];
+        testPlatform7.position = CGPointMake(CGRectGetMidX(self.frame) + (50*+3),
+                                             CGRectGetMidY(self.frame) - 62);
+        [_platforms addObject:testPlatform7];
+        [self addChild:testPlatform7];
+        
+        Platform* testPlatform8 = [[Platform alloc] init: @"FirePlatformTopBottom.gif"];
+        testPlatform8.position = CGPointMake(CGRectGetMidX(self.frame) + (50*+4),
+                                             CGRectGetMidY(self.frame) - 62);
+        [_platforms addObject:testPlatform8];
+        [self addChild:testPlatform8];
+        
+        Platform* testPlatform9 = [[Platform alloc] init: @"FirePlatformTopBottom.gif"];
+        testPlatform9.position = CGPointMake(CGRectGetMidX(self.frame) + (50*+5),
+                                             CGRectGetMidY(self.frame) - 62);
+        [_platforms addObject:testPlatform9];
+        [self addChild:testPlatform9];
+        
+        Platform* testPlatform10 = [[Platform alloc] init: @"FirePlatformTopBottom.gif"];
+        testPlatform10.position = CGPointMake(CGRectGetMidX(self.frame) + (50*+6),
+                                             CGRectGetMidY(self.frame) - 62);
+        [_platforms addObject:testPlatform10];
+        [self addChild:testPlatform10];
+        
+        Platform* testPlatform11 = [[Platform alloc] init: @"FirePlatformTopBottom.gif"];
+        testPlatform11.position = CGPointMake(CGRectGetMidX(self.frame) + (50*+7),
+                                             CGRectGetMidY(self.frame) - 62);
+        [_platforms addObject:testPlatform11];
+        [self addChild:testPlatform11];
+        
+        Platform* testPlatform12 = [[Platform alloc] init: @"FirePlatformTopBottom.gif"];
+        testPlatform12.position = CGPointMake(CGRectGetMidX(self.frame) + (50*-7),
+                                              CGRectGetMidY(self.frame) - 62);
+        [_platforms addObject:testPlatform12];
+        [self addChild:testPlatform12];
+        
+        Platform* testPlatform13 = [[Platform alloc] init: @"FirePlatformTopBottom.gif"];
+        testPlatform13.position = CGPointMake(CGRectGetMidX(self.frame) + (50*-6),
+                                              CGRectGetMidY(self.frame) - 62);
+        [_platforms addObject:testPlatform13];
+        [self addChild:testPlatform13];
+        
+        Platform* testPlatform14 = [[Platform alloc] init: @"FirePlatformTopBottom.gif"];
+        testPlatform14.position = CGPointMake(CGRectGetMidX(self.frame) + (50*-5),
+                                              CGRectGetMidY(self.frame) - 62);
+        [_platforms addObject:testPlatform14];
+        [self addChild:testPlatform14];
+        
+        Platform* testPlatform15 = [[Platform alloc] init: @"FirePlatformTopBottom.gif"];
+        testPlatform15.position = CGPointMake(CGRectGetMidX(self.frame) + (50*-4),
+                                              CGRectGetMidY(self.frame) - 62);
+        [_platforms addObject:testPlatform15];
+        [self addChild:testPlatform15];
+        
+        Platform* testPlatform16 = [[Platform alloc] init: @"FirePlatformTopBottom.gif"];
+        testPlatform16.position = CGPointMake(CGRectGetMidX(self.frame) + (50*-3),
+                                              CGRectGetMidY(self.frame) - 62);
+        [_platforms addObject:testPlatform16];
+        [self addChild:testPlatform16];
+        
+        Platform* testPlatform17 = [[Platform alloc] init: @"FirePlatformTopBottom.gif"];
+        testPlatform17.position = CGPointMake(CGRectGetMidX(self.frame) + (50*-8),
+                                              CGRectGetMidY(self.frame) - 62);
+        [_platforms addObject:testPlatform17];
+        [self addChild:testPlatform17];
+        
+        Platform* testPlatform18 = [[Platform alloc] init: @"FirePlatformTopBottom.gif"];
+        testPlatform18.position = CGPointMake(CGRectGetMidX(self.frame) + (50*+8),
+                                              CGRectGetMidY(self.frame) - 62);
+        [_platforms addObject:testPlatform18];
+        [self addChild:testPlatform18];
+        
+        SmallEnemy* newEnemy = [[SmallEnemy alloc] init];
+        newEnemy.position = CGPointMake(CGRectGetMidX(self.frame),
+                                        CGRectGetMidY(self.frame));
+        [_enemies addObject:newEnemy];
+        [self addChild:newEnemy];
+        
+
 
     }
     return self;
@@ -126,6 +231,8 @@
     [self updateProjectiles];
     [self updateEnemies];
     [self mainCharacterGravity];
+    [self updateGround];
+
 }
 
 
@@ -195,10 +302,10 @@
     
     // If enough damage has occured to kill the player,
     // end the game.
-    NSLog(@"%d", mainCharacter.health);
+//    NSLog(@"%d", mainCharacter.health);
     if (mainCharacter.health <= 0) {
         // Show what stats screen here...
-        NSLog(@"You are now dead.");
+//        NSLog(@"You are now dead.");
     }
     
 }
@@ -258,15 +365,14 @@
 
 - (void) mainCharacterGravity
 {
-    if (mainCharacter.position.y > CGRectGetMidY(self.frame)) {
+    if (mainCharacter.position.y > _ground + 37) {
         mainCharacter.yVelocity -= .04;
     }
-    else if (mainCharacter.position.y < CGRectGetMidY(self.frame)) {
+    else if (mainCharacter.position.y < _ground + 37) {
         mainCharacter.yVelocity = 0;
         mainCharacter.position = CGPointMake(mainCharacter.position.x,
-                                             CGRectGetMidY((self.frame)));
+                                             (_ground + 37));
         mainCharacter.airborne = NO;
-        
     }
 }
 
@@ -291,6 +397,24 @@
         [array addObject:projectile];
         [self addChild:projectile];
         
+    }
+}
+
+- (void) updateGround
+{
+    Platform* ground;
+    int smallestDist = INT_MAX;
+    for (Platform* p in _platforms) {
+        int xDist = mainCharacter.position.x - p.position.x;
+        int yDist = mainCharacter.position.y - p.position.y;
+        
+        if ((-54 <= xDist) && (xDist <= 54) && (yDist >= 62)) {
+            if (yDist <= smallestDist) {
+                ground = p;
+            }
+        }
+        _ground = ground.position.y + 25;
+        NSLog(@"%D", _ground);
     }
 }
 

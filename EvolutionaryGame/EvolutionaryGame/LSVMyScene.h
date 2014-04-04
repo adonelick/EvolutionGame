@@ -29,6 +29,9 @@
 // Keeps track of all the platforms in the level
 @property NSMutableArray* platforms;
 
+// The y position of the ground relative to the main character
+@property int ground;
+
 // Updates the appearance of the main character, enemies
 // This timer calls another function every so often, but not
 // as fast as the frames are rendered. This makes the animations
@@ -42,6 +45,7 @@
 - (void) updateProjectiles;
 - (void) updateEnemies;
 - (void) mainCharacterGravity;
+- (void) updateGround;
 
 
 - (void) cleanUp:(NSMutableArray*) objects byDeleting:(NSMutableArray*) delObjects;

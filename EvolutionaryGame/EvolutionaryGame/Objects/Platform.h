@@ -10,12 +10,6 @@
 
 @interface Platform : SKSpriteNode
 
-// x position of the platform
-@property int xPos;
-
-// y position of the platform
-@property int yPos;
-
 // initialization function that takes in a name of a file to initialize the piece with
 -(id) init:(NSString*) imageName;
 
