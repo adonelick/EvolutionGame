@@ -13,13 +13,13 @@
 - (id) init
 {
     // TODO: Change the file name to the name of the smoke image
-    self = [super initWithImageNamed:@"FullFirePlayerChar1.gif"];
+    self = [super initWithImageNamed:@"SmokeScreen1.gif"];
     
     if (self)
     {
         // Same 'TODO' as earlier here...
-        _texture1 = [SKTexture textureWithImageNamed:@"FullFirePlayerChar1.gif"];
-        _texture2 = [SKTexture textureWithImageNamed:@"FullFirePlayerChar2.gif"];
+        _texture1 = [SKTexture textureWithImageNamed:@"SmokeScreen1.gif"];
+        _texture2 = [SKTexture textureWithImageNamed:@"SmokeScreen2.gif"];
         
         // Does 25 hit points of damage per second
         _damagePotential = 25;

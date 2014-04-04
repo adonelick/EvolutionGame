@@ -13,10 +13,12 @@
 // The amount of damage caused by a specific type of smoke
 @property int damagePotential;
 
-// Two different textures for the smoke's animation.
+// Two different textures for the smoke's animation
 @property SKTexture* texture1;
 @property SKTexture* texture2;
 
+// Variable for time delay to control flicker speed
+@property int delay;
 
 // Changes the texture of the smoke to show the animation
 - (void) updateTexture;

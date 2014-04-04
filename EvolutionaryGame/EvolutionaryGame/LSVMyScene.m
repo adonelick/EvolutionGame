@@ -38,6 +38,12 @@
         _smokeHazards = [NSMutableArray new];
         _platforms = [NSMutableArray new];
         
+        // Create the main character and place it in the center of the screen
+        mainCharacter = [[Character alloc] init];
+        mainCharacter.position = CGPointMake(CGRectGetMidX(self.frame),
+                                             CGRectGetMidY(self.frame));
+        [self addChild:mainCharacter];
+        
         SmallEnemy* newEnemy = [[SmallEnemy alloc] init];
         newEnemy.position = CGPointMake(CGRectGetMidX(self.frame),
                                         CGRectGetMidY(self.frame));
@@ -54,17 +60,32 @@
         [_smokeHazards addObject:newHazard];
         [self addChild:newHazard];
         
+        SmokeHazard* newHazard2 = [[SmokeHazard alloc] init];
+        newHazard2.position = CGPointMake(CGRectGetMidX(self.frame)+150,
+                                         CGRectGetMidY(self.frame));
+        [_smokeHazards addObject:newHazard2];
+        [self addChild:newHazard2];
+        
+        SmokeHazard* newHazard3 = [[SmokeHazard alloc] init];
+        newHazard3.position = CGPointMake(CGRectGetMidX(self.frame)+100,
+                                         CGRectGetMidY(self.frame)+50);
+        [_smokeHazards addObject:newHazard3];
+        [self addChild:newHazard3];
+        
+        SmokeHazard* newHazard4 = [[SmokeHazard alloc] init];
+        newHazard4.position = CGPointMake(CGRectGetMidX(self.frame)+150,
+                                         CGRectGetMidY(self.frame)+50);
+        [_smokeHazards addObject:newHazard4];
+        [self addChild:newHazard4];
+        
         Platform* testPlatform = [[Platform alloc] init: @"FirePlatformSinglePiece.gif"];
         testPlatform.position = CGPointMake(CGRectGetMidX(self.frame),
                                             CGRectGetMidY(self.frame)+(25+50*1));
         [_platforms addObject:testPlatform];
         [self addChild:testPlatform];
         
-        // Create the main character and place it in the center of the screen
-        mainCharacter = [[Character alloc] init];
-        mainCharacter.position = CGPointMake(CGRectGetMidX(self.frame),
-                                             CGRectGetMidY(self.frame));
-        [self addChild:mainCharacter];
+        
+
     }
     return self;
 }
@@ -76,6 +97,14 @@
     
     for (Enemy* e in _enemies) {
         [e updateTexture];
+    }
+    
+    for (SmokeHazard* h in _smokeHazards) {
+        ++h.delay;
+        if(h.delay == 7) {
+            h.delay = 0;
+            [h updateTexture];
+        }
     }
 }
                          
