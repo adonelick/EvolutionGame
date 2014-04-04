@@ -21,8 +21,8 @@
         _texture1 = [SKTexture textureWithImageNamed:@"FullFirePlayerChar1.gif"];
         _texture2 = [SKTexture textureWithImageNamed:@"FullFirePlayerChar2.gif"];
         
-        // Does 1 level unit of damage per second
-        _damagePotential = 1;
+        // Does 25 hit points of damage per second
+        _damagePotential = 25;
     }
     
     return self;

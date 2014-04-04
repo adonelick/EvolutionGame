@@ -10,9 +10,9 @@
 
 @implementation Platform
 
-- (id) init
+- (id) init:(NSString*) imageName
 {
-    self = [super initWithImageNamed:@"FirePlatformSinglePiece.gif"];
+    self = [super initWithImageNamed:imageName];
     
     if (self) {
         self.xPos = self.position.x;

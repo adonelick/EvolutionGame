@@ -15,6 +15,11 @@
 
 #import "config.h"
 
+// DELETE LATER: numbers:
+// platform/hazard size: 50x50
+// character size: use 58x74
+
+
 @implementation LSVMyScene
 
 - (id) initWithSize:(CGSize)size
@@ -49,7 +54,7 @@
         [_smokeHazards addObject:newHazard];
         [self addChild:newHazard];
         
-        Platform* testPlatform = [[Platform alloc] init];
+        Platform* testPlatform = [[Platform alloc] init: @"FirePlatformSinglePiece.gif"];
         testPlatform.position = CGPointMake(CGRectGetMidX(self.frame),
                                             CGRectGetMidY(self.frame)+(25+50*1));
         [_platforms addObject:testPlatform];
@@ -149,11 +154,12 @@
     // Check whether the main character has come into contact with
     // any of the smoke hazards on the screen.
     for (SmokeHazard* h in _smokeHazards) {
-        CGPoint projectPos = h.position;
+        CGPoint hazardPos = h.position;
         CGPoint characterPos = mainCharacter.position;
-        double distance = [ExtraMath distanceBetween:projectPos and:characterPos];
+        int xdist = hazardPos.x - characterPos.x;
+        int ydist = hazardPos.y - characterPos.y;
         
-        if (distance <= SMOKE_INJURE_DISTANCE && arc4random() < 150000000) {
+        if ((-54 <= xdist) && (xdist <= 54) && (-62 <= ydist) && (ydist <= 62) && arc4random() < 150000000) {
             [mainCharacter damageBy:h.damagePotential];
         }
     }
