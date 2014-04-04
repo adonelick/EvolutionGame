@@ -26,6 +26,9 @@
 // that may pose a risk to the main player.
 @property NSMutableArray* smokeHazards;
 
+// Keeps track of all the platforms in the level
+@property NSMutableArray* platforms;
+
 // Updates the appearance of the main character, enemies
 // This timer calls another function every so often, but not
 // as fast as the frames are rendered. This makes the animations

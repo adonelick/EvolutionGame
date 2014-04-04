@@ -10,6 +10,16 @@
 
 @implementation Platform
 
-
+- (id) init
+{
+    self = [super initWithImageNamed:@"FirePlatformSinglePiece.gif"];
+    
+    if (self) {
+        self.xPos = self.position.x;
+        self.yPos = self.position.y;
+    }
+    
+    return self;
+}
 
 @end

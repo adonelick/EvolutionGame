@@ -47,9 +47,24 @@
 		934271DF18C2EBA1006E9365 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 934271DE18C2EBA1006E9365 /* Enemy.m */; };
 		934271E218C2EE0F006E9365 /* Creature.m in Sources */ = {isa = PBXBuildFile; fileRef = 934271E118C2EE0F006E9365 /* Creature.m */; };
 		934271E518C432FD006E9365 /* ExtraMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 934271E418C432FD006E9365 /* ExtraMath.m */; };
-		9358E71A18EE2323009BB406 /* TPlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = 9358E71918EE2323009BB406 /* TPlatform.m */; };
 		935C9AEE18E91B53007B57F9 /* FireEnemySmallProjectileL.gif in Resources */ = {isa = PBXBuildFile; fileRef = 935C9AED18E91B53007B57F9 /* FireEnemySmallProjectileL.gif */; };
 		935C9AF018E91B58007B57F9 /* FireEnemySmallProjectileR.gif in Resources */ = {isa = PBXBuildFile; fileRef = 935C9AEF18E91B58007B57F9 /* FireEnemySmallProjectileR.gif */; };
+		93B6493D18EE27BC005B412E /* FirePlatformBottom.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B6493818EE27BC005B412E /* FirePlatformBottom.gif */; };
+		93B6493E18EE27BC005B412E /* FirePlatformBottomLeft.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B6493918EE27BC005B412E /* FirePlatformBottomLeft.gif */; };
+		93B6493F18EE27BC005B412E /* FirePlatformBottomLeftRight.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B6493A18EE27BC005B412E /* FirePlatformBottomLeftRight.gif */; };
+		93B6494018EE27BC005B412E /* FirePlatformBottomRight.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B6493B18EE27BC005B412E /* FirePlatformBottomRight.gif */; };
+		93B6494118EE27BC005B412E /* FirePlatformCenter.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B6493C18EE27BC005B412E /* FirePlatformCenter.gif */; };
+		93B6494D18EE27CA005B412E /* FirePlatformLeft.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B6494218EE27CA005B412E /* FirePlatformLeft.gif */; };
+		93B6494E18EE27CA005B412E /* FirePlatformLeftRight.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B6494318EE27CA005B412E /* FirePlatformLeftRight.gif */; };
+		93B6494F18EE27CA005B412E /* FirePlatformRight.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B6494418EE27CA005B412E /* FirePlatformRight.gif */; };
+		93B6495018EE27CA005B412E /* FirePlatformSinglePiece.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B6494518EE27CA005B412E /* FirePlatformSinglePiece.gif */; };
+		93B6495118EE27CA005B412E /* FirePlatformTop.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B6494618EE27CA005B412E /* FirePlatformTop.gif */; };
+		93B6495218EE27CA005B412E /* FirePlatformTopBottom.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B6494718EE27CA005B412E /* FirePlatformTopBottom.gif */; };
+		93B6495318EE27CA005B412E /* FirePlatformTopLeft.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B6494818EE27CA005B412E /* FirePlatformTopLeft.gif */; };
+		93B6495418EE27CA005B412E /* FirePlatformTopLeftBottom.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B6494918EE27CA005B412E /* FirePlatformTopLeftBottom.gif */; };
+		93B6495518EE27CA005B412E /* FirePlatformTopRight.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B6494A18EE27CA005B412E /* FirePlatformTopRight.gif */; };
+		93B6495618EE27CA005B412E /* FirePlatformTopRightBottom.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B6494B18EE27CA005B412E /* FirePlatformTopRightBottom.gif */; };
+		93B6495718EE27CA005B412E /* FirePlatformTopRightLeft.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B6494C18EE27CA005B412E /* FirePlatformTopRightLeft.gif */; };
 		93E0473F18E91C97004D5433 /* SmallEnemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E0473E18E91C97004D5433 /* SmallEnemy.m */; };
 		93E0474518EA66EB004D5433 /* SmallEnemyProjectile.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E0474418EA66EB004D5433 /* SmallEnemyProjectile.m */; };
 		93E0474818EA6925004D5433 /* SmallEnemyWeapon.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E0474718EA6925004D5433 /* SmallEnemyWeapon.m */; };
@@ -121,10 +136,24 @@
 		934271E118C2EE0F006E9365 /* Creature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Creature.m; path = Creatures/Creature.m; sourceTree = "<group>"; };
 		934271E318C432FD006E9365 /* ExtraMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtraMath.h; sourceTree = "<group>"; };
 		934271E418C432FD006E9365 /* ExtraMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtraMath.m; sourceTree = "<group>"; };
-		9358E71818EE2323009BB406 /* TPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPlatform.h; sourceTree = "<group>"; };
-		9358E71918EE2323009BB406 /* TPlatform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPlatform.m; sourceTree = "<group>"; };
 		935C9AED18E91B53007B57F9 /* FireEnemySmallProjectileL.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FireEnemySmallProjectileL.gif; path = Images/FireEnemySmallProjectileL.gif; sourceTree = "<group>"; };
 		935C9AEF18E91B58007B57F9 /* FireEnemySmallProjectileR.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FireEnemySmallProjectileR.gif; path = Images/FireEnemySmallProjectileR.gif; sourceTree = "<group>"; };
+		93B6493818EE27BC005B412E /* FirePlatformBottom.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformBottom.gif; path = "../../../Downloads/documents-export-2014-04-03/FirePlatformBottom.gif"; sourceTree = "<group>"; };
+		93B6493918EE27BC005B412E /* FirePlatformBottomLeft.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformBottomLeft.gif; path = "../../../Downloads/documents-export-2014-04-03/FirePlatformBottomLeft.gif"; sourceTree = "<group>"; };
+		93B6493A18EE27BC005B412E /* FirePlatformBottomLeftRight.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformBottomLeftRight.gif; path = "../../../Downloads/documents-export-2014-04-03/FirePlatformBottomLeftRight.gif"; sourceTree = "<group>"; };
+		93B6493B18EE27BC005B412E /* FirePlatformBottomRight.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformBottomRight.gif; path = "../../../Downloads/documents-export-2014-04-03/FirePlatformBottomRight.gif"; sourceTree = "<group>"; };
+		93B6493C18EE27BC005B412E /* FirePlatformCenter.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformCenter.gif; path = "../../../Downloads/documents-export-2014-04-03/FirePlatformCenter.gif"; sourceTree = "<group>"; };
+		93B6494218EE27CA005B412E /* FirePlatformLeft.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformLeft.gif; path = "../../../Downloads/documents-export-2014-04-03/FirePlatformLeft.gif"; sourceTree = "<group>"; };
+		93B6494318EE27CA005B412E /* FirePlatformLeftRight.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformLeftRight.gif; path = "../../../Downloads/documents-export-2014-04-03/FirePlatformLeftRight.gif"; sourceTree = "<group>"; };
+		93B6494418EE27CA005B412E /* FirePlatformRight.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformRight.gif; path = "../../../Downloads/documents-export-2014-04-03/FirePlatformRight.gif"; sourceTree = "<group>"; };
+		93B6494518EE27CA005B412E /* FirePlatformSinglePiece.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformSinglePiece.gif; path = "../../../Downloads/documents-export-2014-04-03/FirePlatformSinglePiece.gif"; sourceTree = "<group>"; };
+		93B6494618EE27CA005B412E /* FirePlatformTop.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformTop.gif; path = "../../../Downloads/documents-export-2014-04-03/FirePlatformTop.gif"; sourceTree = "<group>"; };
+		93B6494718EE27CA005B412E /* FirePlatformTopBottom.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformTopBottom.gif; path = "../../../Downloads/documents-export-2014-04-03/FirePlatformTopBottom.gif"; sourceTree = "<group>"; };
+		93B6494818EE27CA005B412E /* FirePlatformTopLeft.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformTopLeft.gif; path = "../../../Downloads/documents-export-2014-04-03/FirePlatformTopLeft.gif"; sourceTree = "<group>"; };
+		93B6494918EE27CA005B412E /* FirePlatformTopLeftBottom.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformTopLeftBottom.gif; path = "../../../Downloads/documents-export-2014-04-03/FirePlatformTopLeftBottom.gif"; sourceTree = "<group>"; };
+		93B6494A18EE27CA005B412E /* FirePlatformTopRight.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformTopRight.gif; path = "../../../Downloads/documents-export-2014-04-03/FirePlatformTopRight.gif"; sourceTree = "<group>"; };
+		93B6494B18EE27CA005B412E /* FirePlatformTopRightBottom.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformTopRightBottom.gif; path = "../../../Downloads/documents-export-2014-04-03/FirePlatformTopRightBottom.gif"; sourceTree = "<group>"; };
+		93B6494C18EE27CA005B412E /* FirePlatformTopRightLeft.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformTopRightLeft.gif; path = "../../../Downloads/documents-export-2014-04-03/FirePlatformTopRightLeft.gif"; sourceTree = "<group>"; };
 		93E0473D18E91C97004D5433 /* SmallEnemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmallEnemy.h; sourceTree = "<group>"; };
 		93E0473E18E91C97004D5433 /* SmallEnemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmallEnemy.m; sourceTree = "<group>"; };
 		93E0474318EA66EB004D5433 /* SmallEnemyProjectile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SmallEnemyProjectile.h; path = Objects/SmallEnemyProjectile.h; sourceTree = "<group>"; };
@@ -269,8 +298,6 @@
 				93E0474718EA6925004D5433 /* SmallEnemyWeapon.m */,
 				9333FD7918B9313C006B11F5 /* Platform.h */,
 				9333FD7A18B9313C006B11F5 /* Platform.m */,
-				9358E71818EE2323009BB406 /* TPlatform.h */,
-				9358E71918EE2323009BB406 /* TPlatform.m */,
 				93FB25E618E910B0008193F3 /* SmokeHazard.h */,
 				93FB25E718E910B0008193F3 /* SmokeHazard.m */,
 			);
@@ -320,12 +347,36 @@
 		934271D918C2827A006E9365 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				93B6493718EE27A0005B412E /* Platforms */,
 				934271D518C27EA1006E9365 /* PlayerProjectileLeft.gif */,
 				934271D618C27EA1006E9365 /* PlayerProjectileRight.gif */,
 				935C9AED18E91B53007B57F9 /* FireEnemySmallProjectileL.gif */,
 				935C9AEF18E91B58007B57F9 /* FireEnemySmallProjectileR.gif */,
 			);
 			name = Objects;
+			sourceTree = "<group>";
+		};
+		93B6493718EE27A0005B412E /* Platforms */ = {
+			isa = PBXGroup;
+			children = (
+				93B6494218EE27CA005B412E /* FirePlatformLeft.gif */,
+				93B6494318EE27CA005B412E /* FirePlatformLeftRight.gif */,
+				93B6494418EE27CA005B412E /* FirePlatformRight.gif */,
+				93B6494518EE27CA005B412E /* FirePlatformSinglePiece.gif */,
+				93B6494618EE27CA005B412E /* FirePlatformTop.gif */,
+				93B6494718EE27CA005B412E /* FirePlatformTopBottom.gif */,
+				93B6494818EE27CA005B412E /* FirePlatformTopLeft.gif */,
+				93B6494918EE27CA005B412E /* FirePlatformTopLeftBottom.gif */,
+				93B6494A18EE27CA005B412E /* FirePlatformTopRight.gif */,
+				93B6494B18EE27CA005B412E /* FirePlatformTopRightBottom.gif */,
+				93B6494C18EE27CA005B412E /* FirePlatformTopRightLeft.gif */,
+				93B6493818EE27BC005B412E /* FirePlatformBottom.gif */,
+				93B6493918EE27BC005B412E /* FirePlatformBottomLeft.gif */,
+				93B6493A18EE27BC005B412E /* FirePlatformBottomLeftRight.gif */,
+				93B6493B18EE27BC005B412E /* FirePlatformBottomRight.gif */,
+				93B6493C18EE27BC005B412E /* FirePlatformCenter.gif */,
+			);
+			name = Platforms;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,24 +456,40 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93B6495518EE27CA005B412E /* FirePlatformTopRight.gif in Resources */,
+				93B6495718EE27CA005B412E /* FirePlatformTopRightLeft.gif in Resources */,
 				934271C418C1C4DD006E9365 /* PlayerCharR1.gif in Resources */,
 				935C9AEE18E91B53007B57F9 /* FireEnemySmallProjectileL.gif in Resources */,
+				93B6495618EE27CA005B412E /* FirePlatformTopRightBottom.gif in Resources */,
+				93B6494D18EE27CA005B412E /* FirePlatformLeft.gif in Resources */,
+				93B6495018EE27CA005B412E /* FirePlatformSinglePiece.gif in Resources */,
+				93B6493D18EE27BC005B412E /* FirePlatformBottom.gif in Resources */,
+				93B6494018EE27BC005B412E /* FirePlatformBottomRight.gif in Resources */,
+				93B6494E18EE27CA005B412E /* FirePlatformLeftRight.gif in Resources */,
 				934271C518C1C4DD006E9365 /* PlayerCharR2.gif in Resources */,
 				934271C718C1C4DD006E9365 /* PlayerCharWeaponL2.gif in Resources */,
 				934271D218C27E94006E9365 /* FireEnemySmallL2.gif in Resources */,
 				934271C818C1C4DD006E9365 /* PlayerCharWeaponR1.gif in Resources */,
 				9333FD4218B3E521006B11F5 /* InfoPlist.strings in Resources */,
 				935C9AF018E91B58007B57F9 /* FireEnemySmallProjectileR.gif in Resources */,
+				93B6494F18EE27CA005B412E /* FirePlatformRight.gif in Resources */,
 				934271B518C1C274006E9365 /* Arrow_Left.png in Resources */,
 				934271C118C1C4DD006E9365 /* FullFirePlayerChar1.gif in Resources */,
+				93B6495318EE27CA005B412E /* FirePlatformTopLeft.gif in Resources */,
+				93B6495218EE27CA005B412E /* FirePlatformTopBottom.gif in Resources */,
+				93B6493F18EE27BC005B412E /* FirePlatformBottomLeftRight.gif in Resources */,
 				934271D318C27E94006E9365 /* FireEnemySmallR1.gif in Resources */,
 				934271C218C1C4DD006E9365 /* PlayerCharL1.gif in Resources */,
 				934271D718C27EA1006E9365 /* PlayerProjectileLeft.gif in Resources */,
 				934271D118C27E94006E9365 /* FireEnemySmallL1.gif in Resources */,
+				93B6495118EE27CA005B412E /* FirePlatformTop.gif in Resources */,
 				934271C318C1C4DD006E9365 /* PlayerCharL2.gif in Resources */,
 				934271C618C1C4DD006E9365 /* PlayerCharWeaponL1.gif in Resources */,
+				93B6493E18EE27BC005B412E /* FirePlatformBottomLeft.gif in Resources */,
 				934271C918C1C4DD006E9365 /* PlayerCharWeaponR2.gif in Resources */,
 				9333FD5518B3E521006B11F5 /* Images.xcassets in Resources */,
+				93B6495418EE27CA005B412E /* FirePlatformTopLeftBottom.gif in Resources */,
+				93B6494118EE27BC005B412E /* FirePlatformCenter.gif in Resources */,
 				934271B618C1C274006E9365 /* Arrow_Right.png in Resources */,
 				934271D818C27EA1006E9365 /* PlayerProjectileRight.gif in Resources */,
 				9333FD4B18B3E521006B11F5 /* Main.storyboard in Resources */,
@@ -460,7 +527,6 @@
 				93E0474518EA66EB004D5433 /* SmallEnemyProjectile.m in Sources */,
 				9333FD4418B3E521006B11F5 /* main.m in Sources */,
 				9333FD4E18B3E521006B11F5 /* LSVViewController.m in Sources */,
-				9358E71A18EE2323009BB406 /* TPlatform.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

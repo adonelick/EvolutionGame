@@ -11,6 +11,7 @@
 #import "SmokeHazard.h"
 #import "ExtraMath.h"
 #import "SmallEnemy.h"
+#import "Platform.h"
 
 #import "config.h"
 
@@ -30,6 +31,7 @@
         _enemyProjectiles = [NSMutableArray new];
         _enemies = [NSMutableArray new];
         _smokeHazards = [NSMutableArray new];
+        _platforms = [NSMutableArray new];
         
         SmallEnemy* newEnemy = [[SmallEnemy alloc] init];
         newEnemy.position = CGPointMake(CGRectGetMidX(self.frame),
@@ -42,12 +44,16 @@
         
         // FOR TESTING PURPOSES:
         SmokeHazard* newHazard = [[SmokeHazard alloc] init];
-        newHazard.position = CGPointMake(CGRectGetMidX(self.frame),
+        newHazard.position = CGPointMake(CGRectGetMidX(self.frame)+100,
                                          CGRectGetMidY(self.frame));
         [_smokeHazards addObject:newHazard];
         [self addChild:newHazard];
         
-        
+        Platform* testPlatform = [[Platform alloc] init];
+        testPlatform.position = CGPointMake(CGRectGetMidX(self.frame),
+                                            CGRectGetMidY(self.frame)+(25+50*1));
+        [_platforms addObject:testPlatform];
+        [self addChild:testPlatform];
         
         // Create the main character and place it in the center of the screen
         mainCharacter = [[Character alloc] init];
@@ -218,7 +224,7 @@
 - (void) mainCharacterGravity
 {
     if (mainCharacter.position.y > CGRectGetMidY(self.frame)) {
-        mainCharacter.yVelocity -= .05;
+        mainCharacter.yVelocity -= .04;
     }
     else if (mainCharacter.position.y < CGRectGetMidY(self.frame)) {
         mainCharacter.yVelocity = 0;
