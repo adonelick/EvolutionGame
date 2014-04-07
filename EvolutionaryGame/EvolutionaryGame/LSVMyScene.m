@@ -27,6 +27,9 @@
     self = [super initWithSize:size];
     if (self) {
         
+        self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
+        
+        
         _textureTimer = [NSTimer scheduledTimerWithTimeInterval:UPDATE_TIME
                                                          target:self
                                                        selector:@selector(updateTextures)
@@ -43,12 +46,18 @@
         mainCharacter.position = CGPointMake(CGRectGetMidX(self.frame),
                                              CGRectGetMidY(self.frame));
         [self addChild:mainCharacter];
+        mainCharacter.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:CHARACTER_HALF_HEIGHT];
+        mainCharacter.physicsBody.dynamic = YES;
+        mainCharacter.physicsBody.affectedByGravity = YES;
+        mainCharacter.physicsBody.linearDamping = 1;
+        mainCharacter.physicsBody.angularDamping = 1;
+        mainCharacter.physicsBody.mass = 0.1;
         
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
         // FOR TESTING PURPOSES:
         
-        _ground = mainCharacter.position.y - 37;
+        _ground = mainCharacter.position.y - CHARACTER_HALF_HEIGHT;
         
         SmokeHazard* newHazard = [[SmokeHazard alloc] init];
         newHazard.position = CGPointMake(CGRectGetMidX(self.frame)+100,
@@ -183,6 +192,15 @@
         [_platforms addObject:testPlatform18];
         [self addChild:testPlatform18];
         
+        
+        for (Platform* p in _platforms) {
+            p.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(50, 50)];
+            p.physicsBody.dynamic = NO;
+            p.physicsBody.affectedByGravity = NO;
+            p.physicsBody.linearDamping = 1000;
+        }
+        
+        
         SmallEnemy* newEnemy = [[SmallEnemy alloc] init];
         newEnemy.position = CGPointMake(CGRectGetMidX(self.frame),
                                         CGRectGetMidY(self.frame));
@@ -230,8 +248,6 @@
     [self updateMainCharacter];
     [self updateProjectiles];
     [self updateEnemies];
-    [self mainCharacterGravity];
-    [self updateGround];
 
 }
 
@@ -314,6 +330,11 @@
 - (void) updateMainCharacter
 {
     [mainCharacter move];
+    
+    // Because collisions can cause the character to rotate
+    // about its center, we need to fight this rotation.
+    SKAction* rotateAction = [SKAction rotateByAngle:-0.2*mainCharacter.zRotation duration:0.1];
+    [mainCharacter runAction:rotateAction];
 }
 
 - (void) updateProjectiles
@@ -326,7 +347,7 @@
         
         // Check if the projectile has gone out of bounds. If so,
         // slate it for deletion.
-        if (p.position.x > self.frame.size.width || p.position.x < 0) {
+        if (p.position.x > self.frame.size.width - 20 || p.position.x < 20) {
             [vanishedProjectiles addObject:p];
         }
     }
@@ -340,7 +361,7 @@
         
         // Check if the projectile has gone out of bounds. If so,
         // slate it for deletion.
-        if (p.position.x > self.frame.size.width || p.position.x < 0) {
+        if (p.position.x > self.frame.size.width - 20 || p.position.x < 20) {
             [vanishedProjectiles addObject:p];
         }
     }
@@ -358,7 +379,8 @@
             // Fire a projectile at random time intervals to try
             // to kill the main player.
             if (arc4random() < 50000000) {
-                [self addProjectile: [e fireProjectileAt:mainCharacter.position] toArray:_enemyProjectiles];
+                Projectile* newProjectile = [e fireProjectileAt:mainCharacter.position];
+                [self addProjectile: newProjectile toArray:_enemyProjectiles];
         }
     }
 }
@@ -379,43 +401,14 @@
     // A projectile can only be added if it is not nil.
     // If it is, do nothing.
     if (projectile) {
-        
+        projectile.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:10];
+        projectile.physicsBody.dynamic = YES;
+        projectile.physicsBody.allowsRotation = NO;
+        projectile.physicsBody.affectedByGravity = NO;
+        projectile.physicsBody.mass = 0.01;
         [array addObject:projectile];
         [self addChild:projectile];
         
-    }
-}
-
-- (void) mainCharacterGravity
-{
-    if (mainCharacter.position.y > _ground + 37) {
-        mainCharacter.yVelocity -= .04;
-    }
-    else if (mainCharacter.position.y < _ground + 37) {
-        mainCharacter.yVelocity = 0;
-        mainCharacter.position = CGPointMake(mainCharacter.position.x,
-                                             (_ground + 37));
-        mainCharacter.airborne = NO;
-    }
-}
-
-
-- (void) updateGround
-{
-    Platform* ground;
-    int smallestDist = INT_MAX;
-    for (Platform* p in _platforms) {
-        int xDist = mainCharacter.position.x - p.position.x;
-        int yDist = mainCharacter.position.y - p.position.y;
-        
-        if ((-54 <= xDist) && (xDist <= 54) && (yDist >= 62)) {
-            if (yDist <= smallestDist) {
-                ground = p;
-            }
-            NSLog(@"%D", yDist);
-        }
-        _ground = ground.position.y + 25;
-//        NSLog(@"%D", _ground);
     }
 }
 

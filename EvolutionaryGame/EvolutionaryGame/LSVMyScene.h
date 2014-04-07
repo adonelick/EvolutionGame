@@ -44,8 +44,6 @@
 - (void) updateMainCharacter;
 - (void) updateProjectiles;
 - (void) updateEnemies;
-- (void) mainCharacterGravity;
-- (void) updateGround;
 
 
 - (void) cleanUp:(NSMutableArray*) objects byDeleting:(NSMutableArray*) delObjects;

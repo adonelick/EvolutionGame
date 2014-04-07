@@ -27,7 +27,7 @@
 
 // How close (in pixels) must a projectile come to a creature
 // to cause damage?
-#define KILL_DISTANCE 30
+#define KILL_DISTANCE 50
 
 // How close (in pixels) must the main character come to
 // the smoke hazard to be injured?
@@ -39,7 +39,18 @@
 #define MAX_ENEMIES 5
 
 // Amount of rotation (in radians) for the enemy's hover
+
 #define DELTA_THETA 0.1
+
+
+#define CHARACTER_HEIGHT 74
+
+#define CHARACTER_HALF_HEIGHT 37
+
+#define CHARACTER_WIDTH 58
+
+#define CHARACTER_HALF_WIDTH 29
+
 
 
 // Global variable that contains the main character that

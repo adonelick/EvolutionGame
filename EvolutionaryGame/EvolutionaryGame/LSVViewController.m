@@ -87,9 +87,11 @@
 - (IBAction)jump:(id)sender
 {
     if (mainCharacter.airborne == NO) {
-    mainCharacter.yVelocity = 1;
+    mainCharacter.yVelocity = 0;
     mainCharacter.airborne = YES;
     }
+    
+    [mainCharacter.physicsBody applyImpulse:CGVectorMake(0, 50)];
 }
 
 
