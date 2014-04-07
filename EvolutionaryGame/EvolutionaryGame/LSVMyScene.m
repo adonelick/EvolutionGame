@@ -233,6 +233,7 @@
     [self mainCharacterGravity];
     [self updateGround];
 
+
 }
 
 
@@ -412,10 +413,9 @@
             if (yDist <= smallestDist) {
                 ground = p;
             }
-            NSLog(@"%D", yDist);
         }
         _ground = ground.position.y + 25;
-//        NSLog(@"%D", _ground);
+        NSLog(@"%D", _ground);
     }
 }
 
