@@ -230,6 +230,7 @@
     [self updateMainCharacter];
     [self updateProjectiles];
     [self updateEnemies];
+    [self updateGround];
     [self mainCharacterGravity];
     [self updateGround];
 
@@ -363,20 +364,6 @@
     }
 }
 
-- (void) mainCharacterGravity
-{
-    if (mainCharacter.position.y > _ground + 37) {
-        mainCharacter.yVelocity -= .04;
-    }
-    else if (mainCharacter.position.y < _ground + 37) {
-        mainCharacter.yVelocity = 0;
-        mainCharacter.position = CGPointMake(mainCharacter.position.x,
-                                             (_ground + 37));
-        mainCharacter.airborne = NO;
-    }
-}
-
-
 
 - (void) cleanUp:(NSMutableArray *)objects byDeleting:(NSMutableArray *)delObjects
 {
@@ -400,6 +387,20 @@
     }
 }
 
+- (void) mainCharacterGravity
+{
+    if (mainCharacter.position.y > _ground + 37) {
+        mainCharacter.yVelocity -= .04;
+    }
+    else if (mainCharacter.position.y < _ground + 37) {
+        mainCharacter.yVelocity = 0;
+        mainCharacter.position = CGPointMake(mainCharacter.position.x,
+                                             (_ground + 37));
+        mainCharacter.airborne = NO;
+    }
+}
+
+
 - (void) updateGround
 {
     Platform* ground;
@@ -412,9 +413,10 @@
             if (yDist <= smallestDist) {
                 ground = p;
             }
+            NSLog(@"%D", yDist);
         }
         _ground = ground.position.y + 25;
-        NSLog(@"%D", _ground);
+//        NSLog(@"%D", _ground);
     }
 }
 
