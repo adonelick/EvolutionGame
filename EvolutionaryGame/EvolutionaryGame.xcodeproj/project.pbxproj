@@ -65,8 +65,8 @@
 		93B6495518EE27CA005B412E /* FirePlatformTopRight.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B6494A18EE27CA005B412E /* FirePlatformTopRight.gif */; };
 		93B6495618EE27CA005B412E /* FirePlatformTopRightBottom.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B6494B18EE27CA005B412E /* FirePlatformTopRightBottom.gif */; };
 		93B6495718EE27CA005B412E /* FirePlatformTopRightLeft.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B6494C18EE27CA005B412E /* FirePlatformTopRightLeft.gif */; };
-		93B6496118EE6CEC005B412E /* SmokeScreen1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B6496018EE6CEC005B412E /* SmokeScreen1.gif */; };
-		93B6496318EE6CF1005B412E /* SmokeScreen2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B6496218EE6CF1005B412E /* SmokeScreen2.gif */; };
+		93B649F218F242B9005B412E /* SmokeScreen1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B649F118F242B9005B412E /* SmokeScreen1.gif */; };
+		93B649F418F242BF005B412E /* SmokeScreen2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B649F318F242BF005B412E /* SmokeScreen2.gif */; };
 		93E0473F18E91C97004D5433 /* SmallEnemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E0473E18E91C97004D5433 /* SmallEnemy.m */; };
 		93E0474518EA66EB004D5433 /* SmallEnemyProjectile.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E0474418EA66EB004D5433 /* SmallEnemyProjectile.m */; };
 		93E0474818EA6925004D5433 /* SmallEnemyWeapon.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E0474718EA6925004D5433 /* SmallEnemyWeapon.m */; };
@@ -156,8 +156,8 @@
 		93B6494A18EE27CA005B412E /* FirePlatformTopRight.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformTopRight.gif; path = "../../../Downloads/documents-export-2014-04-03/FirePlatformTopRight.gif"; sourceTree = "<group>"; };
 		93B6494B18EE27CA005B412E /* FirePlatformTopRightBottom.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformTopRightBottom.gif; path = "../../../Downloads/documents-export-2014-04-03/FirePlatformTopRightBottom.gif"; sourceTree = "<group>"; };
 		93B6494C18EE27CA005B412E /* FirePlatformTopRightLeft.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformTopRightLeft.gif; path = "../../../Downloads/documents-export-2014-04-03/FirePlatformTopRightLeft.gif"; sourceTree = "<group>"; };
-		93B6496018EE6CEC005B412E /* SmokeScreen1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = SmokeScreen1.gif; path = ../../../Downloads/SmokeScreen1.gif; sourceTree = "<group>"; };
-		93B6496218EE6CF1005B412E /* SmokeScreen2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = SmokeScreen2.gif; path = ../../../Downloads/SmokeScreen2.gif; sourceTree = "<group>"; };
+		93B649F118F242B9005B412E /* SmokeScreen1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = SmokeScreen1.gif; path = ../../../Downloads/SmokeScreen1.gif; sourceTree = "<group>"; };
+		93B649F318F242BF005B412E /* SmokeScreen2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = SmokeScreen2.gif; path = ../../../Downloads/SmokeScreen2.gif; sourceTree = "<group>"; };
 		93E0473D18E91C97004D5433 /* SmallEnemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmallEnemy.h; sourceTree = "<group>"; };
 		93E0473E18E91C97004D5433 /* SmallEnemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmallEnemy.m; sourceTree = "<group>"; };
 		93E0474318EA66EB004D5433 /* SmallEnemyProjectile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SmallEnemyProjectile.h; path = Objects/SmallEnemyProjectile.h; sourceTree = "<group>"; };
@@ -312,8 +312,8 @@
 		9342719A18C1B3CF006E9365 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				93B6496018EE6CEC005B412E /* SmokeScreen1.gif */,
-				93B6496218EE6CF1005B412E /* SmokeScreen2.gif */,
+				93B649F118F242B9005B412E /* SmokeScreen1.gif */,
+				93B649F318F242BF005B412E /* SmokeScreen2.gif */,
 				934271D918C2827A006E9365 /* Objects */,
 				934271CC18C1C503006E9365 /* Characters */,
 				934271CB18C1C4EF006E9365 /* Controls */,
@@ -462,7 +462,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93B6496118EE6CEC005B412E /* SmokeScreen1.gif in Resources */,
+				93B649F218F242B9005B412E /* SmokeScreen1.gif in Resources */,
 				93B6495518EE27CA005B412E /* FirePlatformTopRight.gif in Resources */,
 				93B6495718EE27CA005B412E /* FirePlatformTopRightLeft.gif in Resources */,
 				934271C418C1C4DD006E9365 /* PlayerCharR1.gif in Resources */,
@@ -499,7 +499,7 @@
 				93B6494118EE27BC005B412E /* FirePlatformCenter.gif in Resources */,
 				934271B618C1C274006E9365 /* Arrow_Right.png in Resources */,
 				934271D818C27EA1006E9365 /* PlayerProjectileRight.gif in Resources */,
-				93B6496318EE6CF1005B412E /* SmokeScreen2.gif in Resources */,
+				93B649F418F242BF005B412E /* SmokeScreen2.gif in Resources */,
 				9333FD4B18B3E521006B11F5 /* Main.storyboard in Resources */,
 				934271D418C27E94006E9365 /* FireEnemySmallR2.gif in Resources */,
 			);
