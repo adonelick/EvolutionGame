@@ -230,7 +230,6 @@
     [self updateMainCharacter];
     [self updateProjectiles];
     [self updateEnemies];
-    [self updateGround];
     [self mainCharacterGravity];
     [self updateGround];
 
