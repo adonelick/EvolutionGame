@@ -51,6 +51,8 @@
 
 #define CHARACTER_HALF_WIDTH 29
 
+#define TILE_HALF_SIZE 25
+
 
 
 // Global variable that contains the main character that

@@ -53,7 +53,7 @@
         mainCharacter.physicsBody.angularDamping = 1;
         mainCharacter.physicsBody.mass = 0.1;
         
-        self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
+        self.backgroundColor = [SKColor colorWithRed:0.25 green:0.15 blue:0.15 alpha:1.0];
         
         // FOR TESTING PURPOSES:
         
@@ -80,7 +80,6 @@
         SmokeHazard* newHazard4 = [[SmokeHazard alloc] init];
         newHazard4.position = CGPointMake(CGRectGetMidX(self.frame)+150,
                                          _ground + 75);
-        
         [_smokeHazards addObject:newHazard4];
         [self addChild:newHazard4];
         
@@ -311,7 +310,7 @@
         int xdist = hazardPos.x - characterPos.x;
         int ydist = hazardPos.y - characterPos.y;
         
-        if ((-54 <= xdist) && (xdist <= 54) && (-62 <= ydist) && (ydist <= 62) && arc4random() < 150000000) {
+        if ((-(TILE_HALF_SIZE + CHARACTER_HALF_WIDTH) <= xdist) && (xdist <= (TILE_HALF_SIZE + CHARACTER_HALF_WIDTH)) && (-(TILE_HALF_SIZE + CHARACTER_HALF_HEIGHT) <= ydist) && (ydist <= (TILE_HALF_SIZE + CHARACTER_HALF_HEIGHT)) && arc4random() < 150000000) {
             [mainCharacter damageBy:h.damagePotential];
         }
     }
