@@ -12,6 +12,7 @@
 #import "ExtraMath.h"
 #import "SmallEnemy.h"
 #import "Platform.h"
+#import "MediumEnemy.h"
 
 #import "config.h"
 
@@ -205,6 +206,12 @@
                                         CGRectGetMidY(self.frame));
         [_enemies addObject:newEnemy];
         [self addChild:newEnemy];
+        
+        MediumEnemy* newEnemy1 = [[MediumEnemy alloc] init];
+        newEnemy1.position = CGPointMake(CGRectGetMidX(self.frame) - 75,
+                                         CGRectGetMidY(self.frame));
+        
+        [self addChild:newEnemy1];
         
 
 
