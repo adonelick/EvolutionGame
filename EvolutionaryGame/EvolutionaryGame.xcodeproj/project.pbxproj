@@ -29,7 +29,6 @@
 		934271A018C1BA01006E9365 /* Projectile.m in Sources */ = {isa = PBXBuildFile; fileRef = 9342719F18C1BA01006E9365 /* Projectile.m */; };
 		934271B518C1C274006E9365 /* Arrow_Left.png in Resources */ = {isa = PBXBuildFile; fileRef = 934271B318C1C274006E9365 /* Arrow_Left.png */; };
 		934271B618C1C274006E9365 /* Arrow_Right.png in Resources */ = {isa = PBXBuildFile; fileRef = 934271B418C1C274006E9365 /* Arrow_Right.png */; };
-		934271C118C1C4DD006E9365 /* FullFirePlayerChar1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 934271B718C1C4DD006E9365 /* FullFirePlayerChar1.gif */; };
 		934271C218C1C4DD006E9365 /* PlayerCharL1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 934271B818C1C4DD006E9365 /* PlayerCharL1.gif */; };
 		934271C318C1C4DD006E9365 /* PlayerCharL2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 934271B918C1C4DD006E9365 /* PlayerCharL2.gif */; };
 		934271C418C1C4DD006E9365 /* PlayerCharR1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 934271BA18C1C4DD006E9365 /* PlayerCharR1.gif */; };
@@ -75,6 +74,14 @@
 		93F3226218FB88CE007E4718 /* HealthPiece.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3225E18FB88CE007E4718 /* HealthPiece.gif */; };
 		93F3226318FB88CE007E4718 /* Magma1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3225F18FB88CE007E4718 /* Magma1.gif */; };
 		93F3226418FB88CE007E4718 /* Magma2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3226018FB88CE007E4718 /* Magma2.gif */; };
+		93F3226D18FB8CE0007E4718 /* FullFirePlayerCharL1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3226518FB8CE0007E4718 /* FullFirePlayerCharL1.gif */; };
+		93F3226E18FB8CE0007E4718 /* FullFirePlayerCharL2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3226618FB8CE0007E4718 /* FullFirePlayerCharL2.gif */; };
+		93F3226F18FB8CE0007E4718 /* FullFirePlayerCharR1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3226718FB8CE0007E4718 /* FullFirePlayerCharR1.gif */; };
+		93F3227018FB8CE0007E4718 /* FullFirePlayerCharR2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3226818FB8CE0007E4718 /* FullFirePlayerCharR2.gif */; };
+		93F3227118FB8CE0007E4718 /* FullFirePlayerCharWeaponL1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3226918FB8CE0007E4718 /* FullFirePlayerCharWeaponL1.gif */; };
+		93F3227218FB8CE0007E4718 /* FullFirePlayerCharWeaponL2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3226A18FB8CE0007E4718 /* FullFirePlayerCharWeaponL2.gif */; };
+		93F3227318FB8CE0007E4718 /* FullFirePlayerCharWeaponR1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3226B18FB8CE0007E4718 /* FullFirePlayerCharWeaponR1.gif */; };
+		93F3227418FB8CE0007E4718 /* FullFirePlayerCharWeaponR2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3226C18FB8CE0007E4718 /* FullFirePlayerCharWeaponR2.gif */; };
 		93FB25E818E910B0008193F3 /* SmokeHazard.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FB25E718E910B0008193F3 /* SmokeHazard.m */; };
 /* End PBXBuildFile section */
 
@@ -122,7 +129,6 @@
 		9342719F18C1BA01006E9365 /* Projectile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Projectile.m; path = Objects/Projectile.m; sourceTree = "<group>"; };
 		934271B318C1C274006E9365 /* Arrow_Left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Arrow_Left.png; path = Images/Arrow_Left.png; sourceTree = "<group>"; };
 		934271B418C1C274006E9365 /* Arrow_Right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Arrow_Right.png; path = Images/Arrow_Right.png; sourceTree = "<group>"; };
-		934271B718C1C4DD006E9365 /* FullFirePlayerChar1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FullFirePlayerChar1.gif; path = Images/FullFirePlayerChar1.gif; sourceTree = "<group>"; };
 		934271B818C1C4DD006E9365 /* PlayerCharL1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = PlayerCharL1.gif; path = Images/PlayerCharL1.gif; sourceTree = "<group>"; };
 		934271B918C1C4DD006E9365 /* PlayerCharL2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = PlayerCharL2.gif; path = Images/PlayerCharL2.gif; sourceTree = "<group>"; };
 		934271BA18C1C4DD006E9365 /* PlayerCharR1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = PlayerCharR1.gif; path = Images/PlayerCharR1.gif; sourceTree = "<group>"; };
@@ -174,6 +180,14 @@
 		93F3225E18FB88CE007E4718 /* HealthPiece.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = HealthPiece.gif; path = Images/HealthPiece.gif; sourceTree = "<group>"; };
 		93F3225F18FB88CE007E4718 /* Magma1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = Magma1.gif; path = Images/Magma1.gif; sourceTree = "<group>"; };
 		93F3226018FB88CE007E4718 /* Magma2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = Magma2.gif; path = Images/Magma2.gif; sourceTree = "<group>"; };
+		93F3226518FB8CE0007E4718 /* FullFirePlayerCharL1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FullFirePlayerCharL1.gif; path = Images/FullFirePlayerCharL1.gif; sourceTree = "<group>"; };
+		93F3226618FB8CE0007E4718 /* FullFirePlayerCharL2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FullFirePlayerCharL2.gif; path = Images/FullFirePlayerCharL2.gif; sourceTree = "<group>"; };
+		93F3226718FB8CE0007E4718 /* FullFirePlayerCharR1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FullFirePlayerCharR1.gif; path = Images/FullFirePlayerCharR1.gif; sourceTree = "<group>"; };
+		93F3226818FB8CE0007E4718 /* FullFirePlayerCharR2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FullFirePlayerCharR2.gif; path = Images/FullFirePlayerCharR2.gif; sourceTree = "<group>"; };
+		93F3226918FB8CE0007E4718 /* FullFirePlayerCharWeaponL1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FullFirePlayerCharWeaponL1.gif; path = Images/FullFirePlayerCharWeaponL1.gif; sourceTree = "<group>"; };
+		93F3226A18FB8CE0007E4718 /* FullFirePlayerCharWeaponL2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FullFirePlayerCharWeaponL2.gif; path = Images/FullFirePlayerCharWeaponL2.gif; sourceTree = "<group>"; };
+		93F3226B18FB8CE0007E4718 /* FullFirePlayerCharWeaponR1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FullFirePlayerCharWeaponR1.gif; path = Images/FullFirePlayerCharWeaponR1.gif; sourceTree = "<group>"; };
+		93F3226C18FB8CE0007E4718 /* FullFirePlayerCharWeaponR2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FullFirePlayerCharWeaponR2.gif; path = Images/FullFirePlayerCharWeaponR2.gif; sourceTree = "<group>"; };
 		93FB25E618E910B0008193F3 /* SmokeHazard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SmokeHazard.h; path = Objects/SmokeHazard.h; sourceTree = "<group>"; };
 		93FB25E718E910B0008193F3 /* SmokeHazard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SmokeHazard.m; path = Objects/SmokeHazard.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -342,6 +356,14 @@
 		934271CC18C1C503006E9365 /* Characters */ = {
 			isa = PBXGroup;
 			children = (
+				93F3226518FB8CE0007E4718 /* FullFirePlayerCharL1.gif */,
+				93F3226618FB8CE0007E4718 /* FullFirePlayerCharL2.gif */,
+				93F3226718FB8CE0007E4718 /* FullFirePlayerCharR1.gif */,
+				93F3226818FB8CE0007E4718 /* FullFirePlayerCharR2.gif */,
+				93F3226918FB8CE0007E4718 /* FullFirePlayerCharWeaponL1.gif */,
+				93F3226A18FB8CE0007E4718 /* FullFirePlayerCharWeaponL2.gif */,
+				93F3226B18FB8CE0007E4718 /* FullFirePlayerCharWeaponR1.gif */,
+				93F3226C18FB8CE0007E4718 /* FullFirePlayerCharWeaponR2.gif */,
 				934271CD18C27E94006E9365 /* FireEnemySmallL1.gif */,
 				934271CE18C27E94006E9365 /* FireEnemySmallL2.gif */,
 				934271CF18C27E94006E9365 /* FireEnemySmallR1.gif */,
@@ -354,7 +376,6 @@
 				934271BD18C1C4DD006E9365 /* PlayerCharWeaponL2.gif */,
 				934271BE18C1C4DD006E9365 /* PlayerCharWeaponR1.gif */,
 				934271BF18C1C4DD006E9365 /* PlayerCharWeaponR2.gif */,
-				934271B718C1C4DD006E9365 /* FullFirePlayerChar1.gif */,
 			);
 			name = Characters;
 			sourceTree = "<group>";
@@ -488,10 +509,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93F3227418FB8CE0007E4718 /* FullFirePlayerCharWeaponR2.gif in Resources */,
 				93B649F618F248C2005B412E /* SmokeScreen1.gif in Resources */,
 				934271C418C1C4DD006E9365 /* PlayerCharR1.gif in Resources */,
+				93F3227318FB8CE0007E4718 /* FullFirePlayerCharWeaponR1.gif in Resources */,
 				93B64A1318F24BAA005B412E /* FirePlatformRight.gif in Resources */,
 				935C9AEE18E91B53007B57F9 /* FireEnemySmallProjectileL.gif in Resources */,
+				93F3227018FB8CE0007E4718 /* FullFirePlayerCharR2.gif in Resources */,
 				934271C518C1C4DD006E9365 /* PlayerCharR2.gif in Resources */,
 				934271C718C1C4DD006E9365 /* PlayerCharWeaponL2.gif in Resources */,
 				93B64A1B18F24BAA005B412E /* FirePlatformTopRightLeft.gif in Resources */,
@@ -504,7 +528,6 @@
 				935C9AF018E91B58007B57F9 /* FireEnemySmallProjectileR.gif in Resources */,
 				93F3226118FB88CE007E4718 /* Bubble.gif in Resources */,
 				934271B518C1C274006E9365 /* Arrow_Left.png in Resources */,
-				934271C118C1C4DD006E9365 /* FullFirePlayerChar1.gif in Resources */,
 				934271D318C27E94006E9365 /* FireEnemySmallR1.gif in Resources */,
 				93B64A1418F24BAA005B412E /* FirePlatformSinglePiece.gif in Resources */,
 				934271C218C1C4DD006E9365 /* PlayerCharL1.gif in Resources */,
@@ -512,6 +535,7 @@
 				93B64A1018F24BAA005B412E /* FirePlatformCenter.gif in Resources */,
 				93F3226318FB88CE007E4718 /* Magma1.gif in Resources */,
 				93B64A1718F24BAA005B412E /* FirePlatformTopLeft.gif in Resources */,
+				93F3226F18FB8CE0007E4718 /* FullFirePlayerCharR1.gif in Resources */,
 				93B64A1818F24BAA005B412E /* FirePlatformTopLeftBottom.gif in Resources */,
 				93B64A1218F24BAA005B412E /* FirePlatformLeftRight.gif in Resources */,
 				93B64A0F18F24BAA005B412E /* FirePlatformBottomRight.gif in Resources */,
@@ -523,13 +547,17 @@
 				9333FD5518B3E521006B11F5 /* Images.xcassets in Resources */,
 				93B64A1618F24BAA005B412E /* FirePlatformTopBottom.gif in Resources */,
 				934271B618C1C274006E9365 /* Arrow_Right.png in Resources */,
+				93F3226D18FB8CE0007E4718 /* FullFirePlayerCharL1.gif in Resources */,
 				93F3226418FB88CE007E4718 /* Magma2.gif in Resources */,
+				93F3227218FB8CE0007E4718 /* FullFirePlayerCharWeaponL2.gif in Resources */,
 				934271D818C27EA1006E9365 /* PlayerProjectileRight.gif in Resources */,
 				93F3226218FB88CE007E4718 /* HealthPiece.gif in Resources */,
 				93B64A1918F24BAA005B412E /* FirePlatformTopRight.gif in Resources */,
+				93F3227118FB8CE0007E4718 /* FullFirePlayerCharWeaponL1.gif in Resources */,
 				93B64A0C18F24BAA005B412E /* FirePlatformBottom.gif in Resources */,
 				93B64A1A18F24BAA005B412E /* FirePlatformTopRightBottom.gif in Resources */,
 				93B64A1118F24BAA005B412E /* FirePlatformLeft.gif in Resources */,
+				93F3226E18FB8CE0007E4718 /* FullFirePlayerCharL2.gif in Resources */,
 				93B649F818F248C7005B412E /* SmokeScreen2.gif in Resources */,
 				9333FD4B18B3E521006B11F5 /* Main.storyboard in Resources */,
 				934271D418C27E94006E9365 /* FireEnemySmallR2.gif in Resources */,
