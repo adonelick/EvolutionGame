@@ -71,6 +71,7 @@
 		93E0474518EA66EB004D5433 /* SmallEnemyProjectile.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E0474418EA66EB004D5433 /* SmallEnemyProjectile.m */; };
 		93E0474818EA6925004D5433 /* SmallEnemyWeapon.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E0474718EA6925004D5433 /* SmallEnemyWeapon.m */; };
 <<<<<<< HEAD
+<<<<<<< HEAD
 		93F3225C18FB841A007E4718 /* HealthBar.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3225B18FB841A007E4718 /* HealthBar.gif */; };
 		93F3226118FB88CE007E4718 /* Bubble.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3225D18FB88CE007E4718 /* Bubble.gif */; };
 		93F3226218FB88CE007E4718 /* HealthPiece.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3225E18FB88CE007E4718 /* HealthPiece.gif */; };
@@ -92,6 +93,8 @@
 		93F3228218FB9044007E4718 /* FireEnemyMediumR1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3227E18FB9044007E4718 /* FireEnemyMediumR1.gif */; };
 		93F3228318FB9044007E4718 /* FireEnemyMediumR2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3227F18FB9044007E4718 /* FireEnemyMediumR2.gif */; };
 		93F3228618FB9218007E4718 /* MediumEnemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F3228518FB9218007E4718 /* MediumEnemy.m */; };
+=======
+>>>>>>> FETCH_HEAD
 =======
 >>>>>>> FETCH_HEAD
 		93FB25E818E910B0008193F3 /* SmokeHazard.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FB25E718E910B0008193F3 /* SmokeHazard.m */; };
@@ -189,6 +192,7 @@
 		93E0474618EA6925004D5433 /* SmallEnemyWeapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SmallEnemyWeapon.h; path = Objects/SmallEnemyWeapon.h; sourceTree = "<group>"; };
 		93E0474718EA6925004D5433 /* SmallEnemyWeapon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SmallEnemyWeapon.m; path = Objects/SmallEnemyWeapon.m; sourceTree = "<group>"; };
 <<<<<<< HEAD
+<<<<<<< HEAD
 		93F3225B18FB841A007E4718 /* HealthBar.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = HealthBar.gif; path = Images/HealthBar.gif; sourceTree = "<group>"; };
 		93F3225D18FB88CE007E4718 /* Bubble.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = Bubble.gif; path = Images/Bubble.gif; sourceTree = "<group>"; };
 		93F3225E18FB88CE007E4718 /* HealthPiece.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = HealthPiece.gif; path = Images/HealthPiece.gif; sourceTree = "<group>"; };
@@ -211,6 +215,8 @@
 		93F3227F18FB9044007E4718 /* FireEnemyMediumR2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FireEnemyMediumR2.gif; path = Images/FireEnemyMediumR2.gif; sourceTree = "<group>"; };
 		93F3228418FB9218007E4718 /* MediumEnemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MediumEnemy.h; path = Creatures/MediumEnemy.h; sourceTree = "<group>"; };
 		93F3228518FB9218007E4718 /* MediumEnemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MediumEnemy.m; path = Creatures/MediumEnemy.m; sourceTree = "<group>"; };
+=======
+>>>>>>> FETCH_HEAD
 =======
 >>>>>>> FETCH_HEAD
 		93FB25E618E910B0008193F3 /* SmokeHazard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SmokeHazard.h; path = Objects/SmokeHazard.h; sourceTree = "<group>"; };
@@ -385,6 +391,7 @@
 			isa = PBXGroup;
 			children = (
 <<<<<<< HEAD
+<<<<<<< HEAD
 				93F3226518FB8CE0007E4718 /* FullFirePlayerCharL1.gif */,
 				93F3226618FB8CE0007E4718 /* FullFirePlayerCharL2.gif */,
 				93F3226718FB8CE0007E4718 /* FullFirePlayerCharR1.gif */,
@@ -397,6 +404,8 @@
 				93F3227D18FB9044007E4718 /* FireEnemyMediumL2.gif */,
 				93F3227E18FB9044007E4718 /* FireEnemyMediumR1.gif */,
 				93F3227F18FB9044007E4718 /* FireEnemyMediumR2.gif */,
+=======
+>>>>>>> FETCH_HEAD
 =======
 >>>>>>> FETCH_HEAD
 				934271CD18C27E94006E9365 /* FireEnemySmallL1.gif */,
@@ -532,9 +541,12 @@
 			buildActionMask = 2147483647;
 			files = (
 <<<<<<< HEAD
+<<<<<<< HEAD
 				93F3227418FB8CE0007E4718 /* FullFirePlayerCharWeaponR2.gif in Resources */,
 				93F3227A18FB8DBC007E4718 /* PlayerProjectileWaterLeft.gif in Resources */,
 				93F3228318FB9044007E4718 /* FireEnemyMediumR2.gif in Resources */,
+=======
+>>>>>>> FETCH_HEAD
 =======
 >>>>>>> FETCH_HEAD
 				93B649F618F248C2005B412E /* SmokeScreen1.gif in Resources */,
@@ -570,10 +582,13 @@
 				93B64A1618F24BAA005B412E /* FirePlatformTopBottom.gif in Resources */,
 				934271B618C1C274006E9365 /* Arrow_Right.png in Resources */,
 <<<<<<< HEAD
+<<<<<<< HEAD
 				93F3226D18FB8CE0007E4718 /* FullFirePlayerCharL1.gif in Resources */,
 				93F3228118FB9044007E4718 /* FireEnemyMediumL2.gif in Resources */,
 				93F3226418FB88CE007E4718 /* Magma2.gif in Resources */,
 				93F3227218FB8CE0007E4718 /* FullFirePlayerCharWeaponL2.gif in Resources */,
+=======
+>>>>>>> FETCH_HEAD
 =======
 >>>>>>> FETCH_HEAD
 				934271D818C27EA1006E9365 /* PlayerProjectileRight.gif in Resources */,
@@ -582,9 +597,12 @@
 				93B64A1A18F24BAA005B412E /* FirePlatformTopRightBottom.gif in Resources */,
 				93B64A1118F24BAA005B412E /* FirePlatformLeft.gif in Resources */,
 <<<<<<< HEAD
+<<<<<<< HEAD
 				93F3228218FB9044007E4718 /* FireEnemyMediumR1.gif in Resources */,
 				93F3226E18FB8CE0007E4718 /* FullFirePlayerCharL2.gif in Resources */,
 				93F3228018FB9044007E4718 /* FireEnemyMediumL1.gif in Resources */,
+=======
+>>>>>>> FETCH_HEAD
 =======
 >>>>>>> FETCH_HEAD
 				93B649F818F248C7005B412E /* SmokeScreen2.gif in Resources */,
