@@ -70,6 +70,7 @@
 		93E0473F18E91C97004D5433 /* SmallEnemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E0473E18E91C97004D5433 /* SmallEnemy.m */; };
 		93E0474518EA66EB004D5433 /* SmallEnemyProjectile.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E0474418EA66EB004D5433 /* SmallEnemyProjectile.m */; };
 		93E0474818EA6925004D5433 /* SmallEnemyWeapon.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E0474718EA6925004D5433 /* SmallEnemyWeapon.m */; };
+		93F3225C18FB841A007E4718 /* HealthBar.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3225B18FB841A007E4718 /* HealthBar.gif */; };
 		93FB25E818E910B0008193F3 /* SmokeHazard.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FB25E718E910B0008193F3 /* SmokeHazard.m */; };
 /* End PBXBuildFile section */
 
@@ -164,6 +165,7 @@
 		93E0474418EA66EB004D5433 /* SmallEnemyProjectile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SmallEnemyProjectile.m; path = Objects/SmallEnemyProjectile.m; sourceTree = "<group>"; };
 		93E0474618EA6925004D5433 /* SmallEnemyWeapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SmallEnemyWeapon.h; path = Objects/SmallEnemyWeapon.h; sourceTree = "<group>"; };
 		93E0474718EA6925004D5433 /* SmallEnemyWeapon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SmallEnemyWeapon.m; path = Objects/SmallEnemyWeapon.m; sourceTree = "<group>"; };
+		93F3225B18FB841A007E4718 /* HealthBar.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = HealthBar.gif; path = Images/HealthBar.gif; sourceTree = "<group>"; };
 		93FB25E618E910B0008193F3 /* SmokeHazard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SmokeHazard.h; path = Objects/SmokeHazard.h; sourceTree = "<group>"; };
 		93FB25E718E910B0008193F3 /* SmokeHazard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SmokeHazard.m; path = Objects/SmokeHazard.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -312,8 +314,7 @@
 		9342719A18C1B3CF006E9365 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				93B649F518F248C2005B412E /* SmokeScreen1.gif */,
-				93B649F718F248C7005B412E /* SmokeScreen2.gif */,
+				93F3225A18FB82F0007E4718 /* Other */,
 				934271D918C2827A006E9365 /* Objects */,
 				934271CC18C1C503006E9365 /* Characters */,
 				934271CB18C1C4EF006E9365 /* Controls */,
@@ -383,6 +384,16 @@
 				93B64A0B18F24BAA005B412E /* FirePlatformTopRightLeft.gif */,
 			);
 			name = Platforms;
+			sourceTree = "<group>";
+		};
+		93F3225A18FB82F0007E4718 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				93F3225B18FB841A007E4718 /* HealthBar.gif */,
+				93B649F518F248C2005B412E /* SmokeScreen1.gif */,
+				93B649F718F248C7005B412E /* SmokeScreen2.gif */,
+			);
+			name = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -473,6 +484,7 @@
 				934271C718C1C4DD006E9365 /* PlayerCharWeaponL2.gif in Resources */,
 				93B64A1B18F24BAA005B412E /* FirePlatformTopRightLeft.gif in Resources */,
 				934271D218C27E94006E9365 /* FireEnemySmallL2.gif in Resources */,
+				93F3225C18FB841A007E4718 /* HealthBar.gif in Resources */,
 				934271C818C1C4DD006E9365 /* PlayerCharWeaponR1.gif in Resources */,
 				93B64A0E18F24BAA005B412E /* FirePlatformBottomLeftRight.gif in Resources */,
 				93B64A0D18F24BAA005B412E /* FirePlatformBottomLeft.gif in Resources */,
