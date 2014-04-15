@@ -88,7 +88,7 @@
 - (IBAction)jump:(id)sender
 {
 
-    if((((int)(mainCharacter.position.y-CHARACTER_HALF_HEIGHT)) <= _scene.ground) && (mainCharacter.airborne == NO)) {
+    if((((int)(mainCharacter.position.y-CHARACTER_HALF_HEIGHT)) <= 550) && (mainCharacter.airborne == NO)) {
         mainCharacter.airborne = YES;
         [mainCharacter.physicsBody applyImpulse:CGVectorMake(0, 50)];
     }
