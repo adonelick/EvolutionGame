@@ -67,7 +67,7 @@
 {
     if(self.health > 0){
         self.health -= damage;
-        if(self.health < 0){
+        if(self.health <= 0){
             self.health = 0;
         }
     }

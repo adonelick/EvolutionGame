@@ -9,6 +9,7 @@
 #import "LSVViewController.h"
 #import "LSVMyScene.h"
 #import "config.h"
+#import "LSVHealthView.h"
 
 
 @implementation LSVViewController
@@ -28,6 +29,20 @@
     
     // Present the scene.
     [skView presentScene:_scene];
+    
+    // Add in the health bar
+    LSVHealthView *health = [[LSVHealthView alloc] init];
+    health.frame = CGRectMake(30,90.3,250,8);
+    health.layer.anchorPoint = CGPointMake(.5,1.0);
+    [self.view addSubview:health];
+    
+    UIImageView *healthbar = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HealthBar.gif"]];
+    healthbar.frame = CGRectMake(20,99,260,35);
+    healthbar.layer.anchorPoint = CGPointMake(.5,1.0);
+    [self.view addSubview:healthbar];
+    
+    _scene.health = health;
+    
 }
 
 - (BOOL)shouldAutorotate

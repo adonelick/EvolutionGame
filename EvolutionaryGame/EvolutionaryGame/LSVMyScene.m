@@ -7,14 +7,7 @@
 //
 
 #import "LSVMyScene.h"
-#import "Character.h"
-#import "SmokeHazard.h"
-#import "ExtraMath.h"
-#import "SmallEnemy.h"
-#import "Platform.h"
-#import "MediumEnemy.h"
 
-#import "config.h"
 
 // DELETE LATER: numbers:
 // platform/hazard size: 50x50
@@ -55,6 +48,11 @@
         mainCharacter.physicsBody.mass = 0.1;
         
         self.backgroundColor = [SKColor colorWithRed:0.25 green:0.15 blue:0.15 alpha:1.0];
+        
+        
+        
+        
+        
         
         // FOR TESTING PURPOSES:
         
@@ -254,6 +252,9 @@
     [self updateMainCharacter];
     [self updateProjectiles];
     [self updateEnemies];
+    
+    // Update the health bar
+    _health.frame = CGRectMake(30,86,(mainCharacter.health)*(0.25),8);
 
 }
 
@@ -300,9 +301,13 @@
         double distance = [ExtraMath distanceBetween:projectPos and:characterPos];
         
         if (distance <= KILL_DISTANCE) {
-            
+            if (mainCharacter.health - p.damage <= 0) {
+                mainCharacter.health = 0;
+                [usedProjectiles addObject:p];
+            } else {
             [mainCharacter damageBy:p.damage];
             [usedProjectiles addObject:p];
+            }
         }
         
     }

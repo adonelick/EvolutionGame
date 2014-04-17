@@ -8,6 +8,15 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "Projectile.h"
+#import "Character.h"
+#import "SmokeHazard.h"
+#import "ExtraMath.h"
+#import "SmallEnemy.h"
+#import "Platform.h"
+#import "MediumEnemy.h"
+#import "LSVHealthView.h"
+#import "config.h"
+
 
 @interface LSVMyScene : SKScene
 
@@ -44,6 +53,9 @@
 - (void) updateMainCharacter;
 - (void) updateProjectiles;
 - (void) updateEnemies;
+
+// Is updated depending on the main character's health
+@property LSVHealthView* health;
 
 
 - (void) cleanUp:(NSMutableArray*) objects byDeleting:(NSMutableArray*) delObjects;
