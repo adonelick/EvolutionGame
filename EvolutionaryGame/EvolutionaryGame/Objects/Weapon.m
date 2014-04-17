@@ -17,6 +17,13 @@
     p.velocity = 0.3;
     p.damage = 50;
     
+    p.fireDamage = self.fireDamage;
+    p.iceDamage = self.iceDamage;
+    p.lightningDamage = self.lightningDamage;
+    p.earthDamage = self.earthDamage;
+    p.waterDamage = self.waterDamage;
+    
+    
     // Set properties of the projectile here, based on
     // the current evolution of the weapon
     

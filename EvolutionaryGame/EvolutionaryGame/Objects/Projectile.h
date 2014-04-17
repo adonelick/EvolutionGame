@@ -20,8 +20,16 @@
 // Current heading of the projectile (in radians)
 @property double heading;
 
-// Damage done by the projectile
+// Damage done by the projectile (for enemies)
 @property int damage;
+
+// Damage stats (for player)
+@property int fireDamage;
+@property int iceDamage;
+@property int lightningDamage;
+@property int earthDamage;
+@property int waterDamage;
+
 
 - (id) initWithDirection:(double) heading;
 

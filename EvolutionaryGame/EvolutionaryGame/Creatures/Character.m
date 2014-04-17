@@ -38,9 +38,30 @@
         
         self.weapon = [[Weapon alloc] init];
         
+        // Initialize all stats
+        self.weapon.fireDamage = 50;
+        self.weapon.iceDamage = 50;
+        self.weapon.lightningDamage = 50;
+        self.weapon.earthDamage = 50;
+        self.weapon.waterDamage = 50;
+
+        self.fireDef = 1.0;
+        self.iceDef = 1.0;
+        self.lightningDef = 1.0;
+        self.earthDef = 1.0;
+        self.waterDef = 1.0;
+        
+        self.jumpHeight = 1.0;
+        self.strength = 1.0;
+        self.runSpeed = 1.0;
+        self.climb = 1.0;
+        self.breath = 1.0;
+        
+        
     }
     
     return self;
+    
 }
 
 - (void) updateTexture

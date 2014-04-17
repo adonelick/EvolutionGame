@@ -25,6 +25,12 @@
         
         self.damage = 0;
         
+        self.fireDamage = 0;
+        self.iceDamage = 0;
+        self.lightningDamage = 0;
+        self.earthDamage = 0;
+        self.waterDamage = 0;
+        
     }
     
     return self;

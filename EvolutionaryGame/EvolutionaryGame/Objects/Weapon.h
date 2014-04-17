@@ -11,6 +11,14 @@
 
 @interface Weapon : SKSpriteNode
 
+// Damage stats (for player)
+@property int fireDamage;
+@property int iceDamage;
+@property int lightningDamage;
+@property int earthDamage;
+@property int waterDamage;
+
+
 - (id) fireProjectile:(double) heading;
 
 @end
