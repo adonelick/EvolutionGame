@@ -70,7 +70,7 @@
 
 - (void) move
 {
-    if (self.movingRight) {
+    if (self.facingRight) {
         self.xVelocity = 1.5;
     } else {
         self.xVelocity = -1.5;

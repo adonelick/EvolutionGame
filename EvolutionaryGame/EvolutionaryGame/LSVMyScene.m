@@ -341,9 +341,9 @@
                 int xDist = enemyPos.x - platformPos.x;
                 if (abs(yDist) < (MEDIUM_ENEMY_HALF_HEIGHT + TILE_HALF_SIZE - 2)) {
                     if (xDist >= 0 && xDist <= (MEDIUM_ENEMY_HALF_WIDTH + TILE_HALF_SIZE)) {
-                        e.movingRight = YES;
+                        e.facingRight = YES;
                     } else if (xDist <= 0 && (-1*xDist) <= (MEDIUM_ENEMY_HALF_WIDTH + TILE_HALF_SIZE)) {
-                        e.movingRight = NO;
+                        e.facingRight = NO;
                     }
                 }
             }

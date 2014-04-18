@@ -17,9 +17,6 @@
     p.velocity = 0.3;
     p.damage = 250;
     
-    // Set properties of the projectile here, based on
-    // the current evolution of the weapon
-    
     return p;
 }
 

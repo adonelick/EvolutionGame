@@ -21,8 +21,6 @@
 @property Weapon* weapon;
 
 
-@property bool movingRight;
-
 - (id) fireProjectileAt: (CGPoint) point;
 
 - (void) moveToward:(CGPoint) point;
