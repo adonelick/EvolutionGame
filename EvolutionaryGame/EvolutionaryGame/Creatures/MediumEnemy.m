@@ -29,7 +29,7 @@
         
         self.type = 2;
         
-        self.movingRight = YES;
+        self.facingRight = YES;
     }
     
     return self;
