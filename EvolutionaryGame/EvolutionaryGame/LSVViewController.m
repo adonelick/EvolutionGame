@@ -105,7 +105,7 @@
 
     if((((int)(mainCharacter.position.y-CHARACTER_HALF_HEIGHT)) <= 550) && (mainCharacter.airborne == NO)) {
         mainCharacter.airborne = YES;
-        [mainCharacter.physicsBody applyImpulse:CGVectorMake(0, 50)];
+        [mainCharacter.physicsBody applyImpulse:CGVectorMake(0, 77*(mainCharacter.jumpHeight))];
     }
     mainCharacter.airborne = NO;
     

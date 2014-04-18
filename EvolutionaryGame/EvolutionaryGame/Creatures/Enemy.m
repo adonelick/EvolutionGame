@@ -42,51 +42,12 @@
 
 - (void) circleAround:(CGPoint)point withDistance:(int)distance
 {
-    SKAction* moveAction;
-    CGPoint newPoint;
-    int currentDist = (int)[ExtraMath distanceBetween:self.position and:point];
-    
-    if (!(abs(currentDist - distance) < 10)) {
-        // The enemy currently is not on the circle around the
-        // given point, so move to the start position
-        
-        double theta = atan2(self.position.x - point.x, self.position.y - point.y);
-        
-        newPoint = CGPointMake(point.x + (distance - 10) * cos(theta),
-                               point.y + (distance - 10) * sin(theta));
-        
-        int dx = newPoint.x - self.position.x;
-        int dy = newPoint.y - self.position.y;
-        
-        double speedX = 0.04;
-        double speedY = 0.04;
-        
-        self.xVelocity = speedX*dx;
-        self.yVelocity = speedY*dy;
-        
-        moveAction = [SKAction moveByX:speedX*dx y:speedY*dy duration:0.1];
-    } else {
-        // Continue circling the point
-        CGPoint tempPosition = CGPointMake(self.position.x - point.x, self.position.y - point.y);
-        
-        CGAffineTransform rotate = CGAffineTransformMakeRotation(DELTA_THETA);
-        
-        double theta = atan2(-(self.position.x - point.x), self.position.y - point.y);
-        self.xVelocity = cos(theta);
-        self.yVelocity = sin(theta);
-        
-        newPoint = CGPointApplyAffineTransform(tempPosition, rotate);
-        newPoint = CGPointMake(newPoint.x + point.x, newPoint.y + point.y);
-        moveAction = [SKAction moveTo:newPoint duration:0.05];
-    }
-    
-    
-    [self runAction:moveAction];
+    // Only implement for small enemies
 }
 
 - (void) move
 {
-    // Do nothing for an enemy
+    // Only implement for medium enemies
 }
 
 

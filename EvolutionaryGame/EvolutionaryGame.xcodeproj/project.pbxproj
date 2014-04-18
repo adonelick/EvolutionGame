@@ -49,6 +49,8 @@
 		935C9AEE18E91B53007B57F9 /* FireEnemySmallProjectileL.gif in Resources */ = {isa = PBXBuildFile; fileRef = 935C9AED18E91B53007B57F9 /* FireEnemySmallProjectileL.gif */; };
 		935C9AF018E91B58007B57F9 /* FireEnemySmallProjectileR.gif in Resources */ = {isa = PBXBuildFile; fileRef = 935C9AEF18E91B58007B57F9 /* FireEnemySmallProjectileR.gif */; };
 		93939EE51900655C00F38FA9 /* LSVHealthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93939EE41900655C00F38FA9 /* LSVHealthView.m */; };
+		93939EE81900E2A000F38FA9 /* MediumEnemyWeapon.m in Sources */ = {isa = PBXBuildFile; fileRef = 93939EE71900E2A000F38FA9 /* MediumEnemyWeapon.m */; };
+		93939EEB1900E31300F38FA9 /* MediumEnemyProjectile.m in Sources */ = {isa = PBXBuildFile; fileRef = 93939EEA1900E31300F38FA9 /* MediumEnemyProjectile.m */; };
 		93B649F618F248C2005B412E /* SmokeScreen1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B649F518F248C2005B412E /* SmokeScreen1.gif */; };
 		93B649F818F248C7005B412E /* SmokeScreen2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B649F718F248C7005B412E /* SmokeScreen2.gif */; };
 		93B64A0C18F24BAA005B412E /* FirePlatformBottom.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B649FC18F24BAA005B412E /* FirePlatformBottom.gif */; };
@@ -162,6 +164,10 @@
 		935C9AEF18E91B58007B57F9 /* FireEnemySmallProjectileR.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FireEnemySmallProjectileR.gif; path = Images/FireEnemySmallProjectileR.gif; sourceTree = "<group>"; };
 		93939EE31900655C00F38FA9 /* LSVHealthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSVHealthView.h; sourceTree = "<group>"; };
 		93939EE41900655C00F38FA9 /* LSVHealthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSVHealthView.m; sourceTree = "<group>"; };
+		93939EE61900E2A000F38FA9 /* MediumEnemyWeapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediumEnemyWeapon.h; sourceTree = "<group>"; };
+		93939EE71900E2A000F38FA9 /* MediumEnemyWeapon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediumEnemyWeapon.m; sourceTree = "<group>"; };
+		93939EE91900E31300F38FA9 /* MediumEnemyProjectile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediumEnemyProjectile.h; sourceTree = "<group>"; };
+		93939EEA1900E31300F38FA9 /* MediumEnemyProjectile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediumEnemyProjectile.m; sourceTree = "<group>"; };
 		93B649F518F248C2005B412E /* SmokeScreen1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = SmokeScreen1.gif; path = Images/SmokeScreen1.gif; sourceTree = "<group>"; };
 		93B649F718F248C7005B412E /* SmokeScreen2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = SmokeScreen2.gif; path = Images/SmokeScreen2.gif; sourceTree = "<group>"; };
 		93B649FC18F24BAA005B412E /* FirePlatformBottom.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformBottom.gif; path = Images/Platforms/FirePlatformBottom.gif; sourceTree = "<group>"; };
@@ -345,10 +351,14 @@
 				9342719F18C1BA01006E9365 /* Projectile.m */,
 				93E0474318EA66EB004D5433 /* SmallEnemyProjectile.h */,
 				93E0474418EA66EB004D5433 /* SmallEnemyProjectile.m */,
+				93939EE91900E31300F38FA9 /* MediumEnemyProjectile.h */,
+				93939EEA1900E31300F38FA9 /* MediumEnemyProjectile.m */,
 				9342719B18C1B9D6006E9365 /* Weapon.h */,
 				9342719C18C1B9D6006E9365 /* Weapon.m */,
 				93E0474618EA6925004D5433 /* SmallEnemyWeapon.h */,
 				93E0474718EA6925004D5433 /* SmallEnemyWeapon.m */,
+				93939EE61900E2A000F38FA9 /* MediumEnemyWeapon.h */,
+				93939EE71900E2A000F38FA9 /* MediumEnemyWeapon.m */,
 				9333FD7918B9313C006B11F5 /* Platform.h */,
 				9333FD7A18B9313C006B11F5 /* Platform.m */,
 				93FB25E618E910B0008193F3 /* SmokeHazard.h */,
@@ -632,10 +642,12 @@
 				9342719D18C1B9D6006E9365 /* Weapon.m in Sources */,
 				9333FD5118B3E521006B11F5 /* LSVMyScene.m in Sources */,
 				93E0473F18E91C97004D5433 /* SmallEnemy.m in Sources */,
+				93939EE81900E2A000F38FA9 /* MediumEnemyWeapon.m in Sources */,
 				934271E218C2EE0F006E9365 /* Creature.m in Sources */,
 				93F3228618FB9218007E4718 /* MediumEnemy.m in Sources */,
 				93FB25E818E910B0008193F3 /* SmokeHazard.m in Sources */,
 				9333FD7318B5A187006B11F5 /* Character.m in Sources */,
+				93939EEB1900E31300F38FA9 /* MediumEnemyProjectile.m in Sources */,
 				9333FD7B18B9313C006B11F5 /* Platform.m in Sources */,
 				9333FD4818B3E521006B11F5 /* LSVAppDelegate.m in Sources */,
 				934271E518C432FD006E9365 /* ExtraMath.m in Sources */,

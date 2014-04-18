@@ -44,7 +44,7 @@
         mainCharacter.physicsBody.dynamic = YES;
         mainCharacter.physicsBody.affectedByGravity = YES;
         mainCharacter.physicsBody.linearDamping = 1;
-        mainCharacter.physicsBody.angularDamping = 1;
+        mainCharacter.physicsBody.angularDamping = 10000;
         mainCharacter.physicsBody.mass = 0.1;
         
         self.backgroundColor = [SKColor colorWithRed:0.25 green:0.15 blue:0.15 alpha:1.0];
@@ -208,11 +208,15 @@
         MediumEnemy* newEnemy1 = [[MediumEnemy alloc] init];
         newEnemy1.position = CGPointMake(CGRectGetMidX(self.frame) - 175,
                                          CGRectGetMidY(self.frame) - 50);
-        
+        [_enemies addObject:newEnemy1];
         [self addChild:newEnemy1];
+        newEnemy1.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:MEDIUM_ENEMY_HALF_HEIGHT];
+        newEnemy1.physicsBody.dynamic = YES;
+        newEnemy1.physicsBody.affectedByGravity = YES;
+        newEnemy1.physicsBody.linearDamping = 1;
+        newEnemy1.physicsBody.angularDamping = 10000;
+        newEnemy1.physicsBody.mass = 0.1;
         
-
-
     }
     return self;
 }
@@ -326,6 +330,26 @@
             [mainCharacter damageBy:h.damagePotential];
         }
     }
+
+    
+    for (Platform* p in _platforms) {
+        for (Enemy* e in _enemies) {
+            if (e.type == 2) {
+                CGPoint enemyPos = e.position;
+                CGPoint platformPos = p.position;
+                int yDist = enemyPos.y - platformPos.y;
+                int xDist = enemyPos.x - platformPos.x;
+                if (abs(yDist) < (MEDIUM_ENEMY_HALF_HEIGHT + TILE_HALF_SIZE - 2)) {
+                    if (xDist >= 0 && xDist <= (MEDIUM_ENEMY_HALF_WIDTH + TILE_HALF_SIZE)) {
+                        e.movingRight = YES;
+                    } else if (xDist <= 0 && (-1*xDist) <= (MEDIUM_ENEMY_HALF_WIDTH + TILE_HALF_SIZE)) {
+                        e.movingRight = NO;
+                    }
+                }
+            }
+        }
+    }
+    
     
     // If enough damage has occured to kill the player,
     // end the game.
@@ -384,14 +408,14 @@
 - (void) updateEnemies
 {
     for (Enemy* e in _enemies) {
-            [e move];
-            [e circleAround:mainCharacter.position withDistance:100];
+        [e move];
+        [e circleAround:mainCharacter.position withDistance:100];
         
-            // Fire a projectile at random time intervals to try
-            // to kill the main player.
-            if (arc4random() < 50000000) {
-                Projectile* newProjectile = [e fireProjectileAt:mainCharacter.position];
-                [self addProjectile: newProjectile toArray:_enemyProjectiles];
+        // Fire a projectile at random time intervals to try
+        // to kill the main player.
+        if (arc4random() < 50000000) {
+            Projectile* newProjectile = [e fireProjectileAt:mainCharacter.position];
+            [self addProjectile: newProjectile toArray:_enemyProjectiles];
         }
     }
 }
@@ -412,11 +436,11 @@
     // A projectile can only be added if it is not nil.
     // If it is, do nothing.
     if (projectile) {
-        projectile.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:10];
-        projectile.physicsBody.dynamic = YES;
-        projectile.physicsBody.allowsRotation = NO;
-        projectile.physicsBody.affectedByGravity = NO;
-        projectile.physicsBody.mass = 0.01;
+//        projectile.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:10];
+//        projectile.physicsBody.dynamic = YES;
+//        projectile.physicsBody.allowsRotation = NO;
+//        projectile.physicsBody.affectedByGravity = NO;
+//        projectile.physicsBody.mass = 0.01;
         [array addObject:projectile];
         [self addChild:projectile];
         

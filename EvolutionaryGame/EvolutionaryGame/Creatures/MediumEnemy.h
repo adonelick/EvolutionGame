@@ -7,7 +7,7 @@
 //
 
 #import "Enemy.h"
-#import "SmallEnemyWeapon.h"
+#import "MediumEnemyWeapon.h"
 
 @interface MediumEnemy : Enemy
 

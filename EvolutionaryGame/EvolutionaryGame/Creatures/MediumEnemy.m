@@ -23,11 +23,13 @@
         self.xVelocity = 0.0;
         self.yVelocity = 0.0;
         
-        self.weapon = [[SmallEnemyWeapon alloc] init];
+        self.weapon = [[MediumEnemyWeapon alloc] init];
         
-        self.health = 250;
+        self.health = 500;
         
-        self.type = 1;
+        self.type = 2;
+        
+        self.movingRight = YES;
     }
     
     return self;
@@ -63,6 +65,18 @@
             self.texture = self.walkLeft1;
         }
     }
+}
+
+
+- (void) move
+{
+    if (self.movingRight) {
+        self.xVelocity = 1.5;
+    } else {
+        self.xVelocity = -1.5;
+    }
+    SKAction *moveAction = [SKAction moveByX:self.xVelocity y:0 duration:0.9];
+    [self runAction:moveAction];
 }
 
 
