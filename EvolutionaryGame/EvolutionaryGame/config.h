@@ -53,6 +53,10 @@
 
 #define TILE_HALF_SIZE 25
 
+#define MEDIUM_ENEMY_HALF_WIDTH 49
+
+#define MEDIUM_ENEMY_HALF_HEIGHT 39
+
 
 
 // Global variable that contains the main character that

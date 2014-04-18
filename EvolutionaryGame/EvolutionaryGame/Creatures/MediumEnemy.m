@@ -34,4 +34,36 @@
 }
 
 
+- (void) updateTexture
+{
+    if (self.xVelocity > 0) {
+        // If the velocity is positive, then we are moving to the right
+        self.facingRight = YES;
+        
+        if (self.texture == self.walkRight1) {
+            self.texture = self.walkRight2;
+        } else {
+            self.texture = self.walkRight1;
+        }
+        
+    } else if (self.xVelocity < 0) {
+        // If the velocity is negative, then we are moving to the left
+        self.facingRight = NO;
+        
+        if (self.texture == self.walkLeft1) {
+            self.texture = self.walkLeft2;
+        } else {
+            self.texture = self.walkLeft1;
+        }
+    } else {
+        // Reset the textures to default if not moving
+        if (self.facingRight) {
+            self.texture = self.walkRight1;
+        } else {
+            self.texture = self.walkLeft1;
+        }
+    }
+}
+
+
 @end

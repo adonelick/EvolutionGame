@@ -88,7 +88,7 @@
         [_platforms addObject:testPlatform];
         [self addChild:testPlatform];
         
-        Platform* testPlatform2 = [[Platform alloc] init: @"FirePlatformTopBottom.gif"];
+        Platform* testPlatform2 = [[Platform alloc] init: @"FirePlatformTopLeftBottom.gif"];
         testPlatform2.position = CGPointMake(CGRectGetMidX(self.frame) + (50*-2),
                                             CGRectGetMidY(self.frame) - 62);
         [_platforms addObject:testPlatform2];
@@ -148,37 +148,37 @@
         [_platforms addObject:testPlatform11];
         [self addChild:testPlatform11];
         
-        Platform* testPlatform12 = [[Platform alloc] init: @"FirePlatformTopBottom.gif"];
+        Platform* testPlatform12 = [[Platform alloc] init: @"FirePlatformTopLeftBottom.gif"];
         testPlatform12.position = CGPointMake(CGRectGetMidX(self.frame) + (50*-7),
-                                              CGRectGetMidY(self.frame) - 62);
+                                              CGRectGetMidY(self.frame) - 112);
         [_platforms addObject:testPlatform12];
         [self addChild:testPlatform12];
         
         Platform* testPlatform13 = [[Platform alloc] init: @"FirePlatformTopBottom.gif"];
         testPlatform13.position = CGPointMake(CGRectGetMidX(self.frame) + (50*-6),
-                                              CGRectGetMidY(self.frame) - 62);
+                                              CGRectGetMidY(self.frame) - 112);
         [_platforms addObject:testPlatform13];
         [self addChild:testPlatform13];
         
         Platform* testPlatform14 = [[Platform alloc] init: @"FirePlatformTopBottom.gif"];
         testPlatform14.position = CGPointMake(CGRectGetMidX(self.frame) + (50*-5),
-                                              CGRectGetMidY(self.frame) - 62);
+                                              CGRectGetMidY(self.frame) - 112);
         [_platforms addObject:testPlatform14];
         [self addChild:testPlatform14];
         
         Platform* testPlatform15 = [[Platform alloc] init: @"FirePlatformTopBottom.gif"];
         testPlatform15.position = CGPointMake(CGRectGetMidX(self.frame) + (50*-4),
-                                              CGRectGetMidY(self.frame) - 62);
+                                              CGRectGetMidY(self.frame) - 112);
         [_platforms addObject:testPlatform15];
         [self addChild:testPlatform15];
         
-        Platform* testPlatform16 = [[Platform alloc] init: @"FirePlatformTopBottom.gif"];
+        Platform* testPlatform16 = [[Platform alloc] init: @"FirePlatformTopRightBottom.gif"];
         testPlatform16.position = CGPointMake(CGRectGetMidX(self.frame) + (50*-3),
-                                              CGRectGetMidY(self.frame) - 62);
+                                              CGRectGetMidY(self.frame) - 112);
         [_platforms addObject:testPlatform16];
         [self addChild:testPlatform16];
         
-        Platform* testPlatform17 = [[Platform alloc] init: @"FirePlatformTopBottom.gif"];
+        Platform* testPlatform17 = [[Platform alloc] init: @"FirePlatformTopRightBottom.gif"];
         testPlatform17.position = CGPointMake(CGRectGetMidX(self.frame) + (50*-8),
                                               CGRectGetMidY(self.frame) - 62);
         [_platforms addObject:testPlatform17];
@@ -206,8 +206,8 @@
         [self addChild:newEnemy];
         
         MediumEnemy* newEnemy1 = [[MediumEnemy alloc] init];
-        newEnemy1.position = CGPointMake(CGRectGetMidX(self.frame) - 75,
-                                         CGRectGetMidY(self.frame));
+        newEnemy1.position = CGPointMake(CGRectGetMidX(self.frame) - 175,
+                                         CGRectGetMidY(self.frame) - 50);
         
         [self addChild:newEnemy1];
         
