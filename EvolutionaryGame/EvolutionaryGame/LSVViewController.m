@@ -67,6 +67,11 @@
 
 - (IBAction)armCharacter:(id)sender
 {
+    if (mainCharacter.isArmed ) {
+        [sender setTitle:@"Arm" forState:UIControlStateNormal];
+    } else {
+        [sender setTitle:@"Disarm" forState:UIControlStateNormal];
+    }
     mainCharacter.isArmed = !(mainCharacter.isArmed);
 }
 
@@ -103,7 +108,7 @@
 - (IBAction)jump:(id)sender
 {
 
-    if((((int)(mainCharacter.position.y-CHARACTER_HALF_HEIGHT)) <= 550) && (mainCharacter.airborne == NO)) {
+    if((((int)(mainCharacter.position.y-CHARACTER_HALF_HEIGHT)) <= MAX_SCREEN_HEIGHT) && (mainCharacter.airborne == NO)) {
         mainCharacter.airborne = YES;
         [mainCharacter.physicsBody applyImpulse:CGVectorMake(0, 77*(mainCharacter.jumpHeight))];
     }

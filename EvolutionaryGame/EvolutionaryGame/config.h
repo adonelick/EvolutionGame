@@ -57,6 +57,12 @@
 
 #define MEDIUM_ENEMY_HALF_HEIGHT 38
 
+#define MAX_SCREEN_HEIGHT 752
+
+#define MIN_SCREEN_HEIGHT 272
+
+#define BOTTOM_OF_SCREEN 224
+
 
 
 // Global variable that contains the main character that

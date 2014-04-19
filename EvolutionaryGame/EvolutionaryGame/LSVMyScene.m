@@ -35,6 +35,13 @@
         _smokeHazards = [NSMutableArray new];
         _platforms = [NSMutableArray new];
         
+        
+        // Testing display
+        Platform* exitTest = [[Platform alloc] init: @"Exit.png"];
+        exitTest.position = CGPointMake(CGRectGetMidX(self.frame) + 250,
+                                        CGRectGetMidY(self.frame)+13);
+        [self addChild:exitTest];
+        
         // Create the main character and place it in the center of the screen
         mainCharacter = [[Character alloc] init];
         mainCharacter.position = CGPointMake(CGRectGetMidX(self.frame),
@@ -190,6 +197,8 @@
         [_platforms addObject:testPlatform18];
         [self addChild:testPlatform18];
         
+
+        
         
         for (Platform* p in _platforms) {
             p.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(50, 50)];
@@ -208,6 +217,8 @@
         MediumEnemy* newEnemy1 = [[MediumEnemy alloc] init];
         newEnemy1.position = CGPointMake(CGRectGetMidX(self.frame) - 175,
                                          CGRectGetMidY(self.frame) - 50);
+        
+        
         [_enemies addObject:newEnemy1];
         [self addChild:newEnemy1];
         newEnemy1.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:MEDIUM_ENEMY_HALF_HEIGHT];

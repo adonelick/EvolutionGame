@@ -51,6 +51,10 @@
 		93939EE51900655C00F38FA9 /* LSVHealthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93939EE41900655C00F38FA9 /* LSVHealthView.m */; };
 		93939EE81900E2A000F38FA9 /* MediumEnemyWeapon.m in Sources */ = {isa = PBXBuildFile; fileRef = 93939EE71900E2A000F38FA9 /* MediumEnemyWeapon.m */; };
 		93939EEB1900E31300F38FA9 /* MediumEnemyProjectile.m in Sources */ = {isa = PBXBuildFile; fileRef = 93939EEA1900E31300F38FA9 /* MediumEnemyProjectile.m */; };
+		93939EED190247D100F38FA9 /* Button.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93939EEC190247D000F38FA9 /* Button.gif */; };
+		93939EF11902480600F38FA9 /* LeftArrow.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93939EF01902480600F38FA9 /* LeftArrow.gif */; };
+		93939EF31902480D00F38FA9 /* RightArrow.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93939EF21902480D00F38FA9 /* RightArrow.gif */; };
+		93939EF519024F5C00F38FA9 /* Exit.png in Resources */ = {isa = PBXBuildFile; fileRef = 93939EF419024F5C00F38FA9 /* Exit.png */; };
 		93B649F618F248C2005B412E /* SmokeScreen1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B649F518F248C2005B412E /* SmokeScreen1.gif */; };
 		93B649F818F248C7005B412E /* SmokeScreen2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B649F718F248C7005B412E /* SmokeScreen2.gif */; };
 		93B64A0C18F24BAA005B412E /* FirePlatformBottom.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B649FC18F24BAA005B412E /* FirePlatformBottom.gif */; };
@@ -168,6 +172,10 @@
 		93939EE71900E2A000F38FA9 /* MediumEnemyWeapon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediumEnemyWeapon.m; sourceTree = "<group>"; };
 		93939EE91900E31300F38FA9 /* MediumEnemyProjectile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediumEnemyProjectile.h; sourceTree = "<group>"; };
 		93939EEA1900E31300F38FA9 /* MediumEnemyProjectile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediumEnemyProjectile.m; sourceTree = "<group>"; };
+		93939EEC190247D000F38FA9 /* Button.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Button.gif; sourceTree = "<group>"; };
+		93939EF01902480600F38FA9 /* LeftArrow.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LeftArrow.gif; sourceTree = "<group>"; };
+		93939EF21902480D00F38FA9 /* RightArrow.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = RightArrow.gif; sourceTree = "<group>"; };
+		93939EF419024F5C00F38FA9 /* Exit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Exit.png; sourceTree = "<group>"; };
 		93B649F518F248C2005B412E /* SmokeScreen1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = SmokeScreen1.gif; path = Images/SmokeScreen1.gif; sourceTree = "<group>"; };
 		93B649F718F248C7005B412E /* SmokeScreen2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = SmokeScreen2.gif; path = Images/SmokeScreen2.gif; sourceTree = "<group>"; };
 		93B649FC18F24BAA005B412E /* FirePlatformBottom.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformBottom.gif; path = Images/Platforms/FirePlatformBottom.gif; sourceTree = "<group>"; };
@@ -383,6 +391,9 @@
 			children = (
 				934271B418C1C274006E9365 /* Arrow_Right.png */,
 				934271B318C1C274006E9365 /* Arrow_Left.png */,
+				93939EEC190247D000F38FA9 /* Button.gif */,
+				93939EF01902480600F38FA9 /* LeftArrow.gif */,
+				93939EF21902480D00F38FA9 /* RightArrow.gif */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -454,6 +465,7 @@
 			isa = PBXGroup;
 			children = (
 				93F3225D18FB88CE007E4718 /* Bubble.gif */,
+				93939EF419024F5C00F38FA9 /* Exit.png */,
 				93F3225E18FB88CE007E4718 /* HealthPiece.gif */,
 				93F3225F18FB88CE007E4718 /* Magma1.gif */,
 				93F3226018FB88CE007E4718 /* Magma2.gif */,
@@ -563,12 +575,16 @@
 				93F3228318FB9044007E4718 /* FireEnemyMediumR2.gif in Resources */,
 				93B649F618F248C2005B412E /* SmokeScreen1.gif in Resources */,
 				934271C418C1C4DD006E9365 /* PlayerCharR1.gif in Resources */,
+				93939EF11902480600F38FA9 /* LeftArrow.gif in Resources */,
 				93F3227318FB8CE0007E4718 /* FullFirePlayerCharWeaponR1.gif in Resources */,
 				93B64A1318F24BAA005B412E /* FirePlatformRight.gif in Resources */,
 				93F3227918FB8DBC007E4718 /* MediumEnemyProjectile.gif in Resources */,
+				93939EF519024F5C00F38FA9 /* Exit.png in Resources */,
 				935C9AEE18E91B53007B57F9 /* FireEnemySmallProjectileL.gif in Resources */,
 				93F3227018FB8CE0007E4718 /* FullFirePlayerCharR2.gif in Resources */,
+				93939EED190247D100F38FA9 /* Button.gif in Resources */,
 				934271C518C1C4DD006E9365 /* PlayerCharR2.gif in Resources */,
+				93939EF31902480D00F38FA9 /* RightArrow.gif in Resources */,
 				934271C718C1C4DD006E9365 /* PlayerCharWeaponL2.gif in Resources */,
 				93B64A1B18F24BAA005B412E /* FirePlatformTopRightLeft.gif in Resources */,
 				934271D218C27E94006E9365 /* FireEnemySmallL2.gif in Resources */,
