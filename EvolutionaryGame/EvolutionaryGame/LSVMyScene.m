@@ -35,7 +35,6 @@
         _smokeHazards = [NSMutableArray new];
         _platforms = [NSMutableArray new];
         
-        
         // Testing display
         Platform* exitTest = [[Platform alloc] init: @"Exit.png"];
         exitTest.position = CGPointMake(CGRectGetMidX(self.frame) + 250,
@@ -43,7 +42,7 @@
         [self addChild:exitTest];
         
         // Create the main character and place it in the center of the screen
-        mainCharacter = [[Character alloc] init];
+        mainCharacter = [[Character alloc] initWithEvolved:NO];
         mainCharacter.position = CGPointMake(CGRectGetMidX(self.frame),
                                              CGRectGetMidY(self.frame));
         [self addChild:mainCharacter];
@@ -55,10 +54,6 @@
         mainCharacter.physicsBody.mass = 0.1;
         
         self.backgroundColor = [SKColor colorWithRed:0.25 green:0.15 blue:0.15 alpha:1.0];
-        
-        
-        
-        
         
         
         // FOR TESTING PURPOSES:

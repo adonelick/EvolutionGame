@@ -57,6 +57,9 @@
 // Is updated depending on the main character's health
 @property LSVHealthView* health;
 
+// Determines whether the character has 'evolved' or not
+@property Boolean evolved;
+
 
 - (void) cleanUp:(NSMutableArray*) objects byDeleting:(NSMutableArray*) delObjects;
 

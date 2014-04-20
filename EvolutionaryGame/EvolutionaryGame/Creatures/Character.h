@@ -15,9 +15,7 @@
 
 // Determines whether the character is in the air
 @property Boolean airborne;
-
 @property Boolean movingUp;
-
 @property Boolean movingDown;
 
 // The weapon for the character
@@ -43,5 +41,7 @@
 @property SKTexture* walkRightWeapon1;
 @property SKTexture* walkRightWeapon2;
 
+// Initialization function that depends on whether or not the player has evolved
+-(id) initWithEvolved:(Boolean) evolved;
 
 @end
