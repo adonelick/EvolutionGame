@@ -110,9 +110,9 @@
 
     if((((int)(mainCharacter.position.y-CHARACTER_HALF_HEIGHT)) <= MAX_SCREEN_HEIGHT) && (mainCharacter.airborne == NO)) {
         mainCharacter.airborne = YES;
+        mainCharacter.movingUp = YES;
         [mainCharacter.physicsBody applyImpulse:CGVectorMake(0, 77*(mainCharacter.jumpHeight))];
     }
-    mainCharacter.airborne = NO;
     
 }
 

@@ -270,6 +270,17 @@
     
     // Update the health bar
     _health.frame = CGRectMake(30,86,(mainCharacter.health)*(0.25),8);
+    
+    // Check if you can jump again
+    if ((mainCharacter.physicsBody.velocity.dy == 0.0) || mainCharacter.physicsBody.velocity.dy == -0.0) {
+        if (mainCharacter.movingDown) {
+            mainCharacter.movingDown = NO;
+            mainCharacter.airborne = NO;
+        } else if (mainCharacter.movingUp) {
+            mainCharacter.movingUp = NO;
+            mainCharacter.movingDown = YES;
+        }
+    }
 
 }
 

@@ -35,6 +35,8 @@
         
         self.facingRight = YES;
         self.airborne = NO;
+        self.movingUp = NO; 
+        self.movingDown = NO;
         
         self.weapon = [[Weapon alloc] init];
         

@@ -16,6 +16,10 @@
 // Determines whether the character is in the air
 @property Boolean airborne;
 
+@property Boolean movingUp;
+
+@property Boolean movingDown;
+
 // The weapon for the character
 @property Weapon* weapon;
 
