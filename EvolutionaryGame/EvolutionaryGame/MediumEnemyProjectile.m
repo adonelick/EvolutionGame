@@ -19,7 +19,13 @@
         SKAction* rotate = [SKAction rotateByAngle:heading duration:0.0];
         [self runAction:rotate];
         self.heading = heading;
+//        self.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:20];
+//        self.physicsBody.dynamic = YES;
+//        self.physicsBody.allowsRotation = NO;
+//        self.physicsBody.affectedByGravity = NO;
+//        self.physicsBody.mass = 0.01;
     }
+    
     
     return self;
 }

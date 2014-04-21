@@ -230,12 +230,18 @@ WeaponStats *weaponstats = nil;
         
         [_enemies addObject:newEnemy1];
         [self addChild:newEnemy1];
-        newEnemy1.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:MEDIUM_ENEMY_HALF_HEIGHT];
-        newEnemy1.physicsBody.dynamic = YES;
-        newEnemy1.physicsBody.affectedByGravity = YES;
-        newEnemy1.physicsBody.linearDamping = 1;
-        newEnemy1.physicsBody.angularDamping = 10000;
-        newEnemy1.physicsBody.mass = 0.1;
+        
+        for (Enemy* e in _enemies) {
+            if (e.type == 2) {
+                newEnemy1.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:MEDIUM_ENEMY_HALF_HEIGHT];
+                newEnemy1.physicsBody.dynamic = YES;
+                newEnemy1.physicsBody.affectedByGravity = YES;
+                newEnemy1.physicsBody.linearDamping = 1;
+                newEnemy1.physicsBody.angularDamping = 10000;
+                newEnemy1.physicsBody.mass = 0.1;
+            }
+        }
+
         
     }
     return self;
@@ -387,7 +393,6 @@ WeaponStats *weaponstats = nil;
     
     // If enough damage has occured to kill the player,
     // end the game.
-//    NSLog(@"%d", mainCharacter.health);
     if (mainCharacter.health <= 0) {
         // Show what stats screen here...
 //        NSLog(@"You are now dead.");
@@ -470,11 +475,6 @@ WeaponStats *weaponstats = nil;
     // A projectile can only be added if it is not nil.
     // If it is, do nothing.
     if (projectile) {
-//        projectile.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:10];
-//        projectile.physicsBody.dynamic = YES;
-//        projectile.physicsBody.allowsRotation = NO;
-//        projectile.physicsBody.affectedByGravity = NO;
-//        projectile.physicsBody.mass = 0.01;
         [array addObject:projectile];
         [self addChild:projectile];
         
