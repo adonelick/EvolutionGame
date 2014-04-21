@@ -9,11 +9,6 @@
 #import "LSVMyScene.h"
 
 
-// DELETE LATER: numbers:
-// platform/hazard size: 50x50
-// character size: use 58x74
-
-
 @implementation LSVMyScene
 
 // Keep the stats in a global variable so that the character can be reinitialized with its stats intact
@@ -206,17 +201,6 @@ WeaponStats *weaponstats = nil;
         [_platforms addObject:testPlatform18];
         [self addChild:testPlatform18];
         
-
-        
-        
-        for (Platform* p in _platforms) {
-            p.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(50, 50)];
-            p.physicsBody.dynamic = NO;
-            p.physicsBody.affectedByGravity = NO;
-            p.physicsBody.linearDamping = 1000;
-        }
-        
-        
         SmallEnemy* newEnemy = [[SmallEnemy alloc] init];
         newEnemy.position = CGPointMake(CGRectGetMidX(self.frame),
                                         CGRectGetMidY(self.frame));
@@ -230,6 +214,15 @@ WeaponStats *weaponstats = nil;
         
         [_enemies addObject:newEnemy1];
         [self addChild:newEnemy1];
+
+        
+        // Give the platforms and medium enemies physics bodies
+        for (Platform* p in _platforms) {
+            p.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(50, 50)];
+            p.physicsBody.dynamic = NO;
+            p.physicsBody.affectedByGravity = NO;
+            p.physicsBody.linearDamping = 1000;
+        }
         
         for (Enemy* e in _enemies) {
             if (e.type == 2) {
@@ -241,15 +234,17 @@ WeaponStats *weaponstats = nil;
                 newEnemy1.physicsBody.mass = 0.1;
             }
         }
-
         
     }
+    
     return self;
 }
 
 
 - (void) updateTextures
 {
+    // Make all moving objects on the screen move
+    
     [mainCharacter updateTexture];
     
     for (Enemy* e in _enemies) {
@@ -319,7 +314,8 @@ WeaponStats *weaponstats = nil;
             
             if (distance <= KILL_DISTANCE) {
                 
-                [e damageBy:p.damage];
+                // If hit, damage the enemy
+                [e damageBy:p.fireDamage];
                 [usedProjectiles  addObject:p];
                 
                 // Delete the enemy and projectile from the scene
@@ -371,7 +367,7 @@ WeaponStats *weaponstats = nil;
         }
     }
 
-    
+    // Make the medium enemies turn around if it has hit a wall
     for (Platform* p in _platforms) {
         for (Enemy* e in _enemies) {
             if (e.type == 2) {
@@ -450,11 +446,18 @@ WeaponStats *weaponstats = nil;
         [e move];
         [e circleAround:mainCharacter.position withDistance:100];
         
-        // Fire a projectile at random time intervals to try
-        // to kill the main player.
+        // For now, small enemies randomly fire projectiles at the main character
+        if (e.type == 1) {
         if (arc4random() < 50000000) {
             Projectile* newProjectile = [e fireProjectileAt:mainCharacter.position];
             [self addProjectile: newProjectile toArray:_enemyProjectiles];
+        }
+          
+        // Large enemies will need to fix their rotation if they get bumped by the main character
+        if (e.type == 2) {
+            SKAction* rotateAction = [SKAction rotateByAngle:-0.2*e.zRotation duration:0.1];
+            [e runAction:rotateAction];
+            }
         }
     }
 }
@@ -481,6 +484,7 @@ WeaponStats *weaponstats = nil;
     }
 }
 
+// Check if either the main character or the weapon has advanced enough to evolve
 - (void) checkForEvolution
 {
     if (mainCharacter.weapon.stats.killCount >= KILL_TO_EVOLVE) {
