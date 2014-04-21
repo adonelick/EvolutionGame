@@ -11,9 +11,9 @@
 
 @implementation Character
 
-- (id) initWithEvolved:(Boolean) evolved andStats:(CharacterStats*) charstats andWeaponStats:(WeaponStats *)weaponstats
+- (id) initWithStats:(CharacterStats*) charstats andWeaponStats:(WeaponStats *)weaponstats
 {
-    if (evolved) {
+    if (charstats.evolved) {
         self = [super initWithImageNamed:@"FullFirePlayerCharR1.gif"];
         
         if (self) {

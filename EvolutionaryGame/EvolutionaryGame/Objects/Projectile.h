@@ -33,6 +33,8 @@
 
 - (id) initWithDirection:(double) heading;
 
+- (id) initWithDirection:(double)heading andImage:(NSString*) imageName;
+
 - (void) move;
 
 @end

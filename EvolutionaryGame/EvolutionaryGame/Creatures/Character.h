@@ -32,6 +32,6 @@
 @property SKTexture* walkRightWeapon2;
 
 // Initialization function that depends on whether or not the player has evolved
--(id) initWithEvolved:(Boolean) evolved andStats:(CharacterStats*) charstats andWeaponStats:(WeaponStats*) weaponstats;
+-(id) initWithStats:(CharacterStats*) charstats andWeaponStats:(WeaponStats*) weaponstats;
 
 @end

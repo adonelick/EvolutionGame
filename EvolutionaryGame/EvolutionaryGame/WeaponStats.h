@@ -10,10 +10,14 @@
 
 @interface WeaponStats : NSObject
 
+@property Boolean evolved;
+
 @property int fireDamage;
 @property int iceDamage;
 @property int lightningDamage;
 @property int earthDamage;
 @property int waterDamage;
+
+@property int killCount;
 
 @end

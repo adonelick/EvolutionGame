@@ -14,11 +14,15 @@
 {
     self = [super init];
     
+    self.evolved = NO;
+    
     self.fireDamage = 50;
     self.iceDamage = 50;
     self.lightningDamage = 50;
     self.earthDamage = 50;
     self.waterDamage = 50;
+    
+    self.killCount = 0;
     
     return self;
 }

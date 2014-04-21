@@ -10,6 +10,8 @@
 
 @interface CharacterStats : NSObject
 
+@property Boolean evolved;
+
 // Defense stats
 @property float fireDef;
 @property float iceDef;
@@ -23,5 +25,7 @@
 @property float runSpeed;
 @property float climb;
 @property float breath;
+
+@property int boost;
 
 @end

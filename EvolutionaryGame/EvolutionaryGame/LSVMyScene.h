@@ -43,6 +43,7 @@
 // Keeps track of the character's stats
 @property CharacterStats* charStats;
 
+// Keeps track of the character's weapon's stats
 @property WeaponStats* weaponStats;
 
 // The y position of the ground relative to the main character

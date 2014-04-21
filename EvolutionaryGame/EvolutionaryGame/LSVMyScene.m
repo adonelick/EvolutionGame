@@ -16,6 +16,7 @@
 
 @implementation LSVMyScene
 
+// Keep the stats in a global variable so that the character can be reinitialized with its stats intact
 CharacterStats *characterStats = nil;
 WeaponStats *weaponstats = nil;
 
@@ -25,8 +26,6 @@ WeaponStats *weaponstats = nil;
     if(!weaponstats)
         weaponstats = [[WeaponStats alloc] init];
 }
-
-
 
 
 - (id) initWithSize:(CGSize)size
@@ -57,7 +56,7 @@ WeaponStats *weaponstats = nil;
         [self addChild:exitTest];
         
         // Create the main character and place it in the center of the screen
-        mainCharacter = [[Character alloc] initWithEvolved:NO andStats:_charStats andWeaponStats:_weaponStats];
+        mainCharacter = [[Character alloc] initWithStats:_charStats andWeaponStats:_weaponStats];
         mainCharacter.position = CGPointMake(CGRectGetMidX(self.frame),
                                              CGRectGetMidY(self.frame));
         [self addChild:mainCharacter];
@@ -277,6 +276,7 @@ WeaponStats *weaponstats = nil;
     [self updateMainCharacter];
     [self updateProjectiles];
     [self updateEnemies];
+    [self checkForEvolution];
     
     // Update the health bar
     _health.frame = CGRectMake(30,86,(mainCharacter.health)*(0.25),8);
@@ -319,6 +319,8 @@ WeaponStats *weaponstats = nil;
                 // Delete the enemy and projectile from the scene
                 // if enough damage has occured to kill the enemy
                 if (e.health <= 0) {
+                    ++mainCharacter.weapon.stats.killCount;
+                    mainCharacter.weapon.stats.fireDamage += 0.1;
                     [killedEnemies addObject:e];
                 }
             }
@@ -476,6 +478,17 @@ WeaponStats *weaponstats = nil;
         [array addObject:projectile];
         [self addChild:projectile];
         
+    }
+}
+
+- (void) checkForEvolution
+{
+    if (mainCharacter.weapon.stats.killCount >= KILL_TO_EVOLVE) {
+        mainCharacter.weapon.stats.evolved = YES;
+    }
+    
+    if (mainCharacter.stats.boost >= BOOST_TO_EVOLVE) {
+        mainCharacter.stats.evolved = YES;
     }
 }
 

@@ -13,6 +13,8 @@
 - (id) init
 {
     self = [super init];
+    
+    self.evolved = NO;
 
     self.fireDef = 1.0;
     self.iceDef = 1.0;
@@ -25,6 +27,8 @@
     self.runSpeed = 1.0;
     self.climb = 1.0;
     self.breath = 1.0;
+    
+    self.boost = 0;
     
     return self;
 }
