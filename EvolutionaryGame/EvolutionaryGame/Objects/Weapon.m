@@ -17,11 +17,11 @@
     p.velocity = 0.3;
     p.damage = 50;
     
-    p.fireDamage = self.fireDamage;
-    p.iceDamage = self.iceDamage;
-    p.lightningDamage = self.lightningDamage;
-    p.earthDamage = self.earthDamage;
-    p.waterDamage = self.waterDamage;
+    p.fireDamage = self.stats.fireDamage;
+    p.iceDamage = self.stats.iceDamage;
+    p.lightningDamage = self.stats.lightningDamage;
+    p.earthDamage = self.stats.earthDamage;
+    p.waterDamage = self.stats.waterDamage;
     
     
     // Set properties of the projectile here, based on

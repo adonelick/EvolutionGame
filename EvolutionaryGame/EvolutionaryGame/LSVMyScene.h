@@ -15,6 +15,8 @@
 #import "Platform.h"
 #import "MediumEnemy.h"
 #import "LSVHealthView.h"
+#import "CharacterStats.h"
+#import "WeaponStats.h"
 #import "config.h"
 
 
@@ -37,6 +39,11 @@
 
 // Keeps track of all the platforms in the level
 @property NSMutableArray* platforms;
+
+// Keeps track of the character's stats
+@property CharacterStats* charStats;
+
+@property WeaponStats* weaponStats;
 
 // The y position of the ground relative to the main character
 @property int ground;

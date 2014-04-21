@@ -16,6 +16,19 @@
 
 @implementation LSVMyScene
 
+CharacterStats *characterStats = nil;
+WeaponStats *weaponstats = nil;
+
++ (void)initialize {
+    if(!characterStats)
+        characterStats = [[CharacterStats alloc] init];
+    if(!weaponstats)
+        weaponstats = [[WeaponStats alloc] init];
+}
+
+
+
+
 - (id) initWithSize:(CGSize)size
 {
     self = [super initWithSize:size];
@@ -34,15 +47,17 @@
         _enemies = [NSMutableArray new];
         _smokeHazards = [NSMutableArray new];
         _platforms = [NSMutableArray new];
+        _charStats = characterStats;
+        _weaponStats = weaponstats;
         
         // Testing display
         Platform* exitTest = [[Platform alloc] init: @"Exit.png"];
         exitTest.position = CGPointMake(CGRectGetMidX(self.frame) + 250,
-                                        CGRectGetMidY(self.frame)+13);
+                                        CGRectGetMidY(self.frame) + 13);
         [self addChild:exitTest];
         
         // Create the main character and place it in the center of the screen
-        mainCharacter = [[Character alloc] initWithEvolved:NO];
+        mainCharacter = [[Character alloc] initWithEvolved:NO andStats:_charStats andWeaponStats:_weaponStats];
         mainCharacter.position = CGPointMake(CGRectGetMidX(self.frame),
                                              CGRectGetMidY(self.frame));
         [self addChild:mainCharacter];
@@ -326,7 +341,7 @@
                 mainCharacter.health = 0;
                 [usedProjectiles addObject:p];
             } else {
-            [mainCharacter damageBy:p.damage];
+            [mainCharacter damageBy:(mainCharacter.stats.fireDef)*p.damage];
             [usedProjectiles addObject:p];
             }
         }
@@ -344,7 +359,7 @@
         int ydist = hazardPos.y - characterPos.y;
         
         if ((-(TILE_HALF_SIZE + CHARACTER_HALF_WIDTH) <= xdist) && (xdist <= (TILE_HALF_SIZE + CHARACTER_HALF_WIDTH)) && (-(TILE_HALF_SIZE + CHARACTER_HALF_HEIGHT) <= ydist) && (ydist <= (TILE_HALF_SIZE + CHARACTER_HALF_HEIGHT)) && arc4random() < 150000000) {
-            [mainCharacter damageBy:h.damagePotential];
+            [mainCharacter damageBy:(mainCharacter.stats.breath)*h.damagePotential];
         }
     }
 
