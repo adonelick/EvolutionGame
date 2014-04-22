@@ -11,52 +11,69 @@
 
 @implementation Character
 
-- (id) init
+- (id) initWithStats:(CharacterStats*) charstats andWeaponStats:(WeaponStats *)weaponstats
 {
-    self = [super initWithImageNamed:@"PlayerCharR1.gif"];
-    
-    if (self) {
-        // Create the textures from the image files
-        self.walkLeft1 = [SKTexture textureWithImageNamed:@"PlayerCharL1.gif"];
-        self.walkLeft2 = [SKTexture textureWithImageNamed:@"PlayerCharL2.gif"];
-        self.walkRight1 = [SKTexture textureWithImageNamed:@"PlayerCharR1.gif"];
-        self.walkRight2 = [SKTexture textureWithImageNamed:@"PlayerCharR2.gif"];
+    if (charstats.evolved) {
+        self = [super initWithImageNamed:@"FullFirePlayerCharR1.gif"];
         
-        _walkLeftWeapon1 = [SKTexture textureWithImageNamed:@"PlayerCharWeaponL1.gif"];
-        _walkLeftWeapon2 = [SKTexture textureWithImageNamed:@"PlayerCharWeaponL2.gif"];
-        _walkRightWeapon1 = [SKTexture textureWithImageNamed:@"PlayerCharWeaponR1.gif"];
-        _walkRightWeapon2 = [SKTexture textureWithImageNamed:@"PlayerCharWeaponR2.gif"];
-        
-        // Originally, the character is not moving
-        self.xVelocity = 0.0;
-        self.yVelocity = 0.0;
-        
-        self.health = 1000;
-        
-        self.facingRight = YES;
-        self.airborne = NO;
-        
-        self.weapon = [[Weapon alloc] init];
-        
-        // Initialize all stats
-        self.weapon.fireDamage = 50;
-        self.weapon.iceDamage = 50;
-        self.weapon.lightningDamage = 50;
-        self.weapon.earthDamage = 50;
-        self.weapon.waterDamage = 50;
+        if (self) {
+            // Create the textures from the image files
+            self.walkLeft1 = [SKTexture textureWithImageNamed:@"FullFirePlayerCharL1.gif"];
+            self.walkLeft2 = [SKTexture textureWithImageNamed:@"FullFirePlayerCharL2.gif"];
+            self.walkRight1 = [SKTexture textureWithImageNamed:@"FullFirePlayerCharR1.gif"];
+            self.walkRight2 = [SKTexture textureWithImageNamed:@"FullFirePlayerCharR2.gif"];
+            
+            _walkLeftWeapon1 = [SKTexture textureWithImageNamed:@"FullFirePlayerCharWeaponL1.gif"];
+            _walkLeftWeapon2 = [SKTexture textureWithImageNamed:@"FullFirePlayerCharWeaponL2.gif"];
+            _walkRightWeapon1 = [SKTexture textureWithImageNamed:@"FullFirePlayerCharWeaponR1.gif"];
+            _walkRightWeapon2 = [SKTexture textureWithImageNamed:@"FullFirePlayerCharWeaponR2.gif"];
+            
+            // Initialize everything
+            self.health = 1000;
 
-        self.fireDef = 1.0;
-        self.iceDef = 1.0;
-        self.lightningDef = 1.0;
-        self.earthDef = 1.0;
-        self.waterDef = 1.0;
+            self.stats = charstats;
+            
+            self.facingRight = YES;
+            self.airborne = NO;
+            self.movingUp = NO;
+            self.movingDown = NO;
+            
+            self.weapon = [[Weapon alloc] init];
+            
+            self.weapon.stats = weaponstats;
+
+        }
         
-        self.jumpHeight = 1.0;
-        self.strength = 1.0;
-        self.runSpeed = 1.0;
-        self.climb = 1.0;
-        self.breath = 1.0;
+    } else {
+        self = [super initWithImageNamed:@"PlayerCharR1.gif"];
+    
+        if (self) {
+            // Create the textures from the image files
+            self.walkLeft1 = [SKTexture textureWithImageNamed:@"PlayerCharL1.gif"];
+            self.walkLeft2 = [SKTexture textureWithImageNamed:@"PlayerCharL2.gif"];
+            self.walkRight1 = [SKTexture textureWithImageNamed:@"PlayerCharR1.gif"];
+            self.walkRight2 = [SKTexture textureWithImageNamed:@"PlayerCharR2.gif"];
         
+            _walkLeftWeapon1 = [SKTexture textureWithImageNamed:@"PlayerCharWeaponL1.gif"];
+            _walkLeftWeapon2 = [SKTexture textureWithImageNamed:@"PlayerCharWeaponL2.gif"];
+            _walkRightWeapon1 = [SKTexture textureWithImageNamed:@"PlayerCharWeaponR1.gif"];
+            _walkRightWeapon2 = [SKTexture textureWithImageNamed:@"PlayerCharWeaponR2.gif"];
+            
+            // Initialize everything
+            self.health = 1000;
+            
+            self.stats = charstats;
+            
+            self.facingRight = YES;
+            self.airborne = NO;
+            self.movingUp = NO;
+            self.movingDown = NO;
+        
+            self.weapon = [[Weapon alloc] init];
+        
+            self.weapon.stats = weaponstats;
+            
+        }
         
     }
     
@@ -156,6 +173,16 @@
     }
     
     return projectile;
+}
+
+- (void) damageBy:(int)damage
+{
+    if(self.health > 0){
+        self.health -= damage;
+        if(self.health <= 0){
+            self.health = 0;
+        }
+    }
 }
 
 

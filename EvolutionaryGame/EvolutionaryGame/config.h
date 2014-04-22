@@ -63,6 +63,10 @@
 
 #define BOTTOM_OF_SCREEN 224
 
+#define KILL_TO_EVOLVE 1
+
+#define BOOST_TO_EVOLVE 1
+
 
 
 // Global variable that contains the main character that

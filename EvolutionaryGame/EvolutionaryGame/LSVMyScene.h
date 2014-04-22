@@ -15,6 +15,8 @@
 #import "Platform.h"
 #import "MediumEnemy.h"
 #import "LSVHealthView.h"
+#import "CharacterStats.h"
+#import "WeaponStats.h"
 #import "config.h"
 
 
@@ -38,6 +40,12 @@
 // Keeps track of all the platforms in the level
 @property NSMutableArray* platforms;
 
+// Keeps track of the character's stats
+@property CharacterStats* charStats;
+
+// Keeps track of the character's weapon's stats
+@property WeaponStats* weaponStats;
+
 // The y position of the ground relative to the main character
 @property int ground;
 
@@ -56,6 +64,9 @@
 
 // Is updated depending on the main character's health
 @property LSVHealthView* health;
+
+// Determines whether the character has 'evolved' or not
+@property Boolean evolved;
 
 
 - (void) cleanUp:(NSMutableArray*) objects byDeleting:(NSMutableArray*) delObjects;

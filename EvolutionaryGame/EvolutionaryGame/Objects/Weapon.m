@@ -12,17 +12,20 @@
 
 - (id) fireProjectile:(double) heading
 {
-    // Create the projectile objects here
-    Projectile* p = [[Projectile alloc] initWithDirection:heading];
+    Projectile *p = [[Projectile alloc] init];
+    if (self.stats.evolved == NO) {
+        p = [[Projectile alloc] initWithDirection:heading andImage:@"PlayerProjectileRight.gif"];
+    } else {
+        p = [[Projectile alloc] initWithDirection:heading andImage:@"PlayerProjectileWaterRight.gif"];
+    }
     p.velocity = 0.3;
     p.damage = 50;
     
-    p.fireDamage = self.fireDamage;
-    p.iceDamage = self.iceDamage;
-    p.lightningDamage = self.lightningDamage;
-    p.earthDamage = self.earthDamage;
-    p.waterDamage = self.waterDamage;
-    
+    p.fireDamage = self.stats.fireDamage;
+    p.iceDamage = self.stats.iceDamage;
+    p.lightningDamage = self.stats.lightningDamage;
+    p.earthDamage = self.stats.earthDamage;
+    p.waterDamage = self.stats.waterDamage;
     
     // Set properties of the projectile here, based on
     // the current evolution of the weapon

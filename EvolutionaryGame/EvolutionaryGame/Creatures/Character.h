@@ -7,6 +7,7 @@
 //
 
 #import "Creature.h"
+#import "CharacterStats.h"
 
 @interface Character : Creature
 
@@ -15,23 +16,14 @@
 
 // Determines whether the character is in the air
 @property Boolean airborne;
+@property Boolean movingUp;
+@property Boolean movingDown;
 
 // The weapon for the character
 @property Weapon* weapon;
 
-// Defense stats
-@property float fireDef;
-@property float iceDef;
-@property float lightningDef;
-@property float earthDef;
-@property float waterDef;
-
-// Ability stats
-@property float jumpHeight;
-@property float strength;
-@property float runSpeed;
-@property float climb;
-@property float breath;
+// Character's stats
+@property CharacterStats* stats;
 
 // Textures for the character walking with a weapon
 @property SKTexture* walkLeftWeapon1;
@@ -39,5 +31,7 @@
 @property SKTexture* walkRightWeapon1;
 @property SKTexture* walkRightWeapon2;
 
+// Initialization function that depends on whether or not the player has evolved
+-(id) initWithStats:(CharacterStats*) charstats andWeaponStats:(WeaponStats*) weaponstats;
 
 @end

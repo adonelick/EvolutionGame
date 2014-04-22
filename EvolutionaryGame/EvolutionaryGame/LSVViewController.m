@@ -12,6 +12,7 @@
 #import "LSVHealthView.h"
 
 
+
 @implementation LSVViewController
 
 - (void) viewDidLoad
@@ -84,7 +85,7 @@
 
 - (IBAction)leftButtonDown:(id)sender
 {
-    mainCharacter.xVelocity = -0.5;
+    mainCharacter.xVelocity = (mainCharacter.stats.runSpeed)*-0.5;
 }
 
 - (IBAction)leftButtonUp:(id)sender
@@ -94,7 +95,7 @@
 
 - (IBAction)rightButtonDown:(id)sender
 {
-    mainCharacter.xVelocity = 0.5;
+    mainCharacter.xVelocity = (mainCharacter.stats.runSpeed)*0.5;
 }
 
 - (IBAction)rightButtonUp:(id)sender
@@ -120,9 +121,9 @@
 
     if((((int)(mainCharacter.position.y-CHARACTER_HALF_HEIGHT)) <= MAX_SCREEN_HEIGHT) && (mainCharacter.airborne == NO)) {
         mainCharacter.airborne = YES;
-        [mainCharacter.physicsBody applyImpulse:CGVectorMake(0, 77*(mainCharacter.jumpHeight))];
+        mainCharacter.movingUp = YES;
+        [mainCharacter.physicsBody applyImpulse:CGVectorMake(0, 77*(mainCharacter.stats.jumpHeight))];
     }
-    mainCharacter.airborne = NO;
     
 }
 

@@ -8,16 +8,11 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "Projectile.h"
+#import "WeaponStats.h"
 
 @interface Weapon : SKSpriteNode
 
-// Damage stats (for player)
-@property int fireDamage;
-@property int iceDamage;
-@property int lightningDamage;
-@property int earthDamage;
-@property int waterDamage;
-
+@property WeaponStats* stats;
 
 - (id) fireProjectile:(double) heading;
 

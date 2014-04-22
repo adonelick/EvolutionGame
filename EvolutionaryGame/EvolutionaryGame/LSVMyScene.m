@@ -9,12 +9,19 @@
 #import "LSVMyScene.h"
 
 
-// DELETE LATER: numbers:
-// platform/hazard size: 50x50
-// character size: use 58x74
-
-
 @implementation LSVMyScene
+
+// Keep the stats in a global variable so that the character can be reinitialized with its stats intact
+CharacterStats *characterStats = nil;
+WeaponStats *weaponstats = nil;
+
++ (void)initialize {
+    if(!characterStats)
+        characterStats = [[CharacterStats alloc] init];
+    if(!weaponstats)
+        weaponstats = [[WeaponStats alloc] init];
+}
+
 
 - (id) initWithSize:(CGSize)size
 {
@@ -34,16 +41,17 @@
         _enemies = [NSMutableArray new];
         _smokeHazards = [NSMutableArray new];
         _platforms = [NSMutableArray new];
-        
+        _charStats = characterStats;
+        _weaponStats = weaponstats;
         
         // Testing display
         Platform* exitTest = [[Platform alloc] init: @"Exit.png"];
         exitTest.position = CGPointMake(CGRectGetMidX(self.frame) + 250,
-                                        CGRectGetMidY(self.frame)+13);
+                                        CGRectGetMidY(self.frame) + 13);
         [self addChild:exitTest];
         
         // Create the main character and place it in the center of the screen
-        mainCharacter = [[Character alloc] init];
+        mainCharacter = [[Character alloc] initWithStats:_charStats andWeaponStats:_weaponStats];
         mainCharacter.position = CGPointMake(CGRectGetMidX(self.frame),
                                              CGRectGetMidY(self.frame));
         [self addChild:mainCharacter];
@@ -55,10 +63,6 @@
         mainCharacter.physicsBody.mass = 0.1;
         
         self.backgroundColor = [SKColor colorWithRed:0.25 green:0.15 blue:0.15 alpha:1.0];
-        
-        
-        
-        
         
         
         // FOR TESTING PURPOSES:
@@ -197,17 +201,6 @@
         [_platforms addObject:testPlatform18];
         [self addChild:testPlatform18];
         
-
-        
-        
-        for (Platform* p in _platforms) {
-            p.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(50, 50)];
-            p.physicsBody.dynamic = NO;
-            p.physicsBody.affectedByGravity = NO;
-            p.physicsBody.linearDamping = 1000;
-        }
-        
-        
         SmallEnemy* newEnemy = [[SmallEnemy alloc] init];
         newEnemy.position = CGPointMake(CGRectGetMidX(self.frame),
                                         CGRectGetMidY(self.frame));
@@ -221,20 +214,37 @@
         
         [_enemies addObject:newEnemy1];
         [self addChild:newEnemy1];
-        newEnemy1.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:MEDIUM_ENEMY_HALF_HEIGHT];
-        newEnemy1.physicsBody.dynamic = YES;
-        newEnemy1.physicsBody.affectedByGravity = YES;
-        newEnemy1.physicsBody.linearDamping = 1;
-        newEnemy1.physicsBody.angularDamping = 10000;
-        newEnemy1.physicsBody.mass = 0.1;
+
+        
+        // Give the platforms and medium enemies physics bodies
+        for (Platform* p in _platforms) {
+            p.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(50, 50)];
+            p.physicsBody.dynamic = NO;
+            p.physicsBody.affectedByGravity = NO;
+            p.physicsBody.linearDamping = 1000;
+        }
+        
+        for (Enemy* e in _enemies) {
+            if (e.type == 2) {
+                newEnemy1.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:MEDIUM_ENEMY_HALF_HEIGHT];
+                newEnemy1.physicsBody.dynamic = YES;
+                newEnemy1.physicsBody.affectedByGravity = YES;
+                newEnemy1.physicsBody.linearDamping = 1;
+                newEnemy1.physicsBody.angularDamping = 10000;
+                newEnemy1.physicsBody.mass = 0.1;
+            }
+        }
         
     }
+    
     return self;
 }
 
 
 - (void) updateTextures
 {
+    // Make all moving objects on the screen move
+    
     [mainCharacter updateTexture];
     
     for (Enemy* e in _enemies) {
@@ -267,9 +277,21 @@
     [self updateMainCharacter];
     [self updateProjectiles];
     [self updateEnemies];
+    [self checkForEvolution];
     
     // Update the health bar
     _health.frame = CGRectMake(30,86,(mainCharacter.health)*(0.25),8);
+    
+    // Check if you can jump again
+    if ((mainCharacter.physicsBody.velocity.dy == 0.0) || mainCharacter.physicsBody.velocity.dy == -0.0) {
+        if (mainCharacter.movingDown) {
+            mainCharacter.movingDown = NO;
+            mainCharacter.airborne = NO;
+        } else if (mainCharacter.movingUp) {
+            mainCharacter.movingUp = NO;
+            mainCharacter.movingDown = YES;
+        }
+    }
 
 }
 
@@ -292,12 +314,15 @@
             
             if (distance <= KILL_DISTANCE) {
                 
-                [e damageBy:p.damage];
+                // If hit, damage the enemy
+                [e damageBy:p.fireDamage];
                 [usedProjectiles  addObject:p];
                 
                 // Delete the enemy and projectile from the scene
                 // if enough damage has occured to kill the enemy
                 if (e.health <= 0) {
+                    ++mainCharacter.weapon.stats.killCount;
+                    mainCharacter.weapon.stats.fireDamage += 0.1;
                     [killedEnemies addObject:e];
                 }
             }
@@ -320,7 +345,7 @@
                 mainCharacter.health = 0;
                 [usedProjectiles addObject:p];
             } else {
-            [mainCharacter damageBy:p.damage];
+            [mainCharacter damageBy:(mainCharacter.stats.fireDef)*p.damage];
             [usedProjectiles addObject:p];
             }
         }
@@ -338,11 +363,11 @@
         int ydist = hazardPos.y - characterPos.y;
         
         if ((-(TILE_HALF_SIZE + CHARACTER_HALF_WIDTH) <= xdist) && (xdist <= (TILE_HALF_SIZE + CHARACTER_HALF_WIDTH)) && (-(TILE_HALF_SIZE + CHARACTER_HALF_HEIGHT) <= ydist) && (ydist <= (TILE_HALF_SIZE + CHARACTER_HALF_HEIGHT)) && arc4random() < 150000000) {
-            [mainCharacter damageBy:h.damagePotential];
+            [mainCharacter damageBy:(mainCharacter.stats.breath)*h.damagePotential];
         }
     }
 
-    
+    // Make the medium enemies turn around if it has hit a wall
     for (Platform* p in _platforms) {
         for (Enemy* e in _enemies) {
             if (e.type == 2) {
@@ -364,7 +389,6 @@
     
     // If enough damage has occured to kill the player,
     // end the game.
-//    NSLog(@"%d", mainCharacter.health);
     if (mainCharacter.health <= 0) {
         // Show what stats screen here...
 //        NSLog(@"You are now dead.");
@@ -422,11 +446,18 @@
         [e move];
         [e circleAround:mainCharacter.position withDistance:100];
         
-        // Fire a projectile at random time intervals to try
-        // to kill the main player.
+        // For now, small enemies randomly fire projectiles at the main character
+        if (e.type == 1) {
         if (arc4random() < 50000000) {
             Projectile* newProjectile = [e fireProjectileAt:mainCharacter.position];
             [self addProjectile: newProjectile toArray:_enemyProjectiles];
+        }
+          
+        // Large enemies will need to fix their rotation if they get bumped by the main character
+        if (e.type == 2) {
+            SKAction* rotateAction = [SKAction rotateByAngle:-0.2*e.zRotation duration:0.1];
+            [e runAction:rotateAction];
+            }
         }
     }
 }
@@ -447,14 +478,21 @@
     // A projectile can only be added if it is not nil.
     // If it is, do nothing.
     if (projectile) {
-//        projectile.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:10];
-//        projectile.physicsBody.dynamic = YES;
-//        projectile.physicsBody.allowsRotation = NO;
-//        projectile.physicsBody.affectedByGravity = NO;
-//        projectile.physicsBody.mass = 0.01;
         [array addObject:projectile];
         [self addChild:projectile];
         
+    }
+}
+
+// Check if either the main character or the weapon has advanced enough to evolve
+- (void) checkForEvolution
+{
+    if (mainCharacter.weapon.stats.killCount >= KILL_TO_EVOLVE) {
+        mainCharacter.weapon.stats.evolved = YES;
+    }
+    
+    if (mainCharacter.stats.boost >= BOOST_TO_EVOLVE) {
+        mainCharacter.stats.evolved = YES;
     }
 }
 
