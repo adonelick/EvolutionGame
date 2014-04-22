@@ -43,6 +43,8 @@
     
     _scene.health = health;
     
+    UIBarButtonItem *pauseButton =[[UIBarButtonItem alloc] initWithTitle:@"Pause" style:UIBarButtonItemStylePlain target:self action:@selector(pauseButtonPressed:)];
+    [self.navigationItem setRightBarButtonItem:pauseButton];
 }
 
 - (BOOL)shouldAutorotate
@@ -67,7 +69,7 @@
 
 - (IBAction)armCharacter:(id)sender
 {
-    if (mainCharacter.isArmed ) {
+    if (mainCharacter.isArmed) {
         [sender setTitle:@"Arm" forState:UIControlStateNormal];
     } else {
         [sender setTitle:@"Disarm" forState:UIControlStateNormal];
@@ -80,29 +82,37 @@
     [_scene addProjectile:[mainCharacter fireProjectile] toArray:_scene.projectiles];
 }
 
-
 - (IBAction)leftButtonDown:(id)sender
 {
     mainCharacter.xVelocity = -0.5;
 }
-
 
 - (IBAction)leftButtonUp:(id)sender
 {
     mainCharacter.xVelocity = 0.0;
 }
 
-
 - (IBAction)rightButtonDown:(id)sender
 {
     mainCharacter.xVelocity = 0.5;
 }
 
-
 - (IBAction)rightButtonUp:(id)sender
 {
-
     mainCharacter.xVelocity = 0.0;
+}
+
+- (IBAction)pauseButtonPressed:(id)sender
+{
+    if(!self.scene.view.paused) {
+        NSLog(@"Game Paused");
+        self.scene.view.paused = YES;
+        self.navigationItem.rightBarButtonItem.title = @"Resume";
+    }
+    else {
+        NSLog(@"Game Resumed");
+        self.scene.view.paused = NO;
+    }
 }
 
 - (IBAction)jump:(id)sender
