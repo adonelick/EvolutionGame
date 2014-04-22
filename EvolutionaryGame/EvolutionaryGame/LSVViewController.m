@@ -105,14 +105,18 @@
 
 - (IBAction)pauseButtonPressed:(id)sender
 {
+    LSVHealthView *this = [[LSVHealthView alloc] init];
+    this.frame = CGRectMake(300,300,250,250);
+    this.layer.anchorPoint = CGPointMake(1.0,1.0);
     if(!self.scene.view.paused) {
         NSLog(@"Game Paused");
         self.scene.view.paused = YES;
         self.navigationItem.rightBarButtonItem.title = @"Resume";
-    }
-    else {
+        [self.view addSubview:this];
+    } else {
         NSLog(@"Game Resumed");
         self.scene.view.paused = NO;
+        [this removeFromSuperview];
     }
 }
 
