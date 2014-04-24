@@ -405,15 +405,15 @@ WeaponStats *weaponstats = nil;
     [mainCharacter move];
     
     if (mainCharacter.position.x < CGRectGetMidX(self.frame) - 200) {
-        [self shiftScene:(mainCharacter.position.x - CGRectGetMidX(self.frame) + 200)];
+        [self shiftSceneX:(mainCharacter.position.x - CGRectGetMidX(self.frame) + 200)];
     } else if (mainCharacter.position.x > CGRectGetMidX(self.frame) + 200) {
-        [self shiftScene:(mainCharacter.position.x - CGRectGetMidX(self.frame) - 200)];
+        [self shiftSceneX:(mainCharacter.position.x - CGRectGetMidX(self.frame) - 200)];
     }
     
-    if (mainCharacter.position.y < CGRectGetMidY(self.frame) - 200) {
-        [self shiftScene:(mainCharacter.position.y - CGRectGetMidY(self.frame) + 200)];
-    } else if (mainCharacter.position.y > CGRectGetMidY(self.frame) + 200) {
-        [self shiftScene:(mainCharacter.position.y - CGRectGetMidY(self.frame) - 200)];
+    if (mainCharacter.position.y < CGRectGetMidY(self.frame) - 100) {
+        [self shiftSceneY:(mainCharacter.position.y - CGRectGetMidY(self.frame) + 100)];
+    } else if (mainCharacter.position.y > CGRectGetMidY(self.frame) + 100) {
+        [self shiftSceneY:(mainCharacter.position.y - CGRectGetMidY(self.frame) - 100)];
     }
     
     // Because collisions can cause the character to rotate
@@ -612,10 +612,17 @@ WeaponStats *weaponstats = nil;
     [_platforms addObject:p];
 }
 
-- (void) shiftScene:(int) x
+- (void) shiftSceneX:(int) x
 {
     for (SKNode* o in [self children]) {
         o.position = CGPointMake(o.position.x-x, o.position.y);
+    }
+}
+
+- (void) shiftSceneY:(int) y
+{
+    for (SKNode* o in [self children]) {
+        o.position = CGPointMake(o.position.x, o.position.y - y);
     }
 }
 
