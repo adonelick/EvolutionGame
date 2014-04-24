@@ -58,19 +58,15 @@
         }
     } else {
         if (self.texture == self.walkRight1) {
-            NSLog(@"right2");
             self.texture = self.walkRight2;
         }
         if (self.texture == self.walkRight2) {
-            NSLog(@"right1");
             self.texture = self.walkRight1;
         }
         if (self.texture == self.walkLeft1) {
-            NSLog(@"left2");
             self.texture = self.walkLeft2;
         }
         if (self.texture == self.walkLeft2) {
-            NSLog(@"left1");
             self.texture = self.walkLeft1;
         }
     }

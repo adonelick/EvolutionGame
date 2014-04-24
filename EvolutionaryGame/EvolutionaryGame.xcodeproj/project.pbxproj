@@ -77,6 +77,7 @@
 		93B64A1918F24BAA005B412E /* FirePlatformTopRight.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B64A0918F24BAA005B412E /* FirePlatformTopRight.gif */; };
 		93B64A1A18F24BAA005B412E /* FirePlatformTopRightBottom.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B64A0A18F24BAA005B412E /* FirePlatformTopRightBottom.gif */; };
 		93B64A1B18F24BAA005B412E /* FirePlatformTopRightLeft.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B64A0B18F24BAA005B412E /* FirePlatformTopRightLeft.gif */; };
+		93CF06E31909D838004933F9 /* Invisible.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93CF06E21909D838004933F9 /* Invisible.gif */; };
 		93E0473F18E91C97004D5433 /* SmallEnemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E0473E18E91C97004D5433 /* SmallEnemy.m */; };
 		93E0474518EA66EB004D5433 /* SmallEnemyProjectile.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E0474418EA66EB004D5433 /* SmallEnemyProjectile.m */; };
 		93E0474818EA6925004D5433 /* SmallEnemyWeapon.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E0474718EA6925004D5433 /* SmallEnemyWeapon.m */; };
@@ -204,6 +205,7 @@
 		93B64A0918F24BAA005B412E /* FirePlatformTopRight.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformTopRight.gif; path = Images/Platforms/FirePlatformTopRight.gif; sourceTree = "<group>"; };
 		93B64A0A18F24BAA005B412E /* FirePlatformTopRightBottom.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformTopRightBottom.gif; path = Images/Platforms/FirePlatformTopRightBottom.gif; sourceTree = "<group>"; };
 		93B64A0B18F24BAA005B412E /* FirePlatformTopRightLeft.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformTopRightLeft.gif; path = Images/Platforms/FirePlatformTopRightLeft.gif; sourceTree = "<group>"; };
+		93CF06E21909D838004933F9 /* Invisible.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Invisible.gif; sourceTree = "<group>"; };
 		93E0473D18E91C97004D5433 /* SmallEnemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmallEnemy.h; sourceTree = "<group>"; };
 		93E0473E18E91C97004D5433 /* SmallEnemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmallEnemy.m; sourceTree = "<group>"; };
 		93E0474318EA66EB004D5433 /* SmallEnemyProjectile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SmallEnemyProjectile.h; path = Objects/SmallEnemyProjectile.h; sourceTree = "<group>"; };
@@ -417,6 +419,7 @@
 		934271CC18C1C503006E9365 /* Characters */ = {
 			isa = PBXGroup;
 			children = (
+				93CF06E21909D838004933F9 /* Invisible.gif */,
 				93F3226518FB8CE0007E4718 /* FullFirePlayerCharL1.gif */,
 				93F3226618FB8CE0007E4718 /* FullFirePlayerCharL2.gif */,
 				93F3226718FB8CE0007E4718 /* FullFirePlayerCharR1.gif */,
@@ -618,6 +621,7 @@
 				93B64A1518F24BAA005B412E /* FirePlatformTop.gif in Resources */,
 				93B64A1018F24BAA005B412E /* FirePlatformCenter.gif in Resources */,
 				93F3226318FB88CE007E4718 /* Magma1.gif in Resources */,
+				93CF06E31909D838004933F9 /* Invisible.gif in Resources */,
 				93B64A1718F24BAA005B412E /* FirePlatformTopLeft.gif in Resources */,
 				93F3226F18FB8CE0007E4718 /* FullFirePlayerCharR1.gif in Resources */,
 				93B64A1818F24BAA005B412E /* FirePlatformTopLeftBottom.gif in Resources */,

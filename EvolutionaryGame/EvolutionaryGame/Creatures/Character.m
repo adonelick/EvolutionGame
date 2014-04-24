@@ -28,6 +28,8 @@
             _walkRightWeapon1 = [SKTexture textureWithImageNamed:@"FullFirePlayerCharWeaponR1.gif"];
             _walkRightWeapon2 = [SKTexture textureWithImageNamed:@"FullFirePlayerCharWeaponR2.gif"];
             
+            _invisible = [SKTexture textureWithImageNamed:@"invisible.gif"];
+            
             // Initialize everything
             self.health = 1000;
 
@@ -37,6 +39,9 @@
             self.airborne = NO;
             self.movingUp = NO;
             self.movingDown = NO;
+            self.invulnerable = NO;
+            
+            self.show = 0;
             
             self.weapon = [[Weapon alloc] init];
             
@@ -59,6 +64,8 @@
             _walkRightWeapon1 = [SKTexture textureWithImageNamed:@"PlayerCharWeaponR1.gif"];
             _walkRightWeapon2 = [SKTexture textureWithImageNamed:@"PlayerCharWeaponR2.gif"];
             
+            _invisible = [SKTexture textureWithImageNamed:@"invisible.gif"];
+            
             // Initialize everything
             self.health = 1000;
             
@@ -68,6 +75,9 @@
             self.airborne = NO;
             self.movingUp = NO;
             self.movingDown = NO;
+            self.invulnerable = NO;
+            
+            self.show = 0;
         
             self.weapon = [[Weapon alloc] init];
         
@@ -144,6 +154,22 @@
             }
         }
     }
+    
+    if (self.invulnerable) {
+        ++self.show;
+        if (self.texture != self.invisible) {
+            self.pastTexture = self.texture;
+        }
+        if (self.show == 7) {
+            self.show = 0;
+            if (self.texture != self.invisible) {
+                self.texture = self.invisible;
+            } else {
+                self.texture = self.pastTexture;
+            }
+        }
+    }
+    
 }
 
 - (id) fireProjectile
@@ -177,11 +203,14 @@
 
 - (void) damageBy:(int)damage
 {
-    if(self.health > 0){
-        self.health -= damage;
-        if(self.health <= 0){
-            self.health = 0;
+    if (self.invulnerable == NO) {
+        if(self.health > 0){
+            self.health -= damage;
+            if(self.health <= 0){
+                self.health = 0;
+            }
         }
+        self.invulnerable = YES;
     }
 }
 

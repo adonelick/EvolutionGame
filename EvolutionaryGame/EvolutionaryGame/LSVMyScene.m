@@ -287,18 +287,22 @@ int textureTimer = 0;
     [mainCharacter updateTexture];
     
     for (Enemy* e in _enemies) {
-        if (e.type == 1){
-            textureTimer ++;
-            NSLog(@"%d", textureTimer);
-            if (textureTimer == 10) {
-                [e updateTexture];
-                textureTimer = 0;
-            }
-        } else {
-                [e updateTexture];
-        }
-        
+        [e updateTexture];
     }
+    
+//    for (Enemy* e in _enemies) {
+//        if (e.type == 1){
+//            textureTimer ++;
+//            NSLog(@"%d", textureTimer);
+//            if (textureTimer == 10) {
+//                [e updateTexture];
+//                textureTimer = 0;
+//            }
+//        } else {
+//                [e updateTexture];
+//        }
+//        
+//    }
     
     for (SmokeHazard* h in _smokeHazards) {
         ++h.delay;
@@ -419,6 +423,16 @@ int textureTimer = 0;
         }
     }
     
+    for (Enemy* e in _enemies) {
+        if (e.type == 2) {
+            int distance = (int)[ExtraMath distanceBetween:e.position and:mainCharacter.position];
+            if (abs(distance) <= (MEDIUM_ENEMY_HALF_HEIGHT + CHARACTER_HALF_HEIGHT)) {
+                [mainCharacter damageBy:20];
+            }
+            
+        }
+    }
+    
     
     // If enough damage has occured to kill the player,
     // end the game.
@@ -428,6 +442,7 @@ int textureTimer = 0;
     
 }
 
+int IVtimer = 0;
 
 - (void) updateMainCharacter
 {
@@ -449,6 +464,16 @@ int textureTimer = 0;
     // about its center, we need to fight this rotation.
     SKAction* rotateAction = [SKAction rotateByAngle:-0.2*mainCharacter.zRotation duration:0.1];
     [mainCharacter runAction:rotateAction];
+    
+    // If we have invulnerability on, we need to time it out and then turn it off
+    if (mainCharacter.invulnerable == YES) {
+        ++IVtimer;
+        if (IVtimer == 100) {
+            mainCharacter.invulnerable = NO;
+            IVtimer = 0;
+        }
+    }
+    
 }
 
 - (void) updateProjectiles
