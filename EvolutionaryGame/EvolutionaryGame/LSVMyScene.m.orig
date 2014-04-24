@@ -216,6 +216,14 @@ WeaponStats *weaponstats = nil;
         
         [_enemies addObject:newEnemy1];
         [self addChild:newEnemy1];
+<<<<<<< HEAD
+        newEnemy1.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:MEDIUM_ENEMY_HALF_HEIGHT];
+        newEnemy1.physicsBody.dynamic = YES;
+        newEnemy1.physicsBody.affectedByGravity = YES;
+        newEnemy1.physicsBody.linearDamping = 1;
+        newEnemy1.physicsBody.angularDamping = 10000;
+        newEnemy1.physicsBody.mass = 0.1;*/
+=======
 
         
         // Give the platforms and medium enemies physics bodies
@@ -236,7 +244,7 @@ WeaponStats *weaponstats = nil;
                 newEnemy1.physicsBody.mass = 0.1;
             }
         }
-         */
+>>>>>>> 67e4a0531a56c86ac893cdf58a76849cca32af33
         
     }
     
@@ -493,17 +501,7 @@ WeaponStats *weaponstats = nil;
     }
 }
 
-// Check if either the main character or the weapon has advanced enough to evolve
-- (void) checkForEvolution
-{
-    if (mainCharacter.weapon.stats.killCount >= KILL_TO_EVOLVE) {
-        mainCharacter.weapon.stats.evolved = YES;
-    }
-    
-    if (mainCharacter.stats.boost >= BOOST_TO_EVOLVE) {
-        mainCharacter.stats.evolved = YES;
-    }
-}
+<<<<<<< HEAD
 - (void) loadMap:(NSString*) mapName
 {
     NSString* path = [[NSBundle mainBundle] pathForResource:mapName
@@ -550,7 +548,7 @@ WeaponStats *weaponstats = nil;
         } else if (tile == 'Z') {
             [self addPlatform:@"FirePlatformSinglePiece.gif" atX:currentX atY:currentY];
         } else if (tile == 'P') {
-            mainCharacter = [[Character alloc] initWithStats:_charStats andWeaponStats:_weaponStats];
+            mainCharacter = [[Character alloc] initWithEvolved:NO];
             mainCharacter.position = CGPointMake(currentX, currentY + 12);
             [self addChild:mainCharacter];
             mainCharacter.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:CHARACTER_HALF_HEIGHT];
@@ -612,5 +610,19 @@ WeaponStats *weaponstats = nil;
         o.position = CGPointMake(o.position.x-x, o.position.y);
     }
 }
+=======
+// Check if either the main character or the weapon has advanced enough to evolve
+- (void) checkForEvolution
+{
+    if (mainCharacter.weapon.stats.killCount >= KILL_TO_EVOLVE) {
+        mainCharacter.weapon.stats.evolved = YES;
+    }
+    
+    if (mainCharacter.stats.boost >= BOOST_TO_EVOLVE) {
+        mainCharacter.stats.evolved = YES;
+    }
+}
+
+>>>>>>> 67e4a0531a56c86ac893cdf58a76849cca32af33
 
 @end

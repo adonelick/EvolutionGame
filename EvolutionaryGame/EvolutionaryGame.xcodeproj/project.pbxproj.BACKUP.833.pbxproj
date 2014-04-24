@@ -1,0 +1,932 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+<<<<<<< HEAD
+		880C2063190779FF008DD1C9 /* test2.map in Resources */ = {isa = PBXBuildFile; fileRef = 880C2062190779FF008DD1C9 /* test2.map */; };
+		886D3F101904C9A700C4E676 /* test.map in Resources */ = {isa = PBXBuildFile; fileRef = 886D3F0F1904C9A700C4E676 /* test.map */; };
+=======
+		9301CE701904BB2600201643 /* CharacterStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 9301CE6F1904BB2600201643 /* CharacterStats.m */; };
+		9301CE731904C15F00201643 /* WeaponStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 9301CE721904C15F00201643 /* WeaponStats.m */; };
+>>>>>>> 67e4a0531a56c86ac893cdf58a76849cca32af33
+		9333FD3618B3E521006B11F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9333FD3518B3E521006B11F5 /* Foundation.framework */; };
+		9333FD3818B3E521006B11F5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9333FD3718B3E521006B11F5 /* CoreGraphics.framework */; };
+		9333FD3A18B3E521006B11F5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9333FD3918B3E521006B11F5 /* UIKit.framework */; };
+		9333FD3C18B3E521006B11F5 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9333FD3B18B3E521006B11F5 /* SpriteKit.framework */; };
+		9333FD4218B3E521006B11F5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9333FD4018B3E521006B11F5 /* InfoPlist.strings */; };
+		9333FD4418B3E521006B11F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9333FD4318B3E521006B11F5 /* main.m */; };
+		9333FD4818B3E521006B11F5 /* LSVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9333FD4718B3E521006B11F5 /* LSVAppDelegate.m */; };
+		9333FD4B18B3E521006B11F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9333FD4918B3E521006B11F5 /* Main.storyboard */; };
+		9333FD4E18B3E521006B11F5 /* LSVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9333FD4D18B3E521006B11F5 /* LSVViewController.m */; };
+		9333FD5118B3E521006B11F5 /* LSVMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9333FD5018B3E521006B11F5 /* LSVMyScene.m */; };
+		9333FD5518B3E521006B11F5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9333FD5418B3E521006B11F5 /* Images.xcassets */; };
+		9333FD5C18B3E521006B11F5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9333FD5B18B3E521006B11F5 /* XCTest.framework */; };
+		9333FD5D18B3E521006B11F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9333FD3518B3E521006B11F5 /* Foundation.framework */; };
+		9333FD5E18B3E521006B11F5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9333FD3918B3E521006B11F5 /* UIKit.framework */; };
+		9333FD6618B3E521006B11F5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9333FD6418B3E521006B11F5 /* InfoPlist.strings */; };
+		9333FD6818B3E521006B11F5 /* EvolutionaryGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9333FD6718B3E521006B11F5 /* EvolutionaryGameTests.m */; };
+		9333FD7318B5A187006B11F5 /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = 9333FD7218B5A187006B11F5 /* Character.m */; };
+		9333FD7B18B9313C006B11F5 /* Platform.m in Sources */ = {isa = PBXBuildFile; fileRef = 9333FD7A18B9313C006B11F5 /* Platform.m */; };
+		9342719D18C1B9D6006E9365 /* Weapon.m in Sources */ = {isa = PBXBuildFile; fileRef = 9342719C18C1B9D6006E9365 /* Weapon.m */; };
+		934271A018C1BA01006E9365 /* Projectile.m in Sources */ = {isa = PBXBuildFile; fileRef = 9342719F18C1BA01006E9365 /* Projectile.m */; };
+		934271B518C1C274006E9365 /* Arrow_Left.png in Resources */ = {isa = PBXBuildFile; fileRef = 934271B318C1C274006E9365 /* Arrow_Left.png */; };
+		934271B618C1C274006E9365 /* Arrow_Right.png in Resources */ = {isa = PBXBuildFile; fileRef = 934271B418C1C274006E9365 /* Arrow_Right.png */; };
+		934271C218C1C4DD006E9365 /* PlayerCharL1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 934271B818C1C4DD006E9365 /* PlayerCharL1.gif */; };
+		934271C318C1C4DD006E9365 /* PlayerCharL2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 934271B918C1C4DD006E9365 /* PlayerCharL2.gif */; };
+		934271C418C1C4DD006E9365 /* PlayerCharR1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 934271BA18C1C4DD006E9365 /* PlayerCharR1.gif */; };
+		934271C518C1C4DD006E9365 /* PlayerCharR2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 934271BB18C1C4DD006E9365 /* PlayerCharR2.gif */; };
+		934271C618C1C4DD006E9365 /* PlayerCharWeaponL1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 934271BC18C1C4DD006E9365 /* PlayerCharWeaponL1.gif */; };
+		934271C718C1C4DD006E9365 /* PlayerCharWeaponL2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 934271BD18C1C4DD006E9365 /* PlayerCharWeaponL2.gif */; };
+		934271C818C1C4DD006E9365 /* PlayerCharWeaponR1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 934271BE18C1C4DD006E9365 /* PlayerCharWeaponR1.gif */; };
+		934271C918C1C4DD006E9365 /* PlayerCharWeaponR2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 934271BF18C1C4DD006E9365 /* PlayerCharWeaponR2.gif */; };
+		934271D118C27E94006E9365 /* FireEnemySmallL1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 934271CD18C27E94006E9365 /* FireEnemySmallL1.gif */; };
+		934271D218C27E94006E9365 /* FireEnemySmallL2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 934271CE18C27E94006E9365 /* FireEnemySmallL2.gif */; };
+		934271D318C27E94006E9365 /* FireEnemySmallR1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 934271CF18C27E94006E9365 /* FireEnemySmallR1.gif */; };
+		934271D418C27E94006E9365 /* FireEnemySmallR2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 934271D018C27E94006E9365 /* FireEnemySmallR2.gif */; };
+		934271D718C27EA1006E9365 /* PlayerProjectileLeft.gif in Resources */ = {isa = PBXBuildFile; fileRef = 934271D518C27EA1006E9365 /* PlayerProjectileLeft.gif */; };
+		934271D818C27EA1006E9365 /* PlayerProjectileRight.gif in Resources */ = {isa = PBXBuildFile; fileRef = 934271D618C27EA1006E9365 /* PlayerProjectileRight.gif */; };
+		934271DF18C2EBA1006E9365 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 934271DE18C2EBA1006E9365 /* Enemy.m */; };
+		934271E218C2EE0F006E9365 /* Creature.m in Sources */ = {isa = PBXBuildFile; fileRef = 934271E118C2EE0F006E9365 /* Creature.m */; };
+		934271E518C432FD006E9365 /* ExtraMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 934271E418C432FD006E9365 /* ExtraMath.m */; };
+		935C9AEE18E91B53007B57F9 /* FireEnemySmallProjectileL.gif in Resources */ = {isa = PBXBuildFile; fileRef = 935C9AED18E91B53007B57F9 /* FireEnemySmallProjectileL.gif */; };
+		935C9AF018E91B58007B57F9 /* FireEnemySmallProjectileR.gif in Resources */ = {isa = PBXBuildFile; fileRef = 935C9AEF18E91B58007B57F9 /* FireEnemySmallProjectileR.gif */; };
+		93939EE51900655C00F38FA9 /* LSVHealthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93939EE41900655C00F38FA9 /* LSVHealthView.m */; };
+		93939EE81900E2A000F38FA9 /* MediumEnemyWeapon.m in Sources */ = {isa = PBXBuildFile; fileRef = 93939EE71900E2A000F38FA9 /* MediumEnemyWeapon.m */; };
+		93939EEB1900E31300F38FA9 /* MediumEnemyProjectile.m in Sources */ = {isa = PBXBuildFile; fileRef = 93939EEA1900E31300F38FA9 /* MediumEnemyProjectile.m */; };
+		93939EED190247D100F38FA9 /* Button.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93939EEC190247D000F38FA9 /* Button.gif */; };
+		93939EF11902480600F38FA9 /* LeftArrow.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93939EF01902480600F38FA9 /* LeftArrow.gif */; };
+		93939EF31902480D00F38FA9 /* RightArrow.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93939EF21902480D00F38FA9 /* RightArrow.gif */; };
+		93939EF519024F5C00F38FA9 /* Exit.png in Resources */ = {isa = PBXBuildFile; fileRef = 93939EF419024F5C00F38FA9 /* Exit.png */; };
+		93B649F618F248C2005B412E /* SmokeScreen1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B649F518F248C2005B412E /* SmokeScreen1.gif */; };
+		93B649F818F248C7005B412E /* SmokeScreen2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B649F718F248C7005B412E /* SmokeScreen2.gif */; };
+		93B64A0C18F24BAA005B412E /* FirePlatformBottom.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B649FC18F24BAA005B412E /* FirePlatformBottom.gif */; };
+		93B64A0D18F24BAA005B412E /* FirePlatformBottomLeft.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B649FD18F24BAA005B412E /* FirePlatformBottomLeft.gif */; };
+		93B64A0E18F24BAA005B412E /* FirePlatformBottomLeftRight.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B649FE18F24BAA005B412E /* FirePlatformBottomLeftRight.gif */; };
+		93B64A0F18F24BAA005B412E /* FirePlatformBottomRight.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B649FF18F24BAA005B412E /* FirePlatformBottomRight.gif */; };
+		93B64A1018F24BAA005B412E /* FirePlatformCenter.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B64A0018F24BAA005B412E /* FirePlatformCenter.gif */; };
+		93B64A1118F24BAA005B412E /* FirePlatformLeft.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B64A0118F24BAA005B412E /* FirePlatformLeft.gif */; };
+		93B64A1218F24BAA005B412E /* FirePlatformLeftRight.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B64A0218F24BAA005B412E /* FirePlatformLeftRight.gif */; };
+		93B64A1318F24BAA005B412E /* FirePlatformRight.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B64A0318F24BAA005B412E /* FirePlatformRight.gif */; };
+		93B64A1418F24BAA005B412E /* FirePlatformSinglePiece.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B64A0418F24BAA005B412E /* FirePlatformSinglePiece.gif */; };
+		93B64A1518F24BAA005B412E /* FirePlatformTop.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B64A0518F24BAA005B412E /* FirePlatformTop.gif */; };
+		93B64A1618F24BAA005B412E /* FirePlatformTopBottom.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B64A0618F24BAA005B412E /* FirePlatformTopBottom.gif */; };
+		93B64A1718F24BAA005B412E /* FirePlatformTopLeft.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B64A0718F24BAA005B412E /* FirePlatformTopLeft.gif */; };
+		93B64A1818F24BAA005B412E /* FirePlatformTopLeftBottom.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B64A0818F24BAA005B412E /* FirePlatformTopLeftBottom.gif */; };
+		93B64A1918F24BAA005B412E /* FirePlatformTopRight.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B64A0918F24BAA005B412E /* FirePlatformTopRight.gif */; };
+		93B64A1A18F24BAA005B412E /* FirePlatformTopRightBottom.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B64A0A18F24BAA005B412E /* FirePlatformTopRightBottom.gif */; };
+		93B64A1B18F24BAA005B412E /* FirePlatformTopRightLeft.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93B64A0B18F24BAA005B412E /* FirePlatformTopRightLeft.gif */; };
+		93E0473F18E91C97004D5433 /* SmallEnemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E0473E18E91C97004D5433 /* SmallEnemy.m */; };
+		93E0474518EA66EB004D5433 /* SmallEnemyProjectile.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E0474418EA66EB004D5433 /* SmallEnemyProjectile.m */; };
+		93E0474818EA6925004D5433 /* SmallEnemyWeapon.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E0474718EA6925004D5433 /* SmallEnemyWeapon.m */; };
+		93F3225C18FB841A007E4718 /* HealthBar.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3225B18FB841A007E4718 /* HealthBar.gif */; };
+		93F3226118FB88CE007E4718 /* Bubble.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3225D18FB88CE007E4718 /* Bubble.gif */; };
+		93F3226218FB88CE007E4718 /* HealthPiece.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3225E18FB88CE007E4718 /* HealthPiece.gif */; };
+		93F3226318FB88CE007E4718 /* Magma1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3225F18FB88CE007E4718 /* Magma1.gif */; };
+		93F3226418FB88CE007E4718 /* Magma2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3226018FB88CE007E4718 /* Magma2.gif */; };
+		93F3226D18FB8CE0007E4718 /* FullFirePlayerCharL1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3226518FB8CE0007E4718 /* FullFirePlayerCharL1.gif */; };
+		93F3226E18FB8CE0007E4718 /* FullFirePlayerCharL2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3226618FB8CE0007E4718 /* FullFirePlayerCharL2.gif */; };
+		93F3226F18FB8CE0007E4718 /* FullFirePlayerCharR1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3226718FB8CE0007E4718 /* FullFirePlayerCharR1.gif */; };
+		93F3227018FB8CE0007E4718 /* FullFirePlayerCharR2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3226818FB8CE0007E4718 /* FullFirePlayerCharR2.gif */; };
+		93F3227118FB8CE0007E4718 /* FullFirePlayerCharWeaponL1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3226918FB8CE0007E4718 /* FullFirePlayerCharWeaponL1.gif */; };
+		93F3227218FB8CE0007E4718 /* FullFirePlayerCharWeaponL2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3226A18FB8CE0007E4718 /* FullFirePlayerCharWeaponL2.gif */; };
+		93F3227318FB8CE0007E4718 /* FullFirePlayerCharWeaponR1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3226B18FB8CE0007E4718 /* FullFirePlayerCharWeaponR1.gif */; };
+		93F3227418FB8CE0007E4718 /* FullFirePlayerCharWeaponR2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3226C18FB8CE0007E4718 /* FullFirePlayerCharWeaponR2.gif */; };
+		93F3227918FB8DBC007E4718 /* MediumEnemyProjectile.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3227618FB8DBC007E4718 /* MediumEnemyProjectile.gif */; };
+		93F3227A18FB8DBC007E4718 /* PlayerProjectileWaterLeft.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3227718FB8DBC007E4718 /* PlayerProjectileWaterLeft.gif */; };
+		93F3227B18FB8DBC007E4718 /* PlayerProjectileWaterRight.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3227818FB8DBC007E4718 /* PlayerProjectileWaterRight.gif */; };
+		93F3228018FB9044007E4718 /* FireEnemyMediumL1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3227C18FB9044007E4718 /* FireEnemyMediumL1.gif */; };
+		93F3228118FB9044007E4718 /* FireEnemyMediumL2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3227D18FB9044007E4718 /* FireEnemyMediumL2.gif */; };
+		93F3228218FB9044007E4718 /* FireEnemyMediumR1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3227E18FB9044007E4718 /* FireEnemyMediumR1.gif */; };
+		93F3228318FB9044007E4718 /* FireEnemyMediumR2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 93F3227F18FB9044007E4718 /* FireEnemyMediumR2.gif */; };
+		93F3228618FB9218007E4718 /* MediumEnemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F3228518FB9218007E4718 /* MediumEnemy.m */; };
+		93FB25E818E910B0008193F3 /* SmokeHazard.m in Sources */ = {isa = PBXBuildFile; fileRef = 93FB25E718E910B0008193F3 /* SmokeHazard.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9333FD5F18B3E521006B11F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9333FD2A18B3E521006B11F5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9333FD3118B3E521006B11F5;
+			remoteInfo = EvolutionaryGame;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+<<<<<<< HEAD
+		880C2062190779FF008DD1C9 /* test2.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test2.map; sourceTree = "<group>"; };
+		886D3F0F1904C9A700C4E676 /* test.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.map; sourceTree = "<group>"; };
+=======
+		9301CE6E1904BB2600201643 /* CharacterStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterStats.h; sourceTree = "<group>"; };
+		9301CE6F1904BB2600201643 /* CharacterStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterStats.m; sourceTree = "<group>"; };
+		9301CE711904C15F00201643 /* WeaponStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeaponStats.h; sourceTree = "<group>"; };
+		9301CE721904C15F00201643 /* WeaponStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeaponStats.m; sourceTree = "<group>"; };
+>>>>>>> 67e4a0531a56c86ac893cdf58a76849cca32af33
+		9333FD3218B3E521006B11F5 /* EvolutionaryGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EvolutionaryGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9333FD3518B3E521006B11F5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9333FD3718B3E521006B11F5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9333FD3918B3E521006B11F5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9333FD3B18B3E521006B11F5 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		9333FD3F18B3E521006B11F5 /* EvolutionaryGame-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EvolutionaryGame-Info.plist"; sourceTree = "<group>"; };
+		9333FD4118B3E521006B11F5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9333FD4318B3E521006B11F5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9333FD4518B3E521006B11F5 /* EvolutionaryGame-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EvolutionaryGame-Prefix.pch"; sourceTree = "<group>"; };
+		9333FD4618B3E521006B11F5 /* LSVAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSVAppDelegate.h; sourceTree = "<group>"; };
+		9333FD4718B3E521006B11F5 /* LSVAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSVAppDelegate.m; sourceTree = "<group>"; };
+		9333FD4A18B3E521006B11F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9333FD4C18B3E521006B11F5 /* LSVViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSVViewController.h; sourceTree = "<group>"; };
+		9333FD4D18B3E521006B11F5 /* LSVViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSVViewController.m; sourceTree = "<group>"; };
+		9333FD4F18B3E521006B11F5 /* LSVMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSVMyScene.h; sourceTree = "<group>"; };
+		9333FD5018B3E521006B11F5 /* LSVMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSVMyScene.m; sourceTree = "<group>"; };
+		9333FD5418B3E521006B11F5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9333FD5A18B3E521006B11F5 /* EvolutionaryGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EvolutionaryGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9333FD5B18B3E521006B11F5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		9333FD6318B3E521006B11F5 /* EvolutionaryGameTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EvolutionaryGameTests-Info.plist"; sourceTree = "<group>"; };
+		9333FD6518B3E521006B11F5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9333FD6718B3E521006B11F5 /* EvolutionaryGameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EvolutionaryGameTests.m; sourceTree = "<group>"; };
+		9333FD7118B5A187006B11F5 /* Character.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Character.h; path = Creatures/Character.h; sourceTree = "<group>"; };
+		9333FD7218B5A187006B11F5 /* Character.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Character.m; path = Creatures/Character.m; sourceTree = "<group>"; };
+		9333FD7918B9313C006B11F5 /* Platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Platform.h; path = Objects/Platform.h; sourceTree = "<group>"; };
+		9333FD7A18B9313C006B11F5 /* Platform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Platform.m; path = Objects/Platform.m; sourceTree = "<group>"; };
+		9333FD7D18B9342B006B11F5 /* config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		9342719B18C1B9D6006E9365 /* Weapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Weapon.h; path = Objects/Weapon.h; sourceTree = "<group>"; };
+		9342719C18C1B9D6006E9365 /* Weapon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Weapon.m; path = Objects/Weapon.m; sourceTree = "<group>"; };
+		9342719E18C1BA01006E9365 /* Projectile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Projectile.h; path = Objects/Projectile.h; sourceTree = "<group>"; };
+		9342719F18C1BA01006E9365 /* Projectile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Projectile.m; path = Objects/Projectile.m; sourceTree = "<group>"; };
+		934271B318C1C274006E9365 /* Arrow_Left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Arrow_Left.png; path = Images/Arrow_Left.png; sourceTree = "<group>"; };
+		934271B418C1C274006E9365 /* Arrow_Right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Arrow_Right.png; path = Images/Arrow_Right.png; sourceTree = "<group>"; };
+		934271B818C1C4DD006E9365 /* PlayerCharL1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = PlayerCharL1.gif; path = Images/PlayerCharL1.gif; sourceTree = "<group>"; };
+		934271B918C1C4DD006E9365 /* PlayerCharL2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = PlayerCharL2.gif; path = Images/PlayerCharL2.gif; sourceTree = "<group>"; };
+		934271BA18C1C4DD006E9365 /* PlayerCharR1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = PlayerCharR1.gif; path = Images/PlayerCharR1.gif; sourceTree = "<group>"; };
+		934271BB18C1C4DD006E9365 /* PlayerCharR2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = PlayerCharR2.gif; path = Images/PlayerCharR2.gif; sourceTree = "<group>"; };
+		934271BC18C1C4DD006E9365 /* PlayerCharWeaponL1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = PlayerCharWeaponL1.gif; path = Images/PlayerCharWeaponL1.gif; sourceTree = "<group>"; };
+		934271BD18C1C4DD006E9365 /* PlayerCharWeaponL2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = PlayerCharWeaponL2.gif; path = Images/PlayerCharWeaponL2.gif; sourceTree = "<group>"; };
+		934271BE18C1C4DD006E9365 /* PlayerCharWeaponR1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = PlayerCharWeaponR1.gif; path = Images/PlayerCharWeaponR1.gif; sourceTree = "<group>"; };
+		934271BF18C1C4DD006E9365 /* PlayerCharWeaponR2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = PlayerCharWeaponR2.gif; path = Images/PlayerCharWeaponR2.gif; sourceTree = "<group>"; };
+		934271CD18C27E94006E9365 /* FireEnemySmallL1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FireEnemySmallL1.gif; path = Images/FireEnemySmallL1.gif; sourceTree = "<group>"; };
+		934271CE18C27E94006E9365 /* FireEnemySmallL2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FireEnemySmallL2.gif; path = Images/FireEnemySmallL2.gif; sourceTree = "<group>"; };
+		934271CF18C27E94006E9365 /* FireEnemySmallR1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FireEnemySmallR1.gif; path = Images/FireEnemySmallR1.gif; sourceTree = "<group>"; };
+		934271D018C27E94006E9365 /* FireEnemySmallR2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FireEnemySmallR2.gif; path = Images/FireEnemySmallR2.gif; sourceTree = "<group>"; };
+		934271D518C27EA1006E9365 /* PlayerProjectileLeft.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = PlayerProjectileLeft.gif; path = Images/PlayerProjectileLeft.gif; sourceTree = "<group>"; };
+		934271D618C27EA1006E9365 /* PlayerProjectileRight.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = PlayerProjectileRight.gif; path = Images/PlayerProjectileRight.gif; sourceTree = "<group>"; };
+		934271DD18C2EBA1006E9365 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Enemy.h; path = Creatures/Enemy.h; sourceTree = "<group>"; };
+		934271DE18C2EBA1006E9365 /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Enemy.m; path = Creatures/Enemy.m; sourceTree = "<group>"; };
+		934271E018C2EE0F006E9365 /* Creature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Creature.h; path = Creatures/Creature.h; sourceTree = "<group>"; };
+		934271E118C2EE0F006E9365 /* Creature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Creature.m; path = Creatures/Creature.m; sourceTree = "<group>"; };
+		934271E318C432FD006E9365 /* ExtraMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtraMath.h; sourceTree = "<group>"; };
+		934271E418C432FD006E9365 /* ExtraMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtraMath.m; sourceTree = "<group>"; };
+		935C9AED18E91B53007B57F9 /* FireEnemySmallProjectileL.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FireEnemySmallProjectileL.gif; path = Images/FireEnemySmallProjectileL.gif; sourceTree = "<group>"; };
+		935C9AEF18E91B58007B57F9 /* FireEnemySmallProjectileR.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FireEnemySmallProjectileR.gif; path = Images/FireEnemySmallProjectileR.gif; sourceTree = "<group>"; };
+		93939EE31900655C00F38FA9 /* LSVHealthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSVHealthView.h; sourceTree = "<group>"; };
+		93939EE41900655C00F38FA9 /* LSVHealthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSVHealthView.m; sourceTree = "<group>"; };
+		93939EE61900E2A000F38FA9 /* MediumEnemyWeapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediumEnemyWeapon.h; sourceTree = "<group>"; };
+		93939EE71900E2A000F38FA9 /* MediumEnemyWeapon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediumEnemyWeapon.m; sourceTree = "<group>"; };
+		93939EE91900E31300F38FA9 /* MediumEnemyProjectile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediumEnemyProjectile.h; sourceTree = "<group>"; };
+		93939EEA1900E31300F38FA9 /* MediumEnemyProjectile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediumEnemyProjectile.m; sourceTree = "<group>"; };
+		93939EEC190247D000F38FA9 /* Button.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Button.gif; sourceTree = "<group>"; };
+		93939EF01902480600F38FA9 /* LeftArrow.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LeftArrow.gif; sourceTree = "<group>"; };
+		93939EF21902480D00F38FA9 /* RightArrow.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = RightArrow.gif; sourceTree = "<group>"; };
+		93939EF419024F5C00F38FA9 /* Exit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Exit.png; sourceTree = "<group>"; };
+		93B649F518F248C2005B412E /* SmokeScreen1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = SmokeScreen1.gif; path = Images/SmokeScreen1.gif; sourceTree = "<group>"; };
+		93B649F718F248C7005B412E /* SmokeScreen2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = SmokeScreen2.gif; path = Images/SmokeScreen2.gif; sourceTree = "<group>"; };
+		93B649FC18F24BAA005B412E /* FirePlatformBottom.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformBottom.gif; path = Images/Platforms/FirePlatformBottom.gif; sourceTree = "<group>"; };
+		93B649FD18F24BAA005B412E /* FirePlatformBottomLeft.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformBottomLeft.gif; path = Images/Platforms/FirePlatformBottomLeft.gif; sourceTree = "<group>"; };
+		93B649FE18F24BAA005B412E /* FirePlatformBottomLeftRight.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformBottomLeftRight.gif; path = Images/Platforms/FirePlatformBottomLeftRight.gif; sourceTree = "<group>"; };
+		93B649FF18F24BAA005B412E /* FirePlatformBottomRight.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformBottomRight.gif; path = Images/Platforms/FirePlatformBottomRight.gif; sourceTree = "<group>"; };
+		93B64A0018F24BAA005B412E /* FirePlatformCenter.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformCenter.gif; path = Images/Platforms/FirePlatformCenter.gif; sourceTree = "<group>"; };
+		93B64A0118F24BAA005B412E /* FirePlatformLeft.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformLeft.gif; path = Images/Platforms/FirePlatformLeft.gif; sourceTree = "<group>"; };
+		93B64A0218F24BAA005B412E /* FirePlatformLeftRight.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformLeftRight.gif; path = Images/Platforms/FirePlatformLeftRight.gif; sourceTree = "<group>"; };
+		93B64A0318F24BAA005B412E /* FirePlatformRight.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformRight.gif; path = Images/Platforms/FirePlatformRight.gif; sourceTree = "<group>"; };
+		93B64A0418F24BAA005B412E /* FirePlatformSinglePiece.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformSinglePiece.gif; path = Images/Platforms/FirePlatformSinglePiece.gif; sourceTree = "<group>"; };
+		93B64A0518F24BAA005B412E /* FirePlatformTop.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformTop.gif; path = Images/Platforms/FirePlatformTop.gif; sourceTree = "<group>"; };
+		93B64A0618F24BAA005B412E /* FirePlatformTopBottom.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformTopBottom.gif; path = Images/Platforms/FirePlatformTopBottom.gif; sourceTree = "<group>"; };
+		93B64A0718F24BAA005B412E /* FirePlatformTopLeft.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformTopLeft.gif; path = Images/Platforms/FirePlatformTopLeft.gif; sourceTree = "<group>"; };
+		93B64A0818F24BAA005B412E /* FirePlatformTopLeftBottom.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformTopLeftBottom.gif; path = Images/Platforms/FirePlatformTopLeftBottom.gif; sourceTree = "<group>"; };
+		93B64A0918F24BAA005B412E /* FirePlatformTopRight.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformTopRight.gif; path = Images/Platforms/FirePlatformTopRight.gif; sourceTree = "<group>"; };
+		93B64A0A18F24BAA005B412E /* FirePlatformTopRightBottom.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformTopRightBottom.gif; path = Images/Platforms/FirePlatformTopRightBottom.gif; sourceTree = "<group>"; };
+		93B64A0B18F24BAA005B412E /* FirePlatformTopRightLeft.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FirePlatformTopRightLeft.gif; path = Images/Platforms/FirePlatformTopRightLeft.gif; sourceTree = "<group>"; };
+		93E0473D18E91C97004D5433 /* SmallEnemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmallEnemy.h; sourceTree = "<group>"; };
+		93E0473E18E91C97004D5433 /* SmallEnemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmallEnemy.m; sourceTree = "<group>"; };
+		93E0474318EA66EB004D5433 /* SmallEnemyProjectile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SmallEnemyProjectile.h; path = Objects/SmallEnemyProjectile.h; sourceTree = "<group>"; };
+		93E0474418EA66EB004D5433 /* SmallEnemyProjectile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SmallEnemyProjectile.m; path = Objects/SmallEnemyProjectile.m; sourceTree = "<group>"; };
+		93E0474618EA6925004D5433 /* SmallEnemyWeapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SmallEnemyWeapon.h; path = Objects/SmallEnemyWeapon.h; sourceTree = "<group>"; };
+		93E0474718EA6925004D5433 /* SmallEnemyWeapon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SmallEnemyWeapon.m; path = Objects/SmallEnemyWeapon.m; sourceTree = "<group>"; };
+		93F3225B18FB841A007E4718 /* HealthBar.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = HealthBar.gif; path = Images/HealthBar.gif; sourceTree = "<group>"; };
+		93F3225D18FB88CE007E4718 /* Bubble.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = Bubble.gif; path = Images/Bubble.gif; sourceTree = "<group>"; };
+		93F3225E18FB88CE007E4718 /* HealthPiece.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = HealthPiece.gif; path = Images/HealthPiece.gif; sourceTree = "<group>"; };
+		93F3225F18FB88CE007E4718 /* Magma1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = Magma1.gif; path = Images/Magma1.gif; sourceTree = "<group>"; };
+		93F3226018FB88CE007E4718 /* Magma2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = Magma2.gif; path = Images/Magma2.gif; sourceTree = "<group>"; };
+		93F3226518FB8CE0007E4718 /* FullFirePlayerCharL1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FullFirePlayerCharL1.gif; path = Images/FullFirePlayerCharL1.gif; sourceTree = "<group>"; };
+		93F3226618FB8CE0007E4718 /* FullFirePlayerCharL2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FullFirePlayerCharL2.gif; path = Images/FullFirePlayerCharL2.gif; sourceTree = "<group>"; };
+		93F3226718FB8CE0007E4718 /* FullFirePlayerCharR1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FullFirePlayerCharR1.gif; path = Images/FullFirePlayerCharR1.gif; sourceTree = "<group>"; };
+		93F3226818FB8CE0007E4718 /* FullFirePlayerCharR2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FullFirePlayerCharR2.gif; path = Images/FullFirePlayerCharR2.gif; sourceTree = "<group>"; };
+		93F3226918FB8CE0007E4718 /* FullFirePlayerCharWeaponL1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FullFirePlayerCharWeaponL1.gif; path = Images/FullFirePlayerCharWeaponL1.gif; sourceTree = "<group>"; };
+		93F3226A18FB8CE0007E4718 /* FullFirePlayerCharWeaponL2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FullFirePlayerCharWeaponL2.gif; path = Images/FullFirePlayerCharWeaponL2.gif; sourceTree = "<group>"; };
+		93F3226B18FB8CE0007E4718 /* FullFirePlayerCharWeaponR1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FullFirePlayerCharWeaponR1.gif; path = Images/FullFirePlayerCharWeaponR1.gif; sourceTree = "<group>"; };
+		93F3226C18FB8CE0007E4718 /* FullFirePlayerCharWeaponR2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FullFirePlayerCharWeaponR2.gif; path = Images/FullFirePlayerCharWeaponR2.gif; sourceTree = "<group>"; };
+		93F3227618FB8DBC007E4718 /* MediumEnemyProjectile.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = MediumEnemyProjectile.gif; path = Images/MediumEnemyProjectile.gif; sourceTree = "<group>"; };
+		93F3227718FB8DBC007E4718 /* PlayerProjectileWaterLeft.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = PlayerProjectileWaterLeft.gif; path = Images/PlayerProjectileWaterLeft.gif; sourceTree = "<group>"; };
+		93F3227818FB8DBC007E4718 /* PlayerProjectileWaterRight.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = PlayerProjectileWaterRight.gif; path = Images/PlayerProjectileWaterRight.gif; sourceTree = "<group>"; };
+		93F3227C18FB9044007E4718 /* FireEnemyMediumL1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FireEnemyMediumL1.gif; path = Images/FireEnemyMediumL1.gif; sourceTree = "<group>"; };
+		93F3227D18FB9044007E4718 /* FireEnemyMediumL2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FireEnemyMediumL2.gif; path = Images/FireEnemyMediumL2.gif; sourceTree = "<group>"; };
+		93F3227E18FB9044007E4718 /* FireEnemyMediumR1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FireEnemyMediumR1.gif; path = Images/FireEnemyMediumR1.gif; sourceTree = "<group>"; };
+		93F3227F18FB9044007E4718 /* FireEnemyMediumR2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FireEnemyMediumR2.gif; path = Images/FireEnemyMediumR2.gif; sourceTree = "<group>"; };
+		93F3228418FB9218007E4718 /* MediumEnemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MediumEnemy.h; path = Creatures/MediumEnemy.h; sourceTree = "<group>"; };
+		93F3228518FB9218007E4718 /* MediumEnemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MediumEnemy.m; path = Creatures/MediumEnemy.m; sourceTree = "<group>"; };
+		93FB25E618E910B0008193F3 /* SmokeHazard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SmokeHazard.h; path = Objects/SmokeHazard.h; sourceTree = "<group>"; };
+		93FB25E718E910B0008193F3 /* SmokeHazard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SmokeHazard.m; path = Objects/SmokeHazard.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9333FD2F18B3E521006B11F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9333FD3818B3E521006B11F5 /* CoreGraphics.framework in Frameworks */,
+				9333FD3A18B3E521006B11F5 /* UIKit.framework in Frameworks */,
+				9333FD3C18B3E521006B11F5 /* SpriteKit.framework in Frameworks */,
+				9333FD3618B3E521006B11F5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9333FD5718B3E521006B11F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9333FD5C18B3E521006B11F5 /* XCTest.framework in Frameworks */,
+				9333FD5E18B3E521006B11F5 /* UIKit.framework in Frameworks */,
+				9333FD5D18B3E521006B11F5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9333FD2918B3E521006B11F5 = {
+			isa = PBXGroup;
+			children = (
+				9333FD3D18B3E521006B11F5 /* EvolutionaryGame */,
+				9333FD6118B3E521006B11F5 /* EvolutionaryGameTests */,
+				9333FD3418B3E521006B11F5 /* Frameworks */,
+				9333FD4018B3E521006B11F5 /* InfoPlist.strings */,
+				9333FD3318B3E521006B11F5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9333FD3318B3E521006B11F5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9333FD3218B3E521006B11F5 /* EvolutionaryGame.app */,
+				9333FD5A18B3E521006B11F5 /* EvolutionaryGameTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9333FD3418B3E521006B11F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9333FD3518B3E521006B11F5 /* Foundation.framework */,
+				9333FD3718B3E521006B11F5 /* CoreGraphics.framework */,
+				9333FD3918B3E521006B11F5 /* UIKit.framework */,
+				9333FD3B18B3E521006B11F5 /* SpriteKit.framework */,
+				9333FD5B18B3E521006B11F5 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9333FD3D18B3E521006B11F5 /* EvolutionaryGame */ = {
+			isa = PBXGroup;
+			children = (
+				9333FD7D18B9342B006B11F5 /* config.h */,
+				9333FD4618B3E521006B11F5 /* LSVAppDelegate.h */,
+				9333FD4718B3E521006B11F5 /* LSVAppDelegate.m */,
+				9333FD4918B3E521006B11F5 /* Main.storyboard */,
+				9333FD4C18B3E521006B11F5 /* LSVViewController.h */,
+				9333FD4D18B3E521006B11F5 /* LSVViewController.m */,
+				9333FD4F18B3E521006B11F5 /* LSVMyScene.h */,
+				9333FD5018B3E521006B11F5 /* LSVMyScene.m */,
+				880C2062190779FF008DD1C9 /* test2.map */,
+				886D3F0F1904C9A700C4E676 /* test.map */,
+				93939EE31900655C00F38FA9 /* LSVHealthView.h */,
+				93939EE41900655C00F38FA9 /* LSVHealthView.m */,
+				9333FD5418B3E521006B11F5 /* Images.xcassets */,
+				9333FD7518B92FA1006B11F5 /* Objects */,
+				9333FD7418B5A1B1006B11F5 /* Creatures */,
+				9333FD3E18B3E521006B11F5 /* Supporting Files */,
+				9342719A18C1B3CF006E9365 /* Images */,
+			);
+			path = EvolutionaryGame;
+			sourceTree = "<group>";
+		};
+		9333FD3E18B3E521006B11F5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				934271E318C432FD006E9365 /* ExtraMath.h */,
+				934271E418C432FD006E9365 /* ExtraMath.m */,
+				9333FD3F18B3E521006B11F5 /* EvolutionaryGame-Info.plist */,
+				9333FD4318B3E521006B11F5 /* main.m */,
+				9333FD4518B3E521006B11F5 /* EvolutionaryGame-Prefix.pch */,
+				9301CE6E1904BB2600201643 /* CharacterStats.h */,
+				9301CE6F1904BB2600201643 /* CharacterStats.m */,
+				9301CE711904C15F00201643 /* WeaponStats.h */,
+				9301CE721904C15F00201643 /* WeaponStats.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9333FD6118B3E521006B11F5 /* EvolutionaryGameTests */ = {
+			isa = PBXGroup;
+			children = (
+				9333FD6718B3E521006B11F5 /* EvolutionaryGameTests.m */,
+				9333FD6218B3E521006B11F5 /* Supporting Files */,
+			);
+			path = EvolutionaryGameTests;
+			sourceTree = "<group>";
+		};
+		9333FD6218B3E521006B11F5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9333FD6318B3E521006B11F5 /* EvolutionaryGameTests-Info.plist */,
+				9333FD6418B3E521006B11F5 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9333FD7418B5A1B1006B11F5 /* Creatures */ = {
+			isa = PBXGroup;
+			children = (
+				934271E018C2EE0F006E9365 /* Creature.h */,
+				934271E118C2EE0F006E9365 /* Creature.m */,
+				9333FD7118B5A187006B11F5 /* Character.h */,
+				9333FD7218B5A187006B11F5 /* Character.m */,
+				934271DD18C2EBA1006E9365 /* Enemy.h */,
+				934271DE18C2EBA1006E9365 /* Enemy.m */,
+				93F3228418FB9218007E4718 /* MediumEnemy.h */,
+				93F3228518FB9218007E4718 /* MediumEnemy.m */,
+				93E0473D18E91C97004D5433 /* SmallEnemy.h */,
+				93E0473E18E91C97004D5433 /* SmallEnemy.m */,
+			);
+			name = Creatures;
+			sourceTree = "<group>";
+		};
+		9333FD7518B92FA1006B11F5 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				9342719E18C1BA01006E9365 /* Projectile.h */,
+				9342719F18C1BA01006E9365 /* Projectile.m */,
+				93E0474318EA66EB004D5433 /* SmallEnemyProjectile.h */,
+				93E0474418EA66EB004D5433 /* SmallEnemyProjectile.m */,
+				93939EE91900E31300F38FA9 /* MediumEnemyProjectile.h */,
+				93939EEA1900E31300F38FA9 /* MediumEnemyProjectile.m */,
+				9342719B18C1B9D6006E9365 /* Weapon.h */,
+				9342719C18C1B9D6006E9365 /* Weapon.m */,
+				93E0474618EA6925004D5433 /* SmallEnemyWeapon.h */,
+				93E0474718EA6925004D5433 /* SmallEnemyWeapon.m */,
+				93939EE61900E2A000F38FA9 /* MediumEnemyWeapon.h */,
+				93939EE71900E2A000F38FA9 /* MediumEnemyWeapon.m */,
+				9333FD7918B9313C006B11F5 /* Platform.h */,
+				9333FD7A18B9313C006B11F5 /* Platform.m */,
+				93FB25E618E910B0008193F3 /* SmokeHazard.h */,
+				93FB25E718E910B0008193F3 /* SmokeHazard.m */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+		9342719A18C1B3CF006E9365 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				93F3225A18FB82F0007E4718 /* Other */,
+				934271D918C2827A006E9365 /* Objects */,
+				934271CC18C1C503006E9365 /* Characters */,
+				934271CB18C1C4EF006E9365 /* Controls */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		934271CB18C1C4EF006E9365 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				934271B418C1C274006E9365 /* Arrow_Right.png */,
+				934271B318C1C274006E9365 /* Arrow_Left.png */,
+				93939EEC190247D000F38FA9 /* Button.gif */,
+				93939EF01902480600F38FA9 /* LeftArrow.gif */,
+				93939EF21902480D00F38FA9 /* RightArrow.gif */,
+			);
+			name = Controls;
+			sourceTree = "<group>";
+		};
+		934271CC18C1C503006E9365 /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				93F3226518FB8CE0007E4718 /* FullFirePlayerCharL1.gif */,
+				93F3226618FB8CE0007E4718 /* FullFirePlayerCharL2.gif */,
+				93F3226718FB8CE0007E4718 /* FullFirePlayerCharR1.gif */,
+				93F3226818FB8CE0007E4718 /* FullFirePlayerCharR2.gif */,
+				93F3226918FB8CE0007E4718 /* FullFirePlayerCharWeaponL1.gif */,
+				93F3226A18FB8CE0007E4718 /* FullFirePlayerCharWeaponL2.gif */,
+				93F3226B18FB8CE0007E4718 /* FullFirePlayerCharWeaponR1.gif */,
+				93F3226C18FB8CE0007E4718 /* FullFirePlayerCharWeaponR2.gif */,
+				93F3227C18FB9044007E4718 /* FireEnemyMediumL1.gif */,
+				93F3227D18FB9044007E4718 /* FireEnemyMediumL2.gif */,
+				93F3227E18FB9044007E4718 /* FireEnemyMediumR1.gif */,
+				93F3227F18FB9044007E4718 /* FireEnemyMediumR2.gif */,
+				934271CD18C27E94006E9365 /* FireEnemySmallL1.gif */,
+				934271CE18C27E94006E9365 /* FireEnemySmallL2.gif */,
+				934271CF18C27E94006E9365 /* FireEnemySmallR1.gif */,
+				934271D018C27E94006E9365 /* FireEnemySmallR2.gif */,
+				934271B818C1C4DD006E9365 /* PlayerCharL1.gif */,
+				934271B918C1C4DD006E9365 /* PlayerCharL2.gif */,
+				934271BA18C1C4DD006E9365 /* PlayerCharR1.gif */,
+				934271BB18C1C4DD006E9365 /* PlayerCharR2.gif */,
+				934271BC18C1C4DD006E9365 /* PlayerCharWeaponL1.gif */,
+				934271BD18C1C4DD006E9365 /* PlayerCharWeaponL2.gif */,
+				934271BE18C1C4DD006E9365 /* PlayerCharWeaponR1.gif */,
+				934271BF18C1C4DD006E9365 /* PlayerCharWeaponR2.gif */,
+			);
+			name = Characters;
+			sourceTree = "<group>";
+		};
+		934271D918C2827A006E9365 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				93F3227518FB8D39007E4718 /* Projectiles */,
+				93B649FB18F24B98005B412E /* Platforms */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+		93B649FB18F24B98005B412E /* Platforms */ = {
+			isa = PBXGroup;
+			children = (
+				93B649FC18F24BAA005B412E /* FirePlatformBottom.gif */,
+				93B649FD18F24BAA005B412E /* FirePlatformBottomLeft.gif */,
+				93B649FE18F24BAA005B412E /* FirePlatformBottomLeftRight.gif */,
+				93B649FF18F24BAA005B412E /* FirePlatformBottomRight.gif */,
+				93B64A0018F24BAA005B412E /* FirePlatformCenter.gif */,
+				93B64A0118F24BAA005B412E /* FirePlatformLeft.gif */,
+				93B64A0218F24BAA005B412E /* FirePlatformLeftRight.gif */,
+				93B64A0318F24BAA005B412E /* FirePlatformRight.gif */,
+				93B64A0418F24BAA005B412E /* FirePlatformSinglePiece.gif */,
+				93B64A0518F24BAA005B412E /* FirePlatformTop.gif */,
+				93B64A0618F24BAA005B412E /* FirePlatformTopBottom.gif */,
+				93B64A0718F24BAA005B412E /* FirePlatformTopLeft.gif */,
+				93B64A0818F24BAA005B412E /* FirePlatformTopLeftBottom.gif */,
+				93B64A0918F24BAA005B412E /* FirePlatformTopRight.gif */,
+				93B64A0A18F24BAA005B412E /* FirePlatformTopRightBottom.gif */,
+				93B64A0B18F24BAA005B412E /* FirePlatformTopRightLeft.gif */,
+			);
+			name = Platforms;
+			sourceTree = "<group>";
+		};
+		93F3225A18FB82F0007E4718 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				93F3225D18FB88CE007E4718 /* Bubble.gif */,
+				93939EF419024F5C00F38FA9 /* Exit.png */,
+				93F3225E18FB88CE007E4718 /* HealthPiece.gif */,
+				93F3225F18FB88CE007E4718 /* Magma1.gif */,
+				93F3226018FB88CE007E4718 /* Magma2.gif */,
+				93F3225B18FB841A007E4718 /* HealthBar.gif */,
+				93B649F518F248C2005B412E /* SmokeScreen1.gif */,
+				93B649F718F248C7005B412E /* SmokeScreen2.gif */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		93F3227518FB8D39007E4718 /* Projectiles */ = {
+			isa = PBXGroup;
+			children = (
+				93F3227618FB8DBC007E4718 /* MediumEnemyProjectile.gif */,
+				93F3227718FB8DBC007E4718 /* PlayerProjectileWaterLeft.gif */,
+				93F3227818FB8DBC007E4718 /* PlayerProjectileWaterRight.gif */,
+				934271D518C27EA1006E9365 /* PlayerProjectileLeft.gif */,
+				934271D618C27EA1006E9365 /* PlayerProjectileRight.gif */,
+				935C9AED18E91B53007B57F9 /* FireEnemySmallProjectileL.gif */,
+				935C9AEF18E91B58007B57F9 /* FireEnemySmallProjectileR.gif */,
+			);
+			name = Projectiles;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9333FD3118B3E521006B11F5 /* EvolutionaryGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9333FD6B18B3E521006B11F5 /* Build configuration list for PBXNativeTarget "EvolutionaryGame" */;
+			buildPhases = (
+				9333FD2E18B3E521006B11F5 /* Sources */,
+				9333FD2F18B3E521006B11F5 /* Frameworks */,
+				9333FD3018B3E521006B11F5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EvolutionaryGame;
+			productName = EvolutionaryGame;
+			productReference = 9333FD3218B3E521006B11F5 /* EvolutionaryGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9333FD5918B3E521006B11F5 /* EvolutionaryGameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9333FD6E18B3E521006B11F5 /* Build configuration list for PBXNativeTarget "EvolutionaryGameTests" */;
+			buildPhases = (
+				9333FD5618B3E521006B11F5 /* Sources */,
+				9333FD5718B3E521006B11F5 /* Frameworks */,
+				9333FD5818B3E521006B11F5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9333FD6018B3E521006B11F5 /* PBXTargetDependency */,
+			);
+			name = EvolutionaryGameTests;
+			productName = EvolutionaryGameTests;
+			productReference = 9333FD5A18B3E521006B11F5 /* EvolutionaryGameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9333FD2A18B3E521006B11F5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = LSV;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = CS121;
+				TargetAttributes = {
+					9333FD3118B3E521006B11F5 = {
+						DevelopmentTeam = T9HDTSCW4C;
+					};
+					9333FD5918B3E521006B11F5 = {
+						TestTargetID = 9333FD3118B3E521006B11F5;
+					};
+				};
+			};
+			buildConfigurationList = 9333FD2D18B3E521006B11F5 /* Build configuration list for PBXProject "EvolutionaryGame" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9333FD2918B3E521006B11F5;
+			productRefGroup = 9333FD3318B3E521006B11F5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9333FD3118B3E521006B11F5 /* EvolutionaryGame */,
+				9333FD5918B3E521006B11F5 /* EvolutionaryGameTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9333FD3018B3E521006B11F5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93F3227418FB8CE0007E4718 /* FullFirePlayerCharWeaponR2.gif in Resources */,
+				93F3227A18FB8DBC007E4718 /* PlayerProjectileWaterLeft.gif in Resources */,
+				93F3228318FB9044007E4718 /* FireEnemyMediumR2.gif in Resources */,
+				93B649F618F248C2005B412E /* SmokeScreen1.gif in Resources */,
+				934271C418C1C4DD006E9365 /* PlayerCharR1.gif in Resources */,
+				93939EF11902480600F38FA9 /* LeftArrow.gif in Resources */,
+				93F3227318FB8CE0007E4718 /* FullFirePlayerCharWeaponR1.gif in Resources */,
+				93B64A1318F24BAA005B412E /* FirePlatformRight.gif in Resources */,
+				93F3227918FB8DBC007E4718 /* MediumEnemyProjectile.gif in Resources */,
+				93939EF519024F5C00F38FA9 /* Exit.png in Resources */,
+				935C9AEE18E91B53007B57F9 /* FireEnemySmallProjectileL.gif in Resources */,
+				93F3227018FB8CE0007E4718 /* FullFirePlayerCharR2.gif in Resources */,
+				93939EED190247D100F38FA9 /* Button.gif in Resources */,
+				934271C518C1C4DD006E9365 /* PlayerCharR2.gif in Resources */,
+				93939EF31902480D00F38FA9 /* RightArrow.gif in Resources */,
+				934271C718C1C4DD006E9365 /* PlayerCharWeaponL2.gif in Resources */,
+				93B64A1B18F24BAA005B412E /* FirePlatformTopRightLeft.gif in Resources */,
+				934271D218C27E94006E9365 /* FireEnemySmallL2.gif in Resources */,
+				93F3225C18FB841A007E4718 /* HealthBar.gif in Resources */,
+				934271C818C1C4DD006E9365 /* PlayerCharWeaponR1.gif in Resources */,
+				93B64A0E18F24BAA005B412E /* FirePlatformBottomLeftRight.gif in Resources */,
+				93B64A0D18F24BAA005B412E /* FirePlatformBottomLeft.gif in Resources */,
+				9333FD4218B3E521006B11F5 /* InfoPlist.strings in Resources */,
+				935C9AF018E91B58007B57F9 /* FireEnemySmallProjectileR.gif in Resources */,
+				93F3226118FB88CE007E4718 /* Bubble.gif in Resources */,
+				934271B518C1C274006E9365 /* Arrow_Left.png in Resources */,
+				934271D318C27E94006E9365 /* FireEnemySmallR1.gif in Resources */,
+				93B64A1418F24BAA005B412E /* FirePlatformSinglePiece.gif in Resources */,
+				934271C218C1C4DD006E9365 /* PlayerCharL1.gif in Resources */,
+				93B64A1518F24BAA005B412E /* FirePlatformTop.gif in Resources */,
+				93B64A1018F24BAA005B412E /* FirePlatformCenter.gif in Resources */,
+				93F3226318FB88CE007E4718 /* Magma1.gif in Resources */,
+				93B64A1718F24BAA005B412E /* FirePlatformTopLeft.gif in Resources */,
+				93F3226F18FB8CE0007E4718 /* FullFirePlayerCharR1.gif in Resources */,
+				93B64A1818F24BAA005B412E /* FirePlatformTopLeftBottom.gif in Resources */,
+				93B64A1218F24BAA005B412E /* FirePlatformLeftRight.gif in Resources */,
+				93B64A0F18F24BAA005B412E /* FirePlatformBottomRight.gif in Resources */,
+				934271D718C27EA1006E9365 /* PlayerProjectileLeft.gif in Resources */,
+				934271D118C27E94006E9365 /* FireEnemySmallL1.gif in Resources */,
+				934271C318C1C4DD006E9365 /* PlayerCharL2.gif in Resources */,
+				934271C618C1C4DD006E9365 /* PlayerCharWeaponL1.gif in Resources */,
+				934271C918C1C4DD006E9365 /* PlayerCharWeaponR2.gif in Resources */,
+				9333FD5518B3E521006B11F5 /* Images.xcassets in Resources */,
+				93B64A1618F24BAA005B412E /* FirePlatformTopBottom.gif in Resources */,
+				934271B618C1C274006E9365 /* Arrow_Right.png in Resources */,
+				93F3226D18FB8CE0007E4718 /* FullFirePlayerCharL1.gif in Resources */,
+				93F3228118FB9044007E4718 /* FireEnemyMediumL2.gif in Resources */,
+				93F3226418FB88CE007E4718 /* Magma2.gif in Resources */,
+				93F3227218FB8CE0007E4718 /* FullFirePlayerCharWeaponL2.gif in Resources */,
+				934271D818C27EA1006E9365 /* PlayerProjectileRight.gif in Resources */,
+				93F3226218FB88CE007E4718 /* HealthPiece.gif in Resources */,
+				93B64A1918F24BAA005B412E /* FirePlatformTopRight.gif in Resources */,
+				886D3F101904C9A700C4E676 /* test.map in Resources */,
+				93F3227118FB8CE0007E4718 /* FullFirePlayerCharWeaponL1.gif in Resources */,
+				93B64A0C18F24BAA005B412E /* FirePlatformBottom.gif in Resources */,
+				93B64A1A18F24BAA005B412E /* FirePlatformTopRightBottom.gif in Resources */,
+				93B64A1118F24BAA005B412E /* FirePlatformLeft.gif in Resources */,
+				93F3228218FB9044007E4718 /* FireEnemyMediumR1.gif in Resources */,
+				93F3226E18FB8CE0007E4718 /* FullFirePlayerCharL2.gif in Resources */,
+				880C2063190779FF008DD1C9 /* test2.map in Resources */,
+				93F3228018FB9044007E4718 /* FireEnemyMediumL1.gif in Resources */,
+				93B649F818F248C7005B412E /* SmokeScreen2.gif in Resources */,
+				9333FD4B18B3E521006B11F5 /* Main.storyboard in Resources */,
+				934271D418C27E94006E9365 /* FireEnemySmallR2.gif in Resources */,
+				93F3227B18FB8DBC007E4718 /* PlayerProjectileWaterRight.gif in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9333FD5818B3E521006B11F5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9333FD6618B3E521006B11F5 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9333FD2E18B3E521006B11F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9301CE731904C15F00201643 /* WeaponStats.m in Sources */,
+				934271DF18C2EBA1006E9365 /* Enemy.m in Sources */,
+				934271A018C1BA01006E9365 /* Projectile.m in Sources */,
+				93E0474818EA6925004D5433 /* SmallEnemyWeapon.m in Sources */,
+				93939EE51900655C00F38FA9 /* LSVHealthView.m in Sources */,
+				9342719D18C1B9D6006E9365 /* Weapon.m in Sources */,
+				9333FD5118B3E521006B11F5 /* LSVMyScene.m in Sources */,
+				93E0473F18E91C97004D5433 /* SmallEnemy.m in Sources */,
+				93939EE81900E2A000F38FA9 /* MediumEnemyWeapon.m in Sources */,
+				934271E218C2EE0F006E9365 /* Creature.m in Sources */,
+				93F3228618FB9218007E4718 /* MediumEnemy.m in Sources */,
+				93FB25E818E910B0008193F3 /* SmokeHazard.m in Sources */,
+				9333FD7318B5A187006B11F5 /* Character.m in Sources */,
+				93939EEB1900E31300F38FA9 /* MediumEnemyProjectile.m in Sources */,
+				9333FD7B18B9313C006B11F5 /* Platform.m in Sources */,
+				9333FD4818B3E521006B11F5 /* LSVAppDelegate.m in Sources */,
+				934271E518C432FD006E9365 /* ExtraMath.m in Sources */,
+				93E0474518EA66EB004D5433 /* SmallEnemyProjectile.m in Sources */,
+				9333FD4418B3E521006B11F5 /* main.m in Sources */,
+				9333FD4E18B3E521006B11F5 /* LSVViewController.m in Sources */,
+				9301CE701904BB2600201643 /* CharacterStats.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9333FD5618B3E521006B11F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9333FD6818B3E521006B11F5 /* EvolutionaryGameTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9333FD6018B3E521006B11F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9333FD3118B3E521006B11F5 /* EvolutionaryGame */;
+			targetProxy = 9333FD5F18B3E521006B11F5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9333FD4018B3E521006B11F5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9333FD4118B3E521006B11F5 /* en */,
+			);
+			name = InfoPlist.strings;
+			path = EvolutionaryGame;
+			sourceTree = "<group>";
+		};
+		9333FD4918B3E521006B11F5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9333FD4A18B3E521006B11F5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9333FD6418B3E521006B11F5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9333FD6518B3E521006B11F5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9333FD6918B3E521006B11F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		9333FD6A18B3E521006B11F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9333FD6C18B3E521006B11F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EvolutionaryGame/EvolutionaryGame-Prefix.pch";
+				INFOPLIST_FILE = "EvolutionaryGame/EvolutionaryGame-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9333FD6D18B3E521006B11F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EvolutionaryGame/EvolutionaryGame-Prefix.pch";
+				INFOPLIST_FILE = "EvolutionaryGame/EvolutionaryGame-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		9333FD6F18B3E521006B11F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EvolutionaryGame.app/EvolutionaryGame";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EvolutionaryGame/EvolutionaryGame-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "EvolutionaryGameTests/EvolutionaryGameTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		9333FD7018B3E521006B11F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EvolutionaryGame.app/EvolutionaryGame";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EvolutionaryGame/EvolutionaryGame-Prefix.pch";
+				INFOPLIST_FILE = "EvolutionaryGameTests/EvolutionaryGameTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9333FD2D18B3E521006B11F5 /* Build configuration list for PBXProject "EvolutionaryGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9333FD6918B3E521006B11F5 /* Debug */,
+				9333FD6A18B3E521006B11F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9333FD6B18B3E521006B11F5 /* Build configuration list for PBXNativeTarget "EvolutionaryGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9333FD6C18B3E521006B11F5 /* Debug */,
+				9333FD6D18B3E521006B11F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9333FD6E18B3E521006B11F5 /* Build configuration list for PBXNativeTarget "EvolutionaryGameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9333FD6F18B3E521006B11F5 /* Debug */,
+				9333FD7018B3E521006B11F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9333FD2A18B3E521006B11F5 /* Project object */;
+}
