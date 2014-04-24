@@ -35,6 +35,12 @@
         _smokeHazards = [NSMutableArray new];
         _platforms = [NSMutableArray new];
         
+        self.backgroundColor = [SKColor colorWithRed:0.25 green:0.15 blue:0.15 alpha:1.0];
+        
+        // Testing level map loading
+        [self loadMap:@"test2"];
+        
+        /*
         // Testing display
         Platform* exitTest = [[Platform alloc] init: @"Exit.png"];
         exitTest.position = CGPointMake(CGRectGetMidX(self.frame) + 250,
@@ -53,12 +59,8 @@
         mainCharacter.physicsBody.angularDamping = 10000;
         mainCharacter.physicsBody.mass = 0.1;
         
-        self.backgroundColor = [SKColor colorWithRed:0.25 green:0.15 blue:0.15 alpha:1.0];
-        
         
         // FOR TESTING PURPOSES:
-        
-        _ground = mainCharacter.position.y - CHARACTER_HALF_HEIGHT;
         
         SmokeHazard* newHazard = [[SmokeHazard alloc] init];
         newHazard.position = CGPointMake(CGRectGetMidX(self.frame)+100,
@@ -221,7 +223,7 @@
         newEnemy1.physicsBody.affectedByGravity = YES;
         newEnemy1.physicsBody.linearDamping = 1;
         newEnemy1.physicsBody.angularDamping = 10000;
-        newEnemy1.physicsBody.mass = 0.1;
+        newEnemy1.physicsBody.mass = 0.1;*/
         
     }
     return self;
@@ -383,6 +385,12 @@
 {
     [mainCharacter move];
     
+    if (mainCharacter.position.x < 100) {
+        [self shiftScene:(mainCharacter.position.x - 100)];
+    } else if (mainCharacter.position.x > 600) {
+        [self shiftScene:(mainCharacter.position.x - 600)];
+    }
+    
     // Because collisions can cause the character to rotate
     // about its center, we need to fight this rotation.
     SKAction* rotateAction = [SKAction rotateByAngle:-0.2*mainCharacter.zRotation duration:0.1];
@@ -464,5 +472,113 @@
     }
 }
 
+- (void) loadMap:(NSString*) mapName
+{
+    NSString* path = [[NSBundle mainBundle] pathForResource:mapName
+                                                     ofType:@"map"];
+    NSString* content = [NSString stringWithContentsOfFile:path
+                                                  encoding:NSUTF8StringEncoding
+                                                     error:NULL];
+    int currentX = 25;
+    int currentY = 725;
+    
+    for (int i = 0; i < content.length; i++) {
+        char tile = [content characterAtIndex:i];
+        
+        if (tile == '0') {
+            [self addPlatform:@"FirePlatformBottom.gif" atX:currentX atY:currentY];
+        } else if (tile == '1') {
+            [self addPlatform:@"FirePlatformLeft.gif" atX:currentX atY:currentY];
+        } else if (tile == '2') {
+            [self addPlatform:@"FirePlatformTop.gif" atX:currentX atY:currentY];
+        } else if (tile == '3') {
+            [self addPlatform:@"FirePlatformRight.gif" atX:currentX atY:currentY];
+        } else if (tile == '4') {
+            [self addPlatform:@"FirePlatformBottomLeft.gif" atX:currentX atY:currentY];
+        } else if (tile == '5') {
+            [self addPlatform:@"FirePlatformTopLeft.gif" atX:currentX atY:currentY];
+        } else if (tile == '6') {
+            [self addPlatform:@"FirePlatformTopRight.gif" atX:currentX atY:currentY];
+        } else if (tile == '7') {
+            [self addPlatform:@"FirePlatformBottomRight.gif" atX:currentX atY:currentY];
+        } else if (tile == '8') {
+            [self addPlatform:@"FirePlatformBottomLeftRight.gif" atX:currentX atY:currentY];
+        } else if (tile == '9') {
+            [self addPlatform:@"FirePlatformTopLeftBottom.gif" atX:currentX atY:currentY];
+        } else if (tile == 'U') {
+            [self addPlatform:@"FirePlatformTopRightLeft.gif" atX:currentX atY:currentY];
+        } else if (tile == 'V') {
+            [self addPlatform:@"FirePlatformTopRightBottom.gif" atX:currentX atY:currentY];
+        } else if (tile == 'W') {
+            [self addPlatform:@"FirePlatformLeftRight.gif" atX:currentX atY:currentY];
+        } else if (tile == 'X') {
+            [self addPlatform:@"FirePlatformTopBottom.gif" atX:currentX atY:currentY];
+        } else if (tile == 'Y') {
+            [self addPlatform:@"FirePlatformCenter.gif" atX:currentX atY:currentY];
+        } else if (tile == 'Z') {
+            [self addPlatform:@"FirePlatformSinglePiece.gif" atX:currentX atY:currentY];
+        } else if (tile == 'P') {
+            mainCharacter = [[Character alloc] initWithEvolved:NO];
+            mainCharacter.position = CGPointMake(currentX, currentY + 12);
+            [self addChild:mainCharacter];
+            mainCharacter.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:CHARACTER_HALF_HEIGHT];
+            mainCharacter.physicsBody.dynamic = YES;
+            mainCharacter.physicsBody.affectedByGravity = YES;
+            mainCharacter.physicsBody.linearDamping = 1;
+            mainCharacter.physicsBody.angularDamping = 10000;
+            mainCharacter.physicsBody.mass = 0.1;
+        } else if (tile == 'E') {
+            Platform* exitTest = [[Platform alloc] init: @"Exit.png"];
+            exitTest.position = CGPointMake(currentX + 25, currentY + 25);
+            [self addChild:exitTest];
+        } else if (tile == 'S') {
+            SmokeHazard* newHazard = [[SmokeHazard alloc] init];
+            newHazard.position = CGPointMake(currentX, currentY);
+            [_smokeHazards addObject:newHazard];
+            [self addChild:newHazard];
+        } else if (tile == 'B') {
+            SmallEnemy* newEnemy = [[SmallEnemy alloc] init];
+            newEnemy.position = CGPointMake(currentX, currentY);
+            [_enemies addObject:newEnemy];
+            [self addChild:newEnemy];
+        } else if (tile == 'M') {
+            MediumEnemy* m = [[MediumEnemy alloc] init];
+            m.position = CGPointMake(currentX + 25, currentY + 25);
+            [_enemies addObject:m];
+            [self addChild:m];
+            m.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:MEDIUM_ENEMY_HALF_HEIGHT];
+            m.physicsBody.dynamic = YES;
+            m.physicsBody.affectedByGravity = YES;
+            m.physicsBody.linearDamping = 1;
+            m.physicsBody.angularDamping = 10000;
+            m.physicsBody.mass = 0.1;
+        }
+        
+        currentX += 50;
+        if (tile == '\n') {
+            currentX = 25;
+            currentY -= 50;
+        }
+    }
+}
+
+- (void) addPlatform:(NSString*) fileName atX:(int) x atY:(int) y
+{
+    Platform* p = [[Platform alloc] init: fileName];
+    p.position = CGPointMake(x, y);
+    p.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(50, 50)];
+    p.physicsBody.dynamic = NO;
+    p.physicsBody.affectedByGravity = NO;
+    p.physicsBody.linearDamping = 1000;
+    [self addChild:p];
+    [_platforms addObject:p];
+}
+
+- (void) shiftScene:(int) x
+{
+    for (SKNode* o in [self children]) {
+        o.position = CGPointMake(o.position.x-x, o.position.y);
+    }
+}
 
 @end

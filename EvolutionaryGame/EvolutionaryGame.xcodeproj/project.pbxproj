@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		880C2063190779FF008DD1C9 /* test2.map in Resources */ = {isa = PBXBuildFile; fileRef = 880C2062190779FF008DD1C9 /* test2.map */; };
+		886D3F101904C9A700C4E676 /* test.map in Resources */ = {isa = PBXBuildFile; fileRef = 886D3F0F1904C9A700C4E676 /* test.map */; };
 		9333FD3618B3E521006B11F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9333FD3518B3E521006B11F5 /* Foundation.framework */; };
 		9333FD3818B3E521006B11F5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9333FD3718B3E521006B11F5 /* CoreGraphics.framework */; };
 		9333FD3A18B3E521006B11F5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9333FD3918B3E521006B11F5 /* UIKit.framework */; };
@@ -111,6 +113,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		880C2062190779FF008DD1C9 /* test2.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test2.map; sourceTree = "<group>"; };
+		886D3F0F1904C9A700C4E676 /* test.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.map; sourceTree = "<group>"; };
 		9333FD3218B3E521006B11F5 /* EvolutionaryGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EvolutionaryGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9333FD3518B3E521006B11F5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9333FD3718B3E521006B11F5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -294,6 +298,8 @@
 				9333FD4D18B3E521006B11F5 /* LSVViewController.m */,
 				9333FD4F18B3E521006B11F5 /* LSVMyScene.h */,
 				9333FD5018B3E521006B11F5 /* LSVMyScene.m */,
+				880C2062190779FF008DD1C9 /* test2.map */,
+				886D3F0F1904C9A700C4E676 /* test.map */,
 				93939EE31900655C00F38FA9 /* LSVHealthView.h */,
 				93939EE41900655C00F38FA9 /* LSVHealthView.m */,
 				9333FD5418B3E521006B11F5 /* Images.xcassets */,
@@ -622,12 +628,14 @@
 				934271D818C27EA1006E9365 /* PlayerProjectileRight.gif in Resources */,
 				93F3226218FB88CE007E4718 /* HealthPiece.gif in Resources */,
 				93B64A1918F24BAA005B412E /* FirePlatformTopRight.gif in Resources */,
+				886D3F101904C9A700C4E676 /* test.map in Resources */,
 				93F3227118FB8CE0007E4718 /* FullFirePlayerCharWeaponL1.gif in Resources */,
 				93B64A0C18F24BAA005B412E /* FirePlatformBottom.gif in Resources */,
 				93B64A1A18F24BAA005B412E /* FirePlatformTopRightBottom.gif in Resources */,
 				93B64A1118F24BAA005B412E /* FirePlatformLeft.gif in Resources */,
 				93F3228218FB9044007E4718 /* FireEnemyMediumR1.gif in Resources */,
 				93F3226E18FB8CE0007E4718 /* FullFirePlayerCharL2.gif in Resources */,
+				880C2063190779FF008DD1C9 /* test2.map in Resources */,
 				93F3228018FB9044007E4718 /* FireEnemyMediumL1.gif in Resources */,
 				93B649F818F248C7005B412E /* SmokeScreen2.gif in Resources */,
 				9333FD4B18B3E521006B11F5 /* Main.storyboard in Resources */,
