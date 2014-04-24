@@ -244,26 +244,6 @@ WeaponStats *weaponstats = nil;
 }
 
 
-- (void) updateTextures
-{
-    // Make all moving objects on the screen move
-    
-    [mainCharacter updateTexture];
-    
-    for (Enemy* e in _enemies) {
-        [e updateTexture];
-    }
-    
-    for (SmokeHazard* h in _smokeHazards) {
-        ++h.delay;
-        if(h.delay == 7) {
-            h.delay = 0;
-            [h updateTexture];
-        }
-    }
-}
-                         
-
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     /* Called when a touch begins */
@@ -298,6 +278,36 @@ WeaponStats *weaponstats = nil;
 
 }
 
+int textureTimer = 0;
+
+- (void) updateTextures
+{
+    // Make all moving objects on the screen move
+    
+    [mainCharacter updateTexture];
+    
+    for (Enemy* e in _enemies) {
+        if (e.type == 1){
+            textureTimer ++;
+            NSLog(@"%d", textureTimer);
+            if (textureTimer == 10) {
+                [e updateTexture];
+                textureTimer = 0;
+            }
+        } else {
+                [e updateTexture];
+        }
+        
+    }
+    
+    for (SmokeHazard* h in _smokeHazards) {
+        ++h.delay;
+        if(h.delay == 7) {
+            h.delay = 0;
+            [h updateTexture];
+        }
+    }
+}
 
 - (void) checkForCollisions
 {

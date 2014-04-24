@@ -28,6 +28,8 @@
         self.health = 250;
         
         self.type = 1;
+        
+        self.texture = self.walkLeft1;
     }
     
     return self;
@@ -55,10 +57,20 @@
             self.texture = self.walkLeft1;
         }
     } else {
-        // Reset the textures to default if not moving
-        if (self.facingRight) {
+        if (self.texture == self.walkRight1) {
+            NSLog(@"right2");
+            self.texture = self.walkRight2;
+        }
+        if (self.texture == self.walkRight2) {
+            NSLog(@"right1");
             self.texture = self.walkRight1;
-        } else {
+        }
+        if (self.texture == self.walkLeft1) {
+            NSLog(@"left2");
+            self.texture = self.walkLeft2;
+        }
+        if (self.texture == self.walkLeft2) {
+            NSLog(@"left1");
             self.texture = self.walkLeft1;
         }
     }
