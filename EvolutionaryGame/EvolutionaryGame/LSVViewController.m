@@ -85,7 +85,7 @@
 
 - (IBAction)leftButtonDown:(id)sender
 {
-    mainCharacter.xVelocity = (mainCharacter.stats.runSpeed)*-0.5;
+    mainCharacter.xVelocity = (mainCharacter.stats.runSpeed)*-0.375;
 }
 
 - (IBAction)leftButtonUp:(id)sender
@@ -95,7 +95,7 @@
 
 - (IBAction)rightButtonDown:(id)sender
 {
-    mainCharacter.xVelocity = (mainCharacter.stats.runSpeed)*0.5;
+    mainCharacter.xVelocity = (mainCharacter.stats.runSpeed)*0.375;
 }
 
 - (IBAction)rightButtonUp:(id)sender
