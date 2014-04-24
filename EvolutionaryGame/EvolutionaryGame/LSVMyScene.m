@@ -404,10 +404,16 @@ WeaponStats *weaponstats = nil;
 {
     [mainCharacter move];
     
-    if (mainCharacter.position.x < 100) {
-        [self shiftScene:(mainCharacter.position.x - 100)];
-    } else if (mainCharacter.position.x > 600) {
-        [self shiftScene:(mainCharacter.position.x - 600)];
+    if (mainCharacter.position.x < CGRectGetMidX(self.frame) - 200) {
+        [self shiftScene:(mainCharacter.position.x - CGRectGetMidX(self.frame) + 200)];
+    } else if (mainCharacter.position.x > CGRectGetMidX(self.frame) + 200) {
+        [self shiftScene:(mainCharacter.position.x - CGRectGetMidX(self.frame) - 200)];
+    }
+    
+    if (mainCharacter.position.y < CGRectGetMidY(self.frame) - 200) {
+        [self shiftScene:(mainCharacter.position.y - CGRectGetMidY(self.frame) + 200)];
+    } else if (mainCharacter.position.y > CGRectGetMidY(self.frame) + 200) {
+        [self shiftScene:(mainCharacter.position.y - CGRectGetMidY(self.frame) - 200)];
     }
     
     // Because collisions can cause the character to rotate
