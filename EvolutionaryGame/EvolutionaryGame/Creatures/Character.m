@@ -11,9 +11,9 @@
 
 @implementation Character
 
-- (id) initWithEvolved:(Boolean) evolved
+- (id) initWithStats:(CharacterStats*) charstats andWeaponStats:(WeaponStats *)weaponstats
 {
-    if (evolved) {
+    if (charstats.evolved) {
         self = [super initWithImageNamed:@"FullFirePlayerCharR1.gif"];
         
         if (self) {
@@ -28,11 +28,10 @@
             _walkRightWeapon1 = [SKTexture textureWithImageNamed:@"FullFirePlayerCharWeaponR1.gif"];
             _walkRightWeapon2 = [SKTexture textureWithImageNamed:@"FullFirePlayerCharWeaponR2.gif"];
             
-            // Originally, the character is not moving
-            self.xVelocity = 0.0;
-            self.yVelocity = 0.0;
-            
+            // Initialize everything
             self.health = 1000;
+
+            self.stats = charstats;
             
             self.facingRight = YES;
             self.airborne = NO;
@@ -41,24 +40,8 @@
             
             self.weapon = [[Weapon alloc] init];
             
-            // Initialize all stats
-            self.weapon.fireDamage = 50;
-            self.weapon.iceDamage = 50;
-            self.weapon.lightningDamage = 50;
-            self.weapon.earthDamage = 50;
-            self.weapon.waterDamage = 50;
-            
-            self.fireDef = 1.0;
-            self.iceDef = 1.0;
-            self.lightningDef = 1.0;
-            self.earthDef = 1.0;
-            self.waterDef = 1.0;
-            
-            self.jumpHeight = 1.0;
-            self.strength = 1.0;
-            self.runSpeed = 1.0;
-            self.climb = 1.0;
-            self.breath = 1.0;
+            self.weapon.stats = weaponstats;
+
         }
         
     } else {
@@ -76,11 +59,10 @@
             _walkRightWeapon1 = [SKTexture textureWithImageNamed:@"PlayerCharWeaponR1.gif"];
             _walkRightWeapon2 = [SKTexture textureWithImageNamed:@"PlayerCharWeaponR2.gif"];
             
-            // Originally, the character is not moving
-            self.xVelocity = 0.0;
-            self.yVelocity = 0.0;
-            
+            // Initialize everything
             self.health = 1000;
+            
+            self.stats = charstats;
             
             self.facingRight = YES;
             self.airborne = NO;
@@ -89,24 +71,8 @@
         
             self.weapon = [[Weapon alloc] init];
         
-            // Initialize all stats
-            self.weapon.fireDamage = 50;
-            self.weapon.iceDamage = 50;
-            self.weapon.lightningDamage = 50;
-            self.weapon.earthDamage = 50;
-            self.weapon.waterDamage = 50;
-
-            self.fireDef = 1.0;
-            self.iceDef = 1.0;
-            self.lightningDef = 1.0;
-            self.earthDef = 1.0;
-            self.waterDef = 1.0;
-        
-            self.jumpHeight = 1.0;
-            self.strength = 1.0;
-            self.runSpeed = 1.0;
-            self.climb = 1.0;
-            self.breath = 1.0;
+            self.weapon.stats = weaponstats;
+            
         }
         
     }
@@ -207,6 +173,16 @@
     }
     
     return projectile;
+}
+
+- (void) damageBy:(int)damage
+{
+    if(self.health > 0){
+        self.health -= damage;
+        if(self.health <= 0){
+            self.health = 0;
+        }
+    }
 }
 
 

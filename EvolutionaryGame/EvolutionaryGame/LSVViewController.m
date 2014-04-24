@@ -12,6 +12,7 @@
 #import "LSVHealthView.h"
 
 
+
 @implementation LSVViewController
 
 - (void) viewDidLoad
@@ -43,6 +44,8 @@
     
     _scene.health = health;
     
+    UIBarButtonItem *pauseButton =[[UIBarButtonItem alloc] initWithTitle:@"Pause" style:UIBarButtonItemStylePlain target:self action:@selector(pauseButtonPressed:)];
+    [self.navigationItem setRightBarButtonItem:pauseButton];
 }
 
 - (BOOL)shouldAutorotate
@@ -67,7 +70,7 @@
 
 - (IBAction)armCharacter:(id)sender
 {
-    if (mainCharacter.isArmed ) {
+    if (mainCharacter.isArmed) {
         [sender setTitle:@"Arm" forState:UIControlStateNormal];
     } else {
         [sender setTitle:@"Disarm" forState:UIControlStateNormal];
@@ -80,29 +83,41 @@
     [_scene addProjectile:[mainCharacter fireProjectile] toArray:_scene.projectiles];
 }
 
-
 - (IBAction)leftButtonDown:(id)sender
 {
-    mainCharacter.xVelocity = -0.5;
+    mainCharacter.xVelocity = (mainCharacter.stats.runSpeed)*-0.5;
 }
-
 
 - (IBAction)leftButtonUp:(id)sender
 {
     mainCharacter.xVelocity = 0.0;
 }
 
-
 - (IBAction)rightButtonDown:(id)sender
 {
-    mainCharacter.xVelocity = 0.5;
+    mainCharacter.xVelocity = (mainCharacter.stats.runSpeed)*0.5;
 }
-
 
 - (IBAction)rightButtonUp:(id)sender
 {
-
     mainCharacter.xVelocity = 0.0;
+}
+
+- (IBAction)pauseButtonPressed:(id)sender
+{
+    LSVHealthView *this = [[LSVHealthView alloc] init];
+    this.frame = CGRectMake(300,300,250,250);
+    this.layer.anchorPoint = CGPointMake(1.0,1.0);
+    if(!self.scene.view.paused) {
+        NSLog(@"Game Paused");
+        self.scene.view.paused = YES;
+        self.navigationItem.rightBarButtonItem.title = @"Resume";
+        [self.view addSubview:this];
+    } else {
+        NSLog(@"Game Resumed");
+        self.scene.view.paused = NO;
+        [this removeFromSuperview];
+    }
 }
 
 - (IBAction)jump:(id)sender
@@ -111,7 +126,7 @@
     if((((int)(mainCharacter.position.y-CHARACTER_HALF_HEIGHT)) <= MAX_SCREEN_HEIGHT) && (mainCharacter.airborne == NO)) {
         mainCharacter.airborne = YES;
         mainCharacter.movingUp = YES;
-        [mainCharacter.physicsBody applyImpulse:CGVectorMake(0, 77*(mainCharacter.jumpHeight))];
+        [mainCharacter.physicsBody applyImpulse:CGVectorMake(0, 77*(mainCharacter.stats.jumpHeight))];
     }
     
 }
