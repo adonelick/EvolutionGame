@@ -14,7 +14,7 @@
 {
     // Create the projectile objects here
     MediumEnemyProjectile* p = [[MediumEnemyProjectile alloc] initWithDirection:heading];
-    p.velocity = 0.3;
+    p.velocity = 0.4;
     p.damage = 150;
     
     return p;

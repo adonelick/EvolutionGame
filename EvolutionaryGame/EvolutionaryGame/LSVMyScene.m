@@ -318,14 +318,34 @@ WeaponStats *weaponstats = nil;
             if (distance <= KILL_DISTANCE) {
                 
                 // If hit, damage the enemy
-                [e damageBy:p.fireDamage];
+                float damage = 350*(p.fireDamage^2) - 825*(p.fireDamage) + 500;
+                [e damageBy:damage];
                 [usedProjectiles  addObject:p];
                 
                 // Delete the enemy and projectile from the scene
                 // if enough damage has occured to kill the enemy
                 if (e.health <= 0) {
-                    ++mainCharacter.weapon.stats.killCount;
-                    mainCharacter.weapon.stats.fireDamage += 0.1;
+                    mainCharacter.weapon.stats.killCount += e.type;
+                    if(mainCharacter.weapon.stats.fireDamage < MAX_STAT && mainCharacter.weapon.stats.waterDamage > MIN_STAT && mainCharacter.weapon.stats.lightningDamage > MIN_STAT){
+                        if (e.type == 1) {
+                            mainCharacter.weapon.stats.fireDamage += (255/500);
+                            mainCharacter.weapon.stats.waterDamage -= (252/500);
+                            mainCharacter.weapon.stats.lightningDamage -= (253/500);
+                        } else {
+                            mainCharacter.weapon.stats.fireDamage += (260/500);
+                            mainCharacter.weapon.stats.waterDamage -= (254/500);
+                            mainCharacter.weapon.stats.lightningDamage -= (256/500);
+                        }
+                        if (mainCharacter.weapon.stats.fireDamage > MAX_STAT) {
+                            mainCharacter.weapon.stats.fireDamage = MAX_STAT;
+                        }
+                        if (mainCharacter.weapon.stats.waterDamage < MIN_STAT) {
+                            mainCharacter.weapon.stats.waterDamage = MIN_STAT;
+                        }
+                        if (mainCharacter.weapon.stats.lightningDamage < MIN_STAT) {
+                            mainCharacter.weapon.stats.lightningDamage = MIN_STAT;
+                        }
+                    }
                     [killedEnemies addObject:e];
                 }
             }
@@ -344,11 +364,11 @@ WeaponStats *weaponstats = nil;
         double distance = [ExtraMath distanceBetween:projectPos and:characterPos];
         
         if (distance <= KILL_DISTANCE) {
-            if (mainCharacter.health - p.damage <= 0) {
+            if (mainCharacter.health - (1/mainCharacter.stats.fireDef)*p.damage <= 0) {
                 mainCharacter.health = 0;
                 [usedProjectiles addObject:p];
             } else {
-            [mainCharacter damageBy:(mainCharacter.stats.fireDef)*p.damage];
+            [mainCharacter damageBy:(1/mainCharacter.stats.fireDef)*p.damage];
             [usedProjectiles addObject:p];
             }
         }
@@ -366,7 +386,7 @@ WeaponStats *weaponstats = nil;
         int ydist = hazardPos.y - characterPos.y;
         
         if ((-(TILE_HALF_SIZE + CHARACTER_HALF_WIDTH) <= xdist) && (xdist <= (TILE_HALF_SIZE + CHARACTER_HALF_WIDTH)) && (-(TILE_HALF_SIZE + CHARACTER_HALF_HEIGHT) <= ydist) && (ydist <= (TILE_HALF_SIZE + CHARACTER_HALF_HEIGHT)) && arc4random() < 150000000) {
-            [mainCharacter damageBy:(mainCharacter.stats.breath)*h.damagePotential];
+            [mainCharacter damageBy:(1/mainCharacter.stats.breath)*h.damagePotential];
         }
     }
 

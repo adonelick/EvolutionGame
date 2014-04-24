@@ -63,9 +63,13 @@
 
 #define BOTTOM_OF_SCREEN 224
 
-#define KILL_TO_EVOLVE 1
+#define KILL_TO_EVOLVE 25
 
 #define BOOST_TO_EVOLVE 1
+
+#define MIN_STAT 1
+
+#define MAX_STAT 2
 
 
 

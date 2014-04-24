@@ -16,11 +16,11 @@
     
     self.evolved = NO;
     
-    self.fireDamage = 50;
-    self.iceDamage = 50;
-    self.lightningDamage = 50;
-    self.earthDamage = 50;
-    self.waterDamage = 50;
+    self.fireDamage = 1.5;
+    self.iceDamage = 1.5;
+    self.lightningDamage = 1.5;
+    self.earthDamage = 1.5;
+    self.waterDamage = 1.5;
     
     self.killCount = 0;
     
