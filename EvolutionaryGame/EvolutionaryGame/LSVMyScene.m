@@ -332,7 +332,7 @@ int textureTimer = 0;
             if (distance <= KILL_DISTANCE) {
                 
                 // If hit, damage the enemy
-                float damage = 350*(p.fireDamage^2) - 825*(p.fireDamage) + 500;
+                float damage = 350*(p.fireDamage*p.fireDamage) - 825*(p.fireDamage) + 500;
                 [e damageBy:damage];
                 [usedProjectiles  addObject:p];
                 

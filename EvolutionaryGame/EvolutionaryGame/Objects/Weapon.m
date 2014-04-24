@@ -19,8 +19,7 @@
         p = [[Projectile alloc] initWithDirection:heading andImage:@"PlayerProjectileWaterRight.gif"];
     }
     p.velocity = 0.475;
-    p.damage = 50;
-    
+
     p.fireDamage = self.stats.fireDamage;
     p.iceDamage = self.stats.iceDamage;
     p.lightningDamage = self.stats.lightningDamage;
