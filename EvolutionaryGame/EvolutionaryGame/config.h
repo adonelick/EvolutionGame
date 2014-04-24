@@ -65,12 +65,14 @@
 
 #define KILL_TO_EVOLVE 25
 
+// TODO
 #define BOOST_TO_EVOLVE 1
 
 #define MIN_STAT 1
 
 #define MAX_STAT 2
 
+#define BEHAVIOR_DIST 250
 
 
 // Global variable that contains the main character that

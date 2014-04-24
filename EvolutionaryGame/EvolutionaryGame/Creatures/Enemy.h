@@ -28,4 +28,13 @@
 // Makes the enemy circle around a certain point (only used for small enemies)
 - (void) circleAround:(CGPoint)point withDistance:(int)distance;
 
+// Makes the enemy wander left to right (only used for medium enemies)
+- (void) moveLeftRight;
+
+// Enemy has this behavior when the character is out of range
+- (void) primaryMovement;
+
+// Enemy has this behavior when the character is in range (distance is distance to character)
+- (void) secondaryMovement:(CGPoint)point withDistance:(int)distance;
+
 @end

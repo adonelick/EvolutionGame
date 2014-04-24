@@ -47,7 +47,7 @@ WeaponStats *weaponstats = nil;
         self.backgroundColor = [SKColor colorWithRed:0.25 green:0.15 blue:0.15 alpha:1.0];
         
         // Testing level map loading
-        [self loadMap:@"test2"];
+        [self loadMap:@"test"];
         
         /*
         // Testing display
@@ -413,8 +413,7 @@ WeaponStats *weaponstats = nil;
     // If enough damage has occured to kill the player,
     // end the game.
     if (mainCharacter.health <= 0) {
-        // Show what stats screen here...
-//        NSLog(@"You are now dead.");
+        // TODO
     }
     
 }
@@ -478,16 +477,21 @@ WeaponStats *weaponstats = nil;
 - (void) updateEnemies
 {
     for (Enemy* e in _enemies) {
-        [e move];
-        [e circleAround:mainCharacter.position withDistance:100];
-        
-        // For now, small enemies randomly fire projectiles at the main character
-        if (e.type == 1) {
-        if (arc4random() < 50000000) {
-            Projectile* newProjectile = [e fireProjectileAt:mainCharacter.position];
-            [self addProjectile: newProjectile toArray:_enemyProjectiles];
+        int charDist = (int)[ExtraMath distanceBetween:e.position and:mainCharacter.position];
+        if (charDist <= BEHAVIOR_DIST) {
+            [e secondaryMovement:mainCharacter.position withDistance:charDist];
+            if (e.type == 1) {
+                if (arc4random() < 50000000) {
+                Projectile* newProjectile = [e fireProjectileAt:mainCharacter.position];
+                [self addProjectile: newProjectile toArray:_enemyProjectiles];
+                }
+        } else {
+            [e primaryMovement];
         }
-          
+        
+//        [e move];
+//        [e circleAround:mainCharacter.position withDistance:100];
+        
         // Large enemies will need to fix their rotation if they get bumped by the main character
         if (e.type == 2) {
             SKAction* rotateAction = [SKAction rotateByAngle:-0.2*e.zRotation duration:0.1];

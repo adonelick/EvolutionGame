@@ -64,6 +64,16 @@
     }
 }
 
+- (void) primaryMovement
+{
+    // TODO
+}
+
+- (void) secondaryMovement:(CGPoint)point withDistance:(int)distance
+{
+    [self circleAround:point withDistance:distance];
+}
+
 
 - (void) circleAround:(CGPoint)point withDistance:(int)distance
 {
@@ -108,6 +118,8 @@
     
     [self runAction:moveAction];
 }
+
+
 
 
 @end

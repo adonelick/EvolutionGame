@@ -67,8 +67,17 @@
     }
 }
 
+- (void) primaryMovement
+{
+    [self moveLeftRight];
+}
 
-- (void) move
+- (void) secondaryMovement:(CGPoint)point withDistance:(int)distance
+{
+    // TODO
+}
+
+- (void) moveLeftRight
 {
     if (self.facingRight) {
         self.xVelocity = 1.5;
@@ -78,6 +87,5 @@
     SKAction *moveAction = [SKAction moveByX:self.xVelocity y:0 duration:0.9];
     [self runAction:moveAction];
 }
-
 
 @end

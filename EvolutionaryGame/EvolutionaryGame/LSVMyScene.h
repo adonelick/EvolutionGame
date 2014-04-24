@@ -80,7 +80,10 @@
 // Adds a platform to the scene
 - (void) addPlatform:(NSString*) fileName atX:(int) x atY:(int) y;
 
-// Moves every object in the scene by amount x
-- (void) shiftScene:(int) x;
+// Moves every object in the scene left or right by amount x
+- (void) shiftSceneX:(int) x;
+
+// Moves every object in the scene up or down by amount y
+- (void) shiftSceneY:(int) y;
 
 @end
