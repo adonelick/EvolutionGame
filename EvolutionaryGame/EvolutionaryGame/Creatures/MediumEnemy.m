@@ -37,7 +37,6 @@
 
 - (id) fireProjectileAt:(CGPoint)point
 {
-    ///// TO EDIT
     double x1 = point.x;
     double y1 = point.y;
     

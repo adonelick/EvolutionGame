@@ -74,7 +74,7 @@
 
 - (void) primaryMovement
 {
-    // TODO
+    [self circleAround:self.startingPos withDistance:15];
 }
 
 - (void) secondaryMovement:(CGPoint)point withDistance:(int)distance

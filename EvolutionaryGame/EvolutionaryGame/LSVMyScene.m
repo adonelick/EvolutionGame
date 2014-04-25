@@ -637,6 +637,7 @@ int IVtimer = 0;
             newEnemy.position = CGPointMake(currentX, currentY);
             [_enemies addObject:newEnemy];
             [self addChild:newEnemy];
+            newEnemy.startingPos = newEnemy.position;
         } else if (tile == 'M') {
             MediumEnemy* m = [[MediumEnemy alloc] init];
             m.position = CGPointMake(currentX + 25, currentY + 25);
