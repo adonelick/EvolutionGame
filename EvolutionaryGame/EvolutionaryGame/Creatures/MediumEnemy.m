@@ -35,6 +35,23 @@
     return self;
 }
 
+- (id) fireProjectileAt:(CGPoint)point
+{
+    ///// TO EDIT
+    double x1 = point.x;
+    double y1 = point.y;
+    
+    double x2 = self.position.x;
+    double y2 = self.position.y;
+    
+    double theta = atan2(y1 - y2, x1 - x2);
+    
+    Projectile* p = [self.weapon fireProjectile:theta];
+    p.position = self.position;
+    return p;
+
+}
+
 
 - (void) updateTexture
 {
@@ -74,7 +91,13 @@
 
 - (void) secondaryMovement:(CGPoint)point withDistance:(int)distance
 {
-    // TODO
+    self.xVelocity = 0;
+
+    if (point.x < self.position.x) {
+        self.facingRight = NO;
+    } else {
+        self.facingRight = YES;
+    }
 }
 
 - (void) moveLeftRight

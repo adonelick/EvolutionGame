@@ -12,9 +12,6 @@
 
 - (id) fireProjectile:(double) heading
 {
-    
-    // TODO
-    
     // Create the projectile objects here
     MediumEnemyProjectile* p = [[MediumEnemyProjectile alloc] initWithDirection:heading];
     p.velocity = 0.4;

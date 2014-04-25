@@ -515,10 +515,9 @@ int IVtimer = 0;
         int charDist = (int)[ExtraMath distanceBetween:e.position and:mainCharacter.position];
         if (charDist <= BEHAVIOR_DIST) {
             [e secondaryMovement:mainCharacter.position withDistance:charDist];
-            if (e.type == 1) {
-                if (arc4random() < 50000000) {
-                Projectile* newProjectile = [e fireProjectileAt:mainCharacter.position];
-                [self addProjectile: newProjectile toArray:_enemyProjectiles];
+            if (arc4random() < 50000000) {
+            Projectile* newProjectile = [e fireProjectileAt:mainCharacter.position];
+            [self addProjectile: newProjectile toArray:_enemyProjectiles];
                 }
         } else {
             [e primaryMovement];
@@ -531,8 +530,8 @@ int IVtimer = 0;
         if (e.type == 2) {
             SKAction* rotateAction = [SKAction rotateByAngle:-0.2*e.zRotation duration:0.1];
             [e runAction:rotateAction];
-            }
         }
+        
     }
 }
 

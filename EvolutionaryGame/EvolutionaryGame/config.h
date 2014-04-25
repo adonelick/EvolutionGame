@@ -22,8 +22,8 @@
 #define MAX_VELOCITY 10.0
 #define MIN_VELOCITY 0.0
 
-#define PROJECTILE_DX 10
-#define PROJECTILE_DY 2
+#define PROJECTILE_DX 19
+#define PROJECTILE_DY 9
 
 // How close (in pixels) must a projectile come to a creature
 // to cause damage?
