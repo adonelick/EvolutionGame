@@ -515,10 +515,13 @@ int IVtimer = 0;
         int charDist = (int)[ExtraMath distanceBetween:e.position and:mainCharacter.position];
         if (charDist <= BEHAVIOR_DIST) {
             [e secondaryMovement:mainCharacter.position withDistance:charDist];
-            if (arc4random() < 50000000) {
-            Projectile* newProjectile = [e fireProjectileAt:mainCharacter.position];
-            [self addProjectile: newProjectile toArray:_enemyProjectiles];
-                }
+            if (e.type == 1 && arc4random() < 50000000) {
+                Projectile* newProjectile = [e fireProjectileAt:mainCharacter.position];
+                [self addProjectile: newProjectile toArray:_enemyProjectiles];
+            } else if (e.type == 2 && arc4random() < 5000000) {
+                Projectile* newProjectile = [e fireProjectileAt:mainCharacter.position];
+                [self addProjectile: newProjectile toArray:_enemyProjectiles];
+            }
         } else {
             [e primaryMovement];
         }
