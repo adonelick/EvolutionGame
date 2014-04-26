@@ -13,5 +13,6 @@
 @interface LSVViewController : UIViewController
 
 @property LSVMyScene* scene;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *pauseButton;
 
 @end

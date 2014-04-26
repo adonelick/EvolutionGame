@@ -44,8 +44,9 @@
     
     _scene.health = health;
     
-    UIBarButtonItem *pauseButton =[[UIBarButtonItem alloc] initWithTitle:@"Pause" style:UIBarButtonItemStylePlain target:self action:@selector(pauseButtonPressed:)];
-    [self.navigationItem setRightBarButtonItem:pauseButton];
+    UIBarButtonItem *pauseButton =[[UIBarButtonItem alloc] initWithTitle:@"Pause" style:UIBarButtonItemStylePlain target:self action:@selector(buttonAction:)];
+    //[self.navigationItem setRightBarButtonItem:pauseButton];
+    self.navigationItem.rightBarButtonItems = @[pauseButton];
 }
 
 - (BOOL)shouldAutorotate
@@ -102,8 +103,13 @@
 {
     mainCharacter.xVelocity = 0.0;
 }
-
-- (IBAction)pauseButtonPressed:(id)sender
+/*
+- (void)buttonView:(UIBarButtonItem*)buttonView pauseButtonPressed:(NSIndexPath*)indexPath
+{
+    [self performSegueWithIdentifier:@"Pause" sender:self];
+}
+*/
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if(!self.scene.view.paused) {
         NSLog(@"Game Paused");
@@ -113,9 +119,34 @@
     else {
         NSLog(@"Game Resumed");
         self.scene.view.paused = NO;
+        self.navigationItem.rightBarButtonItem.title = @"Pause";
     }
 }
 
+-(void)buttonAction:(id)sender
+{
+    [self performSegueWithIdentifier:@"StatsDisplay" sender:sender];
+}
+/*
+- (IBAction)pauseButtonPressed:(id)sender
+{
+    if(!self.scene.view.paused) {
+        NSLog(@"Game Paused");
+        self.scene.view.paused = YES;
+        self.navigationItem.rightBarButtonItem.title = @"Resume";
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+        UIViewController *vc =[storyboard instantiateInitialViewController];
+        [self performSegueWithIdentifier:@"StatsDisplay" sender:self];
+
+    }
+    else {
+        NSLog(@"Game Resumed");
+        self.scene.view.paused = NO;
+        self.navigationItem.rightBarButtonItem.title = @"Pause";
+    }
+}
+*/
 - (IBAction)jump:(id)sender
 {
 
