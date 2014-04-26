@@ -24,11 +24,11 @@
 @property int damage;
 
 // Damage stats (for player)
-@property int fireDamage;
-@property int iceDamage;
-@property int lightningDamage;
-@property int earthDamage;
-@property int waterDamage;
+@property float fireDamage;
+@property float iceDamage;
+@property float lightningDamage;
+@property float earthDamage;
+@property float waterDamage;
 
 
 - (id) initWithDirection:(double) heading;

@@ -35,6 +35,22 @@
     return self;
 }
 
+- (id) fireProjectileAt:(CGPoint)point
+{
+    double x1 = point.x;
+    double y1 = point.y;
+    
+    double x2 = self.position.x;
+    double y2 = self.position.y;
+    
+    double theta = atan2(y1 - y2, x1 - x2);
+    
+    Projectile* p = [self.weapon fireProjectile:theta];
+    p.position = self.position;
+    return p;
+
+}
+
 
 - (void) updateTexture
 {
@@ -67,8 +83,23 @@
     }
 }
 
+- (void) primaryMovement
+{
+    [self moveLeftRight];
+}
 
-- (void) move
+- (void) secondaryMovement:(CGPoint)point withDistance:(int)distance
+{
+    self.xVelocity = 0;
+
+    if (point.x < self.position.x) {
+        self.facingRight = NO;
+    } else {
+        self.facingRight = YES;
+    }
+}
+
+- (void) moveLeftRight
 {
     if (self.facingRight) {
         self.xVelocity = 1.5;
@@ -78,6 +109,5 @@
     SKAction *moveAction = [SKAction moveByX:self.xVelocity y:0 duration:0.9];
     [self runAction:moveAction];
 }
-
 
 @end

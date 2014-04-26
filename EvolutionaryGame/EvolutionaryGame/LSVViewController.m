@@ -86,7 +86,7 @@
 
 - (IBAction)leftButtonDown:(id)sender
 {
-    mainCharacter.xVelocity = (mainCharacter.stats.runSpeed)*-0.5;
+    mainCharacter.xVelocity = (mainCharacter.stats.runSpeed)*-0.375;
 }
 
 - (IBAction)leftButtonUp:(id)sender
@@ -96,7 +96,7 @@
 
 - (IBAction)rightButtonDown:(id)sender
 {
-    mainCharacter.xVelocity = (mainCharacter.stats.runSpeed)*0.5;
+    mainCharacter.xVelocity = (mainCharacter.stats.runSpeed)*0.375;
 }
 
 - (IBAction)rightButtonUp:(id)sender
@@ -130,10 +130,14 @@
 /*
 - (IBAction)pauseButtonPressed:(id)sender
 {
+    LSVHealthView *this = [[LSVHealthView alloc] init];
+    this.frame = CGRectMake(300,300,250,250);
+    this.layer.anchorPoint = CGPointMake(1.0,1.0);
     if(!self.scene.view.paused) {
         NSLog(@"Game Paused");
         self.scene.view.paused = YES;
         self.navigationItem.rightBarButtonItem.title = @"Resume";
+<<<<<<< HEAD
         
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
         UIViewController *vc =[storyboard instantiateInitialViewController];
@@ -144,6 +148,13 @@
         NSLog(@"Game Resumed");
         self.scene.view.paused = NO;
         self.navigationItem.rightBarButtonItem.title = @"Pause";
+=======
+        [self.view addSubview:this];
+    } else {
+        NSLog(@"Game Resumed");
+        self.scene.view.paused = NO;
+        [this removeFromSuperview];
+>>>>>>> FETCH_HEAD
     }
 }
 */
@@ -153,7 +164,7 @@
     if((((int)(mainCharacter.position.y-CHARACTER_HALF_HEIGHT)) <= MAX_SCREEN_HEIGHT) && (mainCharacter.airborne == NO)) {
         mainCharacter.airborne = YES;
         mainCharacter.movingUp = YES;
-        [mainCharacter.physicsBody applyImpulse:CGVectorMake(0, 77*(mainCharacter.stats.jumpHeight))];
+        [mainCharacter.physicsBody applyImpulse:CGVectorMake(0, 20*(mainCharacter.stats.jumpHeight) + 65)];
     }
     
 }

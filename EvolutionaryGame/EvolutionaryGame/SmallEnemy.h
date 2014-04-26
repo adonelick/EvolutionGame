@@ -16,4 +16,7 @@
 // The weapon for the enemy
 @property SmallEnemyWeapon* weapon;
 
+
+@property CGPoint startingPos;
+
 @end

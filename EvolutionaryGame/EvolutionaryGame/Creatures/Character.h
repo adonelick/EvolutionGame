@@ -19,6 +19,13 @@
 @property Boolean movingUp;
 @property Boolean movingDown;
 
+// Determines whether the character can take damage
+@property Boolean invulnerable;
+
+// Used to make the image of the player character flash when invulnerable
+@property int show;
+@property SKTexture* pastTexture;
+
 // The weapon for the character
 @property Weapon* weapon;
 
@@ -30,6 +37,9 @@
 @property SKTexture* walkLeftWeapon2;
 @property SKTexture* walkRightWeapon1;
 @property SKTexture* walkRightWeapon2;
+
+// Texture for the character while flashing on and off the screen
+@property SKTexture* invisible;
 
 // Initialization function that depends on whether or not the player has evolved
 -(id) initWithStats:(CharacterStats*) charstats andWeaponStats:(WeaponStats*) weaponstats;

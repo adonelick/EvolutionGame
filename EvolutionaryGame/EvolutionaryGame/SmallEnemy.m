@@ -28,6 +28,8 @@
         self.health = 250;
         
         self.type = 1;
+        
+        self.texture = self.walkLeft1;
     }
     
     return self;
@@ -55,13 +57,29 @@
             self.texture = self.walkLeft1;
         }
     } else {
-        // Reset the textures to default if not moving
-        if (self.facingRight) {
+        if (self.texture == self.walkRight1) {
+            self.texture = self.walkRight2;
+        }
+        if (self.texture == self.walkRight2) {
             self.texture = self.walkRight1;
-        } else {
+        }
+        if (self.texture == self.walkLeft1) {
+            self.texture = self.walkLeft2;
+        }
+        if (self.texture == self.walkLeft2) {
             self.texture = self.walkLeft1;
         }
     }
+}
+
+- (void) primaryMovement
+{
+    [self circleAround:self.startingPos withDistance:15];
+}
+
+- (void) secondaryMovement:(CGPoint)point withDistance:(int)distance
+{
+    [self circleAround:point withDistance:distance];
 }
 
 
@@ -108,6 +126,8 @@
     
     [self runAction:moveAction];
 }
+
+
 
 
 @end

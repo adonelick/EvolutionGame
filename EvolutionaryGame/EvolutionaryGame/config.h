@@ -22,8 +22,8 @@
 #define MAX_VELOCITY 10.0
 #define MIN_VELOCITY 0.0
 
-#define PROJECTILE_DX 10
-#define PROJECTILE_DY 2
+#define PROJECTILE_DX 19
+#define PROJECTILE_DY 9
 
 // How close (in pixels) must a projectile come to a creature
 // to cause damage?
@@ -63,10 +63,16 @@
 
 #define BOTTOM_OF_SCREEN 224
 
-#define KILL_TO_EVOLVE 1
+#define KILL_TO_EVOLVE 25
 
+// TODO
 #define BOOST_TO_EVOLVE 1
 
+#define MIN_STAT 1
+
+#define MAX_STAT 2
+
+#define BEHAVIOR_DIST 250
 
 
 // Global variable that contains the main character that

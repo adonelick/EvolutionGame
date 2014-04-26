@@ -24,19 +24,6 @@
     double theta = atan2(y1 - y2, x1 - x2);
     
     Projectile* p = [self.weapon fireProjectile:theta];
-//    if (self.type == 1) {
-//        if (self.facingRight) {
-//            p.position = self.position;
-//        } else {
-//            p.position = self.position;
-//        }
-//    } else {
-//        if (self.facingRight) {
-//            p.position = self.position;
-//        } else {
-//            p.position = self.position;
-//        }
-//    }
     p.position = self.position;
     return p;
 }
@@ -53,16 +40,26 @@
     [self runAction:moveAction];
 }
 
+
 - (void) circleAround:(CGPoint)point withDistance:(int)distance
 {
     // Only implement for small enemies
 }
 
-- (void) move
+- (void) moveLeftRight
 {
     // Only implement for medium enemies
 }
 
+- (void) primaryMovement
+{
+    // Different for enemy types
+}
+
+- (void) secondaryMovement:(CGPoint)point withDistance:(int)distance
+{
+    // Different for enemy types
+}
 
 
 @end

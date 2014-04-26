@@ -47,7 +47,7 @@ WeaponStats *weaponstats = nil;
         self.backgroundColor = [SKColor colorWithRed:0.25 green:0.15 blue:0.15 alpha:1.0];
         
         // Testing level map loading
-        [self loadMap:@"test"];
+        [self loadMap:@"test2"];
         
         /*
         // Testing display
@@ -216,6 +216,14 @@ WeaponStats *weaponstats = nil;
         
         [_enemies addObject:newEnemy1];
         [self addChild:newEnemy1];
+<<<<<<< HEAD
+        newEnemy1.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:MEDIUM_ENEMY_HALF_HEIGHT];
+        newEnemy1.physicsBody.dynamic = YES;
+        newEnemy1.physicsBody.affectedByGravity = YES;
+        newEnemy1.physicsBody.linearDamping = 1;
+        newEnemy1.physicsBody.angularDamping = 10000;
+        newEnemy1.physicsBody.mass = 0.1;*/
+=======
 
         
         // Give the platforms and medium enemies physics bodies
@@ -236,13 +244,33 @@ WeaponStats *weaponstats = nil;
                 newEnemy1.physicsBody.mass = 0.1;
             }
         }
-         */
+>>>>>>> 67e4a0531a56c86ac893cdf58a76849cca32af33
         
     }
     
     return self;
 }
 
+
+- (void) updateTextures
+{
+    // Make all moving objects on the screen move
+    
+    [mainCharacter updateTexture];
+    
+    for (Enemy* e in _enemies) {
+        [e updateTexture];
+    }
+    
+    for (SmokeHazard* h in _smokeHazards) {
+        ++h.delay;
+        if(h.delay == 7) {
+            h.delay = 0;
+            [h updateTexture];
+        }
+    }
+}
+                         
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -278,40 +306,6 @@ WeaponStats *weaponstats = nil;
 
 }
 
-int textureTimer = 0;
-
-- (void) updateTextures
-{
-    // Make all moving objects on the screen move
-    
-    [mainCharacter updateTexture];
-    
-    for (Enemy* e in _enemies) {
-        [e updateTexture];
-    }
-    
-//    for (Enemy* e in _enemies) {
-//        if (e.type == 1){
-//            textureTimer ++;
-//            NSLog(@"%d", textureTimer);
-//            if (textureTimer == 10) {
-//                [e updateTexture];
-//                textureTimer = 0;
-//            }
-//        } else {
-//                [e updateTexture];
-//        }
-//        
-//    }
-    
-    for (SmokeHazard* h in _smokeHazards) {
-        ++h.delay;
-        if(h.delay == 7) {
-            h.delay = 0;
-            [h updateTexture];
-        }
-    }
-}
 
 - (void) checkForCollisions
 {
@@ -332,34 +326,14 @@ int textureTimer = 0;
             if (distance <= KILL_DISTANCE) {
                 
                 // If hit, damage the enemy
-                float damage = 350*(p.fireDamage*p.fireDamage) - 825*(p.fireDamage) + 500;
-                [e damageBy:damage];
+                [e damageBy:p.fireDamage];
                 [usedProjectiles  addObject:p];
                 
                 // Delete the enemy and projectile from the scene
                 // if enough damage has occured to kill the enemy
                 if (e.health <= 0) {
-                    mainCharacter.weapon.stats.killCount += e.type;
-                    if(mainCharacter.weapon.stats.fireDamage < MAX_STAT && mainCharacter.weapon.stats.waterDamage > MIN_STAT && mainCharacter.weapon.stats.lightningDamage > MIN_STAT){
-                        if (e.type == 1) {
-                            mainCharacter.weapon.stats.fireDamage += (255/500);
-                            mainCharacter.weapon.stats.waterDamage -= (252/500);
-                            mainCharacter.weapon.stats.lightningDamage -= (253/500);
-                        } else {
-                            mainCharacter.weapon.stats.fireDamage += (260/500);
-                            mainCharacter.weapon.stats.waterDamage -= (254/500);
-                            mainCharacter.weapon.stats.lightningDamage -= (256/500);
-                        }
-                        if (mainCharacter.weapon.stats.fireDamage > MAX_STAT) {
-                            mainCharacter.weapon.stats.fireDamage = MAX_STAT;
-                        }
-                        if (mainCharacter.weapon.stats.waterDamage < MIN_STAT) {
-                            mainCharacter.weapon.stats.waterDamage = MIN_STAT;
-                        }
-                        if (mainCharacter.weapon.stats.lightningDamage < MIN_STAT) {
-                            mainCharacter.weapon.stats.lightningDamage = MIN_STAT;
-                        }
-                    }
+                    ++mainCharacter.weapon.stats.killCount;
+                    mainCharacter.weapon.stats.fireDamage += 0.1;
                     [killedEnemies addObject:e];
                 }
             }
@@ -378,11 +352,11 @@ int textureTimer = 0;
         double distance = [ExtraMath distanceBetween:projectPos and:characterPos];
         
         if (distance <= KILL_DISTANCE) {
-            if (mainCharacter.health - (1/mainCharacter.stats.fireDef)*p.damage <= 0) {
+            if (mainCharacter.health - p.damage <= 0) {
                 mainCharacter.health = 0;
                 [usedProjectiles addObject:p];
             } else {
-            [mainCharacter damageBy:(1/mainCharacter.stats.fireDef)*p.damage];
+            [mainCharacter damageBy:(mainCharacter.stats.fireDef)*p.damage];
             [usedProjectiles addObject:p];
             }
         }
@@ -400,7 +374,7 @@ int textureTimer = 0;
         int ydist = hazardPos.y - characterPos.y;
         
         if ((-(TILE_HALF_SIZE + CHARACTER_HALF_WIDTH) <= xdist) && (xdist <= (TILE_HALF_SIZE + CHARACTER_HALF_WIDTH)) && (-(TILE_HALF_SIZE + CHARACTER_HALF_HEIGHT) <= ydist) && (ydist <= (TILE_HALF_SIZE + CHARACTER_HALF_HEIGHT)) && arc4random() < 150000000) {
-            [mainCharacter damageBy:(1/mainCharacter.stats.breath)*h.damagePotential];
+            [mainCharacter damageBy:(mainCharacter.stats.breath)*h.damagePotential];
         }
     }
 
@@ -423,57 +397,31 @@ int textureTimer = 0;
         }
     }
     
-    for (Enemy* e in _enemies) {
-        if (e.type == 2) {
-            int distance = (int)[ExtraMath distanceBetween:e.position and:mainCharacter.position];
-            if (abs(distance) <= (MEDIUM_ENEMY_HALF_HEIGHT + CHARACTER_HALF_HEIGHT)) {
-                [mainCharacter damageBy:20];
-            }
-            
-        }
-    }
-    
     
     // If enough damage has occured to kill the player,
     // end the game.
     if (mainCharacter.health <= 0) {
-        // TODO
+        // Show what stats screen here...
+//        NSLog(@"You are now dead.");
     }
     
 }
 
-int IVtimer = 0;
 
 - (void) updateMainCharacter
 {
     [mainCharacter move];
     
-    if (mainCharacter.position.x < CGRectGetMidX(self.frame) - 200) {
-        [self shiftSceneX:(mainCharacter.position.x - CGRectGetMidX(self.frame) + 200)];
-    } else if (mainCharacter.position.x > CGRectGetMidX(self.frame) + 200) {
-        [self shiftSceneX:(mainCharacter.position.x - CGRectGetMidX(self.frame) - 200)];
-    }
-    
-    if (mainCharacter.position.y < CGRectGetMidY(self.frame) - 100) {
-        [self shiftSceneY:(mainCharacter.position.y - CGRectGetMidY(self.frame) + 100)];
-    } else if (mainCharacter.position.y > CGRectGetMidY(self.frame) + 100) {
-        [self shiftSceneY:(mainCharacter.position.y - CGRectGetMidY(self.frame) - 100)];
+    if (mainCharacter.position.x < 100) {
+        [self shiftScene:(mainCharacter.position.x - 100)];
+    } else if (mainCharacter.position.x > 600) {
+        [self shiftScene:(mainCharacter.position.x - 600)];
     }
     
     // Because collisions can cause the character to rotate
     // about its center, we need to fight this rotation.
     SKAction* rotateAction = [SKAction rotateByAngle:-0.2*mainCharacter.zRotation duration:0.1];
     [mainCharacter runAction:rotateAction];
-    
-    // If we have invulnerability on, we need to time it out and then turn it off
-    if (mainCharacter.invulnerable == YES) {
-        ++IVtimer;
-        if (IVtimer == 100) {
-            mainCharacter.invulnerable = NO;
-            IVtimer = 0;
-        }
-    }
-    
 }
 
 - (void) updateProjectiles
@@ -512,29 +460,22 @@ int IVtimer = 0;
 - (void) updateEnemies
 {
     for (Enemy* e in _enemies) {
-        int charDist = (int)[ExtraMath distanceBetween:e.position and:mainCharacter.position];
-        if (charDist <= BEHAVIOR_DIST) {
-            [e secondaryMovement:mainCharacter.position withDistance:charDist];
-            if (e.type == 1 && arc4random() < 50000000) {
-                Projectile* newProjectile = [e fireProjectileAt:mainCharacter.position];
-                [self addProjectile: newProjectile toArray:_enemyProjectiles];
-            } else if (e.type == 2 && arc4random() < 5000000) {
-                Projectile* newProjectile = [e fireProjectileAt:mainCharacter.position];
-                [self addProjectile: newProjectile toArray:_enemyProjectiles];
-            }
-        } else {
-            [e primaryMovement];
+        [e move];
+        [e circleAround:mainCharacter.position withDistance:100];
+        
+        // For now, small enemies randomly fire projectiles at the main character
+        if (e.type == 1) {
+        if (arc4random() < 50000000) {
+            Projectile* newProjectile = [e fireProjectileAt:mainCharacter.position];
+            [self addProjectile: newProjectile toArray:_enemyProjectiles];
         }
-        
-//        [e move];
-//        [e circleAround:mainCharacter.position withDistance:100];
-        
+          
         // Large enemies will need to fix their rotation if they get bumped by the main character
         if (e.type == 2) {
             SKAction* rotateAction = [SKAction rotateByAngle:-0.2*e.zRotation duration:0.1];
             [e runAction:rotateAction];
+            }
         }
-        
     }
 }
 
@@ -560,17 +501,7 @@ int IVtimer = 0;
     }
 }
 
-// Check if either the main character or the weapon has advanced enough to evolve
-- (void) checkForEvolution
-{
-    if (mainCharacter.weapon.stats.killCount >= KILL_TO_EVOLVE) {
-        mainCharacter.weapon.stats.evolved = YES;
-    }
-    
-    if (mainCharacter.stats.boost >= BOOST_TO_EVOLVE) {
-        mainCharacter.stats.evolved = YES;
-    }
-}
+<<<<<<< HEAD
 - (void) loadMap:(NSString*) mapName
 {
     NSString* path = [[NSBundle mainBundle] pathForResource:mapName
@@ -617,7 +548,7 @@ int IVtimer = 0;
         } else if (tile == 'Z') {
             [self addPlatform:@"FirePlatformSinglePiece.gif" atX:currentX atY:currentY];
         } else if (tile == 'P') {
-            mainCharacter = [[Character alloc] initWithStats:_charStats andWeaponStats:_weaponStats];
+            mainCharacter = [[Character alloc] initWithEvolved:NO];
             mainCharacter.position = CGPointMake(currentX, currentY + 12);
             [self addChild:mainCharacter];
             mainCharacter.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:CHARACTER_HALF_HEIGHT];
@@ -640,7 +571,6 @@ int IVtimer = 0;
             newEnemy.position = CGPointMake(currentX, currentY);
             [_enemies addObject:newEnemy];
             [self addChild:newEnemy];
-            newEnemy.startingPos = newEnemy.position;
         } else if (tile == 'M') {
             MediumEnemy* m = [[MediumEnemy alloc] init];
             m.position = CGPointMake(currentX + 25, currentY + 25);
@@ -674,18 +604,25 @@ int IVtimer = 0;
     [_platforms addObject:p];
 }
 
-- (void) shiftSceneX:(int) x
+- (void) shiftScene:(int) x
 {
     for (SKNode* o in [self children]) {
         o.position = CGPointMake(o.position.x-x, o.position.y);
     }
 }
-
-- (void) shiftSceneY:(int) y
+=======
+// Check if either the main character or the weapon has advanced enough to evolve
+- (void) checkForEvolution
 {
-    for (SKNode* o in [self children]) {
-        o.position = CGPointMake(o.position.x, o.position.y - y);
+    if (mainCharacter.weapon.stats.killCount >= KILL_TO_EVOLVE) {
+        mainCharacter.weapon.stats.evolved = YES;
+    }
+    
+    if (mainCharacter.stats.boost >= BOOST_TO_EVOLVE) {
+        mainCharacter.stats.evolved = YES;
     }
 }
+
+>>>>>>> 67e4a0531a56c86ac893cdf58a76849cca32af33
 
 @end
