@@ -71,6 +71,7 @@
         player.currentTime = 0;
         player.volume = 1.0;
     }
+
 }
 
 - (BOOL)shouldAutorotate
@@ -106,6 +107,10 @@
 - (IBAction)shootWeapon:(id)sender
 {
     [_scene addProjectile:[mainCharacter fireProjectile] toArray:_scene.projectiles];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"fire-shot" ofType:@"wav"];
+    shoot=[[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path] error:NULL];
+    shoot.delegate=self;
+    [shoot play];
 }
 
 - (IBAction)leftButtonDown:(id)sender

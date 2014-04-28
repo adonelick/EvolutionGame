@@ -195,8 +195,6 @@ int textureTimer = 0;
                     mainCharacter.stats.strength += 0.03;
                     --mainCharacter.stats.runSpeed;
                     --mainCharacter.stats.climb;
-                    mainCharacter.stats.boost += 3;
-                    // TODO: reset level
                 }
             } else {
             [mainCharacter damageBy:(1/mainCharacter.stats.fireDef)*p.damage];
@@ -228,7 +226,6 @@ int textureTimer = 0;
                     --mainCharacter.stats.runSpeed;
                     --mainCharacter.stats.climb;
                     mainCharacter.stats.boost += 2;
-                    // TODO: reset level
                 }
             }
         }
@@ -269,7 +266,6 @@ int textureTimer = 0;
                         --mainCharacter.stats.runSpeed;
                         --mainCharacter.stats.climb;
                         mainCharacter.stats.boost += 2;
-                        // TODO: reset level
                     }
                 }
             }
@@ -277,7 +273,6 @@ int textureTimer = 0;
         }
     }
     
-<<<<<<< HEAD
     for (Door* d in _doors) {
         int distance = (int)[ExtraMath distanceBetween:d.position and:mainCharacter.position];
         if (abs(distance) <= CHARACTER_HALF_WIDTH) {
@@ -293,9 +288,6 @@ int textureTimer = 0;
         [self clearScene];
         [self loadMap:@"test2"];
     }
-=======
-
->>>>>>> e4d775561bde1ac088d94fc00ed765a3c1ec4ccc
     
 }
 
