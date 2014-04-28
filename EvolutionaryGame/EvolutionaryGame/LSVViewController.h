@@ -8,11 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
+#import <AVFoundation/AVFoundation.h>
 #import "LSVMyScene.h"
 
-@interface LSVViewController : UIViewController
+@interface LSVViewController : UIViewController <AVAudioPlayerDelegate> {
+    
+    AVAudioPlayer *player;
+}
+
+@property (nonatomic, retain) AVAudioPlayer *player;
 
 @property LSVMyScene* scene;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *pauseButton;
 
 @end

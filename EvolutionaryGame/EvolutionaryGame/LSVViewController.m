@@ -15,6 +15,8 @@
 
 @implementation LSVViewController
 
+@synthesize player;
+
 - (void) viewDidLoad
 {
     [super viewDidLoad];
@@ -43,10 +45,41 @@
     [self.view addSubview:healthbar];
     
     _scene.health = health;
-    
+    /*
     UIBarButtonItem *pauseButton =[[UIBarButtonItem alloc] initWithTitle:@"Pause" style:UIBarButtonItemStylePlain target:self action:@selector(buttonAction:)];
     //[self.navigationItem setRightBarButtonItem:pauseButton];
+<<<<<<< HEAD
+    self.navigationItem.rightBarButtonItems = @[pauseButton];*/
+    
+    //UIPopoverController *popover = [[UIPopoverController alloc] initWithContentViewController:<#(UIViewController *)#>]
+=======
     self.navigationItem.rightBarButtonItems = @[pauseButton];
+    
+    NSString* resourcePath = [[NSBundle mainBundle] resourcePath];
+    resourcePath = [resourcePath stringByAppendingString:@"/battle-march-action-loop.wav"];
+    NSLog(@"Path to play: %@", resourcePath);
+    NSError* err;
+    
+    //Initialize our player pointing to the path to our resource
+    player = [[AVAudioPlayer alloc] initWithContentsOfURL:
+              [NSURL fileURLWithPath:resourcePath] error:&err];
+    
+    if( err ){
+        //bail!
+        NSLog(@"Failed with reason: %@", [err localizedDescription]);
+    }
+    else{
+        //set our delegate and begin playback
+        player.delegate = self;
+        [player play];
+        player.numberOfLoops = -1;
+        player.currentTime = 0;
+        player.volume = 1.0;
+    }
+<<<<<<< HEAD
+>>>>>>> FETCH_HEAD
+=======
+>>>>>>> FETCH_HEAD
 }
 
 - (BOOL)shouldAutorotate
@@ -103,31 +136,35 @@
 {
     mainCharacter.xVelocity = 0.0;
 }
-/*
-- (void)buttonView:(UIBarButtonItem*)buttonView pauseButtonPressed:(NSIndexPath*)indexPath
-{
-    [self performSegueWithIdentifier:@"Pause" sender:self];
-}
-*/
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if(!self.scene.view.paused) {
-        NSLog(@"Game Paused");
-        self.scene.view.paused = YES;
-        self.navigationItem.rightBarButtonItem.title = @"Resume";
-    }
-    else {
-        NSLog(@"Game Resumed");
-        self.scene.view.paused = NO;
-        self.navigationItem.rightBarButtonItem.title = @"Pause";
+    if([[segue identifier] isEqualToString:@"pause"]) {
+        if(!self.scene.view.paused) {
+            NSLog(@"Game Paused");
+            self.scene.view.paused = YES;
+            self.navigationItem.rightBarButtonItem.title = @"Resume";
+        }
     }
 }
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
+
+    if ([self.navigationItem.rightBarButtonItem.title  isEqual: @"Resume"]) {
+        NSLog(@"Game Resumed");
+        self.scene.view.paused = NO;
+        self.navigationItem.rightBarButtonItem.title = @"Pause";
+        return NO;
+    }
+    return YES;
+}
+
+/*
 -(void)buttonAction:(id)sender
 {
     [self performSegueWithIdentifier:@"StatsDisplay" sender:sender];
 }
-/*
+
 - (IBAction)pauseButtonPressed:(id)sender
 {
     LSVHealthView *this = [[LSVHealthView alloc] init];
