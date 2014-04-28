@@ -196,7 +196,6 @@ int textureTimer = 0;
                     --mainCharacter.stats.runSpeed;
                     --mainCharacter.stats.climb;
                     mainCharacter.stats.boost += 3;
-                    // TODO: reset level
                 }
             } else {
             [mainCharacter damageBy:(1/mainCharacter.stats.fireDef)*p.damage];
