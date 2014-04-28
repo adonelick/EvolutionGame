@@ -228,7 +228,6 @@ int textureTimer = 0;
                     --mainCharacter.stats.runSpeed;
                     --mainCharacter.stats.climb;
                     mainCharacter.stats.boost += 2;
-                    // TODO: reset level
                 }
             }
         }
@@ -269,7 +268,6 @@ int textureTimer = 0;
                         --mainCharacter.stats.runSpeed;
                         --mainCharacter.stats.climb;
                         mainCharacter.stats.boost += 2;
-                        // TODO: reset level
                     }
                 }
             }
