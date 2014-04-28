@@ -48,12 +48,7 @@
     /*
     UIBarButtonItem *pauseButton =[[UIBarButtonItem alloc] initWithTitle:@"Pause" style:UIBarButtonItemStylePlain target:self action:@selector(buttonAction:)];
     //[self.navigationItem setRightBarButtonItem:pauseButton];
-<<<<<<< HEAD
     self.navigationItem.rightBarButtonItems = @[pauseButton];*/
-    
-    //UIPopoverController *popover = [[UIPopoverController alloc] initWithContentViewController:<#(UIViewController *)#>]
-=======
-    self.navigationItem.rightBarButtonItems = @[pauseButton];
     
     NSString* resourcePath = [[NSBundle mainBundle] resourcePath];
     resourcePath = [resourcePath stringByAppendingString:@"/battle-march-action-loop.wav"];
@@ -76,10 +71,6 @@
         player.currentTime = 0;
         player.volume = 1.0;
     }
-<<<<<<< HEAD
->>>>>>> FETCH_HEAD
-=======
->>>>>>> FETCH_HEAD
 }
 
 - (BOOL)shouldAutorotate
@@ -174,8 +165,7 @@
         NSLog(@"Game Paused");
         self.scene.view.paused = YES;
         self.navigationItem.rightBarButtonItem.title = @"Resume";
-<<<<<<< HEAD
-        
+ 
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
         UIViewController *vc =[storyboard instantiateInitialViewController];
         [self performSegueWithIdentifier:@"StatsDisplay" sender:self];
@@ -185,13 +175,11 @@
         NSLog(@"Game Resumed");
         self.scene.view.paused = NO;
         self.navigationItem.rightBarButtonItem.title = @"Pause";
-=======
         [self.view addSubview:this];
     } else {
         NSLog(@"Game Resumed");
         self.scene.view.paused = NO;
         [this removeFromSuperview];
->>>>>>> FETCH_HEAD
     }
 }
 */
