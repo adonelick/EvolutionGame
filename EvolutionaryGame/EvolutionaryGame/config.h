@@ -65,8 +65,7 @@
 
 #define KILL_TO_EVOLVE 25
 
-// TODO
-#define BOOST_TO_EVOLVE 1
+#define BOOST_TO_EVOLVE 25
 
 #define MIN_STAT 1
 

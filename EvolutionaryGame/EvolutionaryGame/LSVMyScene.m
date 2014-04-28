@@ -128,12 +128,10 @@ int textureTimer = 0;
 {
     // Checks whether a collision has occured between any
     // of the creatures or objects currently in the scene.
-    
     NSMutableArray* killedEnemies = [NSMutableArray new];
     NSMutableArray* usedProjectiles = [NSMutableArray new];
     
-    // Calculates the relative position between all projectiles
-    // fired by the character and the enemies
+    // Checks if any of the player's projectiles has hit any enemies
     for (Projectile* p in _projectiles) {
         for (Enemy* e in _enemies) {
             CGPoint projectPos = p.position;
@@ -180,9 +178,7 @@ int textureTimer = 0;
     [self cleanUp:_enemies byDeleting: killedEnemies];
     [self cleanUp:_projectiles byDeleting: usedProjectiles];
     
-    // Calculates the relative position between all projectiles
-    // fired by the enemies and the character.
-    
+    // Checks if any of the enemies' projectiles has hit the player
     for (Projectile* p in _enemyProjectiles) {
         CGPoint projectPos = p.position;
         CGPoint characterPos = mainCharacter.position;
@@ -192,6 +188,16 @@ int textureTimer = 0;
             if (mainCharacter.health - (1/mainCharacter.stats.fireDef)*p.damage <= 0) {
                 mainCharacter.health = 0;
                 [usedProjectiles addObject:p];
+                // Apply stat boosts upon death
+                if (mainCharacter.stats.jumpHeight <= 1.99 && mainCharacter.stats.breath <= 1.99 && mainCharacter.stats.strength <= 1.97 && mainCharacter.stats.runSpeed >= 1.01 && mainCharacter.stats.climb >= 1.01) {
+                    ++mainCharacter.stats.jumpHeight;
+                    ++mainCharacter.stats.breath;
+                    mainCharacter.stats.strength += 0.03;
+                    --mainCharacter.stats.runSpeed;
+                    --mainCharacter.stats.climb;
+                    mainCharacter.stats.boost += 3;
+                    // TODO: reset level
+                }
             } else {
             [mainCharacter damageBy:(1/mainCharacter.stats.fireDef)*p.damage];
             [usedProjectiles addObject:p];
@@ -212,6 +218,19 @@ int textureTimer = 0;
         
         if ((-(TILE_HALF_SIZE + CHARACTER_HALF_WIDTH) <= xdist) && (xdist <= (TILE_HALF_SIZE + CHARACTER_HALF_WIDTH)) && (-(TILE_HALF_SIZE + CHARACTER_HALF_HEIGHT) <= ydist) && (ydist <= (TILE_HALF_SIZE + CHARACTER_HALF_HEIGHT)) && arc4random() < 150000000) {
             [mainCharacter damageBy:(1/mainCharacter.stats.breath)*h.damagePotential];
+            if (mainCharacter.health <= 0) {
+                mainCharacter.health = 0;
+                // Apply stat boosts upon death
+                if (mainCharacter.stats.jumpHeight <= 1.99 && mainCharacter.stats.breath <= 1.99 && mainCharacter.stats.strength <= 1.98 && mainCharacter.stats.runSpeed >= 1.01 && mainCharacter.stats.climb >= 1.01) {
+                    ++mainCharacter.stats.jumpHeight;
+                    ++mainCharacter.stats.breath;
+                    mainCharacter.stats.strength += 0.02;
+                    --mainCharacter.stats.runSpeed;
+                    --mainCharacter.stats.climb;
+                    mainCharacter.stats.boost += 2;
+                    // TODO: reset level
+                }
+            }
         }
     }
 
@@ -234,16 +253,31 @@ int textureTimer = 0;
         }
     }
     
+    // If the player comes in contact with a medium enemy, damage the player
     for (Enemy* e in _enemies) {
         if (e.type == 2) {
             int distance = (int)[ExtraMath distanceBetween:e.position and:mainCharacter.position];
             if (abs(distance) <= (MEDIUM_ENEMY_HALF_HEIGHT + CHARACTER_HALF_HEIGHT)) {
                 [mainCharacter damageBy:20];
+                if (mainCharacter.health <= 0) {
+                    mainCharacter.health = 0;
+                    // Apply stat boosts upon death
+                    if (mainCharacter.stats.jumpHeight <= 1.99 && mainCharacter.stats.breath <= 1.99 && mainCharacter.stats.strength <= 1.97 && mainCharacter.stats.runSpeed >= 1.01 && mainCharacter.stats.climb >= 1.01) {
+                        ++mainCharacter.stats.jumpHeight;
+                        ++mainCharacter.stats.breath;
+                        mainCharacter.stats.strength += 0.03;
+                        --mainCharacter.stats.runSpeed;
+                        --mainCharacter.stats.climb;
+                        mainCharacter.stats.boost += 2;
+                        // TODO: reset level
+                    }
+                }
             }
             
         }
     }
     
+<<<<<<< HEAD
     for (Door* d in _doors) {
         int distance = (int)[ExtraMath distanceBetween:d.position and:mainCharacter.position];
         if (abs(distance) <= CHARACTER_HALF_WIDTH) {
@@ -259,6 +293,9 @@ int textureTimer = 0;
         [self clearScene];
         [self loadMap:@"test2"];
     }
+=======
+
+>>>>>>> e4d775561bde1ac088d94fc00ed765a3c1ec4ccc
     
 }
 
