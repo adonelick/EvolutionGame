@@ -13,6 +13,7 @@
 #import "ExtraMath.h"
 #import "SmallEnemy.h"
 #import "Platform.h"
+#import "Door.h"
 #import "MediumEnemy.h"
 #import "LSVHealthView.h"
 #import "CharacterStats.h"
@@ -39,6 +40,9 @@
 
 // Keeps track of all the platforms in the level
 @property NSMutableArray* platforms;
+
+// Keeps track of all exits to the level
+@property NSMutableArray* doors;
 
 // Keeps track of the character's stats
 @property CharacterStats* charStats;

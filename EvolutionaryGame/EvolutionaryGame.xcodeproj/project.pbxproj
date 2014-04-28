@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		880C2063190779FF008DD1C9 /* test2.map in Resources */ = {isa = PBXBuildFile; fileRef = 880C2062190779FF008DD1C9 /* test2.map */; };
+		8832250A190DE924007E1702 /* Door.m in Sources */ = {isa = PBXBuildFile; fileRef = 88322509190DE924007E1702 /* Door.m */; };
 		886D3F101904C9A700C4E676 /* test.map in Resources */ = {isa = PBXBuildFile; fileRef = 886D3F0F1904C9A700C4E676 /* test.map */; };
 		9301CE701904BB2600201643 /* CharacterStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 9301CE6F1904BB2600201643 /* CharacterStats.m */; };
 		9301CE731904C15F00201643 /* WeaponStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 9301CE721904C15F00201643 /* WeaponStats.m */; };
@@ -117,6 +118,8 @@
 
 /* Begin PBXFileReference section */
 		880C2062190779FF008DD1C9 /* test2.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test2.map; sourceTree = "<group>"; };
+		88322508190DE924007E1702 /* Door.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Door.h; path = Objects/Door.h; sourceTree = "<group>"; };
+		88322509190DE924007E1702 /* Door.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Door.m; path = Objects/Door.m; sourceTree = "<group>"; };
 		886D3F0F1904C9A700C4E676 /* test.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.map; sourceTree = "<group>"; };
 		9301CE6E1904BB2600201643 /* CharacterStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterStats.h; sourceTree = "<group>"; };
 		9301CE6F1904BB2600201643 /* CharacterStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterStats.m; sourceTree = "<group>"; };
@@ -389,6 +392,8 @@
 				9333FD7A18B9313C006B11F5 /* Platform.m */,
 				93FB25E618E910B0008193F3 /* SmokeHazard.h */,
 				93FB25E718E910B0008193F3 /* SmokeHazard.m */,
+				88322508190DE924007E1702 /* Door.h */,
+				88322509190DE924007E1702 /* Door.m */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -684,6 +689,7 @@
 				93939EE81900E2A000F38FA9 /* MediumEnemyWeapon.m in Sources */,
 				934271E218C2EE0F006E9365 /* Creature.m in Sources */,
 				93F3228618FB9218007E4718 /* MediumEnemy.m in Sources */,
+				8832250A190DE924007E1702 /* Door.m in Sources */,
 				93FB25E818E910B0008193F3 /* SmokeHazard.m in Sources */,
 				9333FD7318B5A187006B11F5 /* Character.m in Sources */,
 				93939EEB1900E31300F38FA9 /* MediumEnemyProjectile.m in Sources */,
