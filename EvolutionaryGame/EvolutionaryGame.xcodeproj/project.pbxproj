@@ -52,6 +52,7 @@
 		934271E518C432FD006E9365 /* ExtraMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 934271E418C432FD006E9365 /* ExtraMath.m */; };
 		935C9AEE18E91B53007B57F9 /* FireEnemySmallProjectileL.gif in Resources */ = {isa = PBXBuildFile; fileRef = 935C9AED18E91B53007B57F9 /* FireEnemySmallProjectileL.gif */; };
 		935C9AF018E91B58007B57F9 /* FireEnemySmallProjectileR.gif in Resources */ = {isa = PBXBuildFile; fileRef = 935C9AEF18E91B58007B57F9 /* FireEnemySmallProjectileR.gif */; };
+		935F045A190DF10400C3859F /* battle-march-action-loop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 935F0459190DF10400C3859F /* battle-march-action-loop.wav */; };
 		93939EE51900655C00F38FA9 /* LSVHealthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93939EE41900655C00F38FA9 /* LSVHealthView.m */; };
 		93939EE81900E2A000F38FA9 /* MediumEnemyWeapon.m in Sources */ = {isa = PBXBuildFile; fileRef = 93939EE71900E2A000F38FA9 /* MediumEnemyWeapon.m */; };
 		93939EEB1900E31300F38FA9 /* MediumEnemyProjectile.m in Sources */ = {isa = PBXBuildFile; fileRef = 93939EEA1900E31300F38FA9 /* MediumEnemyProjectile.m */; };
@@ -177,6 +178,7 @@
 		934271E418C432FD006E9365 /* ExtraMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtraMath.m; sourceTree = "<group>"; };
 		935C9AED18E91B53007B57F9 /* FireEnemySmallProjectileL.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FireEnemySmallProjectileL.gif; path = Images/FireEnemySmallProjectileL.gif; sourceTree = "<group>"; };
 		935C9AEF18E91B58007B57F9 /* FireEnemySmallProjectileR.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = FireEnemySmallProjectileR.gif; path = Images/FireEnemySmallProjectileR.gif; sourceTree = "<group>"; };
+		935F0459190DF10400C3859F /* battle-march-action-loop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "battle-march-action-loop.wav"; sourceTree = "<group>"; };
 		93939EE31900655C00F38FA9 /* LSVHealthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSVHealthView.h; sourceTree = "<group>"; };
 		93939EE41900655C00F38FA9 /* LSVHealthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSVHealthView.m; sourceTree = "<group>"; };
 		93939EE61900E2A000F38FA9 /* MediumEnemyWeapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediumEnemyWeapon.h; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 		9333FD3E18B3E521006B11F5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				935F0459190DF10400C3859F /* battle-march-action-loop.wav */,
 				934271E318C432FD006E9365 /* ExtraMath.h */,
 				934271E418C432FD006E9365 /* ExtraMath.m */,
 				9333FD3F18B3E521006B11F5 /* EvolutionaryGame-Info.plist */,
@@ -604,6 +607,7 @@
 				93939EED190247D100F38FA9 /* Button.gif in Resources */,
 				934271C518C1C4DD006E9365 /* PlayerCharR2.gif in Resources */,
 				93939EF31902480D00F38FA9 /* RightArrow.gif in Resources */,
+				935F045A190DF10400C3859F /* battle-march-action-loop.wav in Resources */,
 				934271C718C1C4DD006E9365 /* PlayerCharWeaponL2.gif in Resources */,
 				93B64A1B18F24BAA005B412E /* FirePlatformTopRightLeft.gif in Resources */,
 				934271D218C27E94006E9365 /* FireEnemySmallL2.gif in Resources */,

@@ -15,6 +15,8 @@
 
 @implementation LSVViewController
 
+@synthesize player;
+
 - (void) viewDidLoad
 {
     [super viewDidLoad];
@@ -47,6 +49,28 @@
     UIBarButtonItem *pauseButton =[[UIBarButtonItem alloc] initWithTitle:@"Pause" style:UIBarButtonItemStylePlain target:self action:@selector(buttonAction:)];
     //[self.navigationItem setRightBarButtonItem:pauseButton];
     self.navigationItem.rightBarButtonItems = @[pauseButton];
+    
+    NSString* resourcePath = [[NSBundle mainBundle] resourcePath];
+    resourcePath = [resourcePath stringByAppendingString:@"/battle-march-action-loop.wav"];
+    NSLog(@"Path to play: %@", resourcePath);
+    NSError* err;
+    
+    //Initialize our player pointing to the path to our resource
+    player = [[AVAudioPlayer alloc] initWithContentsOfURL:
+              [NSURL fileURLWithPath:resourcePath] error:&err];
+    
+    if( err ){
+        //bail!
+        NSLog(@"Failed with reason: %@", [err localizedDescription]);
+    }
+    else{
+        //set our delegate and begin playback
+        player.delegate = self;
+        [player play];
+        player.numberOfLoops = -1;
+        player.currentTime = 0;
+        player.volume = 1.0;
+    }
 }
 
 - (BOOL)shouldAutorotate
