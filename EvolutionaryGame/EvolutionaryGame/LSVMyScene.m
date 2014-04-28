@@ -277,7 +277,6 @@ int textureTimer = 0;
         }
     }
     
-<<<<<<< HEAD
     for (Door* d in _doors) {
         int distance = (int)[ExtraMath distanceBetween:d.position and:mainCharacter.position];
         if (abs(distance) <= CHARACTER_HALF_WIDTH) {
@@ -293,10 +292,6 @@ int textureTimer = 0;
         [self clearScene];
         [self loadMap:@"test2"];
     }
-=======
-
->>>>>>> e4d775561bde1ac088d94fc00ed765a3c1ec4ccc
-    
 }
 
 int IVtimer = 0;
@@ -428,6 +423,7 @@ int IVtimer = 0;
         mainCharacter.stats.evolved = YES;
     }
 }
+
 - (void) loadMap:(NSString*) mapName
 {
     NSString* path = [[NSBundle mainBundle] pathForResource:mapName
@@ -437,6 +433,9 @@ int IVtimer = 0;
                                                      error:NULL];
     int currentX = 25;
     int currentY = 725;
+    
+    int mainCharX = 0;
+    int mainCharY = 0;
     
     for (int i = 0; i < content.length; i++) {
         char tile = [content characterAtIndex:i];
@@ -474,15 +473,8 @@ int IVtimer = 0;
         } else if (tile == 'Z') {
             [self addPlatform:@"FirePlatformSinglePiece.gif" atX:currentX atY:currentY];
         } else if (tile == 'P') {
-            mainCharacter = [[Character alloc] initWithStats:_charStats andWeaponStats:_weaponStats];
-            mainCharacter.position = CGPointMake(currentX, currentY + 12);
-            [self addChild:mainCharacter];
-            mainCharacter.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:CHARACTER_HALF_HEIGHT];
-            mainCharacter.physicsBody.dynamic = YES;
-            mainCharacter.physicsBody.affectedByGravity = YES;
-            mainCharacter.physicsBody.linearDamping = 1;
-            mainCharacter.physicsBody.angularDamping = 10000;
-            mainCharacter.physicsBody.mass = 0.1;
+            mainCharX = currentX;
+            mainCharY = currentY;
         } else if (tile == 'E') {
             Door* e = [[Door alloc] init];
             e.position = CGPointMake(currentX + 25, currentY + 25);
@@ -518,6 +510,17 @@ int IVtimer = 0;
             currentY -= 50;
         }
     }
+    
+    // Initialize main character last so it always displays on top.
+    mainCharacter = [[Character alloc] initWithStats:_charStats andWeaponStats:_weaponStats];
+    mainCharacter.position = CGPointMake(mainCharX, mainCharY + 12);
+    [self addChild:mainCharacter];
+    mainCharacter.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:CHARACTER_HALF_HEIGHT];
+    mainCharacter.physicsBody.dynamic = YES;
+    mainCharacter.physicsBody.affectedByGravity = YES;
+    mainCharacter.physicsBody.linearDamping = 1;
+    mainCharacter.physicsBody.angularDamping = 10000;
+    mainCharacter.physicsBody.mass = 0.1;
 }
 
 - (void) addPlatform:(NSString*) fileName atX:(int) x atY:(int) y

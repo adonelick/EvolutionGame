@@ -90,4 +90,7 @@
 // Moves every object in the scene up or down by amount y
 - (void) shiftSceneY:(int) y;
 
+// Resets the scene to empty.
+- (void) clearScene;
+
 @end
