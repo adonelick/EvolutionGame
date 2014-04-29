@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		880C2063190779FF008DD1C9 /* test2.map in Resources */ = {isa = PBXBuildFile; fileRef = 880C2062190779FF008DD1C9 /* test2.map */; };
+		8817D15F190FA36C008C8462 /* level0.map in Resources */ = {isa = PBXBuildFile; fileRef = 8817D15D190FA36C008C8462 /* level0.map */; };
+		8817D160190FA36C008C8462 /* level1.map in Resources */ = {isa = PBXBuildFile; fileRef = 8817D15E190FA36C008C8462 /* level1.map */; };
 		8832250A190DE924007E1702 /* Door.m in Sources */ = {isa = PBXBuildFile; fileRef = 88322509190DE924007E1702 /* Door.m */; };
 		886D3F101904C9A700C4E676 /* test.map in Resources */ = {isa = PBXBuildFile; fileRef = 886D3F0F1904C9A700C4E676 /* test.map */; };
 		9301CE701904BB2600201643 /* CharacterStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 9301CE6F1904BB2600201643 /* CharacterStats.m */; };
@@ -121,6 +123,8 @@
 
 /* Begin PBXFileReference section */
 		880C2062190779FF008DD1C9 /* test2.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test2.map; sourceTree = "<group>"; };
+		8817D15D190FA36C008C8462 /* level0.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level0.map; sourceTree = "<group>"; };
+		8817D15E190FA36C008C8462 /* level1.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level1.map; sourceTree = "<group>"; };
 		88322508190DE924007E1702 /* Door.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Door.h; path = Objects/Door.h; sourceTree = "<group>"; };
 		88322509190DE924007E1702 /* Door.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Door.m; path = Objects/Door.m; sourceTree = "<group>"; };
 		886D3F0F1904C9A700C4E676 /* test.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.map; sourceTree = "<group>"; };
@@ -307,6 +311,8 @@
 		9333FD3D18B3E521006B11F5 /* EvolutionaryGame */ = {
 			isa = PBXGroup;
 			children = (
+				8817D15D190FA36C008C8462 /* level0.map */,
+				8817D15E190FA36C008C8462 /* level1.map */,
 				9333FD7D18B9342B006B11F5 /* config.h */,
 				9333FD4618B3E521006B11F5 /* LSVAppDelegate.h */,
 				9333FD4718B3E521006B11F5 /* LSVAppDelegate.m */,
@@ -613,6 +619,8 @@
 				93B64A1318F24BAA005B412E /* FirePlatformRight.gif in Resources */,
 				93F3227918FB8DBC007E4718 /* MediumEnemyProjectile.gif in Resources */,
 				93939EF519024F5C00F38FA9 /* Exit.png in Resources */,
+				8817D15F190FA36C008C8462 /* level0.map in Resources */,
+				8817D160190FA36C008C8462 /* level1.map in Resources */,
 				935C9AEE18E91B53007B57F9 /* FireEnemySmallProjectileL.gif in Resources */,
 				93F3227018FB8CE0007E4718 /* FullFirePlayerCharR2.gif in Resources */,
 				93939EED190247D100F38FA9 /* Button.gif in Resources */,

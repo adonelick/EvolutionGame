@@ -14,6 +14,7 @@
 // Keep the stats in a global variable so that the character can be reinitialized with its stats intact
 CharacterStats *characterStats = nil;
 WeaponStats *weaponstats = nil;
+int currentLevel = 0;
 
 + (void)initialize {
     if(!characterStats)
@@ -44,11 +45,12 @@ WeaponStats *weaponstats = nil;
         _doors = [NSMutableArray new];
         _charStats = characterStats;
         _weaponStats = weaponstats;
+        currentLevel = 0;
         
         self.backgroundColor = [SKColor colorWithRed:0.25 green:0.15 blue:0.15 alpha:1.0];
         
         // Testing level map loading
-        [self loadMap:@"test2"];
+        [self loadMap:[NSString stringWithFormat:@"level%d", currentLevel]];
     }
     
     return self;
@@ -277,8 +279,10 @@ int textureTimer = 0;
     for (Door* d in _doors) {
         int distance = (int)[ExtraMath distanceBetween:d.position and:mainCharacter.position];
         if (abs(distance) <= CHARACTER_HALF_WIDTH) {
+            currentLevel++;
+            currentLevel = currentLevel%3;
             [self clearScene];
-            [self loadMap:@"test2"];
+            [self loadMap:[NSString stringWithFormat:@"level%d", currentLevel]];
         }
     }
     
@@ -286,8 +290,9 @@ int textureTimer = 0;
     // If enough damage has occured to kill the player,
     // end the game.
     if (mainCharacter.health <= 0) {
+        currentLevel = 0;
         [self clearScene];
-        [self loadMap:@"test2"];
+        [self loadMap:[NSString stringWithFormat:@"level%d", currentLevel]];
     }
 }
 
