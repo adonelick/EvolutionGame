@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import <AVFoundation/AVAudioPlayer.h>
 #import "LSVMyScene.h"
 
 @interface LSVViewController : UIViewController <AVAudioPlayerDelegate> {
-    
+
     AVAudioPlayer *player;
-    
     IBOutlet UILabel *healthStatsLabel;
     float health;
     /*IBOutlet UILabel *powerStatsLabel;
@@ -22,6 +22,7 @@
     IBOutlet UILabel *formLabel;
     IBOutlet UILabel *jumpHeightStatsLabel;
     IBOutlet UILabel *strengthStatsLabel;*/
+    AVAudioPlayer *shoot;
 }
 
 @property (nonatomic, retain) AVAudioPlayer *player;
