@@ -16,6 +16,7 @@
 @implementation LSVViewController
 
 @synthesize player;
+@synthesize healthStatsLabel;
 
 - (void) viewDidLoad
 {
@@ -71,6 +72,7 @@
         player.currentTime = 0;
         player.volume = 1.0;
     }
+    NSLog(@"HELLLOOO");
 }
 
 - (BOOL)shouldAutorotate
@@ -130,10 +132,18 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([[segue identifier] isEqualToString:@"pause"]) {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController* statsDisplay = [storyboard instantiateViewControllerWithIdentifier:@"StatisticsDisplay"];
+
+    if([segue.identifier isEqualToString:@"pause"]) {
         if(!self.scene.view.paused) {
             NSLog(@"Game Paused");
             self.scene.view.paused = YES;
+            //health = mainCharacter.stats.fireDef;
+            //[segue.destinationViewController ]
+            //[healthStatsLabel setText:[NSString stringWithFormat:@"%f", health]];
+            
+            //[self presentViewController:statsDisplay animated:YES completion:nil];
             self.navigationItem.rightBarButtonItem.title = @"Resume";
         }
     }
