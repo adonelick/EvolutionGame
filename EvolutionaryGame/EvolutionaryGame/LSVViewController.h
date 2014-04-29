@@ -15,19 +15,11 @@
 @interface LSVViewController : UIViewController <AVAudioPlayerDelegate> {
 
     AVAudioPlayer *player;
-    IBOutlet UILabel *healthStatsLabel;
-    float health;
-    /*IBOutlet UILabel *powerStatsLabel;
-    IBOutlet UILabel *toEvolutionStatsLabel;
-    IBOutlet UILabel *formLabel;
-    IBOutlet UILabel *jumpHeightStatsLabel;
-    IBOutlet UILabel *strengthStatsLabel;*/
+
     AVAudioPlayer *shoot;
 }
 
 @property (nonatomic, retain) AVAudioPlayer *player;
-
-@property (nonatomic, retain) IBOutlet UILabel *healthStatsLabel;
 
 @property LSVMyScene* scene;
 

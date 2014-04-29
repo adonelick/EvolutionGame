@@ -16,7 +16,6 @@
 @implementation LSVViewController
 
 @synthesize player;
-@synthesize healthStatsLabel;
 
 - (void) viewDidLoad
 {
@@ -72,11 +71,6 @@
         player.currentTime = 0;
         player.volume = 1.0;
     }
-<<<<<<< HEAD
-    NSLog(@"HELLLOOO");
-=======
-
->>>>>>> FETCH_HEAD
 }
 
 - (BOOL)shouldAutorotate
@@ -140,8 +134,8 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController* statsDisplay = [storyboard instantiateViewControllerWithIdentifier:@"StatisticsDisplay"];
+    //UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    //UIViewController* statsDisplay = [storyboard instantiateViewControllerWithIdentifier:@"StatisticsDisplay"];
 
     if([segue.identifier isEqualToString:@"pause"]) {
         if(!self.scene.view.paused) {
