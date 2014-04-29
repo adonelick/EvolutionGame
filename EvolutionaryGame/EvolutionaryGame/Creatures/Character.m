@@ -40,6 +40,7 @@
             self.movingUp = NO;
             self.movingDown = NO;
             self.invulnerable = NO;
+            self.dead = NO;
             
             self.show = 0;
             
@@ -76,6 +77,7 @@
             self.movingUp = NO;
             self.movingDown = NO;
             self.invulnerable = NO;
+            self.dead = NO;
             
             self.show = 0;
         

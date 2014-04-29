@@ -103,20 +103,6 @@ int textureTimer = 0;
         [e updateTexture];
     }
     
-//    for (Enemy* e in _enemies) {
-//        if (e.type == 1){
-//            textureTimer ++;
-//            NSLog(@"%d", textureTimer);
-//            if (textureTimer == 10) {
-//                [e updateTexture];
-//                textureTimer = 0;
-//            }
-//        } else {
-//                [e updateTexture];
-//        }
-//        
-//    }
-    
     for (SmokeHazard* h in _smokeHazards) {
         ++h.delay;
         if(h.delay == 7) {
@@ -191,13 +177,19 @@ int textureTimer = 0;
                 mainCharacter.health = 0;
                 [usedProjectiles addObject:p];
                 // Apply stat boosts upon death
-                if (mainCharacter.stats.jumpHeight <= 1.99 && mainCharacter.stats.breath <= 1.99 && mainCharacter.stats.strength <= 1.97 && mainCharacter.stats.runSpeed >= 1.01 && mainCharacter.stats.climb >= 1.01) {
-                    ++mainCharacter.stats.jumpHeight;
-                    ++mainCharacter.stats.breath;
+                if (mainCharacter.dead == NO && mainCharacter.stats.jumpHeight <= 1.99 && mainCharacter.stats.breath <= 1.99 && mainCharacter.stats.strength <= 1.97 && mainCharacter.stats.runSpeed >= 1.01 && mainCharacter.stats.climb >= 1.01) {
+                    mainCharacter.dead = YES;
+                    mainCharacter.stats.jumpHeight += 0.01;
+                    mainCharacter.stats.breath += 0.01;
                     mainCharacter.stats.strength += 0.03;
-                    --mainCharacter.stats.runSpeed;
-                    --mainCharacter.stats.climb;
+                    mainCharacter.stats.runSpeed -= 0.1;
+                    mainCharacter.stats.climb -= 0.01;
                     mainCharacter.stats.boost += 3;
+                    if (mainCharacter.stats.waterDef >= 1.03 && mainCharacter.stats.fireDef <= 1.99 && mainCharacter.stats.iceDef <= 1.98) {
+                        mainCharacter.stats.waterDef -= 0.03;
+                        mainCharacter.stats.fireDef += 0.01;
+                        mainCharacter.stats.iceDef += 0.02;
+                    }
                 }
             } else {
             [mainCharacter damageBy:(1/mainCharacter.stats.fireDef)*p.damage];
@@ -222,13 +214,19 @@ int textureTimer = 0;
             if (mainCharacter.health <= 0) {
                 mainCharacter.health = 0;
                 // Apply stat boosts upon death
-                if (mainCharacter.stats.jumpHeight <= 1.99 && mainCharacter.stats.breath <= 1.99 && mainCharacter.stats.strength <= 1.98 && mainCharacter.stats.runSpeed >= 1.01 && mainCharacter.stats.climb >= 1.01) {
-                    ++mainCharacter.stats.jumpHeight;
-                    ++mainCharacter.stats.breath;
+                if (mainCharacter.dead == NO && mainCharacter.stats.jumpHeight <= 1.99 && mainCharacter.stats.breath <= 1.99 && mainCharacter.stats.strength <= 1.98 && mainCharacter.stats.runSpeed >= 1.01 && mainCharacter.stats.climb >= 1.01) {
+                    mainCharacter.dead = YES;
+                    mainCharacter.stats.jumpHeight += 0.01;
+                    mainCharacter.stats.breath += 0.01;
                     mainCharacter.stats.strength += 0.02;
-                    --mainCharacter.stats.runSpeed;
-                    --mainCharacter.stats.climb;
+                    mainCharacter.stats.runSpeed -= 0.01;
+                    mainCharacter.stats.climb -= 0.01;
                     mainCharacter.stats.boost += 2;
+                    if (mainCharacter.stats.waterDef >= 1.03 && mainCharacter.stats.fireDef <= 1.99 && mainCharacter.stats.iceDef <= 1.98) {
+                        mainCharacter.stats.waterDef -= 0.03;
+                        mainCharacter.stats.fireDef += 0.01;
+                        mainCharacter.stats.iceDef += 0.02;
+                    }
                 }
             }
         }
@@ -262,13 +260,19 @@ int textureTimer = 0;
                 if (mainCharacter.health <= 0) {
                     mainCharacter.health = 0;
                     // Apply stat boosts upon death
-                    if (mainCharacter.stats.jumpHeight <= 1.99 && mainCharacter.stats.breath <= 1.99 && mainCharacter.stats.strength <= 1.97 && mainCharacter.stats.runSpeed >= 1.01 && mainCharacter.stats.climb >= 1.01) {
-                        ++mainCharacter.stats.jumpHeight;
-                        ++mainCharacter.stats.breath;
+                    if (mainCharacter.dead == NO && mainCharacter.stats.jumpHeight <= 1.99 && mainCharacter.stats.breath <= 1.99 && mainCharacter.stats.strength <= 1.97 && mainCharacter.stats.runSpeed >= 1.01 && mainCharacter.stats.climb >= 1.01) {
+                        mainCharacter.dead = YES;
+                        mainCharacter.stats.jumpHeight += 0.01;
+                        mainCharacter.stats.breath += 0.01;
                         mainCharacter.stats.strength += 0.03;
-                        --mainCharacter.stats.runSpeed;
-                        --mainCharacter.stats.climb;
+                        mainCharacter.stats.runSpeed -= 0.01;
+                        mainCharacter.stats.climb -= 0.01;
                         mainCharacter.stats.boost += 2;
+                        if (mainCharacter.stats.waterDef >= 1.03 && mainCharacter.stats.fireDef <= 1.99 && mainCharacter.stats.iceDef <= 1.98) {
+                            mainCharacter.stats.waterDef -= 0.03;
+                            mainCharacter.stats.fireDef += 0.01;
+                            mainCharacter.stats.iceDef += 0.02;
+                        }
                     }
                 }
             }
@@ -279,6 +283,20 @@ int textureTimer = 0;
     for (Door* d in _doors) {
         int distance = (int)[ExtraMath distanceBetween:d.position and:mainCharacter.position];
         if (abs(distance) <= CHARACTER_HALF_WIDTH) {
+            if (mainCharacter.stats.jumpHeight <= 1.99 && mainCharacter.stats.breath <= 1.99 && mainCharacter.stats.strength <= 1.95 && mainCharacter.stats.runSpeed >= 1.02 && mainCharacter.stats.climb >= 1.02) {
+                mainCharacter.stats.jumpHeight += 0.02;
+                mainCharacter.stats.breath += 0.02;
+                mainCharacter.stats.strength += 0.05;
+                mainCharacter.stats.runSpeed -= 0.02;
+                mainCharacter.stats.climb -= 0.02;
+                mainCharacter.stats.boost += 5;
+            }
+            if (mainCharacter.stats.waterDef >= 1.03 && mainCharacter.stats.fireDef <= 1.99 && mainCharacter.stats.iceDef <= 1.98) {
+                mainCharacter.stats.waterDef -= 0.03;
+                mainCharacter.stats.fireDef += 0.01;
+                mainCharacter.stats.iceDef += 0.02;
+            }
+            
             currentLevel++;
             currentLevel = currentLevel%2;
             [self clearScene];
@@ -372,7 +390,7 @@ int IVtimer = 0;
             if (e.type == 1 && arc4random() < 50000000) {
                 Projectile* newProjectile = [e fireProjectileAt:mainCharacter.position];
                 [self addProjectile: newProjectile toArray:_enemyProjectiles];
-            } else if (e.type == 2 && arc4random() < 5000000) {
+            } else if (e.type == 2 && arc4random() < 35000000) {
                 Projectile* newProjectile = [e fireProjectileAt:mainCharacter.position];
                 [self addProjectile: newProjectile toArray:_enemyProjectiles];
             }

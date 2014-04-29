@@ -19,6 +19,9 @@
 @property Boolean movingUp;
 @property Boolean movingDown;
 
+// Check for if character has already died
+@property Boolean dead;
+
 // Determines whether the character can take damage
 @property Boolean invulnerable;
 

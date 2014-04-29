@@ -63,9 +63,17 @@
 
 #define BOTTOM_OF_SCREEN 224
 
-#define KILL_TO_EVOLVE 25
+// Demo mode:
+#define KILL_TO_EVOLVE 10
 
-#define BOOST_TO_EVOLVE 25
+//// Release mode:
+//#define KILL_TO_EVOLVE 25
+
+// Demo mode:
+#define BOOST_TO_EVOLVE 15
+
+//// Release mode:
+//#define BOOST_TO_EVOLVE 25
 
 #define MIN_STAT 1
 
