@@ -280,7 +280,7 @@ int textureTimer = 0;
         int distance = (int)[ExtraMath distanceBetween:d.position and:mainCharacter.position];
         if (abs(distance) <= CHARACTER_HALF_WIDTH) {
             currentLevel++;
-            currentLevel = currentLevel%3;
+            currentLevel = currentLevel%2;
             [self clearScene];
             [self loadMap:[NSString stringWithFormat:@"level%d", currentLevel]];
         }
